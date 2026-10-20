@@ -1,0 +1,438 @@
+{
+  "package": "PRAIN",
+  "version": "0.99.4",
+  "artifact": "Phase-0 Schema/State-Machine Conformance Closure Candidate",
+  "created_at": "2026-10-20",
+  "status": "SPECIFICATION_COMPLETE_PENDING_FINAL_USER_RELEASE_APPROVAL",
+  "runtime_implementation_included": false,
+  "phase1_authorized": false,
+  "release_approval_recorded": false,
+  "canonical_schemas": 17,
+  "historical_schemas_audited": 20,
+  "workstreams": 7,
+  "invariants": 30,
+  "runtime_invariants_requiring_future_conformance": 26,
+  "non_runtime_boundary_invariants": 4,
+  "knowledge_base_item_dispositions": 114,
+  "source_records_reviewed": 19,
+  "claims_reviewed": 20,
+  "migration_records": 16,
+  "validation_summary": {
+    "main": {
+      "status": "PASS",
+      "checks": 127,
+      "passed": 127,
+      "failed": 0
+    },
+    "deep": {
+      "status": "PASS",
+      "checks": 237,
+      "passed": 237,
+      "failed": 0
+    },
+    "semantic_consistency": {
+      "status": "PASS",
+      "checks": 221,
+      "passed": 221,
+      "failed": 0
+    },
+    "state_machine_conformance": {
+      "status": "PASS",
+      "checks": 504,
+      "passed": 504,
+      "failed": 0
+    },
+    "state_machine": {
+      "status": "PASS",
+      "checks": 504,
+      "passed": 504,
+      "failed": 0
+    }
+  },
+  "scope_limit": "specification-only; no runtime/production/security certification",
+  "manifest_excludes_itself": true,
+  "listed_file_count": 76,
+  "archive_regular_file_count_including_manifest": 77,
+  "files": [
+    {
+      "path": "CLOSURE_CANDIDATE.md",
+      "bytes": 2936,
+      "sha256": "44aafc8b11c570c6c0e49843741e8785b52588be4dbb164ad2865a3cff869761"
+    },
+    {
+      "path": "INTEGRITY.json",
+      "bytes": 1000,
+      "sha256": "0053dcfcc06b32d8cbdec0d4133ffe0f0d24853438b6bacb787eea4a28ca397b"
+    },
+    {
+      "path": "PHASE1_START_PLAN.md",
+      "bytes": 2690,
+      "sha256": "90125fd2e9858dd447fe5c9ca11fa7b21feb4f84ab62926e513672bb3fb0057b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3662,
+      "sha256": "b0a3171023abd23992a0e302cb940157426a88ca87c396b375f7500de1cce3f2"
+    },
+    {
+      "path": "RELEASE_ATTESTATION.md",
+      "bytes": 2971,
+      "sha256": "83789f5a6dfeeb57de7bf76f1ba9e66a44317847acdc591cd4755afc86ced6d3"
+    },
+    {
+      "path": "RELEASE_ATTESTATION_TEMPLATE.md",
+      "bytes": 1261,
+      "sha256": "cdd12f9e33344e4e57377355ce614fe69a2b379cf4567a1d0710e0d4779ccd14"
+    },
+    {
+      "path": "audit/canonical_schema_inventory.json",
+      "bytes": 14873,
+      "sha256": "06c6707b0404472108c542fdd7f75103618ae06d20089c823fbc921bd6078274"
+    },
+    {
+      "path": "audit/claim_source_audit.json",
+      "bytes": 23730,
+      "sha256": "7a91f8b5d5c30f952f882fb0ae97837edfbf4a00da1c65993afd6e076bace155"
+    },
+    {
+      "path": "audit/deep_conformance_report.json",
+      "bytes": 35050,
+      "sha256": "03ae5eb388d47f53997d0611e5a8c026c53293937fcaf4f201f70cc0ef80842b"
+    },
+    {
+      "path": "audit/knowledge_base_item_disposition.json",
+      "bytes": 26677,
+      "sha256": "63d7c75afda0843f3b968517919cb832444e91fb5653449e3d77204676e8217c"
+    },
+    {
+      "path": "audit/schema_state_machine_conformance_report.json",
+      "bytes": 8789,
+      "sha256": "5a811f77de58e16d0ce29d5b957f9bf13096018dd20672e6c047e9ae022a8790"
+    },
+    {
+      "path": "audit/semantic_consistency_report.json",
+      "bytes": 28556,
+      "sha256": "fc7cba0ef0e52d9c325145739afabe0d956b16b749319842535229c6ae395886"
+    },
+    {
+      "path": "audit/source_audit.json",
+      "bytes": 77314,
+      "sha256": "70022ec209694515b4d94e0e1b6f8e52998028ecbad761e6436d15f5bdef0bd0"
+    },
+    {
+      "path": "audit/state_machine_conformance_report.json",
+      "bytes": 69465,
+      "sha256": "7c190a4356df34969e9a6b0f24ebae179a77eefc4dc4d88fd3097fd78d3c3d85"
+    },
+    {
+      "path": "audit/validation_report.json",
+      "bytes": 18542,
+      "sha256": "46557571be696a76973e8992208c112acbb386e7abbc39a704ae2c2bf41180a8"
+    },
+    {
+      "path": "contracts/action-command.schema.json",
+      "bytes": 5869,
+      "sha256": "4e4cb834836496b7c17e900f2705ffe0ae76c84ba52ba973abbdf03326c0a4b3"
+    },
+    {
+      "path": "contracts/claim-transition-event.schema.json",
+      "bytes": 2885,
+      "sha256": "1bac3c739e269dbe8386b28ab5969ab6ee8ec8c7f747f48ac16412e446e4c7f7"
+    },
+    {
+      "path": "contracts/claim.schema.json",
+      "bytes": 9417,
+      "sha256": "343404c92431001662934eb39ce7b751aad276e8db7e50b016fed5207de01cb4"
+    },
+    {
+      "path": "contracts/delegation-grant.schema.json",
+      "bytes": 3584,
+      "sha256": "6d03fe992708e53e0c3ea4596a0e63f5b201bbf22f27ee59d89a2d8b6291807c"
+    },
+    {
+      "path": "contracts/deletion-request.schema.json",
+      "bytes": 3028,
+      "sha256": "f898ff2ddf8a37944cf83a98d8d511eeab80452ced94e6f9c51055e79aea1b55"
+    },
+    {
+      "path": "contracts/evidence-record.schema.json",
+      "bytes": 4220,
+      "sha256": "077ebfc67e6c752fb5123b8fb1d98b2afb0b195f6f08bef25e0f6ee13e1f1a39"
+    },
+    {
+      "path": "contracts/execution-receipt.schema.json",
+      "bytes": 7996,
+      "sha256": "4b2c13d2e89c4a13ff36de95d979f3843f9d69e948086a0f3effe0cbde6aaac0"
+    },
+    {
+      "path": "contracts/goal.schema.json",
+      "bytes": 4020,
+      "sha256": "58349b6c4451fc3fc41b9bbd8798cd7809f625cca0333a43e78613d5ed06cbfa"
+    },
+    {
+      "path": "contracts/health-signal.schema.json",
+      "bytes": 2752,
+      "sha256": "4c5ab543cf2fd0b1dccfda2564260f52d98e5eaf4e9ab9d7f06b1d2951e8b48a"
+    },
+    {
+      "path": "contracts/message-envelope.schema.json",
+      "bytes": 3457,
+      "sha256": "bc9475d4fc81fbb144dab74cf8ee25ba39ed25d50265bdd70d50d903fbc417f3"
+    },
+    {
+      "path": "contracts/observation.schema.json",
+      "bytes": 2340,
+      "sha256": "828438bdf879365438466bc1ea08b9324223636b9940ed09f6bcde326c9e51a3"
+    },
+    {
+      "path": "contracts/policy-approval.schema.json",
+      "bytes": 5362,
+      "sha256": "5b62cbf229ae5f7b362e68492638d416795820205cebf216e12bb8ece49ad16e"
+    },
+    {
+      "path": "contracts/policy-decision.schema.json",
+      "bytes": 3191,
+      "sha256": "4885a83626f8d6306fbcd4a3528bf1c690edd7274ec71a87f2186737896a752a"
+    },
+    {
+      "path": "contracts/principal.schema.json",
+      "bytes": 2290,
+      "sha256": "906ec443a57ebafeaea10e66873fcebcec8d61d8d74c95cc75a53be5a8397249"
+    },
+    {
+      "path": "contracts/repair-proposal.schema.json",
+      "bytes": 7089,
+      "sha256": "c487700076de007df6d4b6597860ce8926272b39d06e653119661037dc432141"
+    },
+    {
+      "path": "contracts/state-record.schema.json",
+      "bytes": 2735,
+      "sha256": "58f352d7dc3bbb8f5a80483d35bb064dcb11ec4f7021af097b84c3d1ad4dd9fb"
+    },
+    {
+      "path": "contracts/tenant.schema.json",
+      "bytes": 1434,
+      "sha256": "30956631395ab8102393def397fa3a6361da81f0ae59517795081e2b82443635"
+    },
+    {
+      "path": "docs/00_COMPLETION_REPORT.md",
+      "bytes": 4373,
+      "sha256": "cb73948526f7ce52ff60f6a867c0aa33952514f09b63bd06326e1a37b49c6c3f"
+    },
+    {
+      "path": "docs/01B_SCHEMA_FAMILY_CROSSWALK.md",
+      "bytes": 4364,
+      "sha256": "04b46e06c980b97e0488284755f65b5b2ac0c8334a3f858b32f029a736de9650"
+    },
+    {
+      "path": "docs/01_SCHEMA_AND_MIGRATION_POLICY.md",
+      "bytes": 4909,
+      "sha256": "330ceccf3d866070a023005057ae90262af0073eca29f04735ff9fa4718f3ffe"
+    },
+    {
+      "path": "docs/02B_KNOWLEDGE_BASE_ITEM_DISPOSITION.md",
+      "bytes": 19797,
+      "sha256": "152eeb44f8d9e3510c57c3f1293fbb1b2489110dee8232346801216997d9fc6e"
+    },
+    {
+      "path": "docs/02_KNOWLEDGE_BASE_AUDIT_AND_CANONICAL_MODEL.md",
+      "bytes": 4023,
+      "sha256": "0ec614509bf9d264d9ead1dcf6e344b3bec32bbcdf8cf6d2b4f6c6c9be9a4593"
+    },
+    {
+      "path": "docs/03_CLAIM_ONTOLOGY_AND_LIFECYCLE.md",
+      "bytes": 5801,
+      "sha256": "ed5a0e1ac2fe23c02a9780ade1ef592d5ab7c73f331b78b4dcadcf5755aee70f"
+    },
+    {
+      "path": "docs/04_IDENTITY_TENANCY_AND_AUTHORITY.md",
+      "bytes": 5977,
+      "sha256": "6b724c49c0fa6230a1f4bf8ccc5eec7242ca9b88dc23febab7a66321a0519224"
+    },
+    {
+      "path": "docs/05_POLICY_APPROVAL_AND_REVOCATION.md",
+      "bytes": 4496,
+      "sha256": "f1798af0a71f131fec4dbf11034f23aef42898714c215da120af962899afcf14"
+    },
+    {
+      "path": "docs/06_EVIDENCE_PRIVACY_AND_DATA_LIFECYCLE.md",
+      "bytes": 5852,
+      "sha256": "665942e8a845c446b4f2cd97bdea33fea380e846001dda908ea4dd6d48ef379e"
+    },
+    {
+      "path": "docs/07_HAL_RESILIENCE_AND_CONFORMANCE.md",
+      "bytes": 7487,
+      "sha256": "88995cec47e56719280cc47585c35d3aad826c143dc95df0781a55762c4519fe"
+    },
+    {
+      "path": "docs/08_DECISION_REGISTER_FINAL.md",
+      "bytes": 4641,
+      "sha256": "f697d0884d9397f2bda596db4417106244c8de344ac0a785dd9d3b48d87baa4f"
+    },
+    {
+      "path": "docs/09_PHASE0_EXIT_CRITERIA.md",
+      "bytes": 3581,
+      "sha256": "f2623498ef96de62a769257f00fcc3e6cc171f56b9ad2c6591fc9fabf70bc95f"
+    },
+    {
+      "path": "docs/10_REFERENCE_FLOWS.md",
+      "bytes": 2577,
+      "sha256": "b31bdd562694db63e07fad623f3a86c4d42a2b36767bc695b3edf2136cbe7c17"
+    },
+    {
+      "path": "docs/11_SPEC_VALIDATION_BOUNDARY.md",
+      "bytes": 596,
+      "sha256": "529e846e5945825e2a32da04286ffddf82b410acfabbde9164734dbf02d02642"
+    },
+    {
+      "path": "docs/12_KNOWLEDGE_BASE_SOURCE_FACT_CHECK.md",
+      "bytes": 7974,
+      "sha256": "9da25f6dbcd0b7d7c9706367194bda1b2ea7ba6244746ca6f63ed686a8aab861"
+    },
+    {
+      "path": "docs/13_INVARIANT_COVERAGE_AND_TEST_BOUNDARY.md",
+      "bytes": 1382,
+      "sha256": "706a8dd439d6836670b4e55158c462529ba6ec07cccf0fbcd5b6408ca2dfe9ad"
+    },
+    {
+      "path": "docs/13_RELEASE_AND_CHANGE_CONTROL.md",
+      "bytes": 2838,
+      "sha256": "46928377de77209b27df46801ba45a306fceace7b1700df025da0f8caad55503"
+    },
+    {
+      "path": "docs/14_SEMANTIC_CONSISTENCY_AUDIT.md",
+      "bytes": 2514,
+      "sha256": "4472b6ebd2ff408aab5620accc0405b5c58dfc4ade45623cc95635123b426602"
+    },
+    {
+      "path": "docs/15_NORMATIVE_STATE_MACHINES.md",
+      "bytes": 13348,
+      "sha256": "fdcb481db3ba7eba1612f3c86bfb6b0311e3ed44a7b99b90b57a0cd3f312928e"
+    },
+    {
+      "path": "docs/16_STATE_MACHINE_CONFORMANCE_MATRIX.md",
+      "bytes": 4178,
+      "sha256": "6b41a29287be52fa8f6dfcae9f47a71a3d773d75f54abad1970c74663b601186"
+    },
+    {
+      "path": "docs/17_SCHEMA_STATE_MACHINE_CROSSWALK.md",
+      "bytes": 7519,
+      "sha256": "1d25d7e6c45b97e4c2509579ecf1dd658e1661a72280f83cd68c1260d41cc799"
+    },
+    {
+      "path": "docs/SCHEMA_FIELD_AUDIT_RECURSIVE.md",
+      "bytes": 34677,
+      "sha256": "7f31fab4bc67f0fed1853ea2740c8eef2b1584be74aac95201eb24a19f968bf8"
+    },
+    {
+      "path": "knowledge_base/PRAIN_Wissensdatenbank.v0.3.0.json",
+      "bytes": 37092,
+      "sha256": "148a155aae47dbf45d48c62b00647c3b7f6caed1b14d4794cb0f03b8c23e252b"
+    },
+    {
+      "path": "knowledge_base/PRAIN_interaktive_Wissensdatenbank.v0.3.0.html",
+      "bytes": 48304,
+      "sha256": "2d1f4817122ccd96661cfc3a9954e6f0408c840a99ac49175e8b6f0df1ad563d"
+    },
+    {
+      "path": "phase0_gate_status.json",
+      "bytes": 1662,
+      "sha256": "4ffcf4677580269dc7d306ad64cd64f9e115d31142d649abda383d621b498bbd"
+    },
+    {
+      "path": "release_status.json",
+      "bytes": 1119,
+      "sha256": "038808968925e103ea8c742972da19458fa0781bd459464904c3a34095f7c642"
+    },
+    {
+      "path": "sources/PRAIN_Architecture_v0.4.0.zip",
+      "bytes": 25686,
+      "sha256": "60de298ddcb130221b240056a805c018158c89675ebfa94049384a01e2f4052c"
+    },
+    {
+      "path": "sources/PRAIN_Distributed_Protocol_v0.5.0.zip",
+      "bytes": 15336,
+      "sha256": "a78d29e0717fbcb17d0149808e59b6ece9daf81d87ad99bc8efae3b9bd634b5a"
+    },
+    {
+      "path": "sources/PRAIN_MASTER_ARCHIVE_through_v0.6.zip",
+      "bytes": 164390,
+      "sha256": "b007c002fdd439db82c3c07605f4c804a4851f3522c96db29a1b1e7610e54e6f"
+    },
+    {
+      "path": "sources/PRAIN_Phase0_v0.2.1.zip",
+      "bytes": 30414,
+      "sha256": "5b801aba53c152105525b5552cb803b6b72e233eec546c1b5e37bafc38f28d82"
+    },
+    {
+      "path": "sources/PRAIN_Wissensdatenbank_original.v0.1.0.json",
+      "bytes": 17786,
+      "sha256": "bd82593ff26a7e3fee4e9a657261ae06eaa00a139ff4f6e11a662107711f08d0"
+    },
+    {
+      "path": "sources/PRAIN_interaktive_Wissensdatenbank_original.v0.1.0.html",
+      "bytes": 28351,
+      "sha256": "32a65e3e1eb7c78c02dcf3b767766c402ac46be7e870e355a5e69c47c6d6d4ae"
+    },
+    {
+      "path": "sources/PRAIN_v0.6.zip",
+      "bytes": 22954,
+      "sha256": "ed8cb1a47b89b0d18b93336d8f807e33636ceeac00f8965c036ab3f2c8b7f652"
+    },
+    {
+      "path": "sources/PRAIN_v0.9.2_Phase0_Consolidation_and_Acceptance_Gate.zip",
+      "bytes": 48734,
+      "sha256": "7947629d9c7e3faec9e446e01b69e4983355b6d7c1e2b818aeb9addac09ff7c5"
+    },
+    {
+      "path": "tests/contract_fixtures.json",
+      "bytes": 13660,
+      "sha256": "9a612c2c3fb766f3fb95f614e4a8ee72457637211464e22cf135c062e42cc955"
+    },
+    {
+      "path": "tests/invariant_coverage.json",
+      "bytes": 15052,
+      "sha256": "bb92226abe878572af3ce9415e222ab3498d82fd3d406d35eb6dc59eec83eb04"
+    },
+    {
+      "path": "tests/invariants.json",
+      "bytes": 5925,
+      "sha256": "d5c8ab8b1a7213bd9eb67f5098687aa8cda9a721f384a84d4bd9196aa673698a"
+    },
+    {
+      "path": "tools/refresh_release_metadata.py",
+      "bytes": 6559,
+      "sha256": "e11cdb0460f58032353175ecca859bf94e10c0488a0d1345e2fa0986f8129190"
+    },
+    {
+      "path": "tools/validate_deep_conformance.py",
+      "bytes": 26941,
+      "sha256": "2568294466fc5061bb05d35d5406c7a8dc7dca6cbe930d8e42245295f5a33990"
+    },
+    {
+      "path": "tools/validate_phase0.py",
+      "bytes": 9771,
+      "sha256": "acec4d3fc7c5361cdf7fccf85d9ad2ad52f02c8f0cebcf90e023e6c50fb02985"
+    },
+    {
+      "path": "tools/validate_schema_state_machine_conformance.py",
+      "bytes": 5086,
+      "sha256": "567a445639be42b220e7cc948132a329f0a452599eb289a226eb9867d75fd6a3"
+    },
+    {
+      "path": "tools/validate_semantic_consistency.py",
+      "bytes": 9850,
+      "sha256": "8d90d6ecb008834ed76a8b5e27cf772d695fcb1fbc8848511a096b3a0a73ca32"
+    },
+    {
+      "path": "tools/validate_state_machine_conformance.py",
+      "bytes": 25520,
+      "sha256": "26f9f8363dec5c542b24cc4fd27f7739b20e47bccae8374698fec75a54312609"
+    },
+    {
+      "path": "tools/verify_release_bundle.py",
+      "bytes": 8690,
+      "sha256": "55284c037c09e18a3aec589a4c9d0ee650830867ef32f6c7dc41cd1b7ed0ddc3"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+PRAIN v1.1.6 test run
+Command: python -m unittest discover -s tests -v
+Result: 47 tests passed, 0 failed, 0 errors.
+Execution mode remains simulated_only.

@@ -1,0 +1,501 @@
+{
+  "project": {
+    "id": "PRAIN",
+    "title": "PRAIN — Autonomous Agent Architecture Knowledge Base",
+    "version": "0.1.0",
+    "created": "2026-10-20",
+    "purpose": "Linked, evidence-aware knowledge base for the five dimensions of autonomous AI agents, initially grounded in the reviewed research report and its implications for Hallerbans.",
+    "status": "Initial foundation; claims and sources require ongoing verification."
+  },
+  "dimensions": [
+    {
+      "id": "brain",
+      "name": "Brain — Cognition & Memory",
+      "icon": "🧠",
+      "color": "#8b5cf6",
+      "summary": "Working state, session summaries, persistent memory, knowledge graphs, retrieval, reasoning and experience consolidation.",
+      "key_concepts": [
+        "Working memory",
+        "Session-scoped compressed memory",
+        "Persistent long-term store",
+        "Mem0",
+        "Zep / Graphiti",
+        "Letta",
+        "A-Mem",
+        "MemoryAgentBench",
+        "MemoryArena",
+        "LoCoMo",
+        "Test-time compute",
+        "Sleep-time compute",
+        "Procedural memory"
+      ],
+      "for_hallerbans": "Keep current task state, durable project facts and execution history distinct. Evaluate memory systems against real multi-step tasks instead of selecting by benchmark headline alone.",
+      "claims": [
+        {
+          "claim": "A three-layer memory model is a useful architecture pattern.",
+          "status": "Supported as a design pattern; not a universal industry standard.",
+          "confidence": "High"
+        },
+        {
+          "claim": "Mem0 universally saves more than 90% of tokens.",
+          "status": "Not established as a universal result; requires the specific benchmark and comparison setup.",
+          "confidence": "Low"
+        },
+        {
+          "claim": "A-Mem's core method is GRPO-based memory routing.",
+          "status": "Mischaracterizes the cited A-Mem paper; its central approach is dynamic, Zettelkasten-inspired memory organization.",
+          "confidence": "High"
+        },
+        {
+          "claim": "Memory benchmarks show that recall alone does not guarantee success in multi-step tasks.",
+          "status": "Broadly supported; exact percentages depend on benchmark, model and setup.",
+          "confidence": "High"
+        }
+      ],
+      "sourceIds": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "body",
+      "name": "Body — Runtime & Infrastructure",
+      "icon": "🖥️",
+      "color": "#0ea5e9",
+      "summary": "Task execution, process lifecycle, resource management, isolation, concurrency, scheduling and agent runtime.",
+      "key_concepts": [
+        "AIOS",
+        "Agent OS",
+        "Task lifecycle",
+        "Persistent jobs",
+        "Process supervision",
+        "Resource limits",
+        "Cloudflare Durable Objects",
+        "Amazon Bedrock AgentCore Runtime",
+        "MicroVM isolation",
+        "Edge runtime"
+      ],
+      "for_hallerbans": "Prioritize a reliable Linux runtime, persistent task state, restart/resume, timeouts, concurrency limits, observability and controlled hand-offs before adopting a full research Agent OS.",
+      "claims": [
+        {
+          "claim": "AIOS is a real research architecture for managing LLM-agent resources.",
+          "status": "Supported.",
+          "confidence": "High"
+        },
+        {
+          "claim": "AIOS is the universally adopted primary agent OS standard.",
+          "status": "Overstated; no such universal standard is established.",
+          "confidence": "High"
+        },
+        {
+          "claim": "AIOS can yield up to 2.1× speed-up.",
+          "status": "A reported result under particular experiments, not a general guarantee.",
+          "confidence": "Medium"
+        },
+        {
+          "claim": "Cloud runtimes guarantee memory access under 100 ms.",
+          "status": "Not substantiated as a universal guarantee by the listed documentation.",
+          "confidence": "High"
+        }
+      ],
+      "sourceIds": [
+        "S6",
+        "S7",
+        "S8"
+      ]
+    },
+    {
+      "id": "senses",
+      "name": "Senses — Perception & Tools",
+      "icon": "👁️",
+      "color": "#14b8a6",
+      "summary": "MCP and other tool interfaces, web/GUI access, files, APIs, multimodal inputs, events and result verification.",
+      "key_concepts": [
+        "Model Context Protocol",
+        "JSON-RPC",
+        "Tool schemas",
+        "MCP tool descriptions",
+        "Browser and GUI perception",
+        "Vision-language models",
+        "Audio/video/PDF inputs",
+        "Event-triggered perception",
+        "Tool-result verification"
+      ],
+      "for_hallerbans": "Maintain a small, clear tool catalog. Specify purpose, input/output schema, limits and failure modes; verify effects from observed system state rather than trusting the model's narration.",
+      "claims": [
+        {
+          "claim": "MCP standardizes connections to tools and data sources.",
+          "status": "Supported; it standardizes interfaces, not correctness or authorization by itself.",
+          "confidence": "High"
+        },
+        {
+          "claim": "Poorly written tool descriptions can impair tool selection and waste context.",
+          "status": "Supported as an active research concern; quantitative benefits need specific evidence.",
+          "confidence": "Medium"
+        },
+        {
+          "claim": "MCP is a universal, fully secure industry standard.",
+          "status": "Overstated; security depends on implementation, permissions and deployment.",
+          "confidence": "High"
+        },
+        {
+          "claim": "Event-triggered perception is a useful architecture pattern.",
+          "status": "Plausible and established as a general systems pattern, not unique to 2026.",
+          "confidence": "High"
+        }
+      ],
+      "sourceIds": [
+        "S9",
+        "S10",
+        "S11"
+      ]
+    },
+    {
+      "id": "will",
+      "name": "Will — Goals & Control",
+      "icon": "🎯",
+      "color": "#f59e0b",
+      "summary": "Goal persistence, planning, task decomposition, progress tracking, verification, recovery and resistance to goal drift.",
+      "key_concepts": [
+        "Goal drift",
+        "Pattern-matching bias",
+        "Task decomposition",
+        "Success criteria",
+        "Independent verifier",
+        "Steering agent",
+        "Trajectory monitoring",
+        "Commitment state",
+        "Retry/recovery policy"
+      ],
+      "for_hallerbans": "Store the goal and measurable acceptance criteria outside the transient model context. Check each major step against them; mark work complete only when the result is independently verified.",
+      "claims": [
+        {
+          "claim": "LLM agents can drift from original goals during long tasks.",
+          "status": "Supported by research; severity varies by model and task.",
+          "confidence": "High"
+        },
+        {
+          "claim": "Goal drift inevitably begins after 100,000 tokens.",
+          "status": "Not supported as a universal threshold.",
+          "confidence": "High"
+        },
+        {
+          "claim": "A steering agent can reduce goal drift.",
+          "status": "Promising research direction; effectiveness is task- and setup-dependent.",
+          "confidence": "Medium"
+        },
+        {
+          "claim": "Goal drift can be driven nearly to zero by the described binding/commitment split.",
+          "status": "Not established by the cited evidence.",
+          "confidence": "High"
+        }
+      ],
+      "sourceIds": [
+        "S12",
+        "S13"
+      ]
+    },
+    {
+      "id": "soul",
+      "name": "Soul — Identity & Governance",
+      "icon": "🔐",
+      "color": "#ec4899",
+      "summary": "Agent identity, delegated authority, least privilege, audit trails, ownership, reputation and optional payment capabilities.",
+      "key_concepts": [
+        "Agent Identity and Access Management",
+        "Scoped delegation",
+        "Continuous authorization",
+        "Audit logs",
+        "ERC-8004",
+        "x402",
+        "AP2",
+        "Trusted Execution Environments",
+        "Owner records"
+      ],
+      "for_hallerbans": "Give the agent a clear service identity, scoped credentials and auditable action logs. Treat crypto identity and autonomous payments as optional capabilities, not prerequisites for general autonomy.",
+      "claims": [
+        {
+          "claim": "Agent systems benefit from identity, scoped authorization and auditability.",
+          "status": "Strong architecture principle; exact implementations vary.",
+          "confidence": "High"
+        },
+        {
+          "claim": "ERC-8004 replaces local identity and access management.",
+          "status": "Incorrect; agent discovery/trust mechanisms do not replace local authorization controls.",
+          "confidence": "High"
+        },
+        {
+          "claim": "x402 and AP2 are real protocol initiatives for agent-related payments.",
+          "status": "Supported; adoption and maturity should not be overstated.",
+          "confidence": "High"
+        },
+        {
+          "claim": "TEEs automatically make an autonomous agent trustworthy.",
+          "status": "Incorrect; TEEs address specific isolation/integrity properties, not the full trust problem.",
+          "confidence": "High"
+        }
+      ],
+      "sourceIds": [
+        "S14",
+        "S15",
+        "S16",
+        "S17"
+      ]
+    }
+  ],
+  "cross_cutting": [
+    {
+      "id": "security",
+      "name": "Security across all dimensions",
+      "summary": "Indirect prompt injection, memory poisoning, tool misuse, privilege escalation, secret leakage, supply-chain risks, and excessive agency.",
+      "links": [
+        "brain",
+        "body",
+        "senses",
+        "will",
+        "soul"
+      ]
+    },
+    {
+      "id": "evidence",
+      "name": "Evidence quality & claim verification",
+      "summary": "Separate primary research, official documentation, secondary commentary and unsupported numerical claims. Track publication date, method, benchmark and scope.",
+      "links": [
+        "brain",
+        "body",
+        "senses",
+        "will",
+        "soul"
+      ]
+    },
+    {
+      "id": "feedback",
+      "name": "Evaluation & feedback loops",
+      "summary": "Measure task success, recovery, tool correctness, memory usefulness, cost, latency and goal adherence on representative tasks.",
+      "links": [
+        "brain",
+        "body",
+        "senses",
+        "will"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from": "brain",
+      "to": "will",
+      "type": "supports",
+      "label": "Memory informs planning; goals determine relevant recall"
+    },
+    {
+      "from": "will",
+      "to": "body",
+      "type": "controls",
+      "label": "Plans become executable tasks"
+    },
+    {
+      "from": "senses",
+      "to": "brain",
+      "type": "feeds",
+      "label": "Observations become context and memory"
+    },
+    {
+      "from": "body",
+      "to": "senses",
+      "type": "exposes",
+      "label": "Runtime makes tools and sensors available"
+    },
+    {
+      "from": "soul",
+      "to": "body",
+      "type": "authorizes",
+      "label": "Identity and permissions constrain execution"
+    },
+    {
+      "from": "soul",
+      "to": "senses",
+      "type": "governs",
+      "label": "Access policy governs tools and data"
+    },
+    {
+      "from": "body",
+      "to": "brain",
+      "type": "persists",
+      "label": "Runtime stores task state and history"
+    },
+    {
+      "from": "will",
+      "to": "brain",
+      "type": "updates",
+      "label": "Verified outcomes become reusable experience"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Mem0 documentation / research",
+      "url": "https://mem0.ai/",
+      "type": "Official product/research",
+      "note": "Check the exact version and benchmark before repeating performance claims."
+    },
+    {
+      "id": "S2",
+      "title": "Graphiti — temporal knowledge graph",
+      "url": "https://github.com/getzep/graphiti",
+      "type": "Official repository",
+      "note": "Open-source temporal knowledge graph framework."
+    },
+    {
+      "id": "S3",
+      "title": "Letta",
+      "url": "https://www.letta.com/",
+      "type": "Official project",
+      "note": "Persistent, agent-managed memory and agent runtime concepts."
+    },
+    {
+      "id": "S4",
+      "title": "A-Mem research paper",
+      "url": "https://arxiv.org/abs/2502.12110",
+      "type": "Primary research",
+      "note": "Dynamic, Zettelkasten-inspired memory organization; do not conflate with GRPO routing."
+    },
+    {
+      "id": "S5",
+      "title": "Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Challenges",
+      "url": "https://arxiv.org/html/2603.07670v1",
+      "type": "Research survey",
+      "note": "Use the paper's exact scope and benchmark definitions."
+    },
+    {
+      "id": "S6",
+      "title": "AIOS research project",
+      "url": "https://github.com/agiresearch/AIOS",
+      "type": "Research repository",
+      "note": "Agent operating-system architecture; speed-up claims are experiment-specific."
+    },
+    {
+      "id": "S7",
+      "title": "Amazon Bedrock AgentCore",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/",
+      "type": "Official documentation",
+      "note": "Runtime capabilities and isolation depend on product configuration."
+    },
+    {
+      "id": "S8",
+      "title": "Cloudflare Agents",
+      "url": "https://developers.cloudflare.com/agents/",
+      "type": "Official documentation",
+      "note": "Agents built on Durable Objects; do not infer universal latency guarantees."
+    },
+    {
+      "id": "S9",
+      "title": "Model Context Protocol specification",
+      "url": "https://modelcontextprotocol.io/",
+      "type": "Official specification",
+      "note": "MCP standardizes interfaces; it does not guarantee safe tool behavior."
+    },
+    {
+      "id": "S10",
+      "title": "MCP Tool Descriptions Are Smelly",
+      "url": "https://www.researchgate.net/publication/415927140_Model_Context_Protocol_MCP_Tool_Descriptions_Are_Smelly_Towards_Improving_AI_Agent_Efficiency_with_Augmented_MCP_Tool_Descriptions",
+      "type": "Research paper listing",
+      "note": "Verify the primary paper/version and exact quantitative findings before citing."
+    },
+    {
+      "id": "S11",
+      "title": "OWASP Top 10 for Agentic Applications",
+      "url": "https://genai.owasp.org/",
+      "type": "Security guidance",
+      "note": "Use the official OWASP project page for current categories and wording."
+    },
+    {
+      "id": "S12",
+      "title": "Evaluating Goal Drift in Language Model Agents",
+      "url": "https://arxiv.org/html/2505.02709v1",
+      "type": "Primary research",
+      "note": "Results depend on tested models and tasks; no universal 100k-token threshold."
+    },
+    {
+      "id": "S13",
+      "title": "Learning to Steer LLM Agents and Multi-Agent Systems",
+      "url": "https://arxiv.org/html/2610.22316v1",
+      "type": "Primary research preprint",
+      "note": "Treat as emerging research, not an established production standard."
+    },
+    {
+      "id": "S14",
+      "title": "ERC-8004",
+      "url": "https://eips.ethereum.org/EIPS/eip-8004",
+      "type": "Standards proposal",
+      "note": "Agent discovery/trust does not replace local access control."
+    },
+    {
+      "id": "S15",
+      "title": "x402",
+      "url": "https://www.x402.org/",
+      "type": "Official project",
+      "note": "HTTP-based payment protocol; adoption and risk depend on implementation."
+    },
+    {
+      "id": "S16",
+      "title": "Agent Payments Protocol (AP2)",
+      "url": "https://github.com/google-agentic-commerce/AP2",
+      "type": "Official repository",
+      "note": "Payment protocol initiative; distinguish announced scope from deployed adoption."
+    },
+    {
+      "id": "S17",
+      "title": "OWASP Agentic Security Initiative",
+      "url": "https://genai.owasp.org/",
+      "type": "Security guidance",
+      "note": "Cross-cutting security reference; map controls to the actual deployment."
+    }
+  ],
+  "priority": [
+    {
+      "rank": 1,
+      "item": "Persistent task state and verifiable completion criteria",
+      "dimension": "will/body",
+      "why": "Makes long-running work resumable and separates activity from success."
+    },
+    {
+      "rank": 2,
+      "item": "Tool catalog with clear schemas and post-action verification",
+      "dimension": "senses/body",
+      "why": "Reduces ambiguous tool use and unverified claims of success."
+    },
+    {
+      "rank": 3,
+      "item": "Layered memory with explicit project facts and execution history",
+      "dimension": "brain",
+      "why": "Supports continuity without putting everything into one undifferentiated memory store."
+    },
+    {
+      "rank": 4,
+      "item": "Scoped credentials and audit logs",
+      "dimension": "soul/body",
+      "why": "Makes actions attributable and limits unnecessary authority."
+    },
+    {
+      "rank": 5,
+      "item": "Representative evaluation suite",
+      "dimension": "all",
+      "why": "Measures actual improvement before adding more frameworks or agents."
+    },
+    {
+      "rank": 6,
+      "item": "Add a temporal graph or learned steering agent only if tests show need",
+      "dimension": "brain/will",
+      "why": "Advanced components should solve measured gaps rather than add complexity by default."
+    },
+    {
+      "rank": 7,
+      "item": "Payments / on-chain agent identity",
+      "dimension": "soul",
+      "why": "Optional until autonomous paid API use or cross-organization agent commerce is a real requirement."
+    }
+  ]
+}

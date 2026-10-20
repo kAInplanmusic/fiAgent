@@ -1,0 +1,2879 @@
+{
+  "report_version": "0.9.4-source-audit",
+  "schema_count": 20,
+  "meta_schema_failures": 0,
+  "unresolved_or_external_ref_count": 0,
+  "schemas": [
+    {
+      "source_path": "PRAIN_Architecture_v0.4.0/contracts/action-request.schema.json",
+      "title": "PRAIN Action Request",
+      "id": "https://prain.local/schemas/action-request-0.4.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "action_id",
+        "goal_id",
+        "plan_id",
+        "actor",
+        "action",
+        "target",
+        "input_digest",
+        "capability_ref",
+        "idempotency_key",
+        "requested_at"
+      ],
+      "root_properties": [
+        "action_id",
+        "goal_id",
+        "plan_id",
+        "actor",
+        "action",
+        "target",
+        "input_digest",
+        "capability_ref",
+        "idempotency_key",
+        "requested_at",
+        "deadline",
+        "preconditions",
+        "expected_postconditions",
+        "risk_class",
+        "policy_decision_ref"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "action_id",
+            "goal_id",
+            "plan_id",
+            "actor",
+            "action",
+            "target",
+            "input_digest",
+            "capability_ref",
+            "idempotency_key",
+            "requested_at"
+          ]
+        },
+        {
+          "path": "$/properties/action_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/goal_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/plan_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/actor",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/action",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/target",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/input_digest",
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        {
+          "path": "$/properties/capability_ref",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/idempotency_key",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/requested_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/deadline",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/preconditions",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/preconditions/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/expected_postconditions",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/expected_postconditions/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/risk_class",
+          "enum": [
+            "read_only",
+            "reversible_write",
+            "external_side_effect",
+            "irreversible"
+          ]
+        },
+        {
+          "path": "$/properties/policy_decision_ref",
+          "type": "string"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "ba5f4026309d3a09535e9b107b81c7cc36f35b77bc4cd83825db4eab4629c0f0"
+    },
+    {
+      "source_path": "PRAIN_Architecture_v0.4.0/contracts/goal.schema.json",
+      "title": "PRAIN Goal",
+      "id": "https://prain.local/schemas/goal-0.4.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "goal_id",
+        "revision",
+        "title",
+        "desired_outcome",
+        "owner",
+        "priority",
+        "status",
+        "acceptance_criteria",
+        "created_at",
+        "updated_at"
+      ],
+      "root_properties": [
+        "goal_id",
+        "revision",
+        "title",
+        "desired_outcome",
+        "owner",
+        "requester",
+        "priority",
+        "status",
+        "acceptance_criteria",
+        "constraints",
+        "depends_on",
+        "budget",
+        "deadline",
+        "created_at",
+        "updated_at",
+        "verification_ref",
+        "blocked_reason"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "goal_id",
+            "revision",
+            "title",
+            "desired_outcome",
+            "owner",
+            "priority",
+            "status",
+            "acceptance_criteria",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "path": "$/properties/goal_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/revision",
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "path": "$/properties/title",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/desired_outcome",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/owner",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/requester",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/priority",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "class"
+          ]
+        },
+        {
+          "path": "$/properties/priority/properties/class",
+          "enum": [
+            "critical",
+            "high",
+            "normal",
+            "low"
+          ]
+        },
+        {
+          "path": "$/properties/priority/properties/factors",
+          "type": "object"
+        },
+        {
+          "path": "$/properties/status",
+          "enum": [
+            "proposed",
+            "accepted",
+            "active",
+            "blocked",
+            "verifying",
+            "completed",
+            "failed",
+            "cancelled",
+            "superseded"
+          ]
+        },
+        {
+          "path": "$/properties/acceptance_criteria",
+          "type": "array",
+          "minItems": 1
+        },
+        {
+          "path": "$/properties/acceptance_criteria/items",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "criterion_id",
+            "description",
+            "verification_method"
+          ]
+        },
+        {
+          "path": "$/properties/acceptance_criteria/items/properties/criterion_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/acceptance_criteria/items/properties/description",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/acceptance_criteria/items/properties/verification_method",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/acceptance_criteria/items/properties/required_evidence",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/acceptance_criteria/items/properties/required_evidence/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/constraints",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/constraints/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/depends_on",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/depends_on/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/budget",
+          "type": "object"
+        },
+        {
+          "path": "$/properties/deadline",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/created_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/updated_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/verification_ref",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/blocked_reason",
+          "type": "string"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "bf5d721354ccd42c59e56f93f13cc1bda8152fc5823a08b6dd967ef6ce77e240"
+    },
+    {
+      "source_path": "PRAIN_Architecture_v0.4.0/contracts/message-envelope.schema.json",
+      "title": "PRAIN Message Envelope",
+      "id": "https://prain.local/schemas/message-envelope-0.4.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "message_id",
+        "message_type",
+        "name",
+        "schema_version",
+        "created_at",
+        "producer",
+        "correlation_id",
+        "payload"
+      ],
+      "root_properties": [
+        "message_id",
+        "message_type",
+        "name",
+        "schema_version",
+        "created_at",
+        "producer",
+        "recipient",
+        "correlation_id",
+        "causation_id",
+        "tenant_id",
+        "idempotency_key",
+        "trace_context",
+        "provenance",
+        "payload"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "message_id",
+            "message_type",
+            "name",
+            "schema_version",
+            "created_at",
+            "producer",
+            "correlation_id",
+            "payload"
+          ]
+        },
+        {
+          "path": "$/properties/message_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/message_type",
+          "enum": [
+            "command",
+            "event",
+            "query",
+            "response"
+          ]
+        },
+        {
+          "path": "$/properties/name",
+          "type": "string",
+          "minLength": 3
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        {
+          "path": "$/properties/created_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/producer",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/recipient",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/correlation_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/causation_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/tenant_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/idempotency_key",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/trace_context",
+          "type": "object"
+        },
+        {
+          "path": "$/properties/provenance",
+          "type": "object"
+        },
+        {
+          "path": "$/properties/payload",
+          "type": "object"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "22bfc6daabef592a526baa636fa3c34d852f9b441b19ac28a2e14df80d74519f"
+    },
+    {
+      "source_path": "PRAIN_Distributed_Protocol_v0.5.0/schemas/action-command.schema.json",
+      "title": "PRAIN Action Command",
+      "id": "https://prain.dev/schemas/action-command-0.5.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "command_id",
+        "idempotency_key",
+        "action_digest",
+        "target",
+        "action",
+        "expected_policy_version",
+        "retry_class",
+        "deadline"
+      ],
+      "root_properties": [
+        "command_id",
+        "idempotency_key",
+        "action_digest",
+        "target",
+        "action",
+        "expected_policy_version",
+        "retry_class",
+        "deadline",
+        "lease"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "command_id",
+            "idempotency_key",
+            "action_digest",
+            "target",
+            "action",
+            "expected_policy_version",
+            "retry_class",
+            "deadline"
+          ]
+        },
+        {
+          "path": "$/properties/command_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/idempotency_key",
+          "type": "string",
+          "minLength": 16
+        },
+        {
+          "path": "$/properties/action_digest",
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        {
+          "path": "$/properties/target",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/action",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "capability",
+            "parameters"
+          ]
+        },
+        {
+          "path": "$/properties/action/properties/capability",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/action/properties/parameters",
+          "type": "object"
+        },
+        {
+          "path": "$/properties/expected_policy_version",
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "path": "$/properties/retry_class",
+          "enum": [
+            "safe_retry",
+            "retry_after_reconcile",
+            "never_auto_retry",
+            "policy_recheck",
+            "manual_review"
+          ]
+        },
+        {
+          "path": "$/properties/deadline",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/lease",
+          "type": "object",
+          "additionalProperties": false
+        },
+        {
+          "path": "$/properties/lease/properties/owner",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/lease/properties/epoch",
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "path": "$/properties/lease/properties/expires_at",
+          "type": "string",
+          "format": "date-time"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "f8900cb6720abb7e41708aa0e16c3918f522937df19893a7a95f6d352170f9de"
+    },
+    {
+      "source_path": "PRAIN_Distributed_Protocol_v0.5.0/schemas/execution-receipt.schema.json",
+      "title": "PRAIN Execution Receipt",
+      "id": "https://prain.dev/schemas/execution-receipt-0.5.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "receipt_id",
+        "command_id",
+        "status",
+        "attempt",
+        "observed_at",
+        "executor",
+        "evidence_refs"
+      ],
+      "root_properties": [
+        "receipt_id",
+        "command_id",
+        "status",
+        "attempt",
+        "observed_at",
+        "executor",
+        "error_code",
+        "evidence_refs",
+        "reconciliation"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "receipt_id",
+            "command_id",
+            "status",
+            "attempt",
+            "observed_at",
+            "executor",
+            "evidence_refs"
+          ]
+        },
+        {
+          "path": "$/properties/receipt_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/command_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/status",
+          "enum": [
+            "accepted",
+            "running",
+            "succeeded",
+            "failed",
+            "unknown",
+            "reconciling",
+            "cancelled"
+          ]
+        },
+        {
+          "path": "$/properties/attempt",
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "path": "$/properties/observed_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/executor",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/error_code",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/evidence_refs",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/evidence_refs/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/reconciliation",
+          "type": "object"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "70ed95f6f5c5b77f600931b7e9fdfb085b4d5c404d305c98a794ac4f7d344633"
+    },
+    {
+      "source_path": "PRAIN_Distributed_Protocol_v0.5.0/schemas/message-envelope.schema.json",
+      "title": "PRAIN Message Envelope",
+      "id": "https://prain.dev/schemas/message-envelope-0.5.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "message_id",
+        "message_type",
+        "schema_version",
+        "created_at",
+        "producer",
+        "correlation_id",
+        "tenant_id",
+        "payload",
+        "classification"
+      ],
+      "root_properties": [
+        "message_id",
+        "message_type",
+        "schema_version",
+        "created_at",
+        "producer",
+        "correlation_id",
+        "causation_id",
+        "tenant_id",
+        "aggregate",
+        "payload",
+        "provenance",
+        "trace",
+        "classification",
+        "expires_at"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "message_id",
+            "message_type",
+            "schema_version",
+            "created_at",
+            "producer",
+            "correlation_id",
+            "tenant_id",
+            "payload",
+            "classification"
+          ]
+        },
+        {
+          "path": "$/properties/message_id",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        {
+          "path": "$/properties/message_type",
+          "enum": [
+            "command",
+            "event",
+            "query",
+            "response",
+            "receipt",
+            "control"
+          ]
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+        },
+        {
+          "path": "$/properties/created_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/producer",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "node_id",
+            "service"
+          ]
+        },
+        {
+          "path": "$/properties/producer/properties/node_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/producer/properties/service",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/producer/properties/instance_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/correlation_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/causation_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/tenant_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/aggregate",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "id",
+            "version"
+          ]
+        },
+        {
+          "path": "$/properties/aggregate/properties/type",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/aggregate/properties/id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/aggregate/properties/version",
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "path": "$/properties/payload",
+          "type": "object"
+        },
+        {
+          "path": "$/properties/provenance",
+          "type": "object"
+        },
+        {
+          "path": "$/properties/trace",
+          "type": "object"
+        },
+        {
+          "path": "$/properties/classification",
+          "enum": [
+            "public",
+            "internal",
+            "confidential",
+            "restricted"
+          ]
+        },
+        {
+          "path": "$/properties/expires_at",
+          "type": "string",
+          "format": "date-time"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "be5709144cb71b54e4d43d038ed86f1adec3602fb71f48e6f9033f7206674334"
+    },
+    {
+      "source_path": "PRAIN_Phase0_v0.2.1/schemas/action-request.schema.json",
+      "title": "PRAIN ActionRequest",
+      "id": "https://prain.dev/schema/action-request-0.1.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "id",
+        "actor_id",
+        "capability",
+        "target",
+        "declared_side_effects",
+        "risk_level",
+        "policy_decision_ref",
+        "correlation_id",
+        "idempotency_key",
+        "schema_version"
+      ],
+      "root_properties": [
+        "id",
+        "actor_id",
+        "capability",
+        "target",
+        "input_ref",
+        "declared_side_effects",
+        "risk_level",
+        "policy_decision_ref",
+        "approval_ref",
+        "correlation_id",
+        "causation_id",
+        "idempotency_key",
+        "schema_version"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "actor_id",
+            "capability",
+            "target",
+            "declared_side_effects",
+            "risk_level",
+            "policy_decision_ref",
+            "correlation_id",
+            "idempotency_key",
+            "schema_version"
+          ]
+        },
+        {
+          "path": "$/properties/id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/actor_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/capability",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/target",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/input_ref",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/declared_side_effects",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/declared_side_effects/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/risk_level",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        {
+          "path": "$/properties/policy_decision_ref",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/approval_ref",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/correlation_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/causation_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/idempotency_key",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "405d00dce95760daf28a21cd1935346d531c119996537d8a8f14ece7e9173f7b"
+    },
+    {
+      "source_path": "PRAIN_Phase0_v0.2.1/schemas/action-result.schema.json",
+      "title": "PRAIN ActionResult",
+      "id": "https://prain.dev/schema/action-result-0.1.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "id",
+        "action_request_id",
+        "execution_status",
+        "verification_status",
+        "occurred_at",
+        "schema_version"
+      ],
+      "root_properties": [
+        "id",
+        "action_request_id",
+        "execution_status",
+        "output_ref",
+        "side_effects_observed",
+        "verification_status",
+        "verification_evidence_refs",
+        "error_code",
+        "occurred_at",
+        "schema_version"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "action_request_id",
+            "execution_status",
+            "verification_status",
+            "occurred_at",
+            "schema_version"
+          ]
+        },
+        {
+          "path": "$/properties/id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/action_request_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/execution_status",
+          "enum": [
+            "accepted",
+            "running",
+            "completed",
+            "failed",
+            "timed_out",
+            "cancelled",
+            "unknown"
+          ]
+        },
+        {
+          "path": "$/properties/output_ref",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/side_effects_observed",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/side_effects_observed/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/verification_status",
+          "enum": [
+            "unverified",
+            "partially_verified",
+            "verified",
+            "rejected",
+            "inconclusive"
+          ]
+        },
+        {
+          "path": "$/properties/verification_evidence_refs",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/verification_evidence_refs/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/error_code",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/occurred_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "c1998245791039b3a7f35eaeed2657e6fc90c37f58d376f8575a26daa97865d6"
+    },
+    {
+      "source_path": "PRAIN_Phase0_v0.2.1/schemas/agent-manifest.schema.json",
+      "title": "PRAIN AgentManifest",
+      "id": "https://prain.dev/schema/agent-manifest-0.1.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "agent_id",
+        "identity_version",
+        "role",
+        "capabilities",
+        "limitations",
+        "schema_version"
+      ],
+      "root_properties": [
+        "agent_id",
+        "identity_version",
+        "role",
+        "capabilities",
+        "limitations",
+        "model_adapter",
+        "memory_adapter",
+        "runtime_adapter",
+        "identity_claim_refs",
+        "schema_version"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "agent_id",
+            "identity_version",
+            "role",
+            "capabilities",
+            "limitations",
+            "schema_version"
+          ]
+        },
+        {
+          "path": "$/properties/agent_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/identity_version",
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "path": "$/properties/role",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/capabilities",
+          "type": "array",
+          "uniqueItems": true
+        },
+        {
+          "path": "$/properties/capabilities/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/limitations",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/limitations/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/model_adapter",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/memory_adapter",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/runtime_adapter",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/identity_claim_refs",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/identity_claim_refs/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "e5944534d5e4a70ded940868345ee5a8b6b2ed54d48af344737a0c156bda7bc1"
+    },
+    {
+      "source_path": "PRAIN_Phase0_v0.2.1/schemas/claim.schema.json",
+      "title": "PRAIN Claim",
+      "id": "https://prain.dev/schema/claim-0.1.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "id",
+        "statement",
+        "kind",
+        "verification_status",
+        "created_at",
+        "schema_version"
+      ],
+      "root_properties": [
+        "id",
+        "statement",
+        "kind",
+        "subject_id",
+        "predicate",
+        "object_ref",
+        "evidence_refs",
+        "confidence",
+        "verification_status",
+        "valid_from",
+        "valid_until",
+        "created_at",
+        "schema_version",
+        "verification_exception_ref"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "statement",
+            "kind",
+            "verification_status",
+            "created_at",
+            "schema_version"
+          ]
+        },
+        {
+          "path": "$/properties/id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/statement",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/kind",
+          "enum": [
+            "observed",
+            "inferred",
+            "hypothesis",
+            "proposal",
+            "externally_asserted"
+          ]
+        },
+        {
+          "path": "$/properties/subject_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/predicate",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/object_ref",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/evidence_refs",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/evidence_refs/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/confidence",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "path": "$/properties/verification_status",
+          "enum": [
+            "unverified",
+            "partially_verified",
+            "verified",
+            "rejected",
+            "inconclusive"
+          ]
+        },
+        {
+          "path": "$/properties/valid_from",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/valid_until",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/created_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/verification_exception_ref",
+          "type": "string"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "166d0f7851fc08bc40d32387ee5460a0f06a4a72d6549b69af5faf8458e598ee"
+    },
+    {
+      "source_path": "PRAIN_Phase0_v0.2.1/schemas/event-envelope.schema.json",
+      "title": "PRAIN Event Envelope",
+      "id": "https://prain.dev/schema/event-envelope-0.1.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "event_id",
+        "event_type",
+        "occurred_at",
+        "producer",
+        "correlation_id",
+        "schema_version",
+        "payload"
+      ],
+      "root_properties": [
+        "event_id",
+        "event_type",
+        "occurred_at",
+        "producer",
+        "correlation_id",
+        "causation_id",
+        "idempotency_key",
+        "schema_version",
+        "payload",
+        "trace_context"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "event_id",
+            "event_type",
+            "occurred_at",
+            "producer",
+            "correlation_id",
+            "schema_version",
+            "payload"
+          ]
+        },
+        {
+          "path": "$/properties/event_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/event_type",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/occurred_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/producer",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/correlation_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/causation_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/idempotency_key",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/payload",
+          "type": "object"
+        },
+        {
+          "path": "$/properties/trace_context",
+          "type": "object",
+          "additionalProperties": "schema-object"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "c45881dad3d5cd12c8c3b2134f088fd36046c3455da37006ff53152386138d3c"
+    },
+    {
+      "source_path": "PRAIN_Phase0_v0.2.1/schemas/evidence.schema.json",
+      "title": "PRAIN Evidence",
+      "id": "https://prain.dev/schema/evidence-0.2.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "id",
+        "kind",
+        "source_ref",
+        "captured_at",
+        "integrity",
+        "schema_version"
+      ],
+      "root_properties": [
+        "id",
+        "kind",
+        "source_ref",
+        "captured_at",
+        "content_hash",
+        "integrity",
+        "classification",
+        "retention_policy_ref",
+        "schema_version"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "kind",
+            "source_ref",
+            "captured_at",
+            "integrity",
+            "schema_version"
+          ]
+        },
+        {
+          "path": "$/properties/id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/kind",
+          "enum": [
+            "observation",
+            "document",
+            "tool_result",
+            "test_result",
+            "human_attestation",
+            "external_source"
+          ]
+        },
+        {
+          "path": "$/properties/source_ref",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/captured_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/content_hash",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/integrity",
+          "enum": [
+            "unchecked",
+            "hash_checked",
+            "signature_checked",
+            "invalid"
+          ]
+        },
+        {
+          "path": "$/properties/classification",
+          "enum": [
+            "public",
+            "internal",
+            "confidential",
+            "secret"
+          ]
+        },
+        {
+          "path": "$/properties/retention_policy_ref",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "1631e27c1253d85221d85a5124ac721b8dbb030e12201d259a87d7d576bd8f52"
+    },
+    {
+      "source_path": "PRAIN_Phase0_v0.2.1/schemas/goal.schema.json",
+      "title": "PRAIN Goal",
+      "id": "https://prain.dev/schema/goal-0.1.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "id",
+        "description",
+        "status",
+        "priority",
+        "acceptance_criteria",
+        "version",
+        "created_at"
+      ],
+      "root_properties": [
+        "id",
+        "description",
+        "status",
+        "priority",
+        "owner_id",
+        "parent_goal_id",
+        "constraints",
+        "acceptance_criteria",
+        "version",
+        "created_at",
+        "updated_at"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "description",
+            "status",
+            "priority",
+            "acceptance_criteria",
+            "version",
+            "created_at"
+          ]
+        },
+        {
+          "path": "$/properties/id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/description",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/status",
+          "enum": [
+            "proposed",
+            "active",
+            "blocked",
+            "succeeded",
+            "failed",
+            "cancelled",
+            "superseded"
+          ]
+        },
+        {
+          "path": "$/properties/priority",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        {
+          "path": "$/properties/owner_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/parent_goal_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/constraints",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/constraints/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/acceptance_criteria",
+          "type": "array",
+          "minItems": 1
+        },
+        {
+          "path": "$/properties/acceptance_criteria/items",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "description",
+            "verification_method"
+          ]
+        },
+        {
+          "path": "$/properties/acceptance_criteria/items/properties/id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/acceptance_criteria/items/properties/description",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/acceptance_criteria/items/properties/verification_method",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/acceptance_criteria/items/properties/passed",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        {
+          "path": "$/properties/version",
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "path": "$/properties/created_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/updated_at",
+          "type": "string",
+          "format": "date-time"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "dac32f4c1e75a36381f76bc5470b8f3751fad9069dee0b9f58c49449db58087b"
+    },
+    {
+      "source_path": "PRAIN_Phase0_v0.2.1/schemas/observation.schema.json",
+      "title": "PRAIN Observation",
+      "id": "https://prain.dev/schema/observation-0.1.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "id",
+        "type",
+        "source",
+        "occurred_at",
+        "schema_version",
+        "payload_ref"
+      ],
+      "root_properties": [
+        "id",
+        "type",
+        "source",
+        "occurred_at",
+        "received_at",
+        "schema_version",
+        "payload_ref",
+        "content_hash",
+        "confidence",
+        "provenance",
+        "correlation_id",
+        "labels"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "type",
+            "source",
+            "occurred_at",
+            "schema_version",
+            "payload_ref"
+          ]
+        },
+        {
+          "path": "$/properties/id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/type",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/source",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_id",
+            "adapter"
+          ]
+        },
+        {
+          "path": "$/properties/source/properties/source_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/source/properties/adapter",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/source/properties/uri",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/occurred_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/received_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        {
+          "path": "$/properties/payload_ref",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/content_hash",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/confidence",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "path": "$/properties/provenance",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/provenance/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/correlation_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/labels",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/labels/items",
+          "type": "string"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "ac633459fc10358b8199e862f47e77e1b164532b25463df0af72f8582ed85ed9"
+    },
+    {
+      "source_path": "PRAIN_Phase0_v0.2.1/schemas/policy-decision.schema.json",
+      "title": "PRAIN PolicyDecision",
+      "id": "https://prain.dev/schema/policy-decision-0.1.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "id",
+        "action_request_id",
+        "decision",
+        "rule_refs",
+        "reason",
+        "decided_at",
+        "policy_version"
+      ],
+      "root_properties": [
+        "id",
+        "action_request_id",
+        "decision",
+        "rule_refs",
+        "reason",
+        "decided_at",
+        "policy_version",
+        "approval_ref"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "action_request_id",
+            "decision",
+            "rule_refs",
+            "reason",
+            "decided_at",
+            "policy_version"
+          ]
+        },
+        {
+          "path": "$/properties/id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/action_request_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/decision",
+          "enum": [
+            "allow",
+            "deny",
+            "require_approval",
+            "defer"
+          ]
+        },
+        {
+          "path": "$/properties/rule_refs",
+          "type": "array"
+        },
+        {
+          "path": "$/properties/rule_refs/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/reason",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/decided_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/policy_version",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/approval_ref",
+          "type": "string"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "dab89fe2956884a6482bbb3df52ca46123f80401c00d8095d854ef3a343c251c"
+    },
+    {
+      "source_path": "PRAIN_Phase0_v0.2.1/schemas/state-snapshot.schema.json",
+      "title": "PRAIN StateSnapshot",
+      "id": "https://prain.dev/schema/state-snapshot-0.2.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "id",
+        "entity_type",
+        "version",
+        "updated_at",
+        "data",
+        "schema_version"
+      ],
+      "root_properties": [
+        "id",
+        "entity_type",
+        "version",
+        "updated_at",
+        "data",
+        "content_classification",
+        "retention_policy_ref",
+        "schema_version"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "entity_type",
+            "version",
+            "updated_at",
+            "data",
+            "schema_version"
+          ]
+        },
+        {
+          "path": "$/properties/id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/entity_type",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/version",
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "path": "$/properties/updated_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/data",
+          "type": "object"
+        },
+        {
+          "path": "$/properties/content_classification",
+          "enum": [
+            "public",
+            "internal",
+            "confidential",
+            "secret"
+          ]
+        },
+        {
+          "path": "$/properties/retention_policy_ref",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "03c9e32dad8fdfdb8e5addb5a3c355a960e6e60e32552df3c7e46959c03e2fa7"
+    },
+    {
+      "source_path": "PRAIN_Phase0_v0.2.1/schemas/trace-event.schema.json",
+      "title": "PRAIN TraceEvent",
+      "id": "https://prain.dev/schema/trace-event-0.2.0.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "trace_id",
+        "span_id",
+        "event_id",
+        "timestamp",
+        "component",
+        "operation",
+        "outcome",
+        "schema_version"
+      ],
+      "root_properties": [
+        "trace_id",
+        "span_id",
+        "parent_span_id",
+        "event_id",
+        "timestamp",
+        "component",
+        "operation",
+        "outcome",
+        "policy_decision_ref",
+        "redaction_applied",
+        "schema_version"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "trace_id",
+            "span_id",
+            "event_id",
+            "timestamp",
+            "component",
+            "operation",
+            "outcome",
+            "schema_version"
+          ]
+        },
+        {
+          "path": "$/properties/trace_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/span_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/parent_span_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/event_id",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/timestamp",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/component",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/operation",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/outcome",
+          "enum": [
+            "success",
+            "failure",
+            "denied",
+            "deferred",
+            "unknown"
+          ]
+        },
+        {
+          "path": "$/properties/policy_decision_ref",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/redaction_applied",
+          "type": "boolean"
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "e45af41fafb7cc186c0f8ab90348c7cc1595c4028da60c82ae96c6a686062b41"
+    },
+    {
+      "source_path": "PRAIN_v0.6/schemas/health-signal.schema.json",
+      "title": "PRAIN v0.6 HAL Health Signal",
+      "id": "https://prain.example/schemas/v0.6/health-signal.schema.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "schema_version",
+        "signal_id",
+        "observed_at",
+        "scope",
+        "metric",
+        "status",
+        "source"
+      ],
+      "root_properties": [
+        "schema_version",
+        "signal_id",
+        "observed_at",
+        "scope",
+        "metric",
+        "value",
+        "unit",
+        "status",
+        "threshold_ref",
+        "source",
+        "evidence_refs",
+        "fresh_until"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "schema_version",
+            "signal_id",
+            "observed_at",
+            "scope",
+            "metric",
+            "status",
+            "source"
+          ]
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string",
+          "const": "0.6.0"
+        },
+        {
+          "path": "$/properties/signal_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/observed_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/scope",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "id"
+          ]
+        },
+        {
+          "path": "$/properties/scope/properties/kind",
+          "enum": [
+            "unit",
+            "group",
+            "global",
+            "resource"
+          ]
+        },
+        {
+          "path": "$/properties/scope/properties/id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/metric",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/value",
+          "type": [
+            "number",
+            "string",
+            "boolean",
+            "null"
+          ]
+        },
+        {
+          "path": "$/properties/unit",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/status",
+          "enum": [
+            "healthy",
+            "degraded",
+            "critical",
+            "unknown",
+            "stale"
+          ]
+        },
+        {
+          "path": "$/properties/threshold_ref",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/source",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "version"
+          ]
+        },
+        {
+          "path": "$/properties/source/properties/id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/source/properties/version",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/evidence_refs",
+          "type": "array",
+          "uniqueItems": true
+        },
+        {
+          "path": "$/properties/evidence_refs/items",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/fresh_until",
+          "type": "string",
+          "format": "date-time"
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "b1beb622750eb13d9105d0f688b0fa1a1de206983bc9e52a236da42362969f11"
+    },
+    {
+      "source_path": "PRAIN_v0.6/schemas/repair-proposal.schema.json",
+      "title": "PRAIN v0.6 HAL Repair Proposal",
+      "id": "https://prain.example/schemas/v0.6/repair-proposal.schema.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "schema_version",
+        "proposal_id",
+        "created_at",
+        "target",
+        "observation_refs",
+        "change",
+        "bounds",
+        "rollout",
+        "success_metrics",
+        "rollback_conditions",
+        "expires_at"
+      ],
+      "root_properties": [
+        "schema_version",
+        "proposal_id",
+        "created_at",
+        "target",
+        "observation_refs",
+        "change",
+        "bounds",
+        "rollout",
+        "success_metrics",
+        "rollback_conditions",
+        "expires_at",
+        "status"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "schema_version",
+            "proposal_id",
+            "created_at",
+            "target",
+            "observation_refs",
+            "change",
+            "bounds",
+            "rollout",
+            "success_metrics",
+            "rollback_conditions",
+            "expires_at"
+          ]
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string",
+          "const": "0.6.0"
+        },
+        {
+          "path": "$/properties/proposal_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/created_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/target",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "id"
+          ]
+        },
+        {
+          "path": "$/properties/target/properties/kind",
+          "enum": [
+            "unit",
+            "group",
+            "projection",
+            "workflow",
+            "provider",
+            "scheduler"
+          ]
+        },
+        {
+          "path": "$/properties/target/properties/id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/observation_refs",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        {
+          "path": "$/properties/observation_refs/items",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/change",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "operation",
+            "parameters"
+          ]
+        },
+        {
+          "path": "$/properties/change/properties/operation",
+          "enum": [
+            "replay_idempotent_messages",
+            "rebuild_projection",
+            "resume_checkpoint",
+            "reconcile_action",
+            "adjust_concurrency",
+            "refresh_cache",
+            "route_workload",
+            "pause_workflow",
+            "rollback_release"
+          ]
+        },
+        {
+          "path": "$/properties/change/properties/parameters",
+          "type": "object"
+        },
+        {
+          "path": "$/properties/bounds",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "policy_ref",
+            "max_attempts",
+            "max_resource_delta"
+          ]
+        },
+        {
+          "path": "$/properties/bounds/properties/policy_ref",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/bounds/properties/max_attempts",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        {
+          "path": "$/properties/bounds/properties/max_resource_delta",
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "path": "$/properties/bounds/properties/requires_approval",
+          "type": "boolean"
+        },
+        {
+          "path": "$/properties/rollout",
+          "enum": [
+            "observe_only",
+            "single_target",
+            "canary",
+            "staged",
+            "immediate_preapproved"
+          ]
+        },
+        {
+          "path": "$/properties/success_metrics",
+          "type": "array",
+          "minItems": 1
+        },
+        {
+          "path": "$/properties/success_metrics/items",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/rollback_conditions",
+          "type": "array",
+          "minItems": 1
+        },
+        {
+          "path": "$/properties/rollback_conditions/items",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/expires_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/status",
+          "enum": [
+            "proposed",
+            "accepted",
+            "rejected",
+            "deferred",
+            "require_approval",
+            "applied",
+            "rolled_back"
+          ]
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "29c6051e09401310d41090d755f4150283cf74e54a4df3087b96bc838e8c5b1c"
+    },
+    {
+      "source_path": "PRAIN_v0.6/schemas/semantic-message.schema.json",
+      "title": "PRAIN v0.6 Semantic Message",
+      "id": "https://prain.example/schemas/v0.6/semantic-message.schema.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "root_type": "object",
+      "root_required": [
+        "schema_version",
+        "message_id",
+        "message_type",
+        "created_at",
+        "producer",
+        "scope",
+        "epistemic_status",
+        "payload",
+        "provenance"
+      ],
+      "root_properties": [
+        "schema_version",
+        "message_id",
+        "correlation_id",
+        "causation_id",
+        "message_type",
+        "created_at",
+        "producer",
+        "scope",
+        "epistemic_status",
+        "aggregate",
+        "affected_dependencies",
+        "valid_until",
+        "confidence",
+        "payload",
+        "provenance",
+        "required_response",
+        "idempotency_key",
+        "trace_id"
+      ],
+      "root_additionalProperties": false,
+      "nested_constraint_nodes": [
+        {
+          "path": "$",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "schema_version",
+            "message_id",
+            "message_type",
+            "created_at",
+            "producer",
+            "scope",
+            "epistemic_status",
+            "payload",
+            "provenance"
+          ]
+        },
+        {
+          "path": "$/properties/schema_version",
+          "type": "string",
+          "const": "0.6.0"
+        },
+        {
+          "path": "$/properties/message_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/correlation_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/causation_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/message_type",
+          "enum": [
+            "observation",
+            "hypothesis",
+            "claim",
+            "invalidation",
+            "command",
+            "receipt",
+            "reconciliation_request",
+            "health_signal",
+            "repair_proposal",
+            "verification_result"
+          ]
+        },
+        {
+          "path": "$/properties/created_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/producer",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "version"
+          ]
+        },
+        {
+          "path": "$/properties/producer/properties/id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/producer/properties/version",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/producer/properties/capability",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/scope",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "id"
+          ]
+        },
+        {
+          "path": "$/properties/scope/properties/kind",
+          "enum": [
+            "unit",
+            "group",
+            "global",
+            "resource"
+          ]
+        },
+        {
+          "path": "$/properties/scope/properties/id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/epistemic_status",
+          "enum": [
+            "observed",
+            "hypothesis",
+            "supported",
+            "confirmed",
+            "refuted",
+            "unknown"
+          ]
+        },
+        {
+          "path": "$/properties/aggregate",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "version"
+          ]
+        },
+        {
+          "path": "$/properties/aggregate/properties/id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/aggregate/properties/version",
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "path": "$/properties/affected_dependencies",
+          "type": "array",
+          "uniqueItems": true
+        },
+        {
+          "path": "$/properties/affected_dependencies/items",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/valid_until",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "path": "$/properties/confidence",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "path": "$/properties/payload",
+          "type": "object"
+        },
+        {
+          "path": "$/properties/provenance",
+          "type": "array",
+          "minItems": 1
+        },
+        {
+          "path": "$/properties/provenance/items",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_id",
+            "relation"
+          ]
+        },
+        {
+          "path": "$/properties/provenance/items/properties/source_id",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/provenance/items/properties/relation",
+          "enum": [
+            "observed_from",
+            "derived_from",
+            "supports",
+            "contradicts",
+            "supersedes",
+            "verified_by"
+          ]
+        },
+        {
+          "path": "$/properties/provenance/items/properties/version",
+          "type": "string"
+        },
+        {
+          "path": "$/properties/required_response",
+          "enum": [
+            "none",
+            "acknowledge",
+            "request_evidence",
+            "reconcile",
+            "verify"
+          ]
+        },
+        {
+          "path": "$/properties/idempotency_key",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "path": "$/properties/trace_id",
+          "type": "string",
+          "minLength": 1
+        }
+      ],
+      "meta_schema_check": "PASS",
+      "meta_schema_error": null,
+      "ref_issues": [],
+      "sha256": "abe3849794044c9f72bdb2c50a6dd16ebbbb912a4fcc68789297d6ad3ca1839a"
+    }
+  ],
+  "knowledge_base": {
+    "source_json_sha256": "148a155aae47dbf45d48c62b00647c3b7f6caed1b14d4794cb0f03b8c23e252b",
+    "source_html_sha256": "2d1f4817122ccd96661cfc3a9954e6f0408c840a99ac49175e8b6f0df1ad563d",
+    "embedded_db_found": true,
+    "json_equals_embedded_html_data": true,
+    "recursive_difference_count": 0,
+    "recursive_differences": [],
+    "dimension_count": 5,
+    "claim_count": 20,
+    "key_concept_count": 50,
+    "source_count": 19,
+    "relation_count": 9,
+    "cross_cutting_count": 3,
+    "priority_count": 7,
+    "dangling_source_refs": [],
+    "dangling_relations": [],
+    "duplicate_source_ids": [],
+    "claim_level_source_mapping": true,
+    "claim_source_audit_count": 20,
+    "dangling_claim_source_refs": []
+  },
+  "source_archives": {
+    "PRAIN_Phase0_v0.2.1.zip": {
+      "path": "/mnt/data/PRAIN_Phase0_v0.2.1.zip",
+      "sha256": "5b801aba53c152105525b5552cb803b6b72e233eec546c1b5e37bafc38f28d82",
+      "bytes": 30414,
+      "zip_integrity": "PASS",
+      "entry_count": 30,
+      "entries": [
+        "PRAIN_Phase0_v0.2.1/README.md",
+        "PRAIN_Phase0_v0.2.1/docs/DECISION_REGISTER.md",
+        "PRAIN_Phase0_v0.2.1/docs/PHASE0_EXIT_CRITERIA.md",
+        "PRAIN_Phase0_v0.2.1/docs/PHASE0_README.md",
+        "PRAIN_Phase0_v0.2.1/docs/PHASE1_INTERFACE_CONTRACTS.md",
+        "PRAIN_Phase0_v0.2.1/docs/architecture-decisions.md",
+        "PRAIN_Phase0_v0.2.1/docs/manifest.json",
+        "PRAIN_Phase0_v0.2.1/docs/ontology.yaml",
+        "PRAIN_Phase0_v0.2.1/docs/phase0-checklist.md",
+        "PRAIN_Phase0_v0.2.1/docs/policy-model.yaml",
+        "PRAIN_Phase0_v0.2.1/docs/schema-index.json",
+        "PRAIN_Phase0_v0.2.1/docs/test-vectors.json",
+        "PRAIN_Phase0_v0.2.1/schemas/action-request.schema.json",
+        "PRAIN_Phase0_v0.2.1/schemas/action-result.schema.json",
+        "PRAIN_Phase0_v0.2.1/schemas/agent-manifest.schema.json",
+        "PRAIN_Phase0_v0.2.1/schemas/claim.schema.json",
+        "PRAIN_Phase0_v0.2.1/schemas/event-envelope.schema.json",
+        "PRAIN_Phase0_v0.2.1/schemas/evidence.schema.json",
+        "PRAIN_Phase0_v0.2.1/schemas/goal.schema.json",
+        "PRAIN_Phase0_v0.2.1/schemas/observation.schema.json",
+        "PRAIN_Phase0_v0.2.1/schemas/policy-decision.schema.json",
+        "PRAIN_Phase0_v0.2.1/schemas/state-snapshot.schema.json",
+        "PRAIN_Phase0_v0.2.1/schemas/trace-event.schema.json",
+        "PRAIN_Phase0_v0.2.1/tests/CONFORMANCE_MATRIX.md",
+        "PRAIN_Phase0_v0.2.1/tests/__pycache__/test_phase0_semantics.cpython-313.pyc",
+        "PRAIN_Phase0_v0.2.1/tests/test-vectors.json",
+        "PRAIN_Phase0_v0.2.1/tests/test_phase0_semantics.py",
+        "PRAIN_Phase0_v0.2.1/tests/unit-test-report.txt",
+        "PRAIN_Phase0_v0.2.1/tests/validate_schemas.py",
+        "PRAIN_Phase0_v0.2.1/tests/validation-report.json"
+      ]
+    },
+    "PRAIN_Architecture_v0.4.0.zip": {
+      "path": "/mnt/data/PRAIN_Architecture_v0.4.0.zip",
+      "sha256": "60de298ddcb130221b240056a805c018158c89675ebfa94049384a01e2f4052c",
+      "bytes": 25686,
+      "zip_integrity": "PASS",
+      "entry_count": 16,
+      "entries": [
+        "PRAIN_Architecture_v0.4.0/README.md",
+        "PRAIN_Architecture_v0.4.0/architecture/COMMUNICATION_MODEL.md",
+        "PRAIN_Architecture_v0.4.0/architecture/FAILURE_AND_RECOVERY.md",
+        "PRAIN_Architecture_v0.4.0/architecture/GOAL_AND_CONTROL_LOOP.md",
+        "PRAIN_Architecture_v0.4.0/architecture/IDENTITY_AND_CONTINUITY.md",
+        "PRAIN_Architecture_v0.4.0/architecture/OBSERVABILITY_AND_EVALUATION.md",
+        "PRAIN_Architecture_v0.4.0/architecture/REFERENCE_ARCHITECTURE.md",
+        "PRAIN_Architecture_v0.4.0/architecture/SEMANTIC_MODEL.md",
+        "PRAIN_Architecture_v0.4.0/architecture/THREAT_AND_TRUST_BOUNDARIES.md",
+        "PRAIN_Architecture_v0.4.0/contracts/action-request.schema.json",
+        "PRAIN_Architecture_v0.4.0/contracts/architecture-map.yaml",
+        "PRAIN_Architecture_v0.4.0/contracts/goal.schema.json",
+        "PRAIN_Architecture_v0.4.0/contracts/message-envelope.schema.json",
+        "PRAIN_Architecture_v0.4.0/plans/DECISION_REGISTER.md",
+        "PRAIN_Architecture_v0.4.0/plans/IMPLEMENTATION_ROADMAP.md",
+        "PRAIN_Architecture_v0.4.0/validation/TRACEABILITY_MATRIX.md"
+      ]
+    },
+    "PRAIN_Distributed_Protocol_v0.5.0.zip": {
+      "path": "/mnt/data/PRAIN_Distributed_Protocol_v0.5.0.zip",
+      "sha256": "a78d29e0717fbcb17d0149808e59b6ece9daf81d87ad99bc8efae3b9bd634b5a",
+      "bytes": 15336,
+      "zip_integrity": "PASS",
+      "entry_count": 12,
+      "entries": [
+        "PRAIN_Distributed_Protocol_v0.5.0/README.md",
+        "PRAIN_Distributed_Protocol_v0.5.0/plans/IMPLEMENTATION_PLAN.md",
+        "PRAIN_Distributed_Protocol_v0.5.0/schemas/action-command.schema.json",
+        "PRAIN_Distributed_Protocol_v0.5.0/schemas/execution-receipt.schema.json",
+        "PRAIN_Distributed_Protocol_v0.5.0/schemas/message-envelope.schema.json",
+        "PRAIN_Distributed_Protocol_v0.5.0/spec/CLUSTER_TOPOLOGY.md",
+        "PRAIN_Distributed_Protocol_v0.5.0/spec/CONFORMANCE_TESTS.md",
+        "PRAIN_Distributed_Protocol_v0.5.0/spec/CONSISTENCY_MODEL.md",
+        "PRAIN_Distributed_Protocol_v0.5.0/spec/EXECUTION_AND_RECOVERY.md",
+        "PRAIN_Distributed_Protocol_v0.5.0/spec/MESSAGE_PROTOCOL.md",
+        "PRAIN_Distributed_Protocol_v0.5.0/spec/STATE_AND_CONFLICTS.md",
+        "PRAIN_Distributed_Protocol_v0.5.0/tests/reference_invariants.json"
+      ]
+    },
+    "PRAIN_v0.6.zip": {
+      "path": "/mnt/data/PRAIN_v0.6.zip",
+      "sha256": "ed8cb1a47b89b0d18b93336d8f807e33636ceeac00f8965c036ab3f2c8b7f652",
+      "bytes": 22954,
+      "zip_integrity": "PASS",
+      "entry_count": 16,
+      "entries": [
+        "PRAIN_v0.6/DECISIONS.md",
+        "PRAIN_v0.6/README.md",
+        "PRAIN_v0.6/TRACEABILITY.md",
+        "PRAIN_v0.6/plans/IMPLEMENTATION_PLAN.md",
+        "PRAIN_v0.6/schemas/health-signal.schema.json",
+        "PRAIN_v0.6/schemas/repair-proposal.schema.json",
+        "PRAIN_v0.6/schemas/semantic-message.schema.json",
+        "PRAIN_v0.6/spec/ARCHITECTURE.md",
+        "PRAIN_v0.6/spec/CONFORMANCE_TESTS.md",
+        "PRAIN_v0.6/spec/CONSISTENCY_AND_CONFLICTS.md",
+        "PRAIN_v0.6/spec/COORDINATION_PROTOCOL.md",
+        "PRAIN_v0.6/spec/FAILURE_AND_RECOVERY.md",
+        "PRAIN_v0.6/spec/HOMEOSTASIS_ADAPTATION.md",
+        "PRAIN_v0.6/spec/IDENTITY_AND_LINEAGE.md",
+        "PRAIN_v0.6/tests/invariants.json",
+        "PRAIN_v0.6-integrity.json"
+      ]
+    },
+    "PRAIN_MASTER_ARCHIVE_through_v0.6.zip": {
+      "path": "/mnt/data/PRAIN_MASTER_ARCHIVE_through_v0.6.zip",
+      "sha256": "b007c002fdd439db82c3c07605f4c804a4851f3522c96db29a1b1e7610e54e6f",
+      "bytes": 164390,
+      "zip_integrity": "PASS",
+      "entry_count": 15,
+      "entries": [
+        "PRAIN_MASTER_INDEX.md",
+        "PRAIN_Phase0_v0.1.0.zip",
+        "PRAIN_Phase0_v0.2.0.zip",
+        "PRAIN_Phase0_v0.2.1.zip",
+        "PRAIN_Phase0_v0.2.1-integrity.json",
+        "PRAIN_Architecture_v0.4.0.zip",
+        "PRAIN_Architecture_v0.4.0-integrity.json",
+        "PRAIN_Distributed_Protocol_v0.5.0.zip",
+        "PRAIN_Distributed_Protocol_v0.5.0-integrity.json",
+        "PRAIN_v0.6.zip",
+        "PRAIN_v0.6-integrity.json",
+        "PRAIN_Phase1_Prototype_v0.1.0.zip",
+        "PRAIN_Phase1_Prototype_v0.1.0-integrity.json",
+        "PRAIN_Wissensdatenbank.json",
+        "PRAIN_interaktive_Wissensdatenbank.html"
+      ]
+    },
+    "PRAIN_v0.9.2_Phase0_Consolidation_and_Acceptance_Gate.zip": {
+      "path": "/mnt/data/PRAIN_v0.9.2_Phase0_Consolidation_and_Acceptance_Gate.zip",
+      "sha256": "7947629d9c7e3faec9e446e01b69e4983355b6d7c1e2b818aeb9addac09ff7c5",
+      "bytes": 48734,
+      "zip_integrity": "PASS",
+      "entry_count": 23,
+      "entries": [
+        "PRAIN_v0.9.2/MANIFEST.json",
+        "PRAIN_v0.9.2/README.md",
+        "PRAIN_v0.9.2/docs/CLAIM_SEMANTICS_AND_EPISTEMIC_LIFECYCLE.md",
+        "PRAIN_v0.9.2/docs/CONFORMANCE_MATRIX.md",
+        "PRAIN_v0.9.2/docs/CONSOLIDATION_AND_PHASE0_GATE.md",
+        "PRAIN_v0.9.2/docs/CONTRACT_CROSSWALK.md",
+        "PRAIN_v0.9.2/docs/DECISION_FREEZE_PROPOSAL.md",
+        "PRAIN_v0.9.2/docs/DECISION_REGISTER.md",
+        "PRAIN_v0.9.2/docs/DECISION_REVIEW_TABLE.md",
+        "PRAIN_v0.9.2/docs/KNOWLEDGE_BASE_CROSSWALK.md",
+        "PRAIN_v0.9.2/docs/KNOWLEDGE_BASE_ITEM_AUDIT.md",
+        "PRAIN_v0.9.2/docs/PHASE0_GAPS_AND_EXIT.md",
+        "PRAIN_v0.9.2/docs/REFERENCE_FLOWS.md",
+        "PRAIN_v0.9.2/docs/SCHEMA_FIELD_AUDIT.md",
+        "PRAIN_v0.9.2/docs/SCHEMA_FIELD_AUDIT_DEEP.md",
+        "PRAIN_v0.9.2/docs/SEVEN_TRACK_REVIEW_PLAN.md",
+        "PRAIN_v0.9.2/docs/SEVEN_TRACK_STATUS.md",
+        "PRAIN_v0.9.2/docs/TRACEABILITY_MASTER.md",
+        "PRAIN_v0.9.2/docs/VERSIONING_AND_CHANGE_POLICY.md",
+        "PRAIN_v0.9.2/schemas/traceability-entry.schema.json",
+        "PRAIN_v0.9.2/tests/phase0_audit_summary.json",
+        "PRAIN_v0.9.2/tests/phase0_gate_status.json",
+        "PRAIN_v0.9.2/tests/traceability-fixtures.json"
+      ]
+    }
+  }
+}

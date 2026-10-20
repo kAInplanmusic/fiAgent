@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:prain:schema:policy-decision:1.0.0",
+  "title": "PRAIN Policy Decision",
+  "description": "Immutable outcome of one policy evaluation. A require_approval result is never mutated into permit; after approval, a new decision is produced.",
+  "type": "object",
+  "properties": {
+    "policy_decision_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "action_digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "actor_principal_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "capability": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "target_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "permit",
+        "deny",
+        "require_approval",
+        "defer"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256
+      }
+    },
+    "policy_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "approval_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+      },
+      "uniqueItems": true
+    },
+    "required_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256
+      },
+      "maxItems": 100
+    },
+    "decision_token_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "revocation_epoch": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "identity_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "policy_rule_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "policy_decision_id",
+    "tenant_id",
+    "action_digest",
+    "actor_principal_id",
+    "capability",
+    "target_ref",
+    "decision",
+    "reason_codes",
+    "policy_version",
+    "evaluated_at",
+    "expires_at",
+    "revocation_epoch",
+    "schema_version",
+    "identity_version",
+    "policy_rule_refs"
+  ],
+  "additionalProperties": false
+}

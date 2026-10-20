@@ -1,0 +1,22 @@
+{
+  "product": "PRAIN Phase 1 Reference Prototype",
+  "version": "1.1.0",
+  "artifact": "PRAIN_v1.1.0_Phase1_Reference_Prototype.zip",
+  "sha256": "09532ea231931b068f0f1d204fda605b9ab53f1029bef6cc6b3017424984bfe0",
+  "size_bytes": 19499,
+  "manifest_sha256": "2c6e6e2efa8cc14685325fe8cec9796c87f834c110a2a941a7b29c3e61b31185",
+  "file_count_in_manifest": 18,
+  "unit_tests": {
+    "passed": 23,
+    "failed": 0
+  },
+  "demo": {
+    "status": "PASS",
+    "policy_allowed": true,
+    "receipt_status": "simulated_success",
+    "evidence_chain_valid": true
+  },
+  "runtime_implementation_included": true,
+  "external_actions_enabled": false,
+  "scope": "Local in-memory Python reference prototype; simulated execution only; not production-certified."
+}

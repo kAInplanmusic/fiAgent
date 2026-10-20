@@ -1,0 +1,2532 @@
+{
+  "package": "PRAIN v0.99.3 Phase-0 State-Machine Audit",
+  "baseline": "PRAIN v0.9.4",
+  "status": "PASS",
+  "check_count": 504,
+  "passed": 504,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "SM-CLAIM-MATRIX:new->corroborated",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:new->disputed",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:new->hypothesized",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:new->inferred",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:new->observed",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:new->refuted",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:new->reported",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:new->unknown",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:new->verified",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:corroborated->corroborated",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:corroborated->disputed",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:corroborated->hypothesized",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:corroborated->inferred",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:corroborated->observed",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:corroborated->refuted",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:corroborated->reported",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:corroborated->unknown",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:corroborated->verified",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:disputed->corroborated",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:disputed->disputed",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:disputed->hypothesized",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:disputed->inferred",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:disputed->observed",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:disputed->refuted",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:disputed->reported",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:disputed->unknown",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:disputed->verified",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:hypothesized->corroborated",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:hypothesized->disputed",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:hypothesized->hypothesized",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:hypothesized->inferred",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:hypothesized->observed",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:hypothesized->refuted",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:hypothesized->reported",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:hypothesized->unknown",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:hypothesized->verified",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:inferred->corroborated",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:inferred->disputed",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:inferred->hypothesized",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:inferred->inferred",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:inferred->observed",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:inferred->refuted",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:inferred->reported",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:inferred->unknown",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:inferred->verified",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:observed->corroborated",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:observed->disputed",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:observed->hypothesized",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:observed->inferred",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:observed->observed",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:observed->refuted",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:observed->reported",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:observed->unknown",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:observed->verified",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:refuted->corroborated",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:refuted->disputed",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:refuted->hypothesized",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:refuted->inferred",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:refuted->observed",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:refuted->refuted",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:refuted->reported",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:refuted->unknown",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:refuted->verified",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:reported->corroborated",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:reported->disputed",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:reported->hypothesized",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:reported->inferred",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:reported->observed",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:reported->refuted",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:reported->reported",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:reported->unknown",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:reported->verified",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:unknown->corroborated",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:unknown->disputed",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:unknown->hypothesized",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:unknown->inferred",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:unknown->observed",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:unknown->refuted",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:unknown->reported",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:unknown->unknown",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:unknown->verified",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:verified->corroborated",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:verified->disputed",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:verified->hypothesized",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:verified->inferred",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:verified->observed",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:verified->refuted",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:verified->reported",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:verified->unknown",
+      "status": "PASS",
+      "detail": "expected edge=True"
+    },
+    {
+      "name": "SM-CLAIM-MATRIX:verified->verified",
+      "status": "PASS",
+      "detail": "expected edge=False"
+    },
+    {
+      "name": "SM-CLAIM-GUARD:missing_actor",
+      "status": "PASS",
+      "detail": "unsafe context accepted: missing_actor"
+    },
+    {
+      "name": "SM-CLAIM-GUARD:missing_reason",
+      "status": "PASS",
+      "detail": "unsafe context accepted: missing_reason"
+    },
+    {
+      "name": "SM-CLAIM-GUARD:missing_rule_version",
+      "status": "PASS",
+      "detail": "unsafe context accepted: missing_rule_version"
+    },
+    {
+      "name": "SM-CLAIM-GUARD:bad_timestamp",
+      "status": "PASS",
+      "detail": "unsafe context accepted: bad_timestamp"
+    },
+    {
+      "name": "SM-CLAIM-GUARD:nonmonotone_revision",
+      "status": "PASS",
+      "detail": "unsafe context accepted: nonmonotone_revision"
+    },
+    {
+      "name": "SM-CLAIM-GUARD:boolean_revision",
+      "status": "PASS",
+      "detail": "unsafe context accepted: boolean_revision"
+    },
+    {
+      "name": "SM-CLAIM-GUARD:verified_not_passed",
+      "status": "PASS",
+      "detail": "unsafe context accepted: verified_not_passed"
+    },
+    {
+      "name": "SM-CLAIM-GUARD:verified_no_ref",
+      "status": "PASS",
+      "detail": "unsafe context accepted: verified_no_ref"
+    },
+    {
+      "name": "SM-CLAIM-GUARD:refuted_not_failed",
+      "status": "PASS",
+      "detail": "unsafe context accepted: refuted_not_failed"
+    },
+    {
+      "name": "SM-CLAIM-GUARD:refuted_no_refs",
+      "status": "PASS",
+      "detail": "unsafe context accepted: refuted_no_refs"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:new->consumed",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:new->expired",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:new->issued",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:new->rejected",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:new->revoked",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:consumed->consumed",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:consumed->expired",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:consumed->issued",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:consumed->rejected",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:consumed->revoked",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:expired->consumed",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:expired->expired",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:expired->issued",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:expired->rejected",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:expired->revoked",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:issued->consumed",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:issued->expired",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:issued->issued",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:issued->rejected",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:issued->revoked",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:rejected->consumed",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:rejected->expired",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:rejected->issued",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:rejected->rejected",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:rejected->revoked",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:revoked->consumed",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:revoked->expired",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:revoked->issued",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:revoked->rejected",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-MATRIX:revoked->revoked",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('approve', 'issued', 'single_use', 1, 0)",
+      "status": "PASS",
+      "detail": "expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('approve', 'consumed', 'single_use', 1, 1)",
+      "status": "PASS",
+      "detail": "expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('deny', 'rejected', 'single_use', 1, 0)",
+      "status": "PASS",
+      "detail": "expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('deny', 'issued', 'single_use', 1, 0)",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('approve', 'rejected', 'single_use', 1, 0)",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('approve', 'issued', 'single_use', 1, 1)",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('approve', 'consumed', 'single_use', 1, 0)",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('approve', 'issued', 'single_use', 2, 0)",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('approve', 'issued', 'bounded_use', 1, 0)",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('approve', 'consumed', 'bounded_use', 3, 2)",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('approve', 'consumed', 'bounded_use', 3, 3)",
+      "status": "PASS",
+      "detail": "expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('approve', 'issued', 'bounded_use', 3, 3)",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('approve', 'issued', 'single_use', 1, -1)",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-COHERENCE:('approve', 'issued', 'single_use', True, 0)",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-GUARD:issue_approve",
+      "status": "PASS",
+      "detail": "expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-GUARD:issue_deny",
+      "status": "PASS",
+      "detail": "expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-GUARD:consumed_atomic",
+      "status": "PASS",
+      "detail": "expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-GUARD:consumed_non_atomic",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-GUARD:revoke_authorized",
+      "status": "PASS",
+      "detail": "expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-GUARD:revoke_not_authorized",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-GUARD:expire_at_deadline",
+      "status": "PASS",
+      "detail": "expected=True"
+    },
+    {
+      "name": "SM-APPROVAL-GUARD:expire_early",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-GUARD:issue_without_evidence",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-APPROVAL-GUARD:issue_deny_as_approved",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-POLICY-OUTCOME:defer",
+      "status": "PASS",
+      "detail": "only permit is dispatchable"
+    },
+    {
+      "name": "SM-POLICY-OUTCOME:deny",
+      "status": "PASS",
+      "detail": "only permit is dispatchable"
+    },
+    {
+      "name": "SM-POLICY-OUTCOME:permit",
+      "status": "PASS",
+      "detail": "only permit is dispatchable"
+    },
+    {
+      "name": "SM-POLICY-OUTCOME:require_approval",
+      "status": "PASS",
+      "detail": "only permit is dispatchable"
+    },
+    {
+      "name": "SM-POLICY-TIME:fresh",
+      "status": "PASS",
+      "detail": "expected=True"
+    },
+    {
+      "name": "SM-POLICY-TIME:not_yet_evaluated",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-POLICY-TIME:expired",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-POLICY-TIME:outlives_command",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-POLICY-TIME:bad_timestamp",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-POLICY-IMMUTABLE-APPROVAL-RECHECK",
+      "status": "PASS",
+      "detail": "approval path must create a fresh decision and keep prior outcome unchanged"
+    },
+    {
+      "name": "SM-POLICY-CANNOT-MUTATE-DECISION-ID",
+      "status": "PASS",
+      "detail": "same decision id cannot represent reevaluation"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:accepted->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:accepted->compensated",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:accepted->effect_observed",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:accepted->effect_possible",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:accepted->failed_pre_effect",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:accepted->not_dispatched",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:accepted->reconciliation_required",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:accepted->reserved",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:accepted->started",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:accepted->unknown",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:accepted->verified",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:compensated->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:compensated->compensated",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:compensated->effect_observed",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:compensated->effect_possible",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:compensated->failed_pre_effect",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:compensated->not_dispatched",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:compensated->reconciliation_required",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:compensated->reserved",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:compensated->started",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:compensated->unknown",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:compensated->verified",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_observed->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_observed->compensated",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_observed->effect_observed",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_observed->effect_possible",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_observed->failed_pre_effect",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_observed->not_dispatched",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_observed->reconciliation_required",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_observed->reserved",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_observed->started",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_observed->unknown",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_observed->verified",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_possible->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_possible->compensated",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_possible->effect_observed",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_possible->effect_possible",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_possible->failed_pre_effect",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_possible->not_dispatched",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_possible->reconciliation_required",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_possible->reserved",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_possible->started",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_possible->unknown",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:effect_possible->verified",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:failed_pre_effect->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:failed_pre_effect->compensated",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:failed_pre_effect->effect_observed",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:failed_pre_effect->effect_possible",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:failed_pre_effect->failed_pre_effect",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:failed_pre_effect->not_dispatched",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:failed_pre_effect->reconciliation_required",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:failed_pre_effect->reserved",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:failed_pre_effect->started",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:failed_pre_effect->unknown",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:failed_pre_effect->verified",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:not_dispatched->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:not_dispatched->compensated",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:not_dispatched->effect_observed",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:not_dispatched->effect_possible",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:not_dispatched->failed_pre_effect",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:not_dispatched->not_dispatched",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:not_dispatched->reconciliation_required",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:not_dispatched->reserved",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:not_dispatched->started",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:not_dispatched->unknown",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:not_dispatched->verified",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reconciliation_required->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reconciliation_required->compensated",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reconciliation_required->effect_observed",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reconciliation_required->effect_possible",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reconciliation_required->failed_pre_effect",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reconciliation_required->not_dispatched",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reconciliation_required->reconciliation_required",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reconciliation_required->reserved",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reconciliation_required->started",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reconciliation_required->unknown",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reconciliation_required->verified",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reserved->accepted",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reserved->compensated",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reserved->effect_observed",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reserved->effect_possible",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reserved->failed_pre_effect",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reserved->not_dispatched",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reserved->reconciliation_required",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reserved->reserved",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reserved->started",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reserved->unknown",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:reserved->verified",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:started->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:started->compensated",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:started->effect_observed",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:started->effect_possible",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:started->failed_pre_effect",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:started->not_dispatched",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:started->reconciliation_required",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:started->reserved",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:started->started",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:started->unknown",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:started->verified",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:unknown->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:unknown->compensated",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:unknown->effect_observed",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:unknown->effect_possible",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:unknown->failed_pre_effect",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:unknown->not_dispatched",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:unknown->reconciliation_required",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:unknown->reserved",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:unknown->started",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:unknown->unknown",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:unknown->verified",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:verified->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:verified->compensated",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:verified->effect_observed",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:verified->effect_possible",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:verified->failed_pre_effect",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:verified->not_dispatched",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:verified->reconciliation_required",
+      "status": "PASS",
+      "detail": "edge expected=True"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:verified->reserved",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:verified->started",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:verified->unknown",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-MATRIX:verified->verified",
+      "status": "PASS",
+      "detail": "edge expected=False"
+    },
+    {
+      "name": "SM-EXEC-GUARD:dispatch_stale_permit",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: dispatch_stale_permit"
+    },
+    {
+      "name": "SM-EXEC-GUARD:dispatch_epoch_stale",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: dispatch_epoch_stale"
+    },
+    {
+      "name": "SM-EXEC-GUARD:dispatch_changed_digest",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: dispatch_changed_digest"
+    },
+    {
+      "name": "SM-EXEC-GUARD:unknown_without_reconciliation",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: unknown_without_reconciliation"
+    },
+    {
+      "name": "SM-EXEC-GUARD:indeterminate_retry",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: indeterminate_retry"
+    },
+    {
+      "name": "SM-EXEC-GUARD:observed_without_evidence",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: observed_without_evidence"
+    },
+    {
+      "name": "SM-EXEC-GUARD:verified_executor_self_attests",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: verified_executor_self_attests"
+    },
+    {
+      "name": "SM-EXEC-GUARD:verified_without_criteria",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: verified_without_criteria"
+    },
+    {
+      "name": "SM-EXEC-GUARD:failed_pre_effect_without_absence_proof",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: failed_pre_effect_without_absence_proof"
+    },
+    {
+      "name": "SM-EXEC-GUARD:compensated_without_proof",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: compensated_without_proof"
+    },
+    {
+      "name": "SM-EXEC-GUARD:retry_changed_key",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: retry_changed_key"
+    },
+    {
+      "name": "SM-EXEC-GUARD:retry_changed_digest",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: retry_changed_digest"
+    },
+    {
+      "name": "SM-EXEC-GUARD:retry_class_never",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: retry_class_never"
+    },
+    {
+      "name": "SM-EXEC-GUARD:retry_without_fresh_policy",
+      "status": "PASS",
+      "detail": "unsafe state transition accepted: retry_without_fresh_policy"
+    },
+    {
+      "name": "SM-RECONCILIATION:effect_absent:retry_if_policy_allows",
+      "status": "PASS",
+      "detail": "expected retry=True"
+    },
+    {
+      "name": "SM-RECONCILIATION:effect_absent:escalate",
+      "status": "PASS",
+      "detail": "expected retry=False"
+    },
+    {
+      "name": "SM-RECONCILIATION:effect_present:retry_if_policy_allows",
+      "status": "PASS",
+      "detail": "expected retry=False"
+    },
+    {
+      "name": "SM-RECONCILIATION:effect_present:verify",
+      "status": "PASS",
+      "detail": "expected retry=False"
+    },
+    {
+      "name": "SM-RECONCILIATION:indeterminate:retry_if_policy_allows",
+      "status": "PASS",
+      "detail": "expected retry=False"
+    },
+    {
+      "name": "SM-RECONCILIATION:indeterminate:escalate",
+      "status": "PASS",
+      "detail": "expected retry=False"
+    },
+    {
+      "name": "SM-RECEIPT-APPEND-ONLY",
+      "status": "PASS",
+      "detail": "receipt/event history mutability constraint missing"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:accepted->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:accepted->active",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:accepted->blocked",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:accepted->cancelled",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:accepted->completed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:accepted->failed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:accepted->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:accepted->superseded",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:accepted->verifying",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:active->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:active->active",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:active->blocked",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:active->cancelled",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:active->completed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:active->failed",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:active->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:active->superseded",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:active->verifying",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:blocked->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:blocked->active",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:blocked->blocked",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:blocked->cancelled",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:blocked->completed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:blocked->failed",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:blocked->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:blocked->superseded",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:blocked->verifying",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:cancelled->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:cancelled->active",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:cancelled->blocked",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:cancelled->cancelled",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:cancelled->completed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:cancelled->failed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:cancelled->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:cancelled->superseded",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:cancelled->verifying",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:completed->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:completed->active",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:completed->blocked",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:completed->cancelled",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:completed->completed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:completed->failed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:completed->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:completed->superseded",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:completed->verifying",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:failed->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:failed->active",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:failed->blocked",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:failed->cancelled",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:failed->completed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:failed->failed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:failed->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:failed->superseded",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:failed->verifying",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:proposed->accepted",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:proposed->active",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:proposed->blocked",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:proposed->cancelled",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:proposed->completed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:proposed->failed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:proposed->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:proposed->superseded",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:proposed->verifying",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:superseded->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:superseded->active",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:superseded->blocked",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:superseded->cancelled",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:superseded->completed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:superseded->failed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:superseded->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:superseded->superseded",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:superseded->verifying",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:verifying->accepted",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:verifying->active",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:verifying->blocked",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:verifying->cancelled",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:verifying->completed",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:verifying->failed",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:verifying->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:verifying->superseded",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-GOAL-MATRIX:verifying->verifying",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-GOAL-NO-COMPLETE-WITHOUT-CRITERIA",
+      "status": "PASS",
+      "detail": "goal completed without criterion proof"
+    },
+    {
+      "name": "SM-GOAL-BLOCKED-REQUIRES-EVIDENCE",
+      "status": "PASS",
+      "detail": "blocked goal can resume without blocker evidence"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:approved->approved",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:approved->executing",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:approved->expired",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:approved->failed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:approved->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:approved->rejected",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:approved->rolled_back",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:approved->succeeded",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:executing->approved",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:executing->executing",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:executing->expired",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:executing->failed",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:executing->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:executing->rejected",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:executing->rolled_back",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:executing->succeeded",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:expired->approved",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:expired->executing",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:expired->expired",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:expired->failed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:expired->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:expired->rejected",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:expired->rolled_back",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:expired->succeeded",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:failed->approved",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:failed->executing",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:failed->expired",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:failed->failed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:failed->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:failed->rejected",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:failed->rolled_back",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:failed->succeeded",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:proposed->approved",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:proposed->executing",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:proposed->expired",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:proposed->failed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:proposed->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:proposed->rejected",
+      "status": "PASS",
+      "detail": "edge expected=True; actual=True"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:proposed->rolled_back",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:proposed->succeeded",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rejected->approved",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rejected->executing",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rejected->expired",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rejected->failed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rejected->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rejected->rejected",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rejected->rolled_back",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rejected->succeeded",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rolled_back->approved",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rolled_back->executing",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rolled_back->expired",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rolled_back->failed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rolled_back->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rolled_back->rejected",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rolled_back->rolled_back",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:rolled_back->succeeded",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:succeeded->approved",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:succeeded->executing",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:succeeded->expired",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:succeeded->failed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:succeeded->proposed",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:succeeded->rejected",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:succeeded->rolled_back",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-MATRIX:succeeded->succeeded",
+      "status": "PASS",
+      "detail": "edge expected=False; actual=False"
+    },
+    {
+      "name": "SM-REPAIR-GUARD:valid_approval",
+      "status": "PASS",
+      "detail": "expected=True"
+    },
+    {
+      "name": "SM-REPAIR-GUARD:hal_self_approval",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-REPAIR-GUARD:no_policy_permit",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-REPAIR-GUARD:changed_target",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-REPAIR-GUARD:stale_observation",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-REPAIR-GUARD:success_without_evidence",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-REPAIR-GUARD:rollback_unverified",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:active->active",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:active->exhausted",
+      "status": "PASS",
+      "detail": "edge expected=True; guarded transition=True"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:active->expired",
+      "status": "PASS",
+      "detail": "edge expected=True; guarded transition=True"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:active->revoked",
+      "status": "PASS",
+      "detail": "edge expected=True; guarded transition=True"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:active->suspended",
+      "status": "PASS",
+      "detail": "edge expected=True; guarded transition=True"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:exhausted->active",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:exhausted->exhausted",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:exhausted->expired",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:exhausted->revoked",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:exhausted->suspended",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:expired->active",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:expired->exhausted",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:expired->expired",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:expired->revoked",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:expired->suspended",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:revoked->active",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:revoked->exhausted",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:revoked->expired",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:revoked->revoked",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:revoked->suspended",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:suspended->active",
+      "status": "PASS",
+      "detail": "edge expected=True; guarded transition=True"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:suspended->exhausted",
+      "status": "PASS",
+      "detail": "edge expected=True; guarded transition=True"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:suspended->expired",
+      "status": "PASS",
+      "detail": "edge expected=True; guarded transition=True"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:suspended->revoked",
+      "status": "PASS",
+      "detail": "edge expected=True; guarded transition=True"
+    },
+    {
+      "name": "SM-DELEGATION-MATRIX:suspended->suspended",
+      "status": "PASS",
+      "detail": "edge expected=False; guarded transition=False"
+    },
+    {
+      "name": "SM-DELEGATION-GUARD:reactivate_without_fresh_check",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-DELEGATION-GUARD:reactivate_without_epoch_bump",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-DELEGATION-GUARD:reactivate_scope_widened",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-DELEGATION-GUARD:revoke_without_authority",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-DELEGATION-GUARD:expire_before_deadline",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-DELEGATION-GUARD:exhaust_before_budget",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-DELEGATION-GUARD:missing_event_provenance",
+      "status": "PASS",
+      "detail": "expected=False"
+    },
+    {
+      "name": "SM-DELEGATION-REVOKED-TERMINAL",
+      "status": "PASS",
+      "detail": "revoked/expired/exhausted delegation is reactivated"
+    },
+    {
+      "name": "SM-DOC-ANCHOR:Canonical action digest",
+      "status": "PASS",
+      "detail": "missing normative anchor: Canonical action digest"
+    },
+    {
+      "name": "SM-DOC-ANCHOR:require_approval",
+      "status": "PASS",
+      "detail": "missing normative anchor: require_approval"
+    },
+    {
+      "name": "SM-DOC-ANCHOR:unknown",
+      "status": "PASS",
+      "detail": "missing normative anchor: unknown"
+    },
+    {
+      "name": "SM-DOC-ANCHOR:effect_absent",
+      "status": "PASS",
+      "detail": "missing normative anchor: effect_absent"
+    },
+    {
+      "name": "SM-DOC-ANCHOR:effect_present",
+      "status": "PASS",
+      "detail": "missing normative anchor: effect_present"
+    },
+    {
+      "name": "SM-DOC-ANCHOR:indeterminate",
+      "status": "PASS",
+      "detail": "missing normative anchor: indeterminate"
+    },
+    {
+      "name": "SM-DOC-ANCHOR:separation of duties",
+      "status": "PASS",
+      "detail": "missing normative anchor: separation of duties"
+    },
+    {
+      "name": "SM-DOC-ANCHOR:Goal lifecycle",
+      "status": "PASS",
+      "detail": "missing normative anchor: Goal lifecycle"
+    },
+    {
+      "name": "SM-DOC-ANCHOR:HAL repair proposal lifecycle",
+      "status": "PASS",
+      "detail": "missing normative anchor: HAL repair proposal lifecycle"
+    },
+    {
+      "name": "SM-DOC-ANCHOR:Delegation lifecycle",
+      "status": "PASS",
+      "detail": "missing normative anchor: Delegation lifecycle"
+    }
+  ],
+  "errors": [],
+  "scope_limit": "deterministic offline specification conformance; not runtime, distributed concurrency, production or security certification"
+}

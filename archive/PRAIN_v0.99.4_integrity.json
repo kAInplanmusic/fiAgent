@@ -1,0 +1,20 @@
+{
+  "package": "PRAIN",
+  "version": "0.99.4",
+  "artifact": "Phase-0 Schema/State-Machine Conformance Closure Candidate",
+  "zip_path": "PRAIN_v0.99.4_Phase0_Schema_State_Machine_Conformance.zip",
+  "zip_sha256": "fcfba5a97d1d9919f9a37344079127d0234fcfc3d1a03681c6e1282e9f04b1c2",
+  "zip_bytes": 488707,
+  "manifest_sha256": "67eac094f6229d92c7f081c2f0214ce6b197b653ff7c4f6f46673ceeb5754a03",
+  "validation_status": "PASS",
+  "main_validator": "127/127",
+  "deep_conformance": "237/237",
+  "semantic_consistency": "221/221",
+  "state_machine_conformance": "504/504",
+  "schema_state_machine_conformance": "65/65",
+  "release_bundle_directory": "304/304",
+  "runtime_implementation_included": false,
+  "release_approval_recorded": false,
+  "phase1_authorized": false,
+  "scope_limit": "deterministic offline specification checks only; not runtime, production, security, legal, or external-truth certification"
+}

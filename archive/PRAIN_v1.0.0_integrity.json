@@ -1,0 +1,48 @@
+{
+  "package": "PRAIN v1.0.0 — Phase-0 Closure / Phase-1 Start Gate",
+  "release_version": "1.0.0",
+  "specification_baseline": "0.99.4",
+  "zip_file": "PRAIN_v1.0.0_Phase0_Closure_Phase1_Start_Gate.zip",
+  "zip_sha256": "3d39ed07df7cf5c98a9c84d258510f16a5c60f2bdfff2cc039e80d62a96207a6",
+  "zip_bytes": 491863,
+  "manifest_sha256": "f207ab2d3fc955d44939acff0aa6d1bd41a029c023cf89664e3962bcf89a201e",
+  "manifest_file_count": 76,
+  "release_status": "PHASE0_CLOSED_PHASE1_AUTHORIZED",
+  "phase0_closed": true,
+  "phase1_authorized_to_start": true,
+  "runtime_implementation_included": false,
+  "production_deployment_authorized": false,
+  "validation_reports": {
+    "main": {
+      "status": "PASS",
+      "checks": 127,
+      "passed": 127,
+      "failed": 0
+    },
+    "deep": {
+      "status": "PASS",
+      "checks": 237,
+      "passed": 237,
+      "failed": 0
+    },
+    "semantic": {
+      "status": "PASS",
+      "checks": 221,
+      "passed": 221,
+      "failed": 0
+    },
+    "state_machine": {
+      "status": "PASS",
+      "checks": 504,
+      "passed": 504,
+      "failed": 0
+    },
+    "schema_state_machine": {
+      "status": "PASS",
+      "checks": 65,
+      "passed": 65,
+      "failed": 0
+    }
+  },
+  "scope_limit": "Offline specification and package integrity checks only; no runtime, production, security, legal, or external-truth certification."
+}

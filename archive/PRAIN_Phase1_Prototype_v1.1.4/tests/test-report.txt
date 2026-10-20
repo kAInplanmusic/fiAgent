@@ -1,0 +1,49 @@
+test_approval_and_admission_rollback_together (test_durable_admission.DurableAdmissionTests.test_approval_and_admission_rollback_together) ... ok
+test_concurrent_same_key_has_one_creation (test_durable_admission.DurableAdmissionTests.test_concurrent_same_key_has_one_creation) ... /usr/lib/python3.13/threading.py:291: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f1681319030>
+  if hasattr(lock, '_release_save'):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:291: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f1681319120>
+  if hasattr(lock, '_release_save'):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_restart_replays_same_receipt (test_durable_admission.DurableAdmissionTests.test_restart_replays_same_receipt) ... ok
+test_same_key_different_fingerprint_conflicts (test_durable_admission.DurableAdmissionTests.test_same_key_different_fingerprint_conflicts) ... ok
+test_single_use_approval_survives_restart (test_durable_admission.DurableAdmissionTests.test_single_use_approval_survives_restart) ... ok
+test_duplicate_event_is_suppressed (test_phase1.EventBusTests.test_duplicate_event_is_suppressed) ... ok
+test_wrong_type_not_delivered (test_phase1.EventBusTests.test_wrong_type_not_delivered) ... ok
+test_completion_requires_verification (test_phase1.GoalTests.test_completion_requires_verification) ... ok
+test_criteria_required (test_phase1.GoalTests.test_criteria_required) ... ok
+test_pass_requires_evidence (test_phase1.GoalTests.test_pass_requires_evidence) ... ok
+test_passing_verification_completes (test_phase1.GoalTests.test_passing_verification_completes) ... ok
+test_chain_verifies (test_phase1.LedgerTests.test_chain_verifies) ... ok
+test_empty_chain_verifies (test_phase1.LedgerTests.test_empty_chain_verifies) ... ok
+test_approval_required (test_phase1.PolicyTests.test_approval_required) ... ok
+test_consumed_single_use_approval_denied (test_phase1.PolicyTests.test_consumed_single_use_approval_denied) ... ok
+test_future_approval_denied (test_phase1.PolicyTests.test_future_approval_denied) ... ok
+test_matching_rule_allowed (test_phase1.PolicyTests.test_matching_rule_allowed) ... ok
+test_no_policy_denied (test_phase1.PolicyTests.test_no_policy_denied) ... ok
+test_revoked_approval_denied (test_phase1.PolicyTests.test_revoked_approval_denied) ... ok
+test_wrong_capability_denied (test_phase1.PolicyTests.test_wrong_capability_denied) ... ok
+test_create_and_cas_increment_version (test_phase1.StateStoreTests.test_create_and_cas_increment_version) ... ok
+test_create_does_not_overwrite (test_phase1.StateStoreTests.test_create_does_not_overwrite) ... ok
+test_stale_version_rejected (test_phase1.StateStoreTests.test_stale_version_rejected) ... ok
+test_allowed_action_is_simulated_and_idempotent (test_runtime.RuntimeTests.test_allowed_action_is_simulated_and_idempotent) ... ok
+test_chain_valid_after_vertical_slice (test_runtime.RuntimeTests.test_chain_valid_after_vertical_slice) ... ok
+test_concurrent_same_idempotency_key_creates_one_receipt (test_runtime.RuntimeTests.test_concurrent_same_idempotency_key_creates_one_receipt) ... ok
+test_goal_needs_verification_evidence (test_runtime.RuntimeTests.test_goal_needs_verification_evidence) ... ok
+test_idempotency_key_cannot_be_reused_for_different_request (test_runtime.RuntimeTests.test_idempotency_key_cannot_be_reused_for_different_request) ... ok
+test_ingest_emits_correlated_event_and_evidence (test_runtime.RuntimeTests.test_ingest_emits_correlated_event_and_evidence) ... ok
+test_nested_payload_is_snapshotted_before_execution (test_runtime.RuntimeTests.test_nested_payload_is_snapshotted_before_execution) ... ok
+test_policy_denial_does_not_create_receipt (test_runtime.RuntimeTests.test_policy_denial_does_not_create_receipt) ... ok
+test_registered_evaluator_returns_evidence_ref (test_runtime.RuntimeTests.test_registered_evaluator_returns_evidence_ref) ... ok
+test_single_use_approval_cannot_authorize_two_distinct_actions (test_runtime.RuntimeTests.test_single_use_approval_cannot_authorize_two_distinct_actions) ... ok
+test_single_use_approval_requires_stable_id (test_runtime.RuntimeTests.test_single_use_approval_requires_stable_id) ... ok
+test_sqlite_admission_rejects_changed_payload_after_restart (test_runtime.RuntimeTests.test_sqlite_admission_rejects_changed_payload_after_restart) ... ok
+test_sqlite_admission_replays_across_runtime_restart (test_runtime.RuntimeTests.test_sqlite_admission_replays_across_runtime_restart) ... ok
+test_sqlite_single_use_approval_consumed_atomically (test_runtime.RuntimeTests.test_sqlite_single_use_approval_consumed_atomically) ... ok
+test_unknown_evaluator_fails_closed (test_runtime.RuntimeTests.test_unknown_evaluator_fails_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 0.125s
+
+OK

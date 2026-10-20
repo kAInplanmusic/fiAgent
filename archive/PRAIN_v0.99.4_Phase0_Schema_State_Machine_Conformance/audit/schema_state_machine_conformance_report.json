@@ -1,0 +1,334 @@
+{
+  "status": "PASS",
+  "check_count": 65,
+  "passed": 65,
+  "failed": 0,
+  "scope": "deterministic offline schema/crosswalk and guard-oracle checks only",
+  "checks": [
+    {
+      "name": "schema-load:action-command.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:claim-transition-event.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:claim.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:delegation-grant.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:deletion-request.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:evidence-record.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:execution-receipt.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:goal.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:health-signal.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:message-envelope.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:observation.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:policy-approval.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:policy-decision.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:principal.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:repair-proposal.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:state-record.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "schema-load:tenant.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "canonical-schema-count-17",
+      "passed": true,
+      "detail": "17"
+    },
+    {
+      "name": "crosswalk-covers:action-command.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:claim-transition-event.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:claim.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:delegation-grant.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:deletion-request.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:evidence-record.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:execution-receipt.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:goal.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:health-signal.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:message-envelope.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:observation.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:policy-approval.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:policy-decision.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:principal.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:repair-proposal.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:state-record.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "crosswalk-covers:tenant.schema.json",
+      "passed": true,
+      "detail": "schema explicitly referenced in crosswalk"
+    },
+    {
+      "name": "claim-event-from-vocabulary-match",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "claim-event-to-vocabulary-match",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "crosswalk-guard:verification_ref",
+      "passed": true,
+      "detail": "verification_ref"
+    },
+    {
+      "name": "crosswalk-guard:refutation_refs",
+      "passed": true,
+      "detail": "refutation_refs"
+    },
+    {
+      "name": "crosswalk-guard:action digest",
+      "passed": true,
+      "detail": "action digest"
+    },
+    {
+      "name": "crosswalk-guard:policy version",
+      "passed": true,
+      "detail": "policy version"
+    },
+    {
+      "name": "crosswalk-guard:independent verification evidence",
+      "passed": true,
+      "detail": "independent verification evidence"
+    },
+    {
+      "name": "crosswalk-guard:proof of effect absence",
+      "passed": true,
+      "detail": "proof of effect absence"
+    },
+    {
+      "name": "crosswalk-guard:idempotency key",
+      "passed": true,
+      "detail": "idempotency key"
+    },
+    {
+      "name": "crosswalk-guard:increments attempt",
+      "passed": true,
+      "detail": "increments attempt"
+    },
+    {
+      "name": "crosswalk-guard:success criteria",
+      "passed": true,
+      "detail": "success criteria"
+    },
+    {
+      "name": "crosswalk-guard:legal hold",
+      "passed": true,
+      "detail": "legal hold"
+    },
+    {
+      "name": "crosswalk-guard:reference resolution",
+      "passed": true,
+      "detail": "reference resolution"
+    },
+    {
+      "name": "crosswalk-guard:atomic single-use approval consumption",
+      "passed": true,
+      "detail": "atomic single-use approval consumption"
+    },
+    {
+      "name": "oracle:positive: verified claim with evidence",
+      "passed": true,
+      "detail": "actual=True, expected=True"
+    },
+    {
+      "name": "oracle:negative: verified claim missing procedure",
+      "passed": true,
+      "detail": "actual=False, expected=False"
+    },
+    {
+      "name": "oracle:negative: verified claim missing evidence",
+      "passed": true,
+      "detail": "actual=False, expected=False"
+    },
+    {
+      "name": "oracle:positive: refuted claim with failed procedure and refs",
+      "passed": true,
+      "detail": "actual=True, expected=True"
+    },
+    {
+      "name": "oracle:negative: refuted claim without refs",
+      "passed": true,
+      "detail": "actual=False, expected=False"
+    },
+    {
+      "name": "oracle:positive: unexpired issued approval",
+      "passed": true,
+      "detail": "actual=True, expected=True"
+    },
+    {
+      "name": "oracle:negative: expired approval",
+      "passed": true,
+      "detail": "actual=False, expected=False"
+    },
+    {
+      "name": "oracle:negative: consumed approval",
+      "passed": true,
+      "detail": "actual=False, expected=False"
+    },
+    {
+      "name": "oracle:positive: retry with full guards",
+      "passed": true,
+      "detail": "actual=True, expected=True"
+    },
+    {
+      "name": "oracle:negative: retry after never class",
+      "passed": true,
+      "detail": "actual=False, expected=False"
+    },
+    {
+      "name": "oracle:negative: retry changes digest",
+      "passed": true,
+      "detail": "actual=False, expected=False"
+    },
+    {
+      "name": "oracle:negative: retry lacks effect absence",
+      "passed": true,
+      "detail": "actual=False, expected=False"
+    },
+    {
+      "name": "oracle:positive: completed goal with verification",
+      "passed": true,
+      "detail": "actual=True, expected=True"
+    },
+    {
+      "name": "oracle:negative: completed goal without verification",
+      "passed": true,
+      "detail": "actual=False, expected=False"
+    },
+    {
+      "name": "oracle:positive: deletion verified no legal hold",
+      "passed": true,
+      "detail": "actual=True, expected=True"
+    },
+    {
+      "name": "oracle:negative: deletion verified with legal hold",
+      "passed": true,
+      "detail": "actual=False, expected=False"
+    }
+  ]
+}

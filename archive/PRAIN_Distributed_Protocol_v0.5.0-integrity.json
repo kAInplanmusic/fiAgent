@@ -1,0 +1,14 @@
+{
+  "artifact": "PRAIN_Distributed_Protocol_v0.5.0.zip",
+  "version": "0.5.0",
+  "sha256": "a78d29e0717fbcb17d0149808e59b6ece9daf81d87ad99bc8efae3b9bd634b5a",
+  "size_bytes": 15336,
+  "files": 12,
+  "validation": {
+    "json_schemas_checked": 3,
+    "json_schemas_valid": true,
+    "invariant_count": 12,
+    "protocol_assertions": "passed"
+  },
+  "scope": "Architecture and protocol specification; no deployed cluster or runtime implementation is claimed."
+}

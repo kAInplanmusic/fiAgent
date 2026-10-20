@@ -1,0 +1,103 @@
+{
+  "product": "PRAIN Phase 1 Reference Prototype",
+  "version": "1.1.2",
+  "generated_at": "2026-10-20",
+  "file_count": 19,
+  "files": [
+    {
+      "path": ".gitignore",
+      "size_bytes": 45,
+      "sha256": "23a2c3c02b184e6ce4aa5ba65acced7a84a0359c9ccdd18db0e4c81e4a941b91"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size_bytes": 2111,
+      "sha256": "535b70147c7bb72acb3d2c23b64f60bcfe721f4c5777744e88a17fe700b43fce"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 2344,
+      "sha256": "894f50ffa0d8411ebf12d669cef9097cbc7cf0832291af6962f79ba3bcfce6bb"
+    },
+    {
+      "path": "docs/PHASE0_ACCEPTANCE.md",
+      "size_bytes": 917,
+      "sha256": "ab940283c8d355d9eca41743ae2a5a2c0ee0b780c0d6d69ca694ee98eb4f4727"
+    },
+    {
+      "path": "docs/PHASE1_IMPLEMENTATION_STATUS.md",
+      "size_bytes": 2081,
+      "sha256": "be1848bc4e7007e1be35e2effcbc1689d8fd24aa2005b87224e25b0b5c3bd1ea"
+    },
+    {
+      "path": "docs/PHASE1_INTERFACE_CONTRACTS.md",
+      "size_bytes": 1975,
+      "sha256": "6d5bf894f1da01cf739beae66815d31890c256a8901c0651d56eb25b2056d22b"
+    },
+    {
+      "path": "docs/STEP7_ATOMIC_ADMISSION_AND_APPROVAL_REUSE.md",
+      "size_bytes": 2393,
+      "sha256": "377ce4d34fb5035e885d570c1916fd8c61330d63919002262d3cd0f6ae77c284"
+    },
+    {
+      "path": "prain/__init__.py",
+      "size_bytes": 650,
+      "sha256": "a6e05e704c8636182d7280c04cfc0c1bdf540ab2b2227c8e120607434ce920b4"
+    },
+    {
+      "path": "prain/demo.py",
+      "size_bytes": 1203,
+      "sha256": "e652229f94d2c7f6947eea9d94daf3949c567f9918fbfd6cd91f2c47e1055fa1"
+    },
+    {
+      "path": "prain/event_bus.py",
+      "size_bytes": 2405,
+      "sha256": "4c00736fcf1da6987eb82caf565e95ab1fce486e31d5933076760a2f293dd1ba"
+    },
+    {
+      "path": "prain/evidence_ledger.py",
+      "size_bytes": 1778,
+      "sha256": "0c858c4c72f2944a9613b3b636de8518fa9bbb0e1b63ef282ed5309245d406b6"
+    },
+    {
+      "path": "prain/goal_registry.py",
+      "size_bytes": 2945,
+      "sha256": "590b00012d79a66cda91bd3a0cd68339aa08ffc5f22ccac9c7e0621a0c19fe48"
+    },
+    {
+      "path": "prain/policy_gateway.py",
+      "size_bytes": 5138,
+      "sha256": "75732640367242b4ea7357d643794e4aadb77a8610ea40fa784795fe99e6b4f6"
+    },
+    {
+      "path": "prain/runtime.py",
+      "size_bytes": 8930,
+      "sha256": "061f218385085ad6c20a7671a0d3c35256cb2afcd9be6dfeac93eb9290d8887e"
+    },
+    {
+      "path": "prain/state_store.py",
+      "size_bytes": 1775,
+      "sha256": "6ddff30cad45f4bb44b94fd104cc1014add3e17e2f23d3fb49da7fa234dea0b4"
+    },
+    {
+      "path": "tests/demo-output.json",
+      "size_bytes": 1713,
+      "sha256": "549040c8c893689cec54ed384a25dde5f9fc95f20b34676765a709d89289be11"
+    },
+    {
+      "path": "tests/test-report.txt",
+      "size_bytes": 3333,
+      "sha256": "adfed61840062c63b1ca1ca12e46edb65ca09bf8c1f763104c907d81eb51aa13"
+    },
+    {
+      "path": "tests/test_phase1.py",
+      "size_bytes": 6185,
+      "sha256": "95728bababea385c4056ba6ff30029d4f6e7e99ee695de2bcb7a4a3be791e2bf"
+    },
+    {
+      "path": "tests/test_runtime.py",
+      "size_bytes": 6906,
+      "sha256": "98f6edd212780e351c055dedc28a33e421faf75e77fbffe50d9e93fad7378b29"
+    }
+  ]
+}

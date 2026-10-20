@@ -1,0 +1,186 @@
+{
+  "version": "1.1.9",
+  "prototype": "PRAIN Phase 1 Reference Prototype",
+  "release_name": "PRAIN_v1.1.9_Phase1_Reference_Prototype",
+  "execution_mode": "simulated_only",
+  "audit_status": "PARTIAL_PASS",
+  "step": 14,
+  "tests": "59 passed, 0 failed, 0 errors",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 45,
+      "sha256": "23a2c3c02b184e6ce4aa5ba65acced7a84a0359c9ccdd18db0e4c81e4a941b91"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 2458,
+      "sha256": "5afaf6cc9d89fc1eeb5746e305fa4a6f7446d1b23361a01eb4568d2fecc9eaae"
+    },
+    {
+      "path": "MANIFEST.json",
+      "bytes": 261,
+      "sha256": "e7320eca704ed328a94ff35f2d859ae5bdeac56372a039cecd3e28c72e2ae892"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3609,
+      "sha256": "a804109f955bd80fd01ee36a6956c8f53ec935606cf0fa96fe6e30610c716118"
+    },
+    {
+      "path": "docs/PHASE0_ACCEPTANCE.md",
+      "bytes": 917,
+      "sha256": "ab940283c8d355d9eca41743ae2a5a2c0ee0b780c0d6d69ca694ee98eb4f4727"
+    },
+    {
+      "path": "docs/PHASE1_IMPLEMENTATION_STATUS.md",
+      "bytes": 2371,
+      "sha256": "f3c9c7fb07aa1a0a67c927bfa47efb0e6f7c67ae65ba1e76d66b26399935e9d1"
+    },
+    {
+      "path": "docs/PHASE1_INTERFACE_CONTRACTS.md",
+      "bytes": 1975,
+      "sha256": "6d5bf894f1da01cf739beae66815d31890c256a8901c0651d56eb25b2056d22b"
+    },
+    {
+      "path": "docs/STEP10_DURABLE_OUTBOX_AND_RECOVERY.md",
+      "bytes": 1327,
+      "sha256": "1cfb9dd967763443bd76e74e6c89d2bb0b083d5d828e21574ed52a129906de09"
+    },
+    {
+      "path": "docs/STEP11_DISPATCHER_RECONCILIATION.md",
+      "bytes": 1690,
+      "sha256": "da0f2273bf33d3c85fabada755e0fb2d77f88477e85ca128d823270fe3e037b7"
+    },
+    {
+      "path": "docs/STEP12_FAULT_INJECTION_AND_MULTIPROCESS_TESTS.md",
+      "bytes": 1090,
+      "sha256": "47254ffdee41f260920ab10a418664ae9c51cb6da25b1498adcb88134e57a44f"
+    },
+    {
+      "path": "docs/STEP13_DURABLE_STATE_STORE.md",
+      "bytes": 1915,
+      "sha256": "2eb0c1214de65cf5fa7fb290b2ffbfd4b315d4cfdb7fa55030a3780d04df8eea"
+    },
+    {
+      "path": "docs/STEP14_DURABLE_RUNTIME_COMPONENTS.md",
+      "bytes": 1939,
+      "sha256": "460cb13acf364c942a60e9d5ce278babd63499cfa96dc43b4cc1ed8bde4b3304"
+    },
+    {
+      "path": "docs/STEP7_ATOMIC_ADMISSION_AND_APPROVAL_REUSE.md",
+      "bytes": 2393,
+      "sha256": "377ce4d34fb5035e885d570c1916fd8c61330d63919002262d3cd0f6ae77c284"
+    },
+    {
+      "path": "docs/STEP8_SQLITE_DURABLE_ADMISSION.md",
+      "bytes": 1363,
+      "sha256": "5399260b3cf036e906df4c86b854831ccad2c25b74491f81318ccb69ac4bfbf1"
+    },
+    {
+      "path": "docs/STEP9_RUNTIME_SQLITE_INTEGRATION.md",
+      "bytes": 2214,
+      "sha256": "f07c2bb8e4846d8fde5f1fceae83451d71aced89211f77611bbdc3abe35e04b8"
+    },
+    {
+      "path": "prain/__init__.py",
+      "bytes": 999,
+      "sha256": "c5c4d14ce75e957aa3559b0f50adc170fd2887c0261a6cb92cf68acc41c37c13"
+    },
+    {
+      "path": "prain/demo.py",
+      "bytes": 1203,
+      "sha256": "e652229f94d2c7f6947eea9d94daf3949c567f9918fbfd6cd91f2c47e1055fa1"
+    },
+    {
+      "path": "prain/dispatcher.py",
+      "bytes": 2671,
+      "sha256": "da36dd71e474bdd2e75c4e55576b86cb3baf6af55856803841de5f8a0042531b"
+    },
+    {
+      "path": "prain/durable_admission.py",
+      "bytes": 9734,
+      "sha256": "122b3e58673edcff23872c5ccffe70d933e6775bff10688b383b15c63a324213"
+    },
+    {
+      "path": "prain/durable_components.py",
+      "bytes": 8484,
+      "sha256": "5fb84820454753807bc486833f14f204ed6db97f106d4614a930720f65f86e25"
+    },
+    {
+      "path": "prain/durable_state_store.py",
+      "bytes": 3654,
+      "sha256": "142f443a5a1d8ae88073fef2a9118a1333932269f133a1d538c07b7a708941d9"
+    },
+    {
+      "path": "prain/event_bus.py",
+      "bytes": 2405,
+      "sha256": "4c00736fcf1da6987eb82caf565e95ab1fce486e31d5933076760a2f293dd1ba"
+    },
+    {
+      "path": "prain/evidence_ledger.py",
+      "bytes": 1778,
+      "sha256": "0c858c4c72f2944a9613b3b636de8518fa9bbb0e1b63ef282ed5309245d406b6"
+    },
+    {
+      "path": "prain/goal_registry.py",
+      "bytes": 2945,
+      "sha256": "590b00012d79a66cda91bd3a0cd68339aa08ffc5f22ccac9c7e0621a0c19fe48"
+    },
+    {
+      "path": "prain/policy_gateway.py",
+      "bytes": 5138,
+      "sha256": "75732640367242b4ea7357d643794e4aadb77a8610ea40fa784795fe99e6b4f6"
+    },
+    {
+      "path": "prain/runtime.py",
+      "bytes": 12026,
+      "sha256": "eef53e76c0f7a9386770bb3f905247c69331ddd76e03a8f0b58a251fa4a18bd9"
+    },
+    {
+      "path": "prain/state_store.py",
+      "bytes": 1775,
+      "sha256": "6ddff30cad45f4bb44b94fd104cc1014add3e17e2f23d3fb49da7fa234dea0b4"
+    },
+    {
+      "path": "tests/demo-output.json",
+      "bytes": 1713,
+      "sha256": "71f978ee4910042924402264c3dc4a662b772a28c79d12fb35164ed902741d9a"
+    },
+    {
+      "path": "tests/test-report.txt",
+      "bytes": 26352,
+      "sha256": "324da149afb70bfdf3314ef22c29379bfc6794b398b2caac185ab5c4449b1c8f"
+    },
+    {
+      "path": "tests/test_dispatcher.py",
+      "bytes": 3041,
+      "sha256": "cf731c2e5aa2a92de6b6ab426a6582b95a766e6609770e4184dcd52549d6836e"
+    },
+    {
+      "path": "tests/test_durable_admission.py",
+      "bytes": 7625,
+      "sha256": "832eaae82910e5f0f23de262aa7c9188e2c2f383c453ec5872f43cbc5a18d378"
+    },
+    {
+      "path": "tests/test_durable_components.py",
+      "bytes": 2644,
+      "sha256": "264f347f8b7576ab0a716727673533bcf768aa8331330ae27cae56a886ba08c7"
+    },
+    {
+      "path": "tests/test_durable_state_store.py",
+      "bytes": 2737,
+      "sha256": "267eec587f9b7f92ffc235b1a4037e6741d06877f4fc86e7d39d9369f30fe7ec"
+    },
+    {
+      "path": "tests/test_phase1.py",
+      "bytes": 6185,
+      "sha256": "95728bababea385c4056ba6ff30029d4f6e7e99ee695de2bcb7a4a3be791e2bf"
+    },
+    {
+      "path": "tests/test_runtime.py",
+      "bytes": 10739,
+      "sha256": "044e5f43e8191c85c4df49e58101d00b3119324a7ed459e50710e2b609ed815d"
+    }
+  ]
+}

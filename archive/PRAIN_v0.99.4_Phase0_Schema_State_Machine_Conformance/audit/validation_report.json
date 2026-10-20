@@ -1,0 +1,649 @@
+{
+  "package": "PRAIN v0.99.3 Phase-0 State-Machine Audit Candidate",
+  "baseline": "PRAIN v0.9.4",
+  "status": "PASS",
+  "check_count": 127,
+  "passed": 127,
+  "failed": 0,
+  "historical_schemas_checked": 20,
+  "canonical_schemas_checked": 17,
+  "checks": [
+    {
+      "name": "canonical_schema_meta:action-command",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:action-command",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:action-command",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:action-command",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:claim",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:claim",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:claim",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:claim",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:claim-transition-event",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:claim-transition-event",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:claim-transition-event",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:claim-transition-event",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:delegation-grant",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:delegation-grant",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:delegation-grant",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:delegation-grant",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:deletion-request",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:deletion-request",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:deletion-request",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:deletion-request",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:evidence-record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:evidence-record",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:evidence-record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:evidence-record",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:execution-receipt",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:execution-receipt",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:execution-receipt",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:execution-receipt",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:goal",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:goal",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:goal",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:goal",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:health-signal",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:health-signal",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:health-signal",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:health-signal",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:message-envelope",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:message-envelope",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:message-envelope",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:message-envelope",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:observation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:observation",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:observation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:observation",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:policy-approval",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:policy-approval",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:policy-approval",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:policy-approval",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:policy-decision",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:policy-decision",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:policy-decision",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:policy-decision",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:principal",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:principal",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:principal",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:principal",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:repair-proposal",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:repair-proposal",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:repair-proposal",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:repair-proposal",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:state-record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:state-record",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:state-record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:state-record",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "canonical_schema_meta:tenant",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_schema_strict:tenant",
+      "status": "PASS",
+      "detail": "root additionalProperties must be false"
+    },
+    {
+      "name": "canonical_fixture_valid:tenant",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "canonical_reject_unknown:tenant",
+      "status": "PASS",
+      "detail": "schema should reject unknown root property"
+    },
+    {
+      "name": "negative_fixture:claim_confidence_without_method",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:verified_claim_without_verification_ref",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:unknown_action_command_field",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:expired_enum_approval",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:unknown_execution_without_reconciliation",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:unapproved_policy_repair",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:command_message_missing_idempotency",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:delegation_without_target_scope",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:refuted_claim_without_refutation",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:bad_timestamp",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:hal_policy_change_without_approval_ref",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:approval_deny_but_issued",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:approval_single_use_multiple_uses",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:approval_rejected_but_approved",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:verified_receipt_without_verifier",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "negative_fixture:effect_absent_reconciliation_wrong_next_action",
+      "status": "PASS",
+      "detail": "expected invalid, schema accepted it"
+    },
+    {
+      "name": "source_archive_integrity:PRAIN_Phase0_v0.2.1.zip",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Phase0_v0.2.1/schemas/action-request.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Phase0_v0.2.1/schemas/action-result.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Phase0_v0.2.1/schemas/agent-manifest.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Phase0_v0.2.1/schemas/claim.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Phase0_v0.2.1/schemas/event-envelope.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Phase0_v0.2.1/schemas/evidence.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Phase0_v0.2.1/schemas/goal.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Phase0_v0.2.1/schemas/observation.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Phase0_v0.2.1/schemas/policy-decision.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Phase0_v0.2.1/schemas/state-snapshot.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Phase0_v0.2.1/schemas/trace-event.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "source_archive_integrity:PRAIN_Architecture_v0.4.0.zip",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Architecture_v0.4.0/contracts/action-request.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Architecture_v0.4.0/contracts/goal.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Architecture_v0.4.0/contracts/message-envelope.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "source_archive_integrity:PRAIN_Distributed_Protocol_v0.5.0.zip",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Distributed_Protocol_v0.5.0/schemas/action-command.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Distributed_Protocol_v0.5.0/schemas/execution-receipt.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_Distributed_Protocol_v0.5.0/schemas/message-envelope.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "source_archive_integrity:PRAIN_v0.6.zip",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_v0.6/schemas/health-signal.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_v0.6/schemas/repair-proposal.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_meta:PRAIN_v0.6/schemas/semantic-message.schema.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "historical_schema_count_20",
+      "status": "PASS",
+      "detail": "count=20"
+    },
+    {
+      "name": "all_validation_tools_parse",
+      "status": "PASS",
+      "detail": "parsed=7"
+    },
+    {
+      "name": "knowledge_base_html_embedded_db_parses",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "knowledge_base_json_equals_html",
+      "status": "PASS",
+      "detail": "canonical JSON and embedded HTML DB must match exactly"
+    },
+    {
+      "name": "knowledge_base_five_dimensions",
+      "status": "PASS",
+      "detail": "5"
+    },
+    {
+      "name": "knowledge_base_legacy_ids_unique",
+      "status": "PASS",
+      "detail": "duplicate dimension id"
+    },
+    {
+      "name": "knowledge_base_source_ids_unique",
+      "status": "PASS",
+      "detail": "duplicate source id"
+    },
+    {
+      "name": "knowledge_base_no_dangling_sources",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "name": "knowledge_base_no_dangling_relations",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "name": "knowledge_base_independent_of_hallerbans",
+      "status": "PASS",
+      "detail": "Independent, evidence-aware semantic control plane for autonomous agents: observations, claims, goals, policy-checked actions, verified outcomes, identity continuity, and adaptive coordination across the five P/R/A/I/N dimensions. PRAIN is not dependent on Hallerbans; Hallerbans is one possible consumer."
+    },
+    {
+      "name": "knowledge_base_policy_gateway_relation",
+      "status": "PASS",
+      "detail": "legacy A→N authorizes relation must be absent"
+    },
+    {
+      "name": "knowledge_base_legacy_advice_field_removed",
+      "status": "PASS",
+      "detail": "old consumer-specific field should not remain"
+    },
+    {
+      "name": "invariant_registry_exact_30",
+      "status": "PASS",
+      "detail": "count=30"
+    },
+    {
+      "name": "claim_separates_status_axes",
+      "status": "PASS",
+      "detail": "missing orthogonal field"
+    },
+    {
+      "name": "policy_has_nonpermit_outcomes",
+      "status": "PASS",
+      "detail": "policy outcome enum mismatch"
+    },
+    {
+      "name": "no_runtime_code_in_package",
+      "status": "PASS",
+      "detail": "unexpected runtime artifact found"
+    },
+    {
+      "name": "deep_reference_oracle_suite",
+      "status": "PASS",
+      "detail": "{\n  \"package\": \"PRAIN v0.99.3 Phase-0 Semantic Consistency Candidate\",\n  \"status\": \"PASS\",\n  \"check_count\": 237,\n  \"passed\": 237,\n  \"failed\": 0,\n  \"errors\": []\n}\n"
+    },
+    {
+      "name": "state_machine_conformance_suite",
+      "status": "PASS",
+      "detail": "{\n  \"package\": \"PRAIN v0.99.3 Phase-0 State-Machine Audit\",\n  \"status\": \"PASS\",\n  \"check_count\": 504,\n  \"passed\": 504,\n  \"failed\": 0,\n  \"errors\": []\n}\n"
+    },
+    {
+      "name": "semantic_consistency_suite",
+      "status": "PASS",
+      "detail": "{\n  \"status\": \"PASS\",\n  \"check_count\": 221,\n  \"passed\": 221,\n  \"failed\": 0,\n  \"runtime_invariant_count\": 26,\n  \"non_runtime_boundary_invariant_count\": 4,\n  \"errors\": []\n}\n"
+    }
+  ],
+  "errors": [],
+  "scope_limit": "offline specification and cross-document consistency tests only; not runtime/production/security certification"
+}

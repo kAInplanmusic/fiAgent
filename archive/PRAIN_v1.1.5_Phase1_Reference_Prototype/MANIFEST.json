@@ -1,0 +1,186 @@
+{
+  "version": "1.1.5",
+  "prototype": "PRAIN Phase 1 Reference Prototype",
+  "execution_mode": "simulated_only",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "23a2c3c02b184e6ce4aa5ba65acced7a84a0359c9ccdd18db0e4c81e4a941b91",
+      "bytes": 45
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "bc3ff5a006aa1fa6ed1fb0a064a672a78943b4fe8fa919c12a21bbea3855ed5c",
+      "bytes": 936
+    },
+    {
+      "path": "README.md",
+      "sha256": "4af747b28c13a7b9030938ff0940251ee0255669b6dab0cbcce051dddad7e66a",
+      "bytes": 3163
+    },
+    {
+      "path": "docs/PHASE0_ACCEPTANCE.md",
+      "sha256": "ab940283c8d355d9eca41743ae2a5a2c0ee0b780c0d6d69ca694ee98eb4f4727",
+      "bytes": 917
+    },
+    {
+      "path": "docs/PHASE1_IMPLEMENTATION_STATUS.md",
+      "sha256": "3148250e25db86fc027a239d2a8955a014d656870614785618d02e4e206bde6b",
+      "bytes": 2081
+    },
+    {
+      "path": "docs/PHASE1_INTERFACE_CONTRACTS.md",
+      "sha256": "6d5bf894f1da01cf739beae66815d31890c256a8901c0651d56eb25b2056d22b",
+      "bytes": 1975
+    },
+    {
+      "path": "docs/STEP10_DURABLE_OUTBOX_AND_RECOVERY.md",
+      "sha256": "1cfb9dd967763443bd76e74e6c89d2bb0b083d5d828e21574ed52a129906de09",
+      "bytes": 1327
+    },
+    {
+      "path": "docs/STEP7_ATOMIC_ADMISSION_AND_APPROVAL_REUSE.md",
+      "sha256": "377ce4d34fb5035e885d570c1916fd8c61330d63919002262d3cd0f6ae77c284",
+      "bytes": 2393
+    },
+    {
+      "path": "docs/STEP8_SQLITE_DURABLE_ADMISSION.md",
+      "sha256": "5399260b3cf036e906df4c86b854831ccad2c25b74491f81318ccb69ac4bfbf1",
+      "bytes": 1363
+    },
+    {
+      "path": "docs/STEP9_RUNTIME_SQLITE_INTEGRATION.md",
+      "sha256": "f07c2bb8e4846d8fde5f1fceae83451d71aced89211f77611bbdc3abe35e04b8",
+      "bytes": 2214
+    },
+    {
+      "path": "prain/__init__.py",
+      "sha256": "8fcf7ff628df7dee2e1662bc65dfd307cc62706eacf1004067c30e9721a5f35f",
+      "bytes": 768
+    },
+    {
+      "path": "prain/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "0b5c58c95af69ea91db43ad6c2d4dbf50f16fb85601a1edebf0a23a85bf0ac23",
+      "bytes": 930
+    },
+    {
+      "path": "prain/__pycache__/durable_admission.cpython-313.pyc",
+      "sha256": "75c419299f1cc37ec769a3ef2cb57a6aed4043e17d7da04f699e041604f388ed",
+      "bytes": 11649
+    },
+    {
+      "path": "prain/__pycache__/event_bus.cpython-313.pyc",
+      "sha256": "ae511136297909899a6e0fe8a9e60cfa7d307455d6dda2d6391291290b884e55",
+      "bytes": 4075
+    },
+    {
+      "path": "prain/__pycache__/evidence_ledger.cpython-313.pyc",
+      "sha256": "44f5b6ddec1a04af7f2dbe7ae11256eab4b1448efd7270cd1d4bcb07fce69b3b",
+      "bytes": 3644
+    },
+    {
+      "path": "prain/__pycache__/goal_registry.cpython-313.pyc",
+      "sha256": "7ea9e4ec01931c73fd1d7459548cd3b480dbfe63424baa70e19d7a60a83eda65",
+      "bytes": 5503
+    },
+    {
+      "path": "prain/__pycache__/policy_gateway.cpython-313.pyc",
+      "sha256": "68c057fdf7dd2aebe4303c058a1029502d4ab1a2b0cd9d46795257fd96f96919",
+      "bytes": 7175
+    },
+    {
+      "path": "prain/__pycache__/runtime.cpython-313.pyc",
+      "sha256": "aca6e58d88d96168bcd08cdb8b2d690343dfa380f25b4d93f6f901f440722c15",
+      "bytes": 13041
+    },
+    {
+      "path": "prain/__pycache__/state_store.cpython-313.pyc",
+      "sha256": "e4d7dcc6cce3376b5f91efa38ce9ca6ec948971d36b5f6e7c1c84adbd4c5fc5b",
+      "bytes": 3702
+    },
+    {
+      "path": "prain/demo.py",
+      "sha256": "e652229f94d2c7f6947eea9d94daf3949c567f9918fbfd6cd91f2c47e1055fa1",
+      "bytes": 1203
+    },
+    {
+      "path": "prain/durable_admission.py",
+      "sha256": "2bc11dd17e4fe410152d33296d4a9c7173fd81f2fe348e6addbf775fad699cd3",
+      "bytes": 8358
+    },
+    {
+      "path": "prain/event_bus.py",
+      "sha256": "4c00736fcf1da6987eb82caf565e95ab1fce486e31d5933076760a2f293dd1ba",
+      "bytes": 2405
+    },
+    {
+      "path": "prain/evidence_ledger.py",
+      "sha256": "0c858c4c72f2944a9613b3b636de8518fa9bbb0e1b63ef282ed5309245d406b6",
+      "bytes": 1778
+    },
+    {
+      "path": "prain/goal_registry.py",
+      "sha256": "590b00012d79a66cda91bd3a0cd68339aa08ffc5f22ccac9c7e0621a0c19fe48",
+      "bytes": 2945
+    },
+    {
+      "path": "prain/policy_gateway.py",
+      "sha256": "75732640367242b4ea7357d643794e4aadb77a8610ea40fa784795fe99e6b4f6",
+      "bytes": 5138
+    },
+    {
+      "path": "prain/runtime.py",
+      "sha256": "a4f2d7120474b9817252d0d54f5314640f7412296ed4780b6cfa2096d58ed509",
+      "bytes": 11568
+    },
+    {
+      "path": "prain/state_store.py",
+      "sha256": "6ddff30cad45f4bb44b94fd104cc1014add3e17e2f23d3fb49da7fa234dea0b4",
+      "bytes": 1775
+    },
+    {
+      "path": "tests/__pycache__/test_durable_admission.cpython-313.pyc",
+      "sha256": "b31430dd8c6a17dc1f2d2dca0f71cd248dc055e7b2eea128b0c55de062a8e96b",
+      "bytes": 8684
+    },
+    {
+      "path": "tests/__pycache__/test_phase1.cpython-313.pyc",
+      "sha256": "3258d82115a2c8206cdea85a722f3287f6bb90b7f6c7f68d7723aff9ca98fc7d",
+      "bytes": 13186
+    },
+    {
+      "path": "tests/__pycache__/test_runtime.cpython-313.pyc",
+      "sha256": "e2dfb8d03a1e90512bdf5bc1bf66467ab4f0c8bd81b20367e6493ce3d51d9ad2",
+      "bytes": 16607
+    },
+    {
+      "path": "tests/demo-output.json",
+      "sha256": "71f978ee4910042924402264c3dc4a662b772a28c79d12fb35164ed902741d9a",
+      "bytes": 1713
+    },
+    {
+      "path": "tests/test-report.txt",
+      "sha256": "11cbd018729b98ece8c804800c543184ce0b186c4b1a9b9e74dc20532051c1b3",
+      "bytes": 4921
+    },
+    {
+      "path": "tests/test_durable_admission.py",
+      "sha256": "c21019acda117ce9e97c0892d24676484444ff55bf99b30c03d44a8d49a23895",
+      "bytes": 4228
+    },
+    {
+      "path": "tests/test_phase1.py",
+      "sha256": "95728bababea385c4056ba6ff30029d4f6e7e99ee695de2bcb7a4a3be791e2bf",
+      "bytes": 6185
+    },
+    {
+      "path": "tests/test_runtime.py",
+      "sha256": "044e5f43e8191c85c4df49e58101d00b3119324a7ed459e50710e2b609ed815d",
+      "bytes": 10739
+    }
+  ],
+  "validation": {
+    "unit_tests": "41/41 passed; see tests/test-report.txt",
+    "external_effects": "not executed"
+  }
+}

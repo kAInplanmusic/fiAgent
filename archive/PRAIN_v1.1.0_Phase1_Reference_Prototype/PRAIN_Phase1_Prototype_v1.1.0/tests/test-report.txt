@@ -1,0 +1,36 @@
+COMMAND: python -m unittest discover -s tests -v
+EXIT_CODE: 0
+
+STDOUT:
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.
+test_duplicate_event_is_suppressed (test_phase1.EventBusTests.test_duplicate_event_is_suppressed) ... ok
+test_wrong_type_not_delivered (test_phase1.EventBusTests.test_wrong_type_not_delivered) ... ok
+test_completion_requires_verification (test_phase1.GoalTests.test_completion_requires_verification) ... ok
+test_criteria_required (test_phase1.GoalTests.test_criteria_required) ... ok
+test_pass_requires_evidence (test_phase1.GoalTests.test_pass_requires_evidence) ... ok
+test_passing_verification_completes (test_phase1.GoalTests.test_passing_verification_completes) ... ok
+test_chain_verifies (test_phase1.LedgerTests.test_chain_verifies) ... ok
+test_empty_chain_verifies (test_phase1.LedgerTests.test_empty_chain_verifies) ... ok
+test_approval_required (test_phase1.PolicyTests.test_approval_required) ... ok
+test_matching_rule_allowed (test_phase1.PolicyTests.test_matching_rule_allowed) ... ok
+test_no_policy_denied (test_phase1.PolicyTests.test_no_policy_denied) ... ok
+test_wrong_capability_denied (test_phase1.PolicyTests.test_wrong_capability_denied) ... ok
+test_create_and_cas_increment_version (test_phase1.StateStoreTests.test_create_and_cas_increment_version) ... ok
+test_create_does_not_overwrite (test_phase1.StateStoreTests.test_create_does_not_overwrite) ... ok
+test_stale_version_rejected (test_phase1.StateStoreTests.test_stale_version_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.002s
+
+OK

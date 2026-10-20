@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:prain:schema:principal:1.0.0",
+  "title": "PRAIN Principal",
+  "description": "Principal records are identifiers and lifecycle evidence, not direct authority grants.",
+  "type": "object",
+  "properties": {
+    "principal_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "principal_type": {
+      "type": "string",
+      "enum": [
+        "human",
+        "agent",
+        "service",
+        "system"
+      ]
+    },
+    "display_label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "lifecycle_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "suspended",
+        "revoked"
+      ]
+    },
+    "identity_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "authentication_method_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+      },
+      "uniqueItems": true
+    },
+    "public_key_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+      },
+      "uniqueItems": true
+    },
+    "lineage_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+      },
+      "uniqueItems": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "revocation_epoch": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "principal_id",
+    "tenant_id",
+    "principal_type",
+    "lifecycle_status",
+    "identity_version",
+    "created_at",
+    "updated_at",
+    "revocation_epoch",
+    "schema_version"
+  ],
+  "additionalProperties": false
+}

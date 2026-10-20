@@ -1,0 +1,98 @@
+{
+  "product": "PRAIN Phase 1 Reference Prototype",
+  "version": "1.1.0",
+  "generated_at": "2026-10-20",
+  "file_count": 18,
+  "files": [
+    {
+      "path": ".gitignore",
+      "size_bytes": 45,
+      "sha256": "23a2c3c02b184e6ce4aa5ba65acced7a84a0359c9ccdd18db0e4c81e4a941b91"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size_bytes": 852,
+      "sha256": "dd8671b8f0aeee16d70dd6f6a1ca47ed12d9e6a885b2f7ebffc9efdf445fa68c"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 2344,
+      "sha256": "894f50ffa0d8411ebf12d669cef9097cbc7cf0832291af6962f79ba3bcfce6bb"
+    },
+    {
+      "path": "docs/PHASE0_ACCEPTANCE.md",
+      "size_bytes": 917,
+      "sha256": "ab940283c8d355d9eca41743ae2a5a2c0ee0b780c0d6d69ca694ee98eb4f4727"
+    },
+    {
+      "path": "docs/PHASE1_IMPLEMENTATION_STATUS.md",
+      "size_bytes": 1630,
+      "sha256": "91120627805fabea663f531be48bfb8cc535a2339223785062e217f3b8a6220a"
+    },
+    {
+      "path": "docs/PHASE1_INTERFACE_CONTRACTS.md",
+      "size_bytes": 1975,
+      "sha256": "a6908452ea27479dd9e68865dfd3d67d734fca38b4bdc7be5c7e95c8bc0708f4"
+    },
+    {
+      "path": "prain/__init__.py",
+      "size_bytes": 650,
+      "sha256": "1afc34392dfc0b546d8396c4993ecee030c5b687adbac941cab1c07fcc9c6cec"
+    },
+    {
+      "path": "prain/demo.py",
+      "size_bytes": 1203,
+      "sha256": "e652229f94d2c7f6947eea9d94daf3949c567f9918fbfd6cd91f2c47e1055fa1"
+    },
+    {
+      "path": "prain/event_bus.py",
+      "size_bytes": 2405,
+      "sha256": "4c00736fcf1da6987eb82caf565e95ab1fce486e31d5933076760a2f293dd1ba"
+    },
+    {
+      "path": "prain/evidence_ledger.py",
+      "size_bytes": 1778,
+      "sha256": "0c858c4c72f2944a9613b3b636de8518fa9bbb0e1b63ef282ed5309245d406b6"
+    },
+    {
+      "path": "prain/goal_registry.py",
+      "size_bytes": 2945,
+      "sha256": "590b00012d79a66cda91bd3a0cd68339aa08ffc5f22ccac9c7e0621a0c19fe48"
+    },
+    {
+      "path": "prain/policy_gateway.py",
+      "size_bytes": 3478,
+      "sha256": "b5de221067aff25b67e76754c22f94c1259d25f53b9de932595280b2c583d278"
+    },
+    {
+      "path": "prain/runtime.py",
+      "size_bytes": 6872,
+      "sha256": "2ff5f4a9f344d6d2e4464adc3c64b474f651006c0857badb2cf2fb5586aee400"
+    },
+    {
+      "path": "prain/state_store.py",
+      "size_bytes": 1775,
+      "sha256": "6ddff30cad45f4bb44b94fd104cc1014add3e17e2f23d3fb49da7fa234dea0b4"
+    },
+    {
+      "path": "tests/demo-output.json",
+      "size_bytes": 1713,
+      "sha256": "95809547b4ad16102837ee644be90698ebbfb40a8c559e288a8a599395298bed"
+    },
+    {
+      "path": "tests/test-report.txt",
+      "size_bytes": 2614,
+      "sha256": "d4d8ec72e0619b492743b23ca121141ea61996694f474d6e97ec24adb1b4b889"
+    },
+    {
+      "path": "tests/test_phase1.py",
+      "size_bytes": 3726,
+      "sha256": "d9fe9fd1b1fa471a1a8c164e86ca25bea18f5992b37177144ddbe0327ea20ddb"
+    },
+    {
+      "path": "tests/test_runtime.py",
+      "size_bytes": 3325,
+      "sha256": "2ded956ddeac156eee8898ba6bb6c6f086a29e31c740ffb228b20c65d52460c3"
+    }
+  ]
+}

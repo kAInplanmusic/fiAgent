@@ -1,0 +1,142 @@
+{
+  "version": "1.1.6",
+  "prototype": "PRAIN Phase 1 Reference Prototype",
+  "execution_mode": "simulated_only",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "23a2c3c02b184e6ce4aa5ba65acced7a84a0359c9ccdd18db0e4c81e4a941b91",
+      "bytes": 45
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "9d8b1a2be85cf7ef233a4d5ad2a89f31654472ac674f01802b16022a7407019e",
+      "bytes": 1298
+    },
+    {
+      "path": "README.md",
+      "sha256": "4af747b28c13a7b9030938ff0940251ee0255669b6dab0cbcce051dddad7e66a",
+      "bytes": 3163
+    },
+    {
+      "path": "docs/PHASE0_ACCEPTANCE.md",
+      "sha256": "ab940283c8d355d9eca41743ae2a5a2c0ee0b780c0d6d69ca694ee98eb4f4727",
+      "bytes": 917
+    },
+    {
+      "path": "docs/PHASE1_IMPLEMENTATION_STATUS.md",
+      "sha256": "3148250e25db86fc027a239d2a8955a014d656870614785618d02e4e206bde6b",
+      "bytes": 2081
+    },
+    {
+      "path": "docs/PHASE1_INTERFACE_CONTRACTS.md",
+      "sha256": "6d5bf894f1da01cf739beae66815d31890c256a8901c0651d56eb25b2056d22b",
+      "bytes": 1975
+    },
+    {
+      "path": "docs/STEP10_DURABLE_OUTBOX_AND_RECOVERY.md",
+      "sha256": "1cfb9dd967763443bd76e74e6c89d2bb0b083d5d828e21574ed52a129906de09",
+      "bytes": 1327
+    },
+    {
+      "path": "docs/STEP11_DISPATCHER_RECONCILIATION.md",
+      "sha256": "da0f2273bf33d3c85fabada755e0fb2d77f88477e85ca128d823270fe3e037b7",
+      "bytes": 1690
+    },
+    {
+      "path": "docs/STEP7_ATOMIC_ADMISSION_AND_APPROVAL_REUSE.md",
+      "sha256": "377ce4d34fb5035e885d570c1916fd8c61330d63919002262d3cd0f6ae77c284",
+      "bytes": 2393
+    },
+    {
+      "path": "docs/STEP8_SQLITE_DURABLE_ADMISSION.md",
+      "sha256": "5399260b3cf036e906df4c86b854831ccad2c25b74491f81318ccb69ac4bfbf1",
+      "bytes": 1363
+    },
+    {
+      "path": "docs/STEP9_RUNTIME_SQLITE_INTEGRATION.md",
+      "sha256": "f07c2bb8e4846d8fde5f1fceae83451d71aced89211f77611bbdc3abe35e04b8",
+      "bytes": 2214
+    },
+    {
+      "path": "prain/__init__.py",
+      "sha256": "8fcf7ff628df7dee2e1662bc65dfd307cc62706eacf1004067c30e9721a5f35f",
+      "bytes": 768
+    },
+    {
+      "path": "prain/demo.py",
+      "sha256": "e652229f94d2c7f6947eea9d94daf3949c567f9918fbfd6cd91f2c47e1055fa1",
+      "bytes": 1203
+    },
+    {
+      "path": "prain/dispatcher.py",
+      "sha256": "da36dd71e474bdd2e75c4e55576b86cb3baf6af55856803841de5f8a0042531b",
+      "bytes": 2671
+    },
+    {
+      "path": "prain/durable_admission.py",
+      "sha256": "122b3e58673edcff23872c5ccffe70d933e6775bff10688b383b15c63a324213",
+      "bytes": 9734
+    },
+    {
+      "path": "prain/event_bus.py",
+      "sha256": "4c00736fcf1da6987eb82caf565e95ab1fce486e31d5933076760a2f293dd1ba",
+      "bytes": 2405
+    },
+    {
+      "path": "prain/evidence_ledger.py",
+      "sha256": "0c858c4c72f2944a9613b3b636de8518fa9bbb0e1b63ef282ed5309245d406b6",
+      "bytes": 1778
+    },
+    {
+      "path": "prain/goal_registry.py",
+      "sha256": "590b00012d79a66cda91bd3a0cd68339aa08ffc5f22ccac9c7e0621a0c19fe48",
+      "bytes": 2945
+    },
+    {
+      "path": "prain/policy_gateway.py",
+      "sha256": "75732640367242b4ea7357d643794e4aadb77a8610ea40fa784795fe99e6b4f6",
+      "bytes": 5138
+    },
+    {
+      "path": "prain/runtime.py",
+      "sha256": "7221acbd50505070b64b08eb797163584887a29327cd1e102eb112602a6b2a3f",
+      "bytes": 11568
+    },
+    {
+      "path": "prain/state_store.py",
+      "sha256": "6ddff30cad45f4bb44b94fd104cc1014add3e17e2f23d3fb49da7fa234dea0b4",
+      "bytes": 1775
+    },
+    {
+      "path": "tests/demo-output.json",
+      "sha256": "71f978ee4910042924402264c3dc4a662b772a28c79d12fb35164ed902741d9a",
+      "bytes": 1713
+    },
+    {
+      "path": "tests/test-report.txt",
+      "sha256": "669948aca5f4335dede2c89542123ead6c9f899e7cfead4f9727fb8812a737c1",
+      "bytes": 155
+    },
+    {
+      "path": "tests/test_dispatcher.py",
+      "sha256": "cf731c2e5aa2a92de6b6ab426a6582b95a766e6609770e4184dcd52549d6836e",
+      "bytes": 3041
+    },
+    {
+      "path": "tests/test_durable_admission.py",
+      "sha256": "c21019acda117ce9e97c0892d24676484444ff55bf99b30c03d44a8d49a23895",
+      "bytes": 4228
+    },
+    {
+      "path": "tests/test_phase1.py",
+      "sha256": "95728bababea385c4056ba6ff30029d4f6e7e99ee695de2bcb7a4a3be791e2bf",
+      "bytes": 6185
+    },
+    {
+      "path": "tests/test_runtime.py",
+      "sha256": "044e5f43e8191c85c4df49e58101d00b3119324a7ed459e50710e2b609ed815d",
+      "bytes": 10739
+    }
+  ]
+}

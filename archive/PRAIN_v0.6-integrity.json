@@ -1,0 +1,82 @@
+{
+  "package": "PRAIN Multiscale Semantic Coordination Architecture",
+  "version": "0.6.0",
+  "status": "architecture specification; not deployed runtime",
+  "files": [
+    {
+      "path": "DECISIONS.md",
+      "size_bytes": 1967,
+      "sha256": "71a1b203ff83995d9cdb2236816c72bc10078474965aed4c688bc2e5b8492391"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 3672,
+      "sha256": "594bccad2e352bf2dec9d3e3e65f0de3501e17918a51d689fcc6e3d36222dfb2"
+    },
+    {
+      "path": "TRACEABILITY.md",
+      "size_bytes": 1460,
+      "sha256": "0b7b455380c36cce7fd35eb4077e4020ae4c2d76e0373f32d43e09d546b99006"
+    },
+    {
+      "path": "plans/IMPLEMENTATION_PLAN.md",
+      "size_bytes": 2765,
+      "sha256": "46a26bbb99a69871b0866f7a9cf2be4b9489ffb5964def8e76c11af074458f8e"
+    },
+    {
+      "path": "schemas/health-signal.schema.json",
+      "size_bytes": 1985,
+      "sha256": "b1beb622750eb13d9105d0f688b0fa1a1de206983bc9e52a236da42362969f11"
+    },
+    {
+      "path": "schemas/repair-proposal.schema.json",
+      "size_bytes": 3281,
+      "sha256": "29c6051e09401310d41090d755f4150283cf74e54a4df3087b96bc838e8c5b1c"
+    },
+    {
+      "path": "schemas/semantic-message.schema.json",
+      "size_bytes": 3797,
+      "sha256": "abe3849794044c9f72bdb2c50a6dd16ebbbb912a4fcc68789297d6ad3ca1839a"
+    },
+    {
+      "path": "spec/ARCHITECTURE.md",
+      "size_bytes": 6156,
+      "sha256": "af5c2be3f6b7f81c116767491d4885edb16132e8882add0e6eecf7f59f546f14"
+    },
+    {
+      "path": "spec/CONFORMANCE_TESTS.md",
+      "size_bytes": 2702,
+      "sha256": "517c88c08fd74e4a3f4f675e8c71fa379ccf5e6064d4205ae46e500a80ce09f3"
+    },
+    {
+      "path": "spec/CONSISTENCY_AND_CONFLICTS.md",
+      "size_bytes": 3147,
+      "sha256": "0bda378286d58919421d16a082b89d270da0a0fcb495356241df41669bc84157"
+    },
+    {
+      "path": "spec/COORDINATION_PROTOCOL.md",
+      "size_bytes": 3690,
+      "sha256": "43cd154faafac8abbbcca66d4113cebbc15ff053045fd635e56984b2c2787192"
+    },
+    {
+      "path": "spec/FAILURE_AND_RECOVERY.md",
+      "size_bytes": 2506,
+      "sha256": "31e4f47bf134132b13d1a9503a92c8fe68945793b57fcad764d95aaffcacaba2"
+    },
+    {
+      "path": "spec/HOMEOSTASIS_ADAPTATION.md",
+      "size_bytes": 3881,
+      "sha256": "b0bb63f951db7addb24939441bbeffc3080161602d874d708619e35581df785d"
+    },
+    {
+      "path": "spec/IDENTITY_AND_LINEAGE.md",
+      "size_bytes": 2344,
+      "sha256": "60a243baaab548dc83bf5dc3fe1d250b095f22b56cedad808b69993e6562f069"
+    },
+    {
+      "path": "tests/invariants.json",
+      "size_bytes": 1965,
+      "sha256": "cc4133ec1dde807533226fb5373beba1585b0f4659db313fb14bbdf6b1b4ff12"
+    }
+  ]
+}

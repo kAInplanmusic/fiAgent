@@ -1,0 +1,120 @@
+{
+  "version": "1.1.4",
+  "files": [
+    {
+      "path": ".gitignore",
+      "size_bytes": 45,
+      "sha256": "23a2c3c02b184e6ce4aa5ba65acced7a84a0359c9ccdd18db0e4c81e4a941b91"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size_bytes": 725,
+      "sha256": "a14c8691f694c8ea894ee409ec13d1590bc42159f0c483eb302c59c506a2a95b"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 3032,
+      "sha256": "e62f627385037ee8d335d899a30ab38f7136cb89ca73c92974d7dd6c0274f522"
+    },
+    {
+      "path": "docs/PHASE0_ACCEPTANCE.md",
+      "size_bytes": 917,
+      "sha256": "ab940283c8d355d9eca41743ae2a5a2c0ee0b780c0d6d69ca694ee98eb4f4727"
+    },
+    {
+      "path": "docs/PHASE1_IMPLEMENTATION_STATUS.md",
+      "size_bytes": 2081,
+      "sha256": "3148250e25db86fc027a239d2a8955a014d656870614785618d02e4e206bde6b"
+    },
+    {
+      "path": "docs/PHASE1_INTERFACE_CONTRACTS.md",
+      "size_bytes": 1975,
+      "sha256": "6d5bf894f1da01cf739beae66815d31890c256a8901c0651d56eb25b2056d22b"
+    },
+    {
+      "path": "docs/STEP7_ATOMIC_ADMISSION_AND_APPROVAL_REUSE.md",
+      "size_bytes": 2393,
+      "sha256": "377ce4d34fb5035e885d570c1916fd8c61330d63919002262d3cd0f6ae77c284"
+    },
+    {
+      "path": "docs/STEP8_SQLITE_DURABLE_ADMISSION.md",
+      "size_bytes": 1363,
+      "sha256": "5399260b3cf036e906df4c86b854831ccad2c25b74491f81318ccb69ac4bfbf1"
+    },
+    {
+      "path": "docs/STEP9_RUNTIME_SQLITE_INTEGRATION.md",
+      "size_bytes": 2214,
+      "sha256": "f07c2bb8e4846d8fde5f1fceae83451d71aced89211f77611bbdc3abe35e04b8"
+    },
+    {
+      "path": "prain/__init__.py",
+      "size_bytes": 768,
+      "sha256": "8fcf7ff628df7dee2e1662bc65dfd307cc62706eacf1004067c30e9721a5f35f"
+    },
+    {
+      "path": "prain/demo.py",
+      "size_bytes": 1203,
+      "sha256": "e652229f94d2c7f6947eea9d94daf3949c567f9918fbfd6cd91f2c47e1055fa1"
+    },
+    {
+      "path": "prain/durable_admission.py",
+      "size_bytes": 4874,
+      "sha256": "961d45c8fb9e9cd98280a1781ac17a5d2007707f9975dc555c68a4bc0fa3e151"
+    },
+    {
+      "path": "prain/event_bus.py",
+      "size_bytes": 2405,
+      "sha256": "4c00736fcf1da6987eb82caf565e95ab1fce486e31d5933076760a2f293dd1ba"
+    },
+    {
+      "path": "prain/evidence_ledger.py",
+      "size_bytes": 1778,
+      "sha256": "0c858c4c72f2944a9613b3b636de8518fa9bbb0e1b63ef282ed5309245d406b6"
+    },
+    {
+      "path": "prain/goal_registry.py",
+      "size_bytes": 2945,
+      "sha256": "590b00012d79a66cda91bd3a0cd68339aa08ffc5f22ccac9c7e0621a0c19fe48"
+    },
+    {
+      "path": "prain/policy_gateway.py",
+      "size_bytes": 5138,
+      "sha256": "75732640367242b4ea7357d643794e4aadb77a8610ea40fa784795fe99e6b4f6"
+    },
+    {
+      "path": "prain/runtime.py",
+      "size_bytes": 10968,
+      "sha256": "f32b9b257fe46768c74f4c09385372624cdddc8bdf7fa36c69fdcea949fc0f1b"
+    },
+    {
+      "path": "prain/state_store.py",
+      "size_bytes": 1775,
+      "sha256": "6ddff30cad45f4bb44b94fd104cc1014add3e17e2f23d3fb49da7fa234dea0b4"
+    },
+    {
+      "path": "tests/demo-output.json",
+      "size_bytes": 1713,
+      "sha256": "71f978ee4910042924402264c3dc4a662b772a28c79d12fb35164ed902741d9a"
+    },
+    {
+      "path": "tests/test-report.txt",
+      "size_bytes": 4926,
+      "sha256": "bdc3b9632966c1268be12074b5cc72742e1742767e3c59c501f9f746a05abd22"
+    },
+    {
+      "path": "tests/test_durable_admission.py",
+      "size_bytes": 2633,
+      "sha256": "e549583125c9f91466c66352779ff169093db27f1bf13fa41466d85ec39588a6"
+    },
+    {
+      "path": "tests/test_phase1.py",
+      "size_bytes": 6185,
+      "sha256": "95728bababea385c4056ba6ff30029d4f6e7e99ee695de2bcb7a4a3be791e2bf"
+    },
+    {
+      "path": "tests/test_runtime.py",
+      "size_bytes": 10478,
+      "sha256": "3e55d5633f3f12f79a88d020ac309a6a407bab75ab8f93a79ebbaf3da4024fd8"
+    }
+  ]
+}

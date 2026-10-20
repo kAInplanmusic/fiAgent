@@ -1,0 +1,372 @@
+[
+  {
+    "invariant_id": "INV-001",
+    "requirement": "Authorization is decided only by policy gateway",
+    "test_ids": [
+      "TC-POLICY-01",
+      "TC-POLICY-NEGATIVE:deny"
+    ],
+    "verification_class": "reference-oracle + schema",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-002",
+    "requirement": "Capability availability is not permission",
+    "test_ids": [
+      "TC-POLICY-01"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-003",
+    "requirement": "Missing tenant on protected records is rejected",
+    "test_ids": [
+      "TC-TENANT-01"
+    ],
+    "verification_class": "schema mutations",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-004",
+    "requirement": "Delegation never widens grantor authority",
+    "test_ids": [
+      "TC-DELEGATION-01",
+      "TC-DELEGATION-02"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-005",
+    "requirement": "Confidence never promotes claim to verified",
+    "test_ids": [
+      "TC-CLAIM-TRANSITIONS-ALL",
+      "TC-CLAIM-VERIFIED-01"
+    ],
+    "verification_class": "state oracle + schema",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-006",
+    "requirement": "Verified claim requires passed verification and ref",
+    "test_ids": [
+      "TC-CLAIM-VERIFIED-01"
+    ],
+    "verification_class": "schema mutation",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-007",
+    "requirement": "Refuted claim requires failed verification and refutation evidence",
+    "test_ids": [
+      "TC-CLAIM-REFUTED-01"
+    ],
+    "verification_class": "schema mutation",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-008",
+    "requirement": "Claim transitions preserve history",
+    "test_ids": [
+      "TC-CLAIM-TRANSITIONS-ALL",
+      "TC-CLAIM-EVENT-01"
+    ],
+    "verification_class": "state oracle + schema",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-009",
+    "requirement": "Claims and evidence preserve provenance",
+    "test_ids": [
+      "TC-PROVENANCE-01"
+    ],
+    "verification_class": "schema mutation",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-010",
+    "requirement": "Command digest bound to decision and approval",
+    "test_ids": [
+      "TC-POLICY-01",
+      "TC-POLICY-NEGATIVE:require_approval",
+      "TC-POLICY-NEGATIVE:defer"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-011",
+    "requirement": "Idempotency key cannot be reused for changed action",
+    "test_ids": [
+      "TC-IDEMPOTENCY-01"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-012",
+    "requirement": "Unknown external outcome is first-class",
+    "test_ids": [
+      "TC-UNKNOWN-OUTCOME-01",
+      "TC-RECEIPT-01"
+    ],
+    "verification_class": "schema + reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-013",
+    "requirement": "Expired lease is not proof no effect occurred",
+    "test_ids": [
+      "TC-UNKNOWN-OUTCOME-01"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-014",
+    "requirement": "CAS rejects stale authoritative update",
+    "test_ids": [
+      "TC-CAS-01"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-015",
+    "requirement": "Projection cannot overwrite authority",
+    "test_ids": [
+      "TC-AUTHORITY-01"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-016",
+    "requirement": "HAL cannot approve own repair or elevate privilege",
+    "test_ids": [
+      "TC-HAL-01",
+      "TC-HAL-02"
+    ],
+    "verification_class": "schema + reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-017",
+    "requirement": "Deletion propagates to derivatives and restore paths",
+    "test_ids": [
+      "TC-DELETION-01"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-018",
+    "requirement": "Deleted content not retained solely for append-only audit",
+    "test_ids": [
+      "TC-EVIDENCE-01"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-019",
+    "requirement": "Evidence digest does not imply source truth/authenticity",
+    "test_ids": [
+      "TC-EVIDENCE-02"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-020",
+    "requirement": "Unknown/stale policy is deny or defer",
+    "test_ids": [
+      "TC-POLICY-01",
+      "TC-POLICY-NEGATIVE:deny"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-021",
+    "requirement": "Approval bound to actor, target and side effects",
+    "test_ids": [
+      "TC-POLICY-NEGATIVE:require_approval",
+      "TC-POLICY-NEGATIVE:defer"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-022",
+    "requirement": "Revocation before dispatch blocks action",
+    "test_ids": [
+      "TC-POLICY-NEGATIVE:missing_approval"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-023",
+    "requirement": "Revocation after possible effect triggers reconciliation",
+    "test_ids": [
+      "TC-UNKNOWN-OUTCOME-01"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-024",
+    "requirement": "HTML knowledge base equals canonical JSON data",
+    "test_ids": [
+      "TC-KB-PARITY-01"
+    ],
+    "verification_class": "structural validator",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": false,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "build-artifact"
+  },
+  {
+    "invariant_id": "INV-025",
+    "requirement": "PRAIN is independent of Hallerbans",
+    "test_ids": [
+      "TC-KB-INDEPENDENCE-01"
+    ],
+    "verification_class": "structural validator",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": false,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "architecture-conformance"
+  },
+  {
+    "invariant_id": "INV-026",
+    "requirement": "Quantum-ready does not assert quantum advantage",
+    "test_ids": [
+      "TC-QUANTUM-READY-01"
+    ],
+    "verification_class": "decision-register assertion",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": false,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "specification-claim"
+  },
+  {
+    "invariant_id": "INV-027",
+    "requirement": "Hard limits and audit cannot be disabled by HAL",
+    "test_ids": [
+      "TC-HAL-02"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-028",
+    "requirement": "No global exactly-once delivery claim",
+    "test_ids": [
+      "TC-DELIVERY-01"
+    ],
+    "verification_class": "decision-register assertion",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-029",
+    "requirement": "Completion requires evidence for every acceptance criterion",
+    "test_ids": [
+      "TC-GOAL-COMPLETION-01"
+    ],
+    "verification_class": "reference-oracle",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": true,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "runtime-conformance"
+  },
+  {
+    "invariant_id": "INV-030",
+    "requirement": "No runtime/framework/OS code is part of Phase 0 package",
+    "test_ids": [
+      "TC-RUNTIME-BOUNDARY-01"
+    ],
+    "verification_class": "package-inventory assertion",
+    "phase0_status": "specification-coverage-only",
+    "runtime_conformance_still_required": false,
+    "note": "Reference oracle validates normative rule examples; it does not prove a future distributed runtime implements them.",
+    "verification_boundary": "release-package-inventory"
+  }
+]

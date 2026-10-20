@@ -1,0 +1,20 @@
+{
+  "package": "PRAIN v0.9.4 Phase-0 Deep Conformance Specification",
+  "zip_file": "PRAIN_v0.9.4_Phase0_Deep_Conformance.zip",
+  "zip_sha256": "c7365727e3c8a950167aed155ef9e05c9824602bf555f0325e6fa563ae749ebe",
+  "zip_bytes": 434611,
+  "manifest_sha256": "d9b00164a0565b2322e0fa531b7732c6c4386c059b4586435557f0bb73e86a4a",
+  "included_file_count": 57,
+  "canonical_schema_count": 17,
+  "historical_schema_count": 20,
+  "kb_item_dispositions": 114,
+  "source_records_reviewed": 19,
+  "claims_reviewed": 20,
+  "validation_status": "PASS",
+  "validation_check_count": 119,
+  "validation_passed": 119,
+  "validation_failed": 0,
+  "zip_integrity_test": "PASS",
+  "runtime_implementation_included": false,
+  "scope_limit": "Specification-level offline checks only; not runtime/production/security certification."
+}

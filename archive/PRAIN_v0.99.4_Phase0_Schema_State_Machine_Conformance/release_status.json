@@ -1,0 +1,24 @@
+{
+  "package": "PRAIN",
+  "release_version": "1.0.0",
+  "release_name": "Phase-0 Closure and Phase-1 Start Gate",
+  "specification_baseline": "0.99.4",
+  "release_status": "PHASE0_CLOSED_PHASE1_AUTHORIZED",
+  "phase0": {
+    "status": "CLOSED",
+    "decision": "APPROVE_PHASE0_CLOSURE",
+    "approval_recorded": true,
+    "basis": "Explicit user instruction in this conversation to finish all outstanding work required for Phase 1 to start and repeated instruction to execute those changes."
+  },
+  "phase1": {
+    "status": "AUTHORIZED_TO_START",
+    "authorization_recorded": true,
+    "scope": "Bounded local reference prototype: typed contracts, in-memory adapters, deterministic semantic/state transitions, fail-closed policy and approval checks, and automated tests.",
+    "production_deployment_authorized": false,
+    "external_side_effects_authorized": false,
+    "paid_api_calls_authorized": false,
+    "os_or_browser_control_authorized": false
+  },
+  "runtime_implementation_included": false,
+  "validation_scope": "Specification and package integrity checks only; no runtime or production certification."
+}

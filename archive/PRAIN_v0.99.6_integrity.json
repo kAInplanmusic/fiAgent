@@ -1,0 +1,55 @@
+{
+  "package": "PRAIN v0.99.6 Phase-0 Green Closure",
+  "zip_file": "PRAIN_v0.99.6_Phase0_Green_Closure.zip",
+  "zip_bytes": 489123,
+  "zip_sha256": "3d97c4e5d0ead76af748d136c9679ff12f9e33a9d334cc0dc6822ed788da04da",
+  "manifest_sha256": "42172dda9c03815e48887a2ac634c4d1da4d79fb73fcdd3f04d96b1cd8a1ad1c",
+  "phase0_status": "GREEN_PHASE0_SPECIFICATION_CLOSED",
+  "phase1_authorized": false,
+  "validator_summary": {
+    "main": {
+      "status": "PASS",
+      "checks": 127,
+      "passed": 127,
+      "failed": 0
+    },
+    "semantic_consistency": {
+      "status": "PASS",
+      "checks": 221,
+      "passed": 221,
+      "failed": 0
+    },
+    "state_machine": {
+      "status": "PASS",
+      "checks": 504,
+      "passed": 504,
+      "failed": 0
+    },
+    "schema_state_machine": {
+      "status": "PASS",
+      "checks": 65,
+      "passed": 65,
+      "failed": 0
+    },
+    "deep_conformance": {
+      "status": "PASS",
+      "checks": 237,
+      "passed": 237,
+      "failed": 0
+    },
+    "release_bundle": {
+      "status": "PASS",
+      "checks": 324,
+      "passed": 324,
+      "failed": 0
+    }
+  },
+  "scope_limit": "Phase-0 specification and release-package checks only; not runtime or production certification",
+  "archive_validation": {
+    "status": "PASS",
+    "checks": 330,
+    "passed": 330,
+    "failed": 0,
+    "note": "324 internal release-package checks plus 6 archive/outer-integrity checks in final verification run"
+  }
+}

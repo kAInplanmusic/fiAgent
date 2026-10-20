@@ -1,0 +1,52 @@
+{
+  "observation": {
+    "observation_id": "demo-observation-1",
+    "source": "demo",
+    "kind": "health",
+    "payload": {
+      "healthy": true
+    },
+    "observed_at": "2026-10-20T17:16:11.579546Z"
+  },
+  "event_id": "71ed4d7b-de92-4ac0-a3c6-3a673620581a",
+  "evaluation": {
+    "observation_id": "demo-observation-1",
+    "evaluator": "healthy",
+    "passed": true,
+    "evaluated_at": "2026-10-20T17:16:11.579728Z",
+    "evidence_ref": "evidence://sha256/84c273a3a1d24ef0cda440a3ba55d1f48fd20c4f7d7410b8257f4e66c52d045a"
+  },
+  "policy_decision": {
+    "decision_id": "ec112181-c574-4aa6-84d7-8d08ea883cdb",
+    "allowed": true,
+    "reason": "policy_match",
+    "policy_id": "demo.read.v1",
+    "evaluated_at": "2026-10-20T17:16:11.579787Z",
+    "action_request_hash": "f400381748d7ed24d165b5f13b21228600ee03de1d8f91d49deef6e0a84b8a91"
+  },
+  "execution_receipt": {
+    "receipt_id": "7abb5920a289d5aadaf8fb8c22ae7629eea83578e7b7571f9bb6caef2d1a61d3",
+    "correlation_id": "demo-observation-1",
+    "action": "read",
+    "target": "runtime.status",
+    "status": "simulated_success",
+    "policy_decision_id": "ec112181-c574-4aa6-84d7-8d08ea883cdb",
+    "result": {
+      "simulated": true,
+      "accepted_action": "read",
+      "target": "runtime.status",
+      "input_hash": "58bdb133181d120cc2bc7353f9705df52c7c308b595175eb2441c01e9c58076c"
+    },
+    "completed_at": "2026-10-20T17:16:11.579823Z"
+  },
+  "runtime": {
+    "version": "1.1.0",
+    "state_records": 0,
+    "goals": 0,
+    "receipts": 1,
+    "evidence_entries": 4,
+    "evidence_chain_valid": true,
+    "execution_mode": "simulated_only"
+  },
+  "note": "Reference prototype. Action execution is simulated only; not production-ready."
+}

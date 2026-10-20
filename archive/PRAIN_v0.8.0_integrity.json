@@ -1,0 +1,16 @@
+{
+  "package": "PRAIN v0.8.0 Schema Audit and Seven-Track Review",
+  "status": "review package; Phase 0 remains open",
+  "zip_sha256": "feb625f08f86ee3637fbfe489ce8f2cddf7ac2b7494cc0706686674a8a455bcd",
+  "bytes": 28922,
+  "source_versions": [
+    "PRAIN_Phase0_v0.1.0.zip",
+    "PRAIN_Phase0_v0.2.0.zip",
+    "PRAIN_Phase0_v0.2.1.zip",
+    "PRAIN_Architecture_v0.4.0.zip",
+    "PRAIN_Distributed_Protocol_v0.5.0.zip",
+    "PRAIN_v0.6.zip"
+  ],
+  "workstreams": 7,
+  "runtime_implementation_included": false
+}

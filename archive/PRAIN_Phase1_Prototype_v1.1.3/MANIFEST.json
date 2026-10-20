@@ -1,0 +1,170 @@
+{
+  "version": "1.1.3",
+  "files": [
+    {
+      "path": ".gitignore",
+      "size_bytes": 45,
+      "sha256": "23a2c3c02b184e6ce4aa5ba65acced7a84a0359c9ccdd18db0e4c81e4a941b91"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size_bytes": 2459,
+      "sha256": "e45cc1e6f10c35c085abbd6990f4f11886bac50e39587b46db7031a1ac2a46e8"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 2344,
+      "sha256": "894f50ffa0d8411ebf12d669cef9097cbc7cf0832291af6962f79ba3bcfce6bb"
+    },
+    {
+      "path": "docs/PHASE0_ACCEPTANCE.md",
+      "size_bytes": 917,
+      "sha256": "ab940283c8d355d9eca41743ae2a5a2c0ee0b780c0d6d69ca694ee98eb4f4727"
+    },
+    {
+      "path": "docs/PHASE1_IMPLEMENTATION_STATUS.md",
+      "size_bytes": 2081,
+      "sha256": "3148250e25db86fc027a239d2a8955a014d656870614785618d02e4e206bde6b"
+    },
+    {
+      "path": "docs/PHASE1_INTERFACE_CONTRACTS.md",
+      "size_bytes": 1975,
+      "sha256": "6d5bf894f1da01cf739beae66815d31890c256a8901c0651d56eb25b2056d22b"
+    },
+    {
+      "path": "docs/STEP7_ATOMIC_ADMISSION_AND_APPROVAL_REUSE.md",
+      "size_bytes": 2393,
+      "sha256": "377ce4d34fb5035e885d570c1916fd8c61330d63919002262d3cd0f6ae77c284"
+    },
+    {
+      "path": "docs/STEP8_SQLITE_DURABLE_ADMISSION.md",
+      "size_bytes": 1363,
+      "sha256": "5399260b3cf036e906df4c86b854831ccad2c25b74491f81318ccb69ac4bfbf1"
+    },
+    {
+      "path": "prain/__init__.py",
+      "size_bytes": 650,
+      "sha256": "0c71da65deb385ad7f08de0e61a257b9106cb953d18adeb776851976c20a6845"
+    },
+    {
+      "path": "prain/__pycache__/__init__.cpython-313.pyc",
+      "size_bytes": 850,
+      "sha256": "e5fdfe21dbf6e11cdf0386079768e6d7d112fd45acc23ce13354a35bc00da7f6"
+    },
+    {
+      "path": "prain/__pycache__/durable_admission.cpython-313.pyc",
+      "size_bytes": 6662,
+      "sha256": "ac0f4d771f9720f33612c33403b9ac96da13fd2db7f70bff68e672d29293af28"
+    },
+    {
+      "path": "prain/__pycache__/event_bus.cpython-313.pyc",
+      "size_bytes": 4074,
+      "sha256": "86089e8df12b189cbffe0254dda2cec5aaccf6b252583ec601e808113fe9a810"
+    },
+    {
+      "path": "prain/__pycache__/evidence_ledger.cpython-313.pyc",
+      "size_bytes": 3643,
+      "sha256": "22c56209ae77f8d444d9b27953bbcce26cb147702e997211379711cdd819b97f"
+    },
+    {
+      "path": "prain/__pycache__/goal_registry.cpython-313.pyc",
+      "size_bytes": 5502,
+      "sha256": "70f83bc7de6c49222f38dfb71a55c46873ec81ec4564aac2d0e5e2f9be91936f"
+    },
+    {
+      "path": "prain/__pycache__/policy_gateway.cpython-313.pyc",
+      "size_bytes": 7174,
+      "sha256": "f3737805981eb9e63b61f292ad89637131aed9720c065b1763a70192c2df2fc0"
+    },
+    {
+      "path": "prain/__pycache__/runtime.cpython-313.pyc",
+      "size_bytes": 11348,
+      "sha256": "339569107a88d94c522999b0f916a1ae1f189a227d5fcd06ffd13454fd6b0ce3"
+    },
+    {
+      "path": "prain/__pycache__/state_store.cpython-313.pyc",
+      "size_bytes": 3701,
+      "sha256": "90bd2c92d54433cb65e54fea6e5066c68a958c418592ec8780ca9d7375aaef88"
+    },
+    {
+      "path": "prain/demo.py",
+      "size_bytes": 1203,
+      "sha256": "e652229f94d2c7f6947eea9d94daf3949c567f9918fbfd6cd91f2c47e1055fa1"
+    },
+    {
+      "path": "prain/durable_admission.py",
+      "size_bytes": 4417,
+      "sha256": "51493f2685c898f6090e6dbfdb27e96de324dacfdb3316203c0aca807d5674d4"
+    },
+    {
+      "path": "prain/event_bus.py",
+      "size_bytes": 2405,
+      "sha256": "4c00736fcf1da6987eb82caf565e95ab1fce486e31d5933076760a2f293dd1ba"
+    },
+    {
+      "path": "prain/evidence_ledger.py",
+      "size_bytes": 1778,
+      "sha256": "0c858c4c72f2944a9613b3b636de8518fa9bbb0e1b63ef282ed5309245d406b6"
+    },
+    {
+      "path": "prain/goal_registry.py",
+      "size_bytes": 2945,
+      "sha256": "590b00012d79a66cda91bd3a0cd68339aa08ffc5f22ccac9c7e0621a0c19fe48"
+    },
+    {
+      "path": "prain/policy_gateway.py",
+      "size_bytes": 5138,
+      "sha256": "75732640367242b4ea7357d643794e4aadb77a8610ea40fa784795fe99e6b4f6"
+    },
+    {
+      "path": "prain/runtime.py",
+      "size_bytes": 8930,
+      "sha256": "061f218385085ad6c20a7671a0d3c35256cb2afcd9be6dfeac93eb9290d8887e"
+    },
+    {
+      "path": "prain/state_store.py",
+      "size_bytes": 1775,
+      "sha256": "6ddff30cad45f4bb44b94fd104cc1014add3e17e2f23d3fb49da7fa234dea0b4"
+    },
+    {
+      "path": "tests/__pycache__/test_durable_admission.cpython-313.pyc",
+      "size_bytes": 5732,
+      "sha256": "8dccdeb42fde3157bf77f0c7fd6cd20223f3f028763f7821984fc319bd7b3f81"
+    },
+    {
+      "path": "tests/__pycache__/test_phase1.cpython-313.pyc",
+      "size_bytes": 13185,
+      "sha256": "11320945bb8d1ab7314711319439e4e0d2ac4e9174d1d326af79a39d7dba54d3"
+    },
+    {
+      "path": "tests/__pycache__/test_runtime.cpython-313.pyc",
+      "size_bytes": 12211,
+      "sha256": "6481ac7f763c75860aefdebd0398253094c7138474273a838bfd918de3040ea2"
+    },
+    {
+      "path": "tests/demo-output.json",
+      "size_bytes": 1713,
+      "sha256": "549040c8c893689cec54ed384a25dde5f9fc95f20b34676765a709d89289be11"
+    },
+    {
+      "path": "tests/test-report.txt",
+      "size_bytes": 4483,
+      "sha256": "f507f7900e4534c756066d79e62d826190c8af962c242cb31a9bd4f7f9b1a409"
+    },
+    {
+      "path": "tests/test_durable_admission.py",
+      "size_bytes": 2633,
+      "sha256": "e549583125c9f91466c66352779ff169093db27f1bf13fa41466d85ec39588a6"
+    },
+    {
+      "path": "tests/test_phase1.py",
+      "size_bytes": 6185,
+      "sha256": "95728bababea385c4056ba6ff30029d4f6e7e99ee695de2bcb7a4a3be791e2bf"
+    },
+    {
+      "path": "tests/test_runtime.py",
+      "size_bytes": 6906,
+      "sha256": "98f6edd212780e351c055dedc28a33e421faf75e77fbffe50d9e93fad7378b29"
+    }
+  ]
+}

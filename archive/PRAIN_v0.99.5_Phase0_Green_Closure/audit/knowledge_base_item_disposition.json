@@ -1,0 +1,686 @@
+[
+  {
+    "kind": "project",
+    "id": "PRAIN",
+    "disposition": "corrected",
+    "rationale": "Independence from Hallerbans made explicit; project title and purpose updated; status remains evidence-qualified."
+  },
+  {
+    "kind": "dimension",
+    "id": "brain",
+    "disposition": "preserved_and_mapped",
+    "rationale": "Legacy id preserved; canonical dimension R / Reason; role text corrected to PRAIN control-plane boundaries."
+  },
+  {
+    "kind": "claim",
+    "id": "brain:claim:1",
+    "disposition": "source_scoped_reviewed_inferred",
+    "rationale": "The three-layer pattern is a design synthesis across memory products/projects, not a universal industry standard or a direct proposition established by one source."
+  },
+  {
+    "kind": "claim",
+    "id": "brain:claim:2",
+    "disposition": "source_scoped_reviewed_disputed",
+    "rationale": "The primary paper reports >90% token-cost savings in a specified LOCOMO/full-context comparison. “Universally” is unsupported; preserve the benchmark and baseline scope."
+  },
+  {
+    "kind": "claim",
+    "id": "brain:claim:3",
+    "disposition": "source_scoped_reviewed_refuted",
+    "rationale": "The cited A-MEM primary paper describes dynamically organized, Zettelkasten-inspired linked memories; it does not establish GRPO-based memory routing as A-MEM's core method. Do not conflate it with the separate steering/GRPO paper S13."
+  },
+  {
+    "kind": "claim",
+    "id": "brain:claim:4",
+    "disposition": "source_scoped_reviewed_reported",
+    "rationale": "The survey covers memory mechanisms and evaluation challenges; the general caution is reasonable, but task success depends on benchmark/model/agent loop and the entry should not be read as a universal quantitative result."
+  },
+  {
+    "kind": "key_concept",
+    "id": "brain:concept:1",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "brain:concept:2",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "brain:concept:3",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "brain:concept:4",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "brain:concept:5",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "brain:concept:6",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "brain:concept:7",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "brain:concept:8",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "brain:concept:9",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "brain:concept:10",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "brain:concept:11",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "brain:concept:12",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "brain:concept:13",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "dimension",
+    "id": "body",
+    "disposition": "preserved_and_mapped",
+    "rationale": "Legacy id preserved; canonical dimension N / Nerve; role text corrected to PRAIN control-plane boundaries."
+  },
+  {
+    "kind": "claim",
+    "id": "body:claim:1",
+    "disposition": "source_scoped_reviewed_corroborated",
+    "rationale": "Repository and primary paper establish AIOS as a research architecture for LLM-agent resources. This verifies existence/scope, not adoption or production maturity."
+  },
+  {
+    "kind": "claim",
+    "id": "body:claim:2",
+    "disposition": "source_scoped_reviewed_disputed",
+    "rationale": "No evidence checked establishes universal adoption or a single universally adopted agent-OS standard. The cited project is one research architecture."
+  },
+  {
+    "kind": "claim",
+    "id": "body:claim:3",
+    "disposition": "source_scoped_reviewed_reported",
+    "rationale": "The up-to-2.1× figure appears in the paper for particular experiments. Preserve “up to”, baseline, task and implementation context; do not promote it to a universal performance estimate."
+  },
+  {
+    "kind": "claim",
+    "id": "body:claim:4",
+    "disposition": "source_scoped_reviewed_disputed",
+    "rationale": "Checked official vendor documentation does not establish a universal <100 ms memory-access guarantee. Cloud/runtime guarantees are product-, path-, region-, load- and configuration-specific."
+  },
+  {
+    "kind": "key_concept",
+    "id": "body:concept:1",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "body:concept:2",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "body:concept:3",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "body:concept:4",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "body:concept:5",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "body:concept:6",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "body:concept:7",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "body:concept:8",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "body:concept:9",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "body:concept:10",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "dimension",
+    "id": "senses",
+    "disposition": "preserved_and_mapped",
+    "rationale": "Legacy id preserved; canonical dimension P / Perception; role text corrected to PRAIN control-plane boundaries."
+  },
+  {
+    "kind": "claim",
+    "id": "senses:claim:1",
+    "disposition": "source_scoped_reviewed_verified",
+    "rationale": "The official MCP specification describes standardized protocol interfaces for client/server interaction with tools and resources. Verification is limited to this scope; MCP itself does not certify the called tool as safe."
+  },
+  {
+    "kind": "claim",
+    "id": "senses:claim:2",
+    "disposition": "source_scoped_reviewed_reported",
+    "rationale": "The primary 2026 study empirically examined 856 tools across 103 servers and found description-quality problems with measurable but mixed outcome effects. Keep the model/task/sample scope and trade-offs."
+  },
+  {
+    "kind": "claim",
+    "id": "senses:claim:3",
+    "disposition": "source_scoped_reviewed_disputed",
+    "rationale": "Neither a protocol specification nor general security guidance supports the claim that MCP is universally and fully secure. Security depends on implementation, authorization, tool permissions and deployment."
+  },
+  {
+    "kind": "claim",
+    "id": "senses:claim:4",
+    "disposition": "source_scoped_reviewed_inferred",
+    "rationale": "Architecture synthesis only: event-triggered perception is a common systems pattern. No specific external empirical source is asserted for this general design statement."
+  },
+  {
+    "kind": "key_concept",
+    "id": "senses:concept:1",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "senses:concept:2",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "senses:concept:3",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "senses:concept:4",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "senses:concept:5",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "senses:concept:6",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "senses:concept:7",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "senses:concept:8",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "senses:concept:9",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "dimension",
+    "id": "will",
+    "disposition": "preserved_and_mapped",
+    "rationale": "Legacy id preserved; canonical dimension I / Intention; role text corrected to PRAIN control-plane boundaries."
+  },
+  {
+    "kind": "claim",
+    "id": "will:claim:1",
+    "disposition": "source_scoped_reviewed_corroborated",
+    "rationale": "Research supports goal drift as a studied failure mode in extended agent tasks; severity depends on task, model and scaffold."
+  },
+  {
+    "kind": "claim",
+    "id": "will:claim:2",
+    "disposition": "source_scoped_reviewed_refuted",
+    "rationale": "The cited study does not establish inevitable onset after 100,000 tokens; it reports nearly perfect adherence by its best-performing scaffolded model beyond 100,000 tokens in its hardest setting while still finding some drift across evaluated models."
+  },
+  {
+    "kind": "claim",
+    "id": "will:claim:3",
+    "disposition": "source_scoped_reviewed_reported",
+    "rationale": "The 2026 preprint reports a steering agent improving performance/efficiency in information-seeking tasks. This is emerging research, not a universal or production-validated guarantee."
+  },
+  {
+    "kind": "claim",
+    "id": "will:claim:4",
+    "disposition": "source_scoped_reviewed_unknown",
+    "rationale": "The checked sources do not establish that a binding/commitment split drives goal drift nearly to zero. No quantitative promise should be repeated without a named evaluation and baseline."
+  },
+  {
+    "kind": "key_concept",
+    "id": "will:concept:1",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "will:concept:2",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "will:concept:3",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "will:concept:4",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "will:concept:5",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "will:concept:6",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "will:concept:7",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "will:concept:8",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "will:concept:9",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "dimension",
+    "id": "soul",
+    "disposition": "preserved_and_mapped",
+    "rationale": "Legacy id preserved; canonical dimension A / Anima; role text corrected to PRAIN control-plane boundaries."
+  },
+  {
+    "kind": "claim",
+    "id": "soul:claim:1",
+    "disposition": "source_scoped_reviewed_inferred",
+    "rationale": "Identity, scoped authorization and auditability are architectural control principles supported by the risk and trust standards landscape; exact mechanisms and assurance levels vary."
+  },
+  {
+    "kind": "claim",
+    "id": "soul:claim:2",
+    "disposition": "source_scoped_reviewed_refuted",
+    "rationale": "ERC-8004 is an agent discovery/trust-related standard proposal; it does not replace application-local authentication, authorization, tenant isolation or policy enforcement."
+  },
+  {
+    "kind": "claim",
+    "id": "soul:claim:3",
+    "disposition": "source_scoped_reviewed_corroborated",
+    "rationale": "Official x402 and AP2 project records establish these as real payment/protocol initiatives. This is not a claim of universal adoption, maturity or safety."
+  },
+  {
+    "kind": "claim",
+    "id": "soul:claim:4",
+    "disposition": "source_scoped_reviewed_disputed",
+    "rationale": "A trusted execution environment can provide bounded isolation/attestation properties; it does not by itself make the whole agent, its inputs, tools, policies or external effects trustworthy."
+  },
+  {
+    "kind": "key_concept",
+    "id": "soul:concept:1",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "soul:concept:2",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "soul:concept:3",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "soul:concept:4",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "soul:concept:5",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "soul:concept:6",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "soul:concept:7",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "soul:concept:8",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "key_concept",
+    "id": "soul:concept:9",
+    "disposition": "preserved_as_tag",
+    "rationale": "Preserved as a search/topic tag, not a verified claim or executable permission."
+  },
+  {
+    "kind": "source",
+    "id": "S1",
+    "disposition": "live_source_checked",
+    "rationale": "PASS_WITH_SCOPE_LIMIT: Product marketing is not independent validation."
+  },
+  {
+    "kind": "source",
+    "id": "S2",
+    "disposition": "live_source_checked",
+    "rationale": "PASS: Repository activity and implementation suitability require version-specific review."
+  },
+  {
+    "kind": "source",
+    "id": "S3",
+    "disposition": "live_source_checked",
+    "rationale": "PASS: Do not infer that any specific architecture is universally superior."
+  },
+  {
+    "kind": "source",
+    "id": "S4",
+    "disposition": "live_source_checked",
+    "rationale": "PASS_PRIMARY_SOURCE: Paper findings are evaluation-specific; this refutes the cited claim that A-MEM core method is GRPO routing."
+  },
+  {
+    "kind": "source",
+    "id": "S5",
+    "disposition": "live_source_checked",
+    "rationale": "PASS_PRIMARY_SOURCE: Survey scope and benchmark details must be checked before quantitative statements."
+  },
+  {
+    "kind": "source",
+    "id": "S6",
+    "disposition": "live_source_checked",
+    "rationale": "PASS: Repository existence does not show universal adoption or production readiness."
+  },
+  {
+    "kind": "source",
+    "id": "S7",
+    "disposition": "live_source_checked",
+    "rationale": "PASS_OFFICIAL_DOCS: AWS documentation notes EC2 Instances compute does not automatically isolate different agents sharing one instance; never phrase as unconditional isolation."
+  },
+  {
+    "kind": "source",
+    "id": "S8",
+    "disposition": "live_source_checked",
+    "rationale": "PASS_OFFICIAL_DOCS: No universal latency guarantee established."
+  },
+  {
+    "kind": "source",
+    "id": "S9",
+    "disposition": "live_source_checked",
+    "rationale": "PASS_SPECIFICATION: Protocol conformity does not guarantee tool correctness, authorization or security."
+  },
+  {
+    "kind": "source",
+    "id": "S10",
+    "disposition": "live_source_checked",
+    "rationale": "CORRECTED_SOURCE_AND_PASS: Results are sample/model/task/version specific. Replaced the prior ResearchGate publication URL because its identifier did not identify this paper."
+  },
+  {
+    "kind": "source",
+    "id": "S11",
+    "disposition": "live_source_checked",
+    "rationale": "PASS_OFFICIAL_GUIDANCE: Security guidance is not certification that a deployment is secure."
+  },
+  {
+    "kind": "source",
+    "id": "S12",
+    "disposition": "live_source_checked",
+    "rationale": "PASS_PRIMARY_SOURCE: Does not create a universal token threshold."
+  },
+  {
+    "kind": "source",
+    "id": "S13",
+    "disposition": "live_source_checked",
+    "rationale": "PASS_EMERGING_PREPRINT: Very recent preprint; not a general production guarantee or settled standard."
+  },
+  {
+    "kind": "source",
+    "id": "S14",
+    "disposition": "live_source_checked",
+    "rationale": "PASS_STANDARD_PROPOSAL_PAGE: Does not replace local IAM, tenant isolation or policy gateway controls."
+  },
+  {
+    "kind": "source",
+    "id": "S15",
+    "disposition": "live_source_checked",
+    "rationale": "PASS: Adoption, deployment security and operational maturity are separate questions."
+  },
+  {
+    "kind": "source",
+    "id": "S16",
+    "disposition": "live_source_checked",
+    "rationale": "PASS: Repository presence does not prove broad adoption or successful deployment."
+  },
+  {
+    "kind": "source",
+    "id": "S17",
+    "disposition": "live_source_checked",
+    "rationale": "CORRECTED_SCOPE_AND_PASS: Updated the URL from the generic homepage to the initiative page."
+  },
+  {
+    "kind": "relation",
+    "id": "R1:brain->will",
+    "disposition": "retained_or_semantically_corrected",
+    "rationale": "Relation endpoints are valid. Authorization, policy, persistence and intention edges are rewritten to match the independent policy-gateway invariant."
+  },
+  {
+    "kind": "relation",
+    "id": "R2:will->body",
+    "disposition": "retained_or_semantically_corrected",
+    "rationale": "Relation endpoints are valid. Authorization, policy, persistence and intention edges are rewritten to match the independent policy-gateway invariant."
+  },
+  {
+    "kind": "relation",
+    "id": "R3:senses->brain",
+    "disposition": "retained_or_semantically_corrected",
+    "rationale": "Relation endpoints are valid. Authorization, policy, persistence and intention edges are rewritten to match the independent policy-gateway invariant."
+  },
+  {
+    "kind": "relation",
+    "id": "R4:body->senses",
+    "disposition": "retained_or_semantically_corrected",
+    "rationale": "Relation endpoints are valid. Authorization, policy, persistence and intention edges are rewritten to match the independent policy-gateway invariant."
+  },
+  {
+    "kind": "relation",
+    "id": "R5:soul->body",
+    "disposition": "retained_or_semantically_corrected",
+    "rationale": "Relation endpoints are valid. Authorization, policy, persistence and intention edges are rewritten to match the independent policy-gateway invariant."
+  },
+  {
+    "kind": "relation",
+    "id": "R6:soul->senses",
+    "disposition": "retained_or_semantically_corrected",
+    "rationale": "Relation endpoints are valid. Authorization, policy, persistence and intention edges are rewritten to match the independent policy-gateway invariant."
+  },
+  {
+    "kind": "relation",
+    "id": "R7:body->brain",
+    "disposition": "retained_or_semantically_corrected",
+    "rationale": "Relation endpoints are valid. Authorization, policy, persistence and intention edges are rewritten to match the independent policy-gateway invariant."
+  },
+  {
+    "kind": "relation",
+    "id": "R8:will->brain",
+    "disposition": "retained_or_semantically_corrected",
+    "rationale": "Relation endpoints are valid. Authorization, policy, persistence and intention edges are rewritten to match the independent policy-gateway invariant."
+  },
+  {
+    "kind": "relation",
+    "id": "R9:senses->will",
+    "disposition": "retained_or_semantically_corrected",
+    "rationale": "Relation endpoints are valid. Authorization, policy, persistence and intention edges are rewritten to match the independent policy-gateway invariant."
+  },
+  {
+    "kind": "cross_cutting",
+    "id": "security",
+    "disposition": "preserved_and_clarified",
+    "rationale": "Cross-cutting scope preserved; security/evidence wording updated to avoid assigning authorization to one dimension."
+  },
+  {
+    "kind": "cross_cutting",
+    "id": "evidence",
+    "disposition": "preserved_and_clarified",
+    "rationale": "Cross-cutting scope preserved; security/evidence wording updated to avoid assigning authorization to one dimension."
+  },
+  {
+    "kind": "cross_cutting",
+    "id": "feedback",
+    "disposition": "preserved_and_clarified",
+    "rationale": "Cross-cutting scope preserved; security/evidence wording updated to avoid assigning authorization to one dimension."
+  },
+  {
+    "kind": "priority",
+    "id": "1",
+    "disposition": "preserved_as_guidance",
+    "rationale": "Priority retained as advisory ranking, not normative policy or implementation commitment."
+  },
+  {
+    "kind": "priority",
+    "id": "2",
+    "disposition": "preserved_as_guidance",
+    "rationale": "Priority retained as advisory ranking, not normative policy or implementation commitment."
+  },
+  {
+    "kind": "priority",
+    "id": "3",
+    "disposition": "preserved_as_guidance",
+    "rationale": "Priority retained as advisory ranking, not normative policy or implementation commitment."
+  },
+  {
+    "kind": "priority",
+    "id": "4",
+    "disposition": "preserved_as_guidance",
+    "rationale": "Priority retained as advisory ranking, not normative policy or implementation commitment."
+  },
+  {
+    "kind": "priority",
+    "id": "5",
+    "disposition": "preserved_as_guidance",
+    "rationale": "Priority retained as advisory ranking, not normative policy or implementation commitment."
+  },
+  {
+    "kind": "priority",
+    "id": "6",
+    "disposition": "preserved_as_guidance",
+    "rationale": "Priority retained as advisory ranking, not normative policy or implementation commitment."
+  },
+  {
+    "kind": "priority",
+    "id": "7",
+    "disposition": "preserved_as_guidance",
+    "rationale": "Priority retained as advisory ranking, not normative policy or implementation commitment."
+  },
+  {
+    "kind": "source",
+    "id": "S18",
+    "disposition": "added_primary_source_live_checked",
+    "rationale": "The paper reports >90% token-cost savings in a specified comparison against full-context on the LOCOMO evaluation; this does not justify a universal guarantee across tasks, models or configurations."
+  },
+  {
+    "kind": "source",
+    "id": "S19",
+    "disposition": "added_primary_source_live_checked",
+    "rationale": "The paper reports up to 2.1× faster execution for studied agent-framework serving experiments; the magnitude is experiment-specific and not a general SLA."
+  }
+]

@@ -1,0 +1,268 @@
+test_exception_becomes_unknown_and_is_not_retried (test_dispatcher.DispatcherTests.test_exception_becomes_unknown_and_is_not_retried) ... ok
+test_invalid_handler_result_becomes_unknown (test_dispatcher.DispatcherTests.test_invalid_handler_result_becomes_unknown) ... ok
+test_no_handler_does_not_claim_or_execute (test_dispatcher.DispatcherTests.test_no_handler_does_not_claim_or_execute) ... ok
+test_reconcile_terminal_and_reject_wrong_state (test_dispatcher.DispatcherTests.test_reconcile_terminal_and_reject_wrong_state) ... ok
+test_success_passes_idempotency_key (test_dispatcher.DispatcherTests.test_success_passes_idempotency_key) ... ok
+test_unknown_requires_evidence_and_not_executed_requeues (test_dispatcher.DispatcherTests.test_unknown_requires_evidence_and_not_executed_requeues) ... ok
+test_admission_and_outbox_are_atomic_and_persistent (test_durable_admission.DurableAdmissionTests.test_admission_and_outbox_are_atomic_and_persistent) ... ok
+test_approval_and_admission_rollback_together (test_durable_admission.DurableAdmissionTests.test_approval_and_admission_rollback_together) ... ok
+test_concurrent_same_key_has_one_creation (test_durable_admission.DurableAdmissionTests.test_concurrent_same_key_has_one_creation) ... /usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3382b60>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3382c50>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3382980>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3382d40>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3382e30>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3382f20>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3383100>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca33831f0>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3383010>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca33833d0>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca33832e0>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca33834c0>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca33835b0>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca33836a0>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3383790>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:281: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e0a90>
+  def __init__(self, lock=None):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_crash_window_never_assumes_external_effect_did_not_happen (test_durable_admission.DurableAdmissionTests.test_crash_window_never_assumes_external_effect_did_not_happen) ... ok
+test_multiprocess_claim_has_single_winner (test_durable_admission.DurableAdmissionTests.test_multiprocess_claim_has_single_winner) ... /usr/lib/python3.13/multiprocessing/popen_fork.py:67: DeprecationWarning: This process (pid=6067) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+ok
+test_outcome_requires_in_flight_and_valid_state (test_durable_admission.DurableAdmissionTests.test_outcome_requires_in_flight_and_valid_state) ... ok
+test_process_crash_after_claim_recovers_as_unknown (test_durable_admission.DurableAdmissionTests.test_process_crash_after_claim_recovers_as_unknown) ... ok
+test_reconciliation_is_compare_and_set_under_race (test_durable_admission.DurableAdmissionTests.test_reconciliation_is_compare_and_set_under_race) ... ok
+test_recovery_marks_in_flight_unknown_not_pending (test_durable_admission.DurableAdmissionTests.test_recovery_marks_in_flight_unknown_not_pending) ... ok
+test_restart_replays_same_receipt (test_durable_admission.DurableAdmissionTests.test_restart_replays_same_receipt) ... ok
+test_same_key_different_fingerprint_conflicts (test_durable_admission.DurableAdmissionTests.test_same_key_different_fingerprint_conflicts) ... ok
+test_single_use_approval_survives_restart (test_durable_admission.DurableAdmissionTests.test_single_use_approval_survives_restart) ... ok
+test_event_log_and_consumer_dedup_persist (test_durable_components.DurableComponentTests.test_event_log_and_consumer_dedup_persist) ... ok
+test_evidence_chain_persists_and_verifies (test_durable_components.DurableComponentTests.test_evidence_chain_persists_and_verifies) ... ok
+test_goal_persists_and_transitions_after_restart (test_durable_components.DurableComponentTests.test_goal_persists_and_transitions_after_restart) ... ok
+test_runtime_enables_durable_goals_events_and_evidence (test_durable_components.DurableComponentTests.test_runtime_enables_durable_goals_events_and_evidence) ... ok
+test_duplicate_create_rejected_across_instances (test_durable_state_store.DurableStateStoreTests.test_duplicate_create_rejected_across_instances) ... ok
+test_multi_process_cas_allows_exactly_one_winner (test_durable_state_store.DurableStateStoreTests.test_multi_process_cas_allows_exactly_one_winner) ... <frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca33833d0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca33834c0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca33835b0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e1300>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e27a0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e18a0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca33832e0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e1a80>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca33836a0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e2a70>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e2c50>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e2980>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e2d40>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e3010>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e2f20>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e3100>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3383d30>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3383a60>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3382b60>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3382980>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e1c60>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e1b70>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3383880>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3382c50>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e16c0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e17b0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e07c0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e0040>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e2e30>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e0400>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e1120>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e0b80>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e06d0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e15d0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e0d60>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e1e40>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca33818a0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e14e0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca3381b70>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e1d50>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e32e0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e31f0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e33d0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e34c0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e35b0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e36a0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e3790>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e3880>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e3970>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e3a60>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e3b50>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e3c40>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e3d30>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e3e20>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca30e3f10>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312c040>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312c130>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312c220>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312c310>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312c400>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312c4f0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312c5e0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312c6d0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312c7c0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312c8b0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312c9a0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312ca90>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312cb80>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312cd60>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312cf40>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312d030>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312ce50>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312cc70>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312d120>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312d210>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312d300>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:488: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fbca312d3f0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_stale_cas_is_rejected_after_restart (test_durable_state_store.DurableStateStoreTests.test_stale_cas_is_rejected_after_restart) ... ok
+test_state_survives_reopen_and_preserves_version (test_durable_state_store.DurableStateStoreTests.test_state_survives_reopen_and_preserves_version) ... ok
+test_duplicate_event_is_suppressed (test_phase1.EventBusTests.test_duplicate_event_is_suppressed) ... ok
+test_wrong_type_not_delivered (test_phase1.EventBusTests.test_wrong_type_not_delivered) ... ok
+test_completion_requires_verification (test_phase1.GoalTests.test_completion_requires_verification) ... ok
+test_criteria_required (test_phase1.GoalTests.test_criteria_required) ... ok
+test_pass_requires_evidence (test_phase1.GoalTests.test_pass_requires_evidence) ... ok
+test_passing_verification_completes (test_phase1.GoalTests.test_passing_verification_completes) ... ok
+test_chain_verifies (test_phase1.LedgerTests.test_chain_verifies) ... ok
+test_empty_chain_verifies (test_phase1.LedgerTests.test_empty_chain_verifies) ... ok
+test_approval_required (test_phase1.PolicyTests.test_approval_required) ... ok
+test_consumed_single_use_approval_denied (test_phase1.PolicyTests.test_consumed_single_use_approval_denied) ... ok
+test_future_approval_denied (test_phase1.PolicyTests.test_future_approval_denied) ... ok
+test_matching_rule_allowed (test_phase1.PolicyTests.test_matching_rule_allowed) ... ok
+test_no_policy_denied (test_phase1.PolicyTests.test_no_policy_denied) ... ok
+test_revoked_approval_denied (test_phase1.PolicyTests.test_revoked_approval_denied) ... ok
+test_wrong_capability_denied (test_phase1.PolicyTests.test_wrong_capability_denied) ... ok
+test_create_and_cas_increment_version (test_phase1.StateStoreTests.test_create_and_cas_increment_version) ... ok
+test_create_does_not_overwrite (test_phase1.StateStoreTests.test_create_does_not_overwrite) ... ok
+test_stale_version_rejected (test_phase1.StateStoreTests.test_stale_version_rejected) ... ok
+test_allowed_action_is_simulated_and_idempotent (test_runtime.RuntimeTests.test_allowed_action_is_simulated_and_idempotent) ... ok
+test_chain_valid_after_vertical_slice (test_runtime.RuntimeTests.test_chain_valid_after_vertical_slice) ... ok
+test_concurrent_same_idempotency_key_creates_one_receipt (test_runtime.RuntimeTests.test_concurrent_same_idempotency_key_creates_one_receipt) ... ok
+test_goal_needs_verification_evidence (test_runtime.RuntimeTests.test_goal_needs_verification_evidence) ... ok
+test_idempotency_key_cannot_be_reused_for_different_request (test_runtime.RuntimeTests.test_idempotency_key_cannot_be_reused_for_different_request) ... ok
+test_ingest_emits_correlated_event_and_evidence (test_runtime.RuntimeTests.test_ingest_emits_correlated_event_and_evidence) ... ok
+test_nested_payload_is_snapshotted_before_execution (test_runtime.RuntimeTests.test_nested_payload_is_snapshotted_before_execution) ... ok
+test_policy_denial_does_not_create_receipt (test_runtime.RuntimeTests.test_policy_denial_does_not_create_receipt) ... ok
+test_registered_evaluator_returns_evidence_ref (test_runtime.RuntimeTests.test_registered_evaluator_returns_evidence_ref) ... ok
+test_single_use_approval_cannot_authorize_two_distinct_actions (test_runtime.RuntimeTests.test_single_use_approval_cannot_authorize_two_distinct_actions) ... ok
+test_single_use_approval_requires_stable_id (test_runtime.RuntimeTests.test_single_use_approval_requires_stable_id) ... ok
+test_sqlite_admission_rejects_changed_payload_after_restart (test_runtime.RuntimeTests.test_sqlite_admission_rejects_changed_payload_after_restart) ... ok
+test_sqlite_admission_replays_across_runtime_restart (test_runtime.RuntimeTests.test_sqlite_admission_replays_across_runtime_restart) ... ok
+test_sqlite_single_use_approval_consumed_atomically (test_runtime.RuntimeTests.test_sqlite_single_use_approval_consumed_atomically) ... ok
+test_unknown_evaluator_fails_closed (test_runtime.RuntimeTests.test_unknown_evaluator_fails_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 59 tests in 3.309s
+
+OK

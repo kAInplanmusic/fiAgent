@@ -1,0 +1,5 @@
+PRAIN v1.1.8 / Step 13
+Command: PYTHONPATH=. python -m unittest discover -s tests -v
+Result: 55 tests passed, 0 failed, 0 errors.
+Coverage includes existing dispatcher/admission/runtime tests plus four DurableStateStore tests.
+Note: existing SQLite connections in durable-admission tests emit ResourceWarning on Python 3.13; tests still pass and connection lifecycle should be cleaned up in a follow-up.

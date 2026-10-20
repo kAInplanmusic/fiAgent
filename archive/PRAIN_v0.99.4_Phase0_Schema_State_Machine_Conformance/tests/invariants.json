@@ -1,0 +1,182 @@
+[
+  {
+    "id": "INV-001",
+    "requirement": "Authorization is decided only by policy gateway",
+    "contracts": "policy-decision, action-command",
+    "test_or_evidence": "negative tests: unknown or missing decision never dispatch"
+  },
+  {
+    "id": "INV-002",
+    "requirement": "Capability availability is not permission",
+    "contracts": "principal, delegation-grant, policy-decision",
+    "test_or_evidence": "denied capability fixture"
+  },
+  {
+    "id": "INV-003",
+    "requirement": "Missing tenant on protected records is rejected",
+    "contracts": "all tenant-bound contracts",
+    "test_or_evidence": "required-field negative fixtures"
+  },
+  {
+    "id": "INV-004",
+    "requirement": "Delegation never widens grantor authority",
+    "contracts": "delegation-grant",
+    "test_or_evidence": "policy rule test"
+  },
+  {
+    "id": "INV-005",
+    "requirement": "Confidence never promotes claim to verified",
+    "contracts": "claim",
+    "test_or_evidence": "confidence-alone negative fixture"
+  },
+  {
+    "id": "INV-006",
+    "requirement": "Verified claim requires passed verification and ref",
+    "contracts": "claim",
+    "test_or_evidence": "conditional schema checks"
+  },
+  {
+    "id": "INV-007",
+    "requirement": "Refuted claim requires failed verification and refutation evidence",
+    "contracts": "claim",
+    "test_or_evidence": "conditional schema checks"
+  },
+  {
+    "id": "INV-008",
+    "requirement": "Claim transitions preserve history",
+    "contracts": "claim-transition-event",
+    "test_or_evidence": "from/to revision and actor/time required"
+  },
+  {
+    "id": "INV-009",
+    "requirement": "Claims and evidence preserve provenance",
+    "contracts": "claim, observation, evidence-record",
+    "test_or_evidence": "required provenance/source fields"
+  },
+  {
+    "id": "INV-010",
+    "requirement": "Command digest bound to decision and approval",
+    "contracts": "action-command, policy-decision, policy-approval",
+    "test_or_evidence": "digest mismatch must be denied"
+  },
+  {
+    "id": "INV-011",
+    "requirement": "Idempotency key cannot be reused for changed action",
+    "contracts": "action-command",
+    "test_or_evidence": "durable uniqueness invariant"
+  },
+  {
+    "id": "INV-012",
+    "requirement": "Unknown external outcome is first-class",
+    "contracts": "execution-receipt",
+    "test_or_evidence": "unknown requires reconciliation"
+  },
+  {
+    "id": "INV-013",
+    "requirement": "Expired lease is not proof no effect occurred",
+    "contracts": "execution-receipt",
+    "test_or_evidence": "reconcile before retry"
+  },
+  {
+    "id": "INV-014",
+    "requirement": "CAS rejects stale authoritative update",
+    "contracts": "state-record",
+    "test_or_evidence": "concurrency conformance scenario"
+  },
+  {
+    "id": "INV-015",
+    "requirement": "Projection cannot overwrite authority",
+    "contracts": "state-record",
+    "test_or_evidence": "authority_class invariant"
+  },
+  {
+    "id": "INV-016",
+    "requirement": "HAL cannot approve own repair or elevate privilege",
+    "contracts": "repair-proposal",
+    "test_or_evidence": "repair class conditional tests and policy gate"
+  },
+  {
+    "id": "INV-017",
+    "requirement": "Deletion propagates to derivatives and restore paths",
+    "contracts": "deletion-request",
+    "test_or_evidence": "propagation scope required"
+  },
+  {
+    "id": "INV-018",
+    "requirement": "Deleted content not retained solely for append-only audit",
+    "contracts": "evidence-record,deletion-request",
+    "test_or_evidence": "separation of manifest/content lifecycle"
+  },
+  {
+    "id": "INV-019",
+    "requirement": "Evidence digest does not imply source truth/authenticity",
+    "contracts": "evidence-record",
+    "test_or_evidence": "design invariant and signature policy"
+  },
+  {
+    "id": "INV-020",
+    "requirement": "Unknown/stale policy is deny or defer",
+    "contracts": "policy-decision",
+    "test_or_evidence": "only permit allows dispatch"
+  },
+  {
+    "id": "INV-021",
+    "requirement": "Approval bound to actor, target and side effects",
+    "contracts": "policy-approval",
+    "test_or_evidence": "digest fields required"
+  },
+  {
+    "id": "INV-022",
+    "requirement": "Revocation before dispatch blocks action",
+    "contracts": "policy-approval, policy-decision",
+    "test_or_evidence": "fresh revocation check scenario"
+  },
+  {
+    "id": "INV-023",
+    "requirement": "Revocation after possible effect triggers reconciliation",
+    "contracts": "execution-receipt",
+    "test_or_evidence": "unknown/reconciliation scenario"
+  },
+  {
+    "id": "INV-024",
+    "requirement": "HTML knowledge base equals canonical JSON data",
+    "contracts": "knowledge_base JSON/HTML",
+    "test_or_evidence": "recursive equality assertion"
+  },
+  {
+    "id": "INV-025",
+    "requirement": "PRAIN is independent of Hallerbans",
+    "contracts": "project KB + relation semantics",
+    "test_or_evidence": "string/semantic review assertion"
+  },
+  {
+    "id": "INV-026",
+    "requirement": "Quantum-ready does not assert quantum advantage",
+    "contracts": "architecture/decision register",
+    "test_or_evidence": "wording policy review"
+  },
+  {
+    "id": "INV-027",
+    "requirement": "Hard limits and audit cannot be disabled by HAL",
+    "contracts": "HAL catalogue",
+    "test_or_evidence": "forbidden class list"
+  },
+  {
+    "id": "INV-028",
+    "requirement": "No global exactly-once delivery claim",
+    "contracts": "protocol docs",
+    "test_or_evidence": "at-least-once plus idempotency stated"
+  },
+  {
+    "id": "INV-029",
+    "requirement": "Completion requires evidence for every acceptance criterion",
+    "contracts": "goal",
+    "test_or_evidence": "goal lifecycle verification rule"
+  },
+  {
+    "id": "INV-030",
+    "requirement": "No runtime/framework/OS code is part of Phase 0 package",
+    "contracts": "package inventory",
+    "test_or_evidence": "spec-only contents check"
+  }
+]

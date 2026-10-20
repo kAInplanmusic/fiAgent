@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:prain:schema:evidence-record:1.0.0",
+  "title": "PRAIN Evidence Record",
+  "description": "Separates integrity metadata from content; signatures are required by policy for designated classes.",
+  "type": "object",
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "observation",
+        "tool_output",
+        "human_attestation",
+        "external_record",
+        "test_result",
+        "execution_receipt",
+        "hash_commitment",
+        "other"
+      ]
+    },
+    "source_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "producer_principal_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "content_digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "content_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "public",
+        "internal",
+        "confidential",
+        "restricted"
+      ]
+    },
+    "retention_policy_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "integrity": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:prain:schema:inline-integrity:1.0.0",
+      "title": "Evidence integrity metadata",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "hash_algorithm": {
+          "type": "string",
+          "const": "sha-256"
+        },
+        "canonicalization": {
+          "type": "string",
+          "enum": [
+            "RFC8785_JCS",
+            "raw_bytes",
+            "media_specific"
+          ]
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "signature_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+        },
+        "signing_key_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+        },
+        "signature_algorithm": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "signature_verified": {
+          "type": "boolean"
+        },
+        "verification_checked_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "hash_algorithm",
+        "canonicalization",
+        "digest"
+      ],
+      "additionalProperties": false
+    },
+    "lifecycle_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "expired",
+        "quarantined",
+        "deletion_pending",
+        "deleted",
+        "legal_hold"
+      ]
+    },
+    "redaction_applied": {
+      "type": "boolean"
+    },
+    "deletion_request_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "evidence_id",
+    "tenant_id",
+    "kind",
+    "source_ref",
+    "captured_at",
+    "recorded_at",
+    "content_digest",
+    "classification",
+    "retention_policy_ref",
+    "integrity",
+    "lifecycle_status",
+    "redaction_applied",
+    "schema_version"
+  ],
+  "additionalProperties": false
+}

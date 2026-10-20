@@ -1,0 +1,146 @@
+"""Small, deterministic PRAIN reference runtime; external effects are simulated only."""
+from __future__ import annotations
+
+from dataclasses import asdict, dataclass
+from datetime import datetime, timezone
+from hashlib import sha256
+import json
+from typing import Any, Callable
+
+from . import ActionRequest, EvidenceLedger, Event, EventBus, GoalRegistry, PolicyGateway, StateStore
+
+
+def _utc() -> str:
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def canonical_hash(value: Any) -> str:
+    raw = json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    return sha256(raw.encode("utf-8")).hexdigest()
+
+
+@dataclass(frozen=True)
+class Observation:
+    observation_id: str
+    source: str
+    kind: str
+    payload: dict[str, Any]
+    observed_at: str
+
+    @classmethod
+    def create(cls, source: str, kind: str, payload: dict[str, Any], observation_id: str | None = None) -> "Observation":
+        if not source.strip() or not kind.strip():
+            raise ValueError("observation source and kind are required")
+        if not isinstance(payload, dict):
+            raise TypeError("observation payload must be a dictionary")
+        import uuid
+        return cls(observation_id or str(uuid.uuid4()), source, kind, dict(payload), _utc())
+
+
+@dataclass(frozen=True)
+class ExecutionReceipt:
+    receipt_id: str
+    correlation_id: str
+    action: str
+    target: str
+    status: str
+    policy_decision_id: str
+    result: dict[str, Any]
+    completed_at: str
+
+
+class PRAINRuntime:
+    """Wires P/R/A/I/N responsibilities into a testable in-process vertical slice.
+
+    P=observation intake, R=rule/evaluator decision, A=explicit context/state,
+    I=goal/action intent, N=policy-gated simulated execution.
+    This class never invokes real external side effects.
+    """
+    def __init__(self, policies: list[dict[str, Any]] | None = None,
+                 evaluators: dict[str, Callable[[Observation], bool]] | None = None):
+        self.state = StateStore()
+        self.events = EventBus()
+        self.goals = GoalRegistry()
+        self.policy = PolicyGateway(policies or [])
+        self.evidence = EvidenceLedger()
+        self.evaluators = dict(evaluators or {})
+        self._receipts: dict[str, ExecutionReceipt] = {}
+        self._request_fingerprints: dict[str, str] = {}
+
+    def ingest(self, observation: Observation) -> Event:
+        """Record an observation and publish a correlated event."""
+        entry = self.evidence.append("observation.received", observation.observation_id, asdict(observation))
+        event = Event.create("prain.observation.received", {
+            "observation_id": observation.observation_id,
+            "observation_hash": canonical_hash(asdict(observation)),
+            "evidence_entry_hash": entry.entry_hash,
+        }, correlation_id=observation.observation_id)
+        self.events.publish(event)
+        return event
+
+    def evaluate(self, observation: Observation, evaluator_name: str) -> dict[str, Any]:
+        """Evaluate a named registered check; unknown checks fail closed."""
+        evaluator = self.evaluators.get(evaluator_name)
+        passed = bool(evaluator(observation)) if evaluator is not None else False
+        result = {
+            "observation_id": observation.observation_id,
+            "evaluator": evaluator_name,
+            "passed": passed,
+            "evaluated_at": _utc(),
+        }
+        entry = self.evidence.append("observation.evaluated", observation.observation_id, result)
+        result["evidence_ref"] = f"evidence://sha256/{entry.entry_hash}"
+        return result
+
+    def request_action(self, action: str, target: str, capability: str | None,
+                       actor: str, payload: dict[str, Any], correlation_id: str,
+                       idempotency_key: str, approval: dict[str, Any] | None = None) -> tuple[ExecutionReceipt | None, dict[str, Any]]:
+        """Authorize then simulate an action. Denials never execute; repeated keys replay receipt."""
+        request = ActionRequest.create(action, target, capability, actor, payload,
+                                       correlation_id=correlation_id, idempotency_key=idempotency_key)
+        fingerprint = canonical_hash({
+            "action": action, "target": target, "capability": capability, "actor": actor,
+            "payload": payload, "correlation_id": correlation_id,
+        })
+        if idempotency_key in self._receipts:
+            receipt = self._receipts[idempotency_key]
+            if self._request_fingerprints[idempotency_key] != fingerprint:
+                return None, {"allowed": False, "reason": "idempotency_key_conflict",
+                              "policy_decision_id": receipt.policy_decision_id}
+            return receipt, {"allowed": True, "reason": "idempotent_replay", "policy_decision_id": receipt.policy_decision_id}
+        decision = self.policy.evaluate(request, approval=approval)
+        self.evidence.append("policy.decision", decision.decision_id, asdict(decision))
+        if not decision.allowed:
+            self.evidence.append("action.denied", idempotency_key, {
+                "reason": decision.reason, "request_hash": decision.action_request_hash,
+            })
+            return None, asdict(decision)
+        # Deliberately simulated. No filesystem, network, shell or external service is called.
+        result = {"simulated": True, "accepted_action": action, "target": target,
+                  "input_hash": canonical_hash(payload)}
+        receipt = ExecutionReceipt(
+            receipt_id=canonical_hash({"key": idempotency_key, "decision": decision.decision_id}),
+            correlation_id=correlation_id, action=action, target=target, status="simulated_success",
+            policy_decision_id=decision.decision_id, result=result, completed_at=_utc(),
+        )
+        self._receipts[idempotency_key] = receipt
+        self._request_fingerprints[idempotency_key] = fingerprint
+        self.evidence.append("execution.receipt", receipt.receipt_id, asdict(receipt))
+        return receipt, asdict(decision)
+
+    def verify_goal(self, goal_id: str, passed: bool, evidence_refs: list[str], verifier: str):
+        """Verification is explicit and requires evidence references for a pass."""
+        goal = self.goals.record_verification(goal_id, passed, evidence_refs, verifier)
+        self.evidence.append("goal.verification", goal_id, asdict(goal))
+        return goal
+
+    def snapshot(self) -> dict[str, Any]:
+        return {
+            "version": "1.1.0",
+            "state_records": len(self.state._records),
+            "goals": len(self.goals.list()),
+            "receipts": len(self._receipts),
+            "evidence_entries": len(self.evidence.entries()),
+            "evidence_chain_valid": self.evidence.verify(),
+            "execution_mode": "simulated_only",
+        }

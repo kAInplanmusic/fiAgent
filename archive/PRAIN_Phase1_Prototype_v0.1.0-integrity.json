@@ -1,0 +1,11 @@
+{
+  "name": "PRAIN Phase 1 executable reference prototype",
+  "version": "0.1.0",
+  "archive": "PRAIN_Phase1_Prototype_v0.1.0.zip",
+  "sha256": "85494f2fd7606c73ee98d1ccacb46d9983fd55421793a0e12241e8c97126d3a2",
+  "size_bytes": 32138,
+  "test_exit_code": 0,
+  "tests_passed": 15,
+  "production_ready": false,
+  "tests_run": 15
+}

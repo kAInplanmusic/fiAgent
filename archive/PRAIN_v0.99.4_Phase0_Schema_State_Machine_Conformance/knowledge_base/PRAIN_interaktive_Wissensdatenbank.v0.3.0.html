@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PRAIN — PRAIN — unabhängige semantische Agentenarchitektur</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2d;--panel2:#18233a;--text:#edf2ff;--muted:#a6b2cc;--line:#2c3a56;--accent:#83b6ff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(150deg,#0b1020,#10182b);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:24px clamp(16px,4vw,48px);border-bottom:1px solid var(--line);background:#0b1020dd;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.kicker{color:#9fc4ff;text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;font-weight:800}h1{margin:.25rem 0;font-size:clamp(1.7rem,4vw,2.6rem)}header p{margin:.3rem 0;color:var(--muted);max-width:850px}
+main{padding:22px clamp(12px,3vw,36px);max-width:1500px;margin:auto}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+input,select,button{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:var(--text);font:inherit}input{flex:1;min-width:220px}button{cursor:pointer}button:hover,.tab.active{border-color:var(--accent);background:#20375a}
+.layout{display:grid;grid-template-columns:minmax(250px,350px) minmax(0,1fr);gap:18px}.panel,.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}.panel h2,.card h2{margin-top:0}.navlist{display:grid;gap:8px}.navitem{display:block;text-align:left;width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#0f1729}.navitem strong{display:block}.navitem small{color:var(--muted)}.navitem.active{border-color:var(--accent);box-shadow:inset 3px 0 var(--accent)}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 8px;font-size:.76rem;color:var(--muted);margin:2px}.badge.high{color:#9de8bd;border-color:#32694b}.badge.low{color:#ffce9e;border-color:#80532e}
+.muted{color:var(--muted)}.section{margin:18px 0}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.mini{background:#0e1728;border:1px solid var(--line);border-radius:12px;padding:12px}.mini h3{margin:0 0 8px;font-size:1rem}.links{display:flex;gap:7px;flex-wrap:wrap}.linkchip{border:1px solid var(--line);background:#101b30;border-radius:999px;padding:5px 9px;color:#c9dcff;cursor:pointer}
+.graph{width:100%;height:auto;min-height:250px;background:#0e1728;border:1px solid var(--line);border-radius:12px}.graph text{fill:var(--text);font-size:13px}.graph .edge{stroke:#607394;stroke-width:1.5;opacity:.9}.graph .node{cursor:pointer;stroke:#d9e7ff;stroke-width:1.2}.graph .node-label{pointer-events:none;font-weight:700}.claim{border-left:3px solid #5c789f;padding:10px 12px;background:#0e1728;border-radius:0 10px 10px 0;margin:9px 0}.claim strong{display:block}.source{padding:10px 0;border-bottom:1px solid var(--line)}a{color:#9fc4ff}ul{padding-left:22px}footer{padding:25px;color:var(--muted);text-align:center;font-size:.85rem}
+@media(max-width:800px){.layout{grid-template-columns:1fr}header{position:relative}.graph{min-height:220px}}
+</style></head><body>
+<header><div class="kicker">Project knowledge base · v0.2.0</div><h1>🧠 PRAIN</h1><p>Vernetzte Wissensbasis für autonome KI-Agenten — fünf P/R/A/I/N-Dimensionen, Quellen, Evidenzstatus und prüfbare Architekturverträge für autonome Agenten.</p></header>
+<main>
+<div class="toolbar"><input id="search" placeholder="Suchen: Begriff, Behauptung, Quelle, Architektur …"><select id="filter"><option value="all">Alle Bereiche</option><option value="brain">Gehirn</option><option value="body">Körper</option><option value="senses">Sinne</option><option value="will">Wille</option><option value="soul">Seele</option><option value="security">Querschnitt: Sicherheit</option><option value="evidence">Querschnitt: Evidenz</option></select><button id="export">Daten exportieren (JSON)</button></div>
+<div class="layout"><aside class="panel"><h2>Wissensbereiche</h2><div class="navlist" id="nav"></div><div class="section"><h3>Querschnitt</h3><div id="crossnav" class="navlist"></div></div><p class="muted">Wähle einen Bereich oder einen Knoten im Beziehungsdiagramm. Suchbegriffe filtern Bereiche, Behauptungen und Quellen.</p></aside>
+<section>
+<div class="card"><h2>Beziehungsdiagramm</h2><p class="muted">Die Linien zeigen funktionale Abhängigkeiten zwischen den fünf Dimensionen. Klicke auf einen Knoten, um Details zu öffnen.</p><svg id="graph" class="graph" viewBox="0 0 720 370" role="img" aria-label="Diagramm der fünf verknüpften PRAIN-Dimensionen"></svg><div id="relations" class="links section"></div></div>
+<div id="detail" class="card section"></div>
+<div class="card section"><h2>Priorisierte Ansatzpunkte für PRAIN-Implementierungen</h2><div id="priority" class="cards"></div></div>
+<div class="card section"><h2>Quellenregister</h2><p class="muted">Primärquellen und offizielle Dokumentation bevorzugen. Zahlenwerte nur mit passendem Benchmark und Kontext übernehmen.</p><div id="sources"></div></div>
+</section></div></main><footer>PRAIN · eigenständige HTML-Wissensdatenbank v0.3.0 · Quellen- und Claim-Prüfung Stand 20.10.2026 · Evidenz bleibt zeit- und kontextgebunden.</footer>
+<script>
+const DB = {
+  "project": {
+    "id": "PRAIN",
+    "title": "PRAIN — Semantic Control Plane for Autonomous Agents",
+    "version": "0.3.0",
+    "created": "2026-10-20",
+    "purpose": "Independent, evidence-aware semantic control plane for autonomous agents: observations, claims, goals, policy-checked actions, verified outcomes, identity continuity, and adaptive coordination across the five P/R/A/I/N dimensions. PRAIN is not dependent on Hallerbans; Hallerbans is one possible consumer.",
+    "status": "Canonical content baseline v0.3.0; 20 claims individually source-mapped and reviewed on 2026-10-20. Scope-specific and design-synthesis claims remain explicitly qualified."
+  },
+  "dimensions": [
+    {
+      "id": "brain",
+      "name": "R — Reason / Denken & Gedächtnis",
+      "icon": "🧠",
+      "color": "#8b5cf6",
+      "summary": "Reason (R) interprets and compares evidence, builds hypotheses, retrieves relevant memory and plans; derived claims must link premises and method/version. Memory storage itself is cross-cutting.",
+      "key_concepts": [
+        "Working memory",
+        "Session-scoped compressed memory",
+        "Persistent long-term store",
+        "Mem0",
+        "Zep / Graphiti",
+        "Letta",
+        "A-Mem",
+        "MemoryAgentBench",
+        "MemoryArena",
+        "LoCoMo",
+        "Test-time compute",
+        "Sleep-time compute",
+        "Procedural memory"
+      ],
+      "claims": [
+        {
+          "claim": "A three-layer memory model is a useful architecture pattern.",
+          "status": "Supported as a design pattern; not a universal industry standard.",
+          "confidence": "High",
+          "claim_id": "brain:claim:1",
+          "sourceIds": [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          "epistemic_status": "inferred",
+          "verification_status": "not_applicable",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "The three-layer pattern is a design synthesis across memory products/projects, not a universal industry standard or a direct proposition established by one source.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        },
+        {
+          "claim": "Mem0 universally saves more than 90% of tokens.",
+          "status": "Not established as a universal result; requires the specific benchmark and comparison setup.",
+          "confidence": "Low",
+          "claim_id": "brain:claim:2",
+          "sourceIds": [
+            "S1",
+            "S18"
+          ],
+          "epistemic_status": "disputed",
+          "verification_status": "inconclusive",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "The primary paper reports >90% token-cost savings in a specified LOCOMO/full-context comparison. “Universally” is unsupported; preserve the benchmark and baseline scope.",
+          "legacy_confidence_scale": "legacy_qualitative_low",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        },
+        {
+          "claim": "A-Mem's core method is GRPO-based memory routing.",
+          "status": "Mischaracterizes the cited A-Mem paper; its central approach is dynamic, Zettelkasten-inspired memory organization.",
+          "confidence": "High",
+          "claim_id": "brain:claim:3",
+          "sourceIds": [
+            "S4"
+          ],
+          "epistemic_status": "refuted",
+          "verification_status": "failed",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "The cited A-MEM primary paper describes dynamically organized, Zettelkasten-inspired linked memories; it does not establish GRPO-based memory routing as A-MEM's core method. Do not conflate it with the separate steering/GRPO paper S13.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability",
+          "refutation_refs": [
+            "S4"
+          ]
+        },
+        {
+          "claim": "Memory benchmarks show that recall alone does not guarantee success in multi-step tasks.",
+          "status": "Broadly supported; exact percentages depend on benchmark, model and setup.",
+          "confidence": "High",
+          "claim_id": "brain:claim:4",
+          "sourceIds": [
+            "S5"
+          ],
+          "epistemic_status": "reported",
+          "verification_status": "inconclusive",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "The survey covers memory mechanisms and evaluation challenges; the general caution is reasonable, but task success depends on benchmark/model/agent loop and the entry should not be read as a universal quantitative result.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        }
+      ],
+      "sourceIds": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "canonical_dimension": "R",
+      "canonical_name": "Reason",
+      "implementation_notes": "Keep current task state, durable project facts and execution history distinct. Evaluate memory systems against real multi-step tasks instead of selecting by benchmark headline alone."
+    },
+    {
+      "id": "body",
+      "name": "N — Nerve / Ausführung & Handeln",
+      "icon": "🖥️",
+      "color": "#0ea5e9",
+      "summary": "Nerve (N) is the capability-mediated execution surface that performs only policy-authorized actions, emits receipts, and supplies verifiable evidence. Runtime/OS implementations are replaceable infrastructure.",
+      "key_concepts": [
+        "AIOS",
+        "Agent OS",
+        "Task lifecycle",
+        "Persistent jobs",
+        "Process supervision",
+        "Resource limits",
+        "Cloudflare Durable Objects",
+        "Amazon Bedrock AgentCore Runtime",
+        "MicroVM isolation",
+        "Edge runtime"
+      ],
+      "claims": [
+        {
+          "claim": "AIOS is a real research architecture for managing LLM-agent resources.",
+          "status": "Supported.",
+          "confidence": "High",
+          "claim_id": "body:claim:1",
+          "sourceIds": [
+            "S6",
+            "S19"
+          ],
+          "epistemic_status": "corroborated",
+          "verification_status": "passed",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "Repository and primary paper establish AIOS as a research architecture for LLM-agent resources. This verifies existence/scope, not adoption or production maturity.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        },
+        {
+          "claim": "AIOS is the universally adopted primary agent OS standard.",
+          "status": "Overstated; no such universal standard is established.",
+          "confidence": "High",
+          "claim_id": "body:claim:2",
+          "sourceIds": [
+            "S6",
+            "S19"
+          ],
+          "epistemic_status": "disputed",
+          "verification_status": "inconclusive",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "No evidence checked establishes universal adoption or a single universally adopted agent-OS standard. The cited project is one research architecture.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        },
+        {
+          "claim": "AIOS can yield up to 2.1× speed-up.",
+          "status": "A reported result under particular experiments, not a general guarantee.",
+          "confidence": "Medium",
+          "claim_id": "body:claim:3",
+          "sourceIds": [
+            "S19"
+          ],
+          "epistemic_status": "reported",
+          "verification_status": "inconclusive",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "The up-to-2.1× figure appears in the paper for particular experiments. Preserve “up to”, baseline, task and implementation context; do not promote it to a universal performance estimate.",
+          "legacy_confidence_scale": "legacy_qualitative_medium",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        },
+        {
+          "claim": "Cloud runtimes guarantee memory access under 100 ms.",
+          "status": "Not substantiated as a universal guarantee by the listed documentation.",
+          "confidence": "High",
+          "claim_id": "body:claim:4",
+          "sourceIds": [
+            "S7",
+            "S8"
+          ],
+          "epistemic_status": "disputed",
+          "verification_status": "inconclusive",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "Checked official vendor documentation does not establish a universal <100 ms memory-access guarantee. Cloud/runtime guarantees are product-, path-, region-, load- and configuration-specific.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        }
+      ],
+      "sourceIds": [
+        "S6",
+        "S7",
+        "S8"
+      ],
+      "canonical_dimension": "N",
+      "canonical_name": "Nerve",
+      "implementation_notes": "Prioritize a reliable Linux runtime, persistent task state, restart/resume, timeouts, concurrency limits, observability and controlled hand-offs before adopting a full research Agent OS."
+    },
+    {
+      "id": "senses",
+      "name": "P — Perception / Sinne & Beobachtung",
+      "icon": "👁️",
+      "color": "#14b8a6",
+      "summary": "Perception (P) normalizes observations from sensors, tools, user reports and external sources; it preserves provenance, uncertainty, scope and timestamps. Observation is not the same as truth.",
+      "key_concepts": [
+        "Model Context Protocol",
+        "JSON-RPC",
+        "Tool schemas",
+        "MCP tool descriptions",
+        "Browser and GUI perception",
+        "Vision-language models",
+        "Audio/video/PDF inputs",
+        "Event-triggered perception",
+        "Tool-result verification"
+      ],
+      "claims": [
+        {
+          "claim": "MCP standardizes connections to tools and data sources.",
+          "status": "Supported; it standardizes interfaces, not correctness or authorization by itself.",
+          "confidence": "High",
+          "claim_id": "senses:claim:1",
+          "sourceIds": [
+            "S9"
+          ],
+          "epistemic_status": "verified",
+          "verification_status": "passed",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "The official MCP specification describes standardized protocol interfaces for client/server interaction with tools and resources. Verification is limited to this scope; MCP itself does not certify the called tool as safe.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability",
+          "verification_ref": "KB-SOURCE-VERIFICATION:senses:claim:1"
+        },
+        {
+          "claim": "Poorly written tool descriptions can impair tool selection and waste context.",
+          "status": "Supported as an active research concern; quantitative benefits need specific evidence.",
+          "confidence": "Medium",
+          "claim_id": "senses:claim:2",
+          "sourceIds": [
+            "S10"
+          ],
+          "epistemic_status": "reported",
+          "verification_status": "inconclusive",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "The primary 2026 study empirically examined 856 tools across 103 servers and found description-quality problems with measurable but mixed outcome effects. Keep the model/task/sample scope and trade-offs.",
+          "legacy_confidence_scale": "legacy_qualitative_medium",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        },
+        {
+          "claim": "MCP is a universal, fully secure industry standard.",
+          "status": "Overstated; security depends on implementation, permissions and deployment.",
+          "confidence": "High",
+          "claim_id": "senses:claim:3",
+          "sourceIds": [
+            "S9",
+            "S11",
+            "S17"
+          ],
+          "epistemic_status": "disputed",
+          "verification_status": "inconclusive",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "Neither a protocol specification nor general security guidance supports the claim that MCP is universally and fully secure. Security depends on implementation, authorization, tool permissions and deployment.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        },
+        {
+          "claim": "Event-triggered perception is a useful architecture pattern.",
+          "status": "Plausible and established as a general systems pattern, not unique to 2026.",
+          "confidence": "High",
+          "claim_id": "senses:claim:4",
+          "sourceIds": [],
+          "epistemic_status": "inferred",
+          "verification_status": "not_applicable",
+          "assessment_method": "design_synthesis",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "Architecture synthesis only: event-triggered perception is a common systems pattern. No specific external empirical source is asserted for this general design statement.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        }
+      ],
+      "sourceIds": [
+        "S9",
+        "S10",
+        "S11"
+      ],
+      "canonical_dimension": "P",
+      "canonical_name": "Perception",
+      "implementation_notes": "Maintain a small, clear tool catalog. Specify purpose, input/output schema, limits and failure modes; verify effects from observed system state rather than trusting the model's narration."
+    },
+    {
+      "id": "will",
+      "name": "I — Intention / Ziele & Wille",
+      "icon": "🎯",
+      "color": "#f59e0b",
+      "summary": "Intention (I) represents goals, priorities, dependencies, constraints and measurable acceptance criteria. It proposes plans; it cannot grant execution permissions.",
+      "key_concepts": [
+        "Goal drift",
+        "Pattern-matching bias",
+        "Task decomposition",
+        "Success criteria",
+        "Independent verifier",
+        "Steering agent",
+        "Trajectory monitoring",
+        "Commitment state",
+        "Retry/recovery policy"
+      ],
+      "claims": [
+        {
+          "claim": "LLM agents can drift from original goals during long tasks.",
+          "status": "Supported by research; severity varies by model and task.",
+          "confidence": "High",
+          "claim_id": "will:claim:1",
+          "sourceIds": [
+            "S12",
+            "S13"
+          ],
+          "epistemic_status": "corroborated",
+          "verification_status": "inconclusive",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "Research supports goal drift as a studied failure mode in extended agent tasks; severity depends on task, model and scaffold.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        },
+        {
+          "claim": "Goal drift inevitably begins after 100,000 tokens.",
+          "status": "Not supported as a universal threshold.",
+          "confidence": "High",
+          "claim_id": "will:claim:2",
+          "sourceIds": [
+            "S12"
+          ],
+          "epistemic_status": "refuted",
+          "verification_status": "failed",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "The cited study does not establish inevitable onset after 100,000 tokens; it reports nearly perfect adherence by its best-performing scaffolded model beyond 100,000 tokens in its hardest setting while still finding some drift across evaluated models.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability",
+          "refutation_refs": [
+            "S12"
+          ]
+        },
+        {
+          "claim": "A steering agent can reduce goal drift.",
+          "status": "Promising research direction; effectiveness is task- and setup-dependent.",
+          "confidence": "Medium",
+          "claim_id": "will:claim:3",
+          "sourceIds": [
+            "S13"
+          ],
+          "epistemic_status": "reported",
+          "verification_status": "inconclusive",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "The 2026 preprint reports a steering agent improving performance/efficiency in information-seeking tasks. This is emerging research, not a universal or production-validated guarantee.",
+          "legacy_confidence_scale": "legacy_qualitative_medium",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        },
+        {
+          "claim": "Goal drift can be driven nearly to zero by the described binding/commitment split.",
+          "status": "Not established by the cited evidence.",
+          "confidence": "High",
+          "claim_id": "will:claim:4",
+          "sourceIds": [
+            "S12",
+            "S13"
+          ],
+          "epistemic_status": "unknown",
+          "verification_status": "inconclusive",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "The checked sources do not establish that a binding/commitment split drives goal drift nearly to zero. No quantitative promise should be repeated without a named evaluation and baseline.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        }
+      ],
+      "sourceIds": [
+        "S12",
+        "S13"
+      ],
+      "canonical_dimension": "I",
+      "canonical_name": "Intention",
+      "implementation_notes": "Store the goal and measurable acceptance criteria outside the transient model context. Check each major step against them; mark work complete only when the result is independently verified."
+    },
+    {
+      "id": "soul",
+      "name": "A — Anima / Selbstmodell & Kontinuität",
+      "icon": "🔐",
+      "color": "#ec4899",
+      "summary": "Anima (A) is the explicit, inspectable, versioned self-model and continuity record. It is not a claim of consciousness and is not the policy authorization authority.",
+      "key_concepts": [
+        "Agent Identity and Access Management",
+        "Scoped delegation",
+        "Continuous authorization",
+        "Audit logs",
+        "ERC-8004",
+        "x402",
+        "AP2",
+        "Trusted Execution Environments",
+        "Owner records"
+      ],
+      "claims": [
+        {
+          "claim": "Agent systems benefit from identity, scoped authorization and auditability.",
+          "status": "Strong architecture principle; exact implementations vary.",
+          "confidence": "High",
+          "claim_id": "soul:claim:1",
+          "sourceIds": [
+            "S11",
+            "S14",
+            "S17"
+          ],
+          "epistemic_status": "inferred",
+          "verification_status": "not_applicable",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "Identity, scoped authorization and auditability are architectural control principles supported by the risk and trust standards landscape; exact mechanisms and assurance levels vary.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        },
+        {
+          "claim": "ERC-8004 replaces local identity and access management.",
+          "status": "Incorrect; agent discovery/trust mechanisms do not replace local authorization controls.",
+          "confidence": "High",
+          "claim_id": "soul:claim:2",
+          "sourceIds": [
+            "S14"
+          ],
+          "epistemic_status": "refuted",
+          "verification_status": "failed",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "ERC-8004 is an agent discovery/trust-related standard proposal; it does not replace application-local authentication, authorization, tenant isolation or policy enforcement.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability",
+          "refutation_refs": [
+            "S14"
+          ]
+        },
+        {
+          "claim": "x402 and AP2 are real protocol initiatives for agent-related payments.",
+          "status": "Supported; adoption and maturity should not be overstated.",
+          "confidence": "High",
+          "claim_id": "soul:claim:3",
+          "sourceIds": [
+            "S15",
+            "S16"
+          ],
+          "epistemic_status": "corroborated",
+          "verification_status": "passed",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "Official x402 and AP2 project records establish these as real payment/protocol initiatives. This is not a claim of universal adoption, maturity or safety.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        },
+        {
+          "claim": "TEEs automatically make an autonomous agent trustworthy.",
+          "status": "Incorrect; TEEs address specific isolation/integrity properties, not the full trust problem.",
+          "confidence": "High",
+          "claim_id": "soul:claim:4",
+          "sourceIds": [
+            "S11",
+            "S17"
+          ],
+          "epistemic_status": "disputed",
+          "verification_status": "inconclusive",
+          "assessment_method": "primary_source_scope_review_2026-10-20",
+          "assessment_ref": "audit/claim_source_audit.json",
+          "checked_at": "2026-10-20",
+          "assessment_note": "A trusted execution environment can provide bounded isolation/attestation properties; it does not by itself make the whole agent, its inputs, tools, policies or external effects trustworthy.",
+          "legacy_confidence_scale": "legacy_qualitative_high",
+          "confidence_method": "legacy qualitative editor assessment; not a calibrated probability"
+        }
+      ],
+      "sourceIds": [
+        "S14",
+        "S15",
+        "S16",
+        "S17"
+      ],
+      "canonical_dimension": "A",
+      "canonical_name": "Anima",
+      "implementation_notes": "Give the agent a clear service identity, scoped credentials and auditable action logs. Treat crypto identity and autonomous payments as optional capabilities, not prerequisites for general autonomy."
+    }
+  ],
+  "cross_cutting": [
+    {
+      "id": "security",
+      "name": "Security across all dimensions",
+      "summary": "Security is enforced across all dimensions by explicit policy, scoped principal/tenant boundaries, capability checks, human approval where required, evidence/audit, revocation, and least authority; no P/R/A/I/N dimension is itself a universal authorization bypass.",
+      "links": [
+        "brain",
+        "body",
+        "senses",
+        "will",
+        "soul"
+      ]
+    },
+    {
+      "id": "evidence",
+      "name": "Evidence quality & claim verification",
+      "summary": "Claims carry provenance and evidence; source quality, capture time, scope, transformations, counterevidence, integrity checks and verification procedures are tracked independently from confidence.",
+      "links": [
+        "brain",
+        "body",
+        "senses",
+        "will",
+        "soul"
+      ]
+    },
+    {
+      "id": "feedback",
+      "name": "Evaluation & feedback loops",
+      "summary": "Measure task success, recovery, tool correctness, memory usefulness, cost, latency and goal adherence on representative tasks.",
+      "links": [
+        "brain",
+        "body",
+        "senses",
+        "will"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from": "brain",
+      "to": "will",
+      "type": "informs",
+      "label": "R provides interpretations and candidate plans; I owns explicit goal contracts and priorities."
+    },
+    {
+      "from": "will",
+      "to": "body",
+      "type": "proposes_for",
+      "label": "Intention proposes commands; only the independent policy gateway authorizes, and N executes after authorization."
+    },
+    {
+      "from": "senses",
+      "to": "brain",
+      "type": "feeds",
+      "label": "Observations become context and memory"
+    },
+    {
+      "from": "body",
+      "to": "senses",
+      "type": "exposes",
+      "label": "Runtime makes tools and sensors available"
+    },
+    {
+      "from": "soul",
+      "to": "body",
+      "type": "constrains_identity_context",
+      "label": "A supplies identity/self-model context and declared limits; it never independently grants execution permission."
+    },
+    {
+      "from": "soul",
+      "to": "senses",
+      "type": "informs_governance",
+      "label": "A may supply identity context to governance; security policy remains cross-cutting and is enforced by the policy gateway."
+    },
+    {
+      "from": "body",
+      "to": "brain",
+      "type": "emits_receipts",
+      "label": "N emits execution receipts and observed outcomes; authoritative storage/commit rules determine which state becomes durable."
+    },
+    {
+      "from": "will",
+      "to": "brain",
+      "type": "feeds_verified_experience",
+      "label": "I/R may incorporate only outcome evidence that has been checked under the applicable verification policy."
+    },
+    {
+      "from": "senses",
+      "to": "will",
+      "type": "informs_goal_evaluation",
+      "label": "Observations may alter goal feasibility, but a goal change must be recorded as a revision with an attributable decision."
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Mem0 documentation / research",
+      "url": "https://mem0.ai/",
+      "type": "Official product/research",
+      "note": "Check the exact version and benchmark before repeating performance claims."
+    },
+    {
+      "id": "S2",
+      "title": "Graphiti — temporal knowledge graph",
+      "url": "https://github.com/getzep/graphiti",
+      "type": "Official repository",
+      "note": "Open-source temporal knowledge graph framework."
+    },
+    {
+      "id": "S3",
+      "title": "Letta",
+      "url": "https://www.letta.com/",
+      "type": "Official project",
+      "note": "Persistent, agent-managed memory and agent runtime concepts."
+    },
+    {
+      "id": "S4",
+      "title": "A-Mem research paper",
+      "url": "https://arxiv.org/abs/2502.12110",
+      "type": "Primary research",
+      "note": "Dynamic, Zettelkasten-inspired memory organization; do not conflate with GRPO routing."
+    },
+    {
+      "id": "S5",
+      "title": "Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Challenges",
+      "url": "https://arxiv.org/html/2603.07670v1",
+      "type": "Research survey",
+      "note": "Use the paper's exact scope and benchmark definitions."
+    },
+    {
+      "id": "S6",
+      "title": "AIOS research project",
+      "url": "https://github.com/agiresearch/AIOS",
+      "type": "Research repository",
+      "note": "Agent operating-system architecture; speed-up claims are experiment-specific."
+    },
+    {
+      "id": "S7",
+      "title": "Amazon Bedrock AgentCore",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/",
+      "type": "Official documentation",
+      "note": "Official developer guide; isolation differs by runtime mode. In particular, EC2 Instances compute does not automatically isolate different agents sharing one instance; session binding and least privilege remain deployment responsibilities."
+    },
+    {
+      "id": "S8",
+      "title": "Cloudflare Agents",
+      "url": "https://developers.cloudflare.com/agents/",
+      "type": "Official documentation",
+      "note": "Agents built on Durable Objects; do not infer universal latency guarantees."
+    },
+    {
+      "id": "S9",
+      "title": "Model Context Protocol specification",
+      "url": "https://modelcontextprotocol.io/",
+      "type": "Official specification",
+      "note": "MCP standardizes interfaces; it does not guarantee safe tool behavior."
+    },
+    {
+      "id": "S10",
+      "title": "Model Context Protocol (MCP) Tool Descriptions Are Smelly — primary arXiv paper",
+      "url": "https://arxiv.org/abs/2602.14878",
+      "type": "Primary research preprint (arXiv; version-specific results)",
+      "note": "Use the primary arXiv record, not the stale/non-matching ResearchGate publication ID. The reported measurements are specific to sampled tools, servers, models and tasks; results show trade-offs as well as gains."
+    },
+    {
+      "id": "S11",
+      "title": "OWASP Top 10 for Agentic Applications",
+      "url": "https://genai.owasp.org/",
+      "type": "Security guidance",
+      "note": "Use the official OWASP project page for current categories and wording."
+    },
+    {
+      "id": "S12",
+      "title": "Evaluating Goal Drift in Language Model Agents",
+      "url": "https://arxiv.org/html/2505.02709v1",
+      "type": "Primary research",
+      "note": "Results depend on tested models and tasks; no universal 100k-token threshold."
+    },
+    {
+      "id": "S13",
+      "title": "Learning to Steer LLM Agents and Multi-Agent Systems",
+      "url": "https://arxiv.org/abs/2610.22316",
+      "type": "Primary research preprint",
+      "note": "Primary research preprint dated 2026-10-15; steering/GRPO result is emerging, task- and evaluation-specific, not a general production guarantee."
+    },
+    {
+      "id": "S14",
+      "title": "ERC-8004",
+      "url": "https://eips.ethereum.org/EIPS/eip-8004",
+      "type": "Standards proposal",
+      "note": "Agent discovery/trust does not replace local access control."
+    },
+    {
+      "id": "S15",
+      "title": "x402",
+      "url": "https://www.x402.org/",
+      "type": "Official project",
+      "note": "HTTP-based payment protocol; adoption and risk depend on implementation."
+    },
+    {
+      "id": "S16",
+      "title": "Agent Payments Protocol (AP2)",
+      "url": "https://github.com/google-agentic-commerce/AP2",
+      "type": "Official repository",
+      "note": "Payment protocol initiative; distinguish announced scope from deployed adoption."
+    },
+    {
+      "id": "S17",
+      "title": "OWASP Agentic Security Initiative",
+      "url": "https://genai.owasp.org/initiatives/agentic-security-initiative/",
+      "type": "Security guidance",
+      "note": "Official OWASP Agentic Security Initiative page; complements but is distinct from the 2026 Top 10 resource referenced by S11."
+    },
+    {
+      "id": "S18",
+      "title": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+      "url": "https://arxiv.org/abs/2504.19413",
+      "type": "Primary research paper",
+      "note": "The paper reports >90% token-cost savings in a specified comparison against full-context on the LOCOMO evaluation; this does not justify a universal guarantee across tasks, models or configurations."
+    },
+    {
+      "id": "S19",
+      "title": "AIOS: LLM Agent Operating System",
+      "url": "https://arxiv.org/abs/2403.16971",
+      "type": "Primary research paper",
+      "note": "The paper reports up to 2.1× faster execution for studied agent-framework serving experiments; the magnitude is experiment-specific and not a general SLA."
+    }
+  ],
+  "priority": [
+    {
+      "rank": 1,
+      "item": "Persistent task state and verifiable completion criteria",
+      "dimension": "will/body",
+      "why": "Makes long-running work resumable and separates activity from success."
+    },
+    {
+      "rank": 2,
+      "item": "Tool catalog with clear schemas and post-action verification",
+      "dimension": "senses/body",
+      "why": "Reduces ambiguous tool use and unverified claims of success."
+    },
+    {
+      "rank": 3,
+      "item": "Layered memory with explicit project facts and execution history",
+      "dimension": "brain",
+      "why": "Supports continuity without putting everything into one undifferentiated memory store."
+    },
+    {
+      "rank": 4,
+      "item": "Scoped credentials and audit logs",
+      "dimension": "soul/body",
+      "why": "Makes actions attributable and limits unnecessary authority."
+    },
+    {
+      "rank": 5,
+      "item": "Representative evaluation suite",
+      "dimension": "all",
+      "why": "Measures actual improvement before adding more frameworks or agents."
+    },
+    {
+      "rank": 6,
+      "item": "Add a temporal graph or learned steering agent only if tests show need",
+      "dimension": "brain/will",
+      "why": "Advanced components should solve measured gaps rather than add complexity by default."
+    },
+    {
+      "rank": 7,
+      "item": "Payments / on-chain agent identity",
+      "dimension": "soul",
+      "why": "Optional until autonomous paid API use or cross-organization agent commerce is a real requirement."
+    }
+  ],
+  "metadata": {
+    "canonical_dimensions": {
+      "P": "Perception",
+      "R": "Reason",
+      "A": "Anima",
+      "I": "Intention",
+      "N": "Nerve"
+    },
+    "legacy_dimension_ids_preserved": true,
+    "source_of_truth": "this JSON file",
+    "html_policy": "HTML is a rendered view; database payload must match this file exactly after JSON parsing",
+    "review_note": "Source claims are not automatically verified by inclusion in the knowledge base.",
+    "canonical_version": "0.3.0",
+    "claim_level_source_mapping": true,
+    "claim_count": 20,
+    "source_count": 19,
+    "source_review_date": "2026-10-20",
+    "source_review_scope": "Primary/official pages were inspected for identity and claim scope; not a systematic review, peer-review assessment or independent experiment replication.",
+    "confidence_note": "Legacy qualitative High/Medium/Low labels are retained for historical continuity and must not be treated as numeric probabilities."
+  }
+};
+const byId = id => DB.dimensions.find(x=>x.id===id);
+let selected='brain';
+const $=id=>document.getElementById(id);
+function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function matches(item,q){if(!q)return true;return JSON.stringify(item).toLowerCase().includes(q.toLowerCase())}
+function navButton(id,name,desc,icon=''){return `<button class="navitem ${selected===id?'active':''}" data-id="${safe(id)}"><strong>${icon} ${safe(name)}</strong><small>${safe(desc||'')}</small></button>`}
+function renderNav(){
+ $('nav').innerHTML=DB.dimensions.filter(x=>matches(x,$('search').value)).map(x=>navButton(x.id,x.name,x.summary,x.icon)).join('');
+ $('crossnav').innerHTML=DB.cross_cutting.filter(x=>matches(x,$('search').value)).map(x=>navButton(x.id,x.name,x.summary,'↔️')).join('');
+ document.querySelectorAll('[data-id]').forEach(b=>b.addEventListener('click',()=>{selected=b.dataset.id;renderAll()}));
+}
+const pos={brain:[360,55],body:[565,150],senses:[485,300],will:[235,300],soul:[155,150]};
+function renderGraph(){
+ const svg=$('graph');let s='';
+ DB.relations.forEach(r=>{let a=pos[r.from],b=pos[r.to];s+=`<line class="edge" x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}"/>`});
+ DB.dimensions.forEach(d=>{let [x,y]=pos[d.id];s+=`<g data-id="${d.id}" style="cursor:pointer"><circle class="node" cx="${x}" cy="${y}" r="48" fill="${d.color}"/><text x="${x}" y="${y-5}" text-anchor="middle" class="node-label">${d.icon}</text><text x="${x}" y="${y+17}" text-anchor="middle" class="node-label">${safe(d.name.split(' — ')[0])}</text></g>`});
+ svg.innerHTML=s;svg.querySelectorAll('[data-id]').forEach(n=>n.addEventListener('click',()=>{selected=n.dataset.id;renderAll()}));
+ $('relations').innerHTML=DB.relations.filter(r=>r.from===selected||r.to===selected).map(r=>`<span class="linkchip" title="${safe(r.label)}" data-rel="${r.from===''+selected?r.to:r.from}">${safe(byId(r.from).name.split(' — ')[0])} → ${safe(byId(r.to).name.split(' — ')[0])}: ${safe(r.label)}</span>`).join('');
+ $('relations').querySelectorAll('[data-rel]').forEach(n=>n.addEventListener('click',()=>{selected=n.dataset.rel;renderAll()}));
+}
+function renderDetail(){
+ let d=byId(selected), cross=DB.cross_cutting.find(x=>x.id===selected);
+ if(cross){$('detail').innerHTML=`<h2>↔️ ${safe(cross.name)}</h2><p>${safe(cross.summary)}</p><h3>Verknüpfte Dimensionen</h3><div class="links">${cross.links.map(id=>`<button class="linkchip" data-jump="${id}">${safe(byId(id).name)}</button>`).join('')}</div>`;wireJumps();return}
+ if(!d){$('detail').innerHTML='<h2>Keine Auswahl</h2>';return}
+ const statusClass=s=>s==='High'?'high':s==='Low'?'low':'';
+ $('detail').innerHTML=`<h2>${d.icon} ${safe(d.name)}</h2><p>${safe(d.summary)}</p><h3>Zentrale Konzepte</h3><div class="links">${d.key_concepts.map(c=>`<span class="badge">${safe(c)}</span>`).join('')}</div><div class="section"><h3>Allgemeine Umsetzungsnotizen</h3><p>${safe(d.implementation_notes)}</p></div><div class="section"><h3>Behauptungen & Evidenzprüfung</h3>${d.claims.map(c=>`<div class="claim"><strong>${safe(c.claim)} <span class="badge ${statusClass(c.confidence)}">Legacy confidence: ${safe(c.confidence)}</span></strong><span>${safe(c.status)}</span><span class="muted">Epistemic: ${safe(c.epistemic_status||'unclassified')} · Verification: ${safe(c.verification_status||'not_checked')} · Claim ID: ${safe(c.claim_id||'legacy')}</span><span class="muted">${safe(c.assessment_note||'No claim-level review note recorded.')}</span><span>${(c.sourceIds||[]).map(id=>{let x=DB.sources.find(s=>s.id===id);return x?`<a href="${safe(x.url)}" target="_blank" rel="noopener noreferrer">${safe(x.id)}: ${safe(x.title)}</a>`:`<span class="badge">Missing source ${safe(id)}</span>`}).join(' · ')||'No external source asserted; design synthesis.'}</span></div>`).join('')}</div><div class="section"><h3>Verknüpfte Quellen</h3>${d.sourceIds.map(id=>{let x=DB.sources.find(s=>s.id===id);return x?`<div class="source"><strong>${safe(x.id)} · ${safe(x.title)}</strong><br><a href="${safe(x.url)}" target="_blank" rel="noopener noreferrer">${safe(x.url)}</a><div class="muted">${safe(x.note)}</div></div>`:''}).join('')}</div>`;
+}
+function wireJumps(){document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>{selected=b.dataset.jump;renderAll()}))}
+function renderPriority(){let q=$('search').value;$('priority').innerHTML=DB.priority.filter(x=>matches(x,q)).map(p=>`<div class="mini"><h3>#${p.rank} ${safe(p.item)}</h3><span class="badge">${safe(p.dimension)}</span><p>${safe(p.why)}</p></div>`).join('')}
+function renderSources(){let q=$('search').value;$('sources').innerHTML=DB.sources.filter(x=>matches(x,q)).map(x=>`<div class="source"><strong>${safe(x.id)} · ${safe(x.title)}</strong> <span class="badge">${safe(x.type)}</span><br><a href="${safe(x.url)}" target="_blank" rel="noopener noreferrer">${safe(x.url)}</a><div class="muted">${safe(x.note)}</div></div>`).join('')}
+function renderAll(){renderNav();renderGraph();renderDetail();renderPriority();renderSources()}
+$('search').addEventListener('input',()=>{const q=$('search').value;const f=$('filter').value;if(f!=='all'&&byId(f))selected=f;renderAll();if(q&&!matches(byId(selected)||DB.cross_cutting.find(x=>x.id===selected),q)){let found=DB.dimensions.find(x=>matches(x,q));if(found){selected=found.id;renderAll()}}});
+$('filter').addEventListener('change',()=>{if($('filter').value!=='all')selected=$('filter').value;renderAll()});
+$('export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(DB,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='PRAIN-knowledge-base-v0.2.0.json';a.click();URL.revokeObjectURL(a.href)});
+renderAll();
+</script></body></html>

@@ -1,0 +1,461 @@
+{
+  "report_version": "0.9.4-source-fact-check",
+  "checked_at": "2026-10-20",
+  "scope": "One-pass inspection of official project/vendor pages and primary papers for source identity, broad proposition support, and obvious scope/overclaim errors. This is not peer review, replication, a legal opinion, or comprehensive claim verification.",
+  "source_count": 19,
+  "claim_count": 20,
+  "sources": [
+    {
+      "source_id": "S1",
+      "checked_url": "https://mem0.ai/",
+      "check_method": "official site opened; research link inspected",
+      "result": "PASS_WITH_SCOPE_LIMIT",
+      "what_is_supported": "Mem0 is an active product/project for persistent agent memory; product claims are vendor claims and do not establish universal benchmark outcomes.",
+      "limitations": "Product marketing is not independent validation."
+    },
+    {
+      "source_id": "S2",
+      "checked_url": "https://github.com/getzep/graphiti",
+      "check_method": "official repository opened",
+      "result": "PASS",
+      "what_is_supported": "Graphiti is an available project/repository for agent knowledge graphs.",
+      "limitations": "Repository activity and implementation suitability require version-specific review."
+    },
+    {
+      "source_id": "S3",
+      "checked_url": "https://www.letta.com/",
+      "check_method": "official project page opened",
+      "result": "PASS",
+      "what_is_supported": "Letta is an agent/memory-related project.",
+      "limitations": "Do not infer that any specific architecture is universally superior."
+    },
+    {
+      "source_id": "S4",
+      "checked_url": "https://arxiv.org/abs/2502.12110",
+      "check_method": "primary arXiv abstract opened",
+      "result": "PASS_PRIMARY_SOURCE",
+      "what_is_supported": "A-MEM describes dynamic Zettelkasten-inspired memory organization and linking.",
+      "limitations": "Paper findings are evaluation-specific; this refutes the cited claim that A-MEM core method is GRPO routing."
+    },
+    {
+      "source_id": "S5",
+      "checked_url": "https://arxiv.org/html/2603.07670v1",
+      "check_method": "primary arXiv HTML opened",
+      "result": "PASS_PRIMARY_SOURCE",
+      "what_is_supported": "Survey covers memory mechanisms, evaluation and challenges.",
+      "limitations": "Survey scope and benchmark details must be checked before quantitative statements."
+    },
+    {
+      "source_id": "S6",
+      "checked_url": "https://github.com/agiresearch/AIOS",
+      "check_method": "official GitHub repository opened",
+      "result": "PASS",
+      "what_is_supported": "AIOS is a research/software project for managing LLM-agent resources.",
+      "limitations": "Repository existence does not show universal adoption or production readiness."
+    },
+    {
+      "source_id": "S7",
+      "checked_url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/",
+      "check_method": "official AWS developer guide identified and searched",
+      "result": "PASS_OFFICIAL_DOCS",
+      "what_is_supported": "AgentCore offers runtime/agent facilities; isolation and tenant binding vary by execution mode and caller configuration.",
+      "limitations": "AWS documentation notes EC2 Instances compute does not automatically isolate different agents sharing one instance; never phrase as unconditional isolation."
+    },
+    {
+      "source_id": "S8",
+      "checked_url": "https://developers.cloudflare.com/agents/",
+      "check_method": "official Cloudflare Agents docs opened",
+      "result": "PASS_OFFICIAL_DOCS",
+      "what_is_supported": "Cloudflare Agents SDK is based on Durable Objects and exposes agent-related state/RPC/scheduling capabilities.",
+      "limitations": "No universal latency guarantee established."
+    },
+    {
+      "source_id": "S9",
+      "checked_url": "https://modelcontextprotocol.io/",
+      "check_method": "official MCP introduction/specification opened",
+      "result": "PASS_SPECIFICATION",
+      "what_is_supported": "MCP defines standardized protocol interfaces for connecting model clients with tools/resources.",
+      "limitations": "Protocol conformity does not guarantee tool correctness, authorization or security."
+    },
+    {
+      "source_id": "S10",
+      "checked_url": "https://arxiv.org/abs/2602.14878",
+      "check_method": "primary arXiv record found after inspecting legacy ResearchGate URL",
+      "result": "CORRECTED_SOURCE_AND_PASS",
+      "what_is_supported": "The 2026 study analyzes 856 tools across 103 MCP servers and reports description-quality issues plus measured task/cost trade-offs.",
+      "limitations": "Results are sample/model/task/version specific. Replaced the prior ResearchGate publication URL because its identifier did not identify this paper."
+    },
+    {
+      "source_id": "S11",
+      "checked_url": "https://genai.owasp.org/",
+      "check_method": "official OWASP resource page opened",
+      "result": "PASS_OFFICIAL_GUIDANCE",
+      "what_is_supported": "OWASP has a 2026 Top 10 resource for agentic-application risks.",
+      "limitations": "Security guidance is not certification that a deployment is secure."
+    },
+    {
+      "source_id": "S12",
+      "checked_url": "https://arxiv.org/html/2505.02709v1",
+      "check_method": "primary arXiv paper HTML and abstract inspected",
+      "result": "PASS_PRIMARY_SOURCE",
+      "what_is_supported": "The study measures goal drift under tested settings; best-performing scaffold in the reported hardest setting maintains near-perfect adherence past 100k tokens, while evaluated models show some drift.",
+      "limitations": "Does not create a universal token threshold."
+    },
+    {
+      "source_id": "S13",
+      "checked_url": "https://arxiv.org/abs/2610.22316",
+      "check_method": "primary arXiv record searched/opened",
+      "result": "PASS_EMERGING_PREPRINT",
+      "what_is_supported": "The 2026-10-15 preprint proposes a steering agent and reports improvements in tested information-seeking tasks.",
+      "limitations": "Very recent preprint; not a general production guarantee or settled standard."
+    },
+    {
+      "source_id": "S14",
+      "checked_url": "https://eips.ethereum.org/EIPS/eip-8004",
+      "check_method": "official EIP page opened",
+      "result": "PASS_STANDARD_PROPOSAL_PAGE",
+      "what_is_supported": "ERC-8004 concerns trust/discovery-related mechanisms for agents.",
+      "limitations": "Does not replace local IAM, tenant isolation or policy gateway controls."
+    },
+    {
+      "source_id": "S15",
+      "checked_url": "https://www.x402.org/",
+      "check_method": "official x402 site opened",
+      "result": "PASS",
+      "what_is_supported": "x402 is a real HTTP payment/protocol initiative.",
+      "limitations": "Adoption, deployment security and operational maturity are separate questions."
+    },
+    {
+      "source_id": "S16",
+      "checked_url": "https://github.com/google-agentic-commerce/AP2",
+      "check_method": "official AP2 GitHub repository opened",
+      "result": "PASS",
+      "what_is_supported": "AP2 is a real agent-related commerce/payment protocol initiative.",
+      "limitations": "Repository presence does not prove broad adoption or successful deployment."
+    },
+    {
+      "source_id": "S17",
+      "checked_url": "https://genai.owasp.org/initiatives/agentic-security-initiative/",
+      "check_method": "official OWASP Agentic Security Initiative page found",
+      "result": "CORRECTED_SCOPE_AND_PASS",
+      "what_is_supported": "OWASP runs an Agentic Security Initiative distinct from the 2026 Top 10 resource page.",
+      "limitations": "Updated the URL from the generic homepage to the initiative page."
+    },
+    {
+      "source_id": "S18",
+      "checked_url": "https://arxiv.org/abs/2504.19413",
+      "check_method": "primary arXiv abstract searched/identified",
+      "result": "ADDED_PRIMARY_SOURCE",
+      "what_is_supported": "The paper reports >90% token-cost savings for the specified LOCOMO/full-context comparison.",
+      "limitations": "Not a universal across-all-tasks guarantee."
+    },
+    {
+      "source_id": "S19",
+      "checked_url": "https://arxiv.org/abs/2403.16971",
+      "check_method": "primary arXiv abstract searched/identified",
+      "result": "ADDED_PRIMARY_SOURCE",
+      "what_is_supported": "AIOS paper reports up to 2.1x faster serving for the experiments described.",
+      "limitations": "Benchmark-, baseline- and implementation-specific."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "brain:claim:1",
+      "dimension_id": "brain",
+      "claim": "A three-layer memory model is a useful architecture pattern.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "epistemic_status": "inferred",
+      "verification_status": "not_applicable",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "The three-layer pattern is a design synthesis across memory products/projects, not a universal industry standard or a direct proposition established by one source.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "brain:claim:2",
+      "dimension_id": "brain",
+      "claim": "Mem0 universally saves more than 90% of tokens.",
+      "source_ids": [
+        "S1",
+        "S18"
+      ],
+      "epistemic_status": "disputed",
+      "verification_status": "inconclusive",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "The primary paper reports >90% token-cost savings in a specified LOCOMO/full-context comparison. “Universally” is unsupported; preserve the benchmark and baseline scope.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "brain:claim:3",
+      "dimension_id": "brain",
+      "claim": "A-Mem's core method is GRPO-based memory routing.",
+      "source_ids": [
+        "S4"
+      ],
+      "epistemic_status": "refuted",
+      "verification_status": "failed",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "The cited A-MEM primary paper describes dynamically organized, Zettelkasten-inspired linked memories; it does not establish GRPO-based memory routing as A-MEM's core method. Do not conflate it with the separate steering/GRPO paper S13.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "brain:claim:4",
+      "dimension_id": "brain",
+      "claim": "Memory benchmarks show that recall alone does not guarantee success in multi-step tasks.",
+      "source_ids": [
+        "S5"
+      ],
+      "epistemic_status": "reported",
+      "verification_status": "inconclusive",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "The survey covers memory mechanisms and evaluation challenges; the general caution is reasonable, but task success depends on benchmark/model/agent loop and the entry should not be read as a universal quantitative result.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "body:claim:1",
+      "dimension_id": "body",
+      "claim": "AIOS is a real research architecture for managing LLM-agent resources.",
+      "source_ids": [
+        "S6",
+        "S19"
+      ],
+      "epistemic_status": "corroborated",
+      "verification_status": "passed",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "Repository and primary paper establish AIOS as a research architecture for LLM-agent resources. This verifies existence/scope, not adoption or production maturity.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "body:claim:2",
+      "dimension_id": "body",
+      "claim": "AIOS is the universally adopted primary agent OS standard.",
+      "source_ids": [
+        "S6",
+        "S19"
+      ],
+      "epistemic_status": "disputed",
+      "verification_status": "inconclusive",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "No evidence checked establishes universal adoption or a single universally adopted agent-OS standard. The cited project is one research architecture.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "body:claim:3",
+      "dimension_id": "body",
+      "claim": "AIOS can yield up to 2.1× speed-up.",
+      "source_ids": [
+        "S19"
+      ],
+      "epistemic_status": "reported",
+      "verification_status": "inconclusive",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "The up-to-2.1× figure appears in the paper for particular experiments. Preserve “up to”, baseline, task and implementation context; do not promote it to a universal performance estimate.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "body:claim:4",
+      "dimension_id": "body",
+      "claim": "Cloud runtimes guarantee memory access under 100 ms.",
+      "source_ids": [
+        "S7",
+        "S8"
+      ],
+      "epistemic_status": "disputed",
+      "verification_status": "inconclusive",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "Checked official vendor documentation does not establish a universal <100 ms memory-access guarantee. Cloud/runtime guarantees are product-, path-, region-, load- and configuration-specific.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "senses:claim:1",
+      "dimension_id": "senses",
+      "claim": "MCP standardizes connections to tools and data sources.",
+      "source_ids": [
+        "S9"
+      ],
+      "epistemic_status": "verified",
+      "verification_status": "passed",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "The official MCP specification describes standardized protocol interfaces for client/server interaction with tools and resources. Verification is limited to this scope; MCP itself does not certify the called tool as safe.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "senses:claim:2",
+      "dimension_id": "senses",
+      "claim": "Poorly written tool descriptions can impair tool selection and waste context.",
+      "source_ids": [
+        "S10"
+      ],
+      "epistemic_status": "reported",
+      "verification_status": "inconclusive",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "The primary 2026 study empirically examined 856 tools across 103 servers and found description-quality problems with measurable but mixed outcome effects. Keep the model/task/sample scope and trade-offs.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "senses:claim:3",
+      "dimension_id": "senses",
+      "claim": "MCP is a universal, fully secure industry standard.",
+      "source_ids": [
+        "S9",
+        "S11",
+        "S17"
+      ],
+      "epistemic_status": "disputed",
+      "verification_status": "inconclusive",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "Neither a protocol specification nor general security guidance supports the claim that MCP is universally and fully secure. Security depends on implementation, authorization, tool permissions and deployment.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "senses:claim:4",
+      "dimension_id": "senses",
+      "claim": "Event-triggered perception is a useful architecture pattern.",
+      "source_ids": [],
+      "epistemic_status": "inferred",
+      "verification_status": "not_applicable",
+      "assessment_method": "design_synthesis",
+      "checked_at": "2026-10-20",
+      "assessment_note": "Architecture synthesis only: event-triggered perception is a common systems pattern. No specific external empirical source is asserted for this general design statement.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "will:claim:1",
+      "dimension_id": "will",
+      "claim": "LLM agents can drift from original goals during long tasks.",
+      "source_ids": [
+        "S12",
+        "S13"
+      ],
+      "epistemic_status": "corroborated",
+      "verification_status": "inconclusive",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "Research supports goal drift as a studied failure mode in extended agent tasks; severity depends on task, model and scaffold.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "will:claim:2",
+      "dimension_id": "will",
+      "claim": "Goal drift inevitably begins after 100,000 tokens.",
+      "source_ids": [
+        "S12"
+      ],
+      "epistemic_status": "refuted",
+      "verification_status": "failed",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "The cited study does not establish inevitable onset after 100,000 tokens; it reports nearly perfect adherence by its best-performing scaffolded model beyond 100,000 tokens in its hardest setting while still finding some drift across evaluated models.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "will:claim:3",
+      "dimension_id": "will",
+      "claim": "A steering agent can reduce goal drift.",
+      "source_ids": [
+        "S13"
+      ],
+      "epistemic_status": "reported",
+      "verification_status": "inconclusive",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "The 2026 preprint reports a steering agent improving performance/efficiency in information-seeking tasks. This is emerging research, not a universal or production-validated guarantee.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "will:claim:4",
+      "dimension_id": "will",
+      "claim": "Goal drift can be driven nearly to zero by the described binding/commitment split.",
+      "source_ids": [
+        "S12",
+        "S13"
+      ],
+      "epistemic_status": "unknown",
+      "verification_status": "inconclusive",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "The checked sources do not establish that a binding/commitment split drives goal drift nearly to zero. No quantitative promise should be repeated without a named evaluation and baseline.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "soul:claim:1",
+      "dimension_id": "soul",
+      "claim": "Agent systems benefit from identity, scoped authorization and auditability.",
+      "source_ids": [
+        "S11",
+        "S14",
+        "S17"
+      ],
+      "epistemic_status": "inferred",
+      "verification_status": "not_applicable",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "Identity, scoped authorization and auditability are architectural control principles supported by the risk and trust standards landscape; exact mechanisms and assurance levels vary.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "soul:claim:2",
+      "dimension_id": "soul",
+      "claim": "ERC-8004 replaces local identity and access management.",
+      "source_ids": [
+        "S14"
+      ],
+      "epistemic_status": "refuted",
+      "verification_status": "failed",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "ERC-8004 is an agent discovery/trust-related standard proposal; it does not replace application-local authentication, authorization, tenant isolation or policy enforcement.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "soul:claim:3",
+      "dimension_id": "soul",
+      "claim": "x402 and AP2 are real protocol initiatives for agent-related payments.",
+      "source_ids": [
+        "S15",
+        "S16"
+      ],
+      "epistemic_status": "corroborated",
+      "verification_status": "passed",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "Official x402 and AP2 project records establish these as real payment/protocol initiatives. This is not a claim of universal adoption, maturity or safety.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    },
+    {
+      "claim_id": "soul:claim:4",
+      "dimension_id": "soul",
+      "claim": "TEEs automatically make an autonomous agent trustworthy.",
+      "source_ids": [
+        "S11",
+        "S17"
+      ],
+      "epistemic_status": "disputed",
+      "verification_status": "inconclusive",
+      "assessment_method": "primary_source_scope_review_2026-10-20",
+      "checked_at": "2026-10-20",
+      "assessment_note": "A trusted execution environment can provide bounded isolation/attestation properties; it does not by itself make the whole agent, its inputs, tools, policies or external effects trustworthy.",
+      "source_scope": "claim-level only; source association does not imply that a source independently proves the entire proposition"
+    }
+  ],
+  "known_limits": [
+    "S1-S19 represent the source set as of the check date; links and project status may change.",
+    "Some statements are design syntheses and intentionally have no external source.",
+    "Vendor pages can substantiate what a vendor documents, not independently validate all vendor claims.",
+    "Very recent preprints are marked emerging and must not be treated as settled standards."
+  ]
+}

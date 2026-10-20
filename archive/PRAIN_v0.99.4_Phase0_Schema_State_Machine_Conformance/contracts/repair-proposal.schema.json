@@ -1,0 +1,316 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:prain:schema:repair-proposal:1.0.0",
+  "title": "PRAIN HAL Repair Proposal",
+  "description": "HAL may propose repair but has no implicit authority to execute it.",
+  "type": "object",
+  "properties": {
+    "proposal_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "target_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "observation_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+      },
+      "uniqueItems": true
+    },
+    "repair_class": {
+      "type": "string",
+      "enum": [
+        "rebuild_projection",
+        "reindex_derived_store",
+        "retry_idempotent_read",
+        "restart_quiescent_worker",
+        "route_around_readonly_failure",
+        "schema_migration",
+        "policy_change",
+        "credential_change",
+        "source_of_truth_write",
+        "external_side_effect",
+        "other"
+      ]
+    },
+    "change_description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 10000
+    },
+    "bounds": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:prain:schema:inline-repair-bounds:1.0.0",
+      "title": "Repair bounds",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "max_attempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "max_duration_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_cost_delta": {
+          "type": "number",
+          "minimum": 0
+        },
+        "scope_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+          },
+          "uniqueItems": true
+        },
+        "canary_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "max_attempts",
+        "max_duration_seconds",
+        "scope_refs"
+      ],
+      "additionalProperties": false
+    },
+    "rollout": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:prain:schema:inline-rollout:1.0.0",
+      "title": "Repair rollout",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "strategy": {
+          "type": "string",
+          "enum": [
+            "dry_run",
+            "canary",
+            "staged",
+            "immediate_with_rollback"
+          ]
+        },
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          }
+        },
+        "operator_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+        }
+      },
+      "required": [
+        "strategy"
+      ],
+      "additionalProperties": false
+    },
+    "success_metrics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256
+      }
+    },
+    "rollback_conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256
+      }
+    },
+    "requires_human_approval": {
+      "type": "boolean"
+    },
+    "approval_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+      },
+      "uniqueItems": true
+    },
+    "policy_decision_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "approved",
+        "rejected",
+        "executing",
+        "succeeded",
+        "rolled_back",
+        "failed",
+        "expired"
+      ]
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "proposal_id",
+    "tenant_id",
+    "created_at",
+    "target_ref",
+    "observation_refs",
+    "repair_class",
+    "change_description",
+    "bounds",
+    "rollout",
+    "success_metrics",
+    "rollback_conditions",
+    "requires_human_approval",
+    "expires_at",
+    "status",
+    "schema_version"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "repair_class": {
+            "enum": [
+              "schema_migration",
+              "policy_change",
+              "credential_change",
+              "source_of_truth_write",
+              "external_side_effect"
+            ]
+          }
+        },
+        "required": [
+          "repair_class"
+        ]
+      },
+      "then": {
+        "properties": {
+          "requires_human_approval": {
+            "const": true
+          }
+        },
+        "required": [
+          "policy_decision_ref"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "approved",
+              "executing",
+              "succeeded",
+              "rolled_back"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "policy_decision_ref"
+        ]
+      }
+    },
+    {
+      "if": {
+        "allOf": [
+          {
+            "properties": {
+              "repair_class": {
+                "enum": [
+                  "schema_migration",
+                  "policy_change",
+                  "credential_change",
+                  "source_of_truth_write",
+                  "external_side_effect"
+                ]
+              }
+            },
+            "required": [
+              "repair_class"
+            ]
+          },
+          {
+            "properties": {
+              "status": {
+                "enum": [
+                  "approved",
+                  "executing",
+                  "succeeded",
+                  "rolled_back"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "approval_refs": {
+            "minItems": 1
+          }
+        },
+        "required": [
+          "approval_refs"
+        ]
+      }
+    }
+  ]
+}

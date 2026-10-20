@@ -1,0 +1,11 @@
+{
+  "release": "PRAIN_Phase0_v0.2.1",
+  "archive": "PRAIN_Phase0_v0.2.1.zip",
+  "archive_bytes": 30414,
+  "sha256": "5b801aba53c152105525b5552cb803b6b72e233eec546c1b5e37bafc38f28d82",
+  "schemas_checked": 11,
+  "schema_vectors_passed": 10,
+  "schema_vectors_failed": 0,
+  "reference_unit_tests": 11,
+  "reference_unit_test_failures": 0
+}

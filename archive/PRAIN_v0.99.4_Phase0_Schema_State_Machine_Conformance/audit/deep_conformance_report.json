@@ -1,0 +1,1197 @@
+{
+  "package": "PRAIN v0.99.3 Phase-0 Semantic Consistency Candidate",
+  "baseline": "PRAIN v0.9.4",
+  "status": "PASS",
+  "check_count": 237,
+  "passed": 237,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "TC-KB-PARITY-01",
+      "status": "PASS",
+      "detail": "JSON and embedded HTML data differ"
+    },
+    {
+      "name": "TC-KB-INDEPENDENCE-01",
+      "status": "PASS",
+      "detail": "PRAIN independence wording missing"
+    },
+    {
+      "name": "TC-KB-CLAIM-COVERAGE-01",
+      "status": "PASS",
+      "detail": "expected 20 unique claim records with IDs"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:brain:claim:1",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:brain:claim:1",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:brain:claim:1",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:brain:claim:2",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:brain:claim:2",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:brain:claim:2",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:brain:claim:3",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:brain:claim:3",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:brain:claim:3",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-REFUTED-REF:brain:claim:3",
+      "status": "PASS",
+      "detail": "refuted claim lacks failure/refutation evidence"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:brain:claim:4",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:brain:claim:4",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:brain:claim:4",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:body:claim:1",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:body:claim:1",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:body:claim:1",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:body:claim:2",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:body:claim:2",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:body:claim:2",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:body:claim:3",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:body:claim:3",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:body:claim:3",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:body:claim:4",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:body:claim:4",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:body:claim:4",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:senses:claim:1",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:senses:claim:1",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:senses:claim:1",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-VERIFIED-REF:senses:claim:1",
+      "status": "PASS",
+      "detail": "verified claim lacks passed status/reference"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:senses:claim:2",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:senses:claim:2",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:senses:claim:2",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:senses:claim:3",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:senses:claim:3",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:senses:claim:3",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:senses:claim:4",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:senses:claim:4",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:senses:claim:4",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:will:claim:1",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:will:claim:1",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:will:claim:1",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:will:claim:2",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:will:claim:2",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:will:claim:2",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-REFUTED-REF:will:claim:2",
+      "status": "PASS",
+      "detail": "refuted claim lacks failure/refutation evidence"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:will:claim:3",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:will:claim:3",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:will:claim:3",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:will:claim:4",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:will:claim:4",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:will:claim:4",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:soul:claim:1",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:soul:claim:1",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:soul:claim:1",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:soul:claim:2",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:soul:claim:2",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:soul:claim:2",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-REFUTED-REF:soul:claim:2",
+      "status": "PASS",
+      "detail": "refuted claim lacks failure/refutation evidence"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:soul:claim:3",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:soul:claim:3",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:soul:claim:3",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-KB-CLAIM-ID:soul:claim:4",
+      "status": "PASS",
+      "detail": "claim is missing stable ID or assessment metadata"
+    },
+    {
+      "name": "TC-KB-CLAIM-SOURCES:soul:claim:4",
+      "status": "PASS",
+      "detail": "dangling source ID or unjustified source-less claim"
+    },
+    {
+      "name": "TC-KB-CLAIM-AXES:soul:claim:4",
+      "status": "PASS",
+      "detail": "claim epistemic axes are invalid"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:new->corroborated",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:new->disputed",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:new->hypothesized",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:new->inferred",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:new->observed",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:new->refuted",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:new->reported",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:new->unknown",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:new->verified",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:corroborated->corroborated",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:corroborated->disputed",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:corroborated->hypothesized",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:corroborated->inferred",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:corroborated->observed",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:corroborated->refuted",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:corroborated->reported",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:corroborated->unknown",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:corroborated->verified",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:disputed->corroborated",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:disputed->disputed",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:disputed->hypothesized",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:disputed->inferred",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:disputed->observed",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:disputed->refuted",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:disputed->reported",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:disputed->unknown",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:disputed->verified",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:hypothesized->corroborated",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:hypothesized->disputed",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:hypothesized->hypothesized",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:hypothesized->inferred",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:hypothesized->observed",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:hypothesized->refuted",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:hypothesized->reported",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:hypothesized->unknown",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:hypothesized->verified",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:inferred->corroborated",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:inferred->disputed",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:inferred->hypothesized",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:inferred->inferred",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:inferred->observed",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:inferred->refuted",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:inferred->reported",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:inferred->unknown",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:inferred->verified",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:observed->corroborated",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:observed->disputed",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:observed->hypothesized",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:observed->inferred",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:observed->observed",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:observed->refuted",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:observed->reported",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:observed->unknown",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:observed->verified",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:refuted->corroborated",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:refuted->disputed",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:refuted->hypothesized",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:refuted->inferred",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:refuted->observed",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:refuted->refuted",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:refuted->reported",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:refuted->unknown",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:refuted->verified",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:reported->corroborated",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:reported->disputed",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:reported->hypothesized",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:reported->inferred",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:reported->observed",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:reported->refuted",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:reported->reported",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:reported->unknown",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:reported->verified",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:unknown->corroborated",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:unknown->disputed",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:unknown->hypothesized",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:unknown->inferred",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:unknown->observed",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:unknown->refuted",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:unknown->reported",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:unknown->unknown",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:unknown->verified",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:verified->corroborated",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:verified->disputed",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:verified->hypothesized",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:verified->inferred",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:verified->observed",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:verified->refuted",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:verified->reported",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:verified->unknown",
+      "status": "PASS",
+      "detail": "expected True, got True"
+    },
+    {
+      "name": "TC-CLAIM-TRANSITIONS-ALL:verified->verified",
+      "status": "PASS",
+      "detail": "expected False, got False"
+    },
+    {
+      "name": "TC-CLAIM-VERIFIED-01",
+      "status": "PASS",
+      "detail": "verification evidence rule mismatch"
+    },
+    {
+      "name": "TC-CLAIM-REFUTED-01",
+      "status": "PASS",
+      "detail": "refutation evidence rule mismatch"
+    },
+    {
+      "name": "TC-CLAIM-EVENT-01",
+      "status": "PASS",
+      "detail": "claim transition event lacks immutable history fields"
+    },
+    {
+      "name": "TC-POLICY-01",
+      "status": "PASS",
+      "detail": "matching policy, decision and approval should pass reference oracle"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:missing_decision",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: missing_decision"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:deny",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: deny"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:require_approval",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: require_approval"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:defer",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: defer"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:action_digest_mismatch",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: action_digest_mismatch"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:tenant_mismatch",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: tenant_mismatch"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:expired_decision",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: expired_decision"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:decision_outlives_command",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: decision_outlives_command"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:future_evaluated_at",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: future_evaluated_at"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:stale_policy",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: stale_policy"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:revocation_epoch",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: revocation_epoch"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:identity_version",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: identity_version"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:policy_rule_refs",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: policy_rule_refs"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:approval_expired",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: approval_expired"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:approval_revoked",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: approval_revoked"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:approval_rejected",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: approval_rejected"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:approval_effect_changed",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: approval_effect_changed"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:approval_actor_changed",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: approval_actor_changed"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:approval_identity_changed",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: approval_identity_changed"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:approval_used",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: approval_used"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:missing_approval",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: missing_approval"
+    },
+    {
+      "name": "TC-POLICY-NEGATIVE:extra_approval_ref",
+      "status": "PASS",
+      "detail": "unsafe case was allowed: extra_approval_ref"
+    },
+    {
+      "name": "TC-POLICY-DIGEST-BIND:tenant_id",
+      "status": "PASS",
+      "detail": "action digest failed to bind tenant_id"
+    },
+    {
+      "name": "TC-POLICY-DIGEST-BIND:goal_id",
+      "status": "PASS",
+      "detail": "action digest failed to bind goal_id"
+    },
+    {
+      "name": "TC-POLICY-DIGEST-BIND:plan_id",
+      "status": "PASS",
+      "detail": "action digest failed to bind plan_id"
+    },
+    {
+      "name": "TC-POLICY-DIGEST-BIND:actor_principal_id",
+      "status": "PASS",
+      "detail": "action digest failed to bind actor_principal_id"
+    },
+    {
+      "name": "TC-POLICY-DIGEST-BIND:capability",
+      "status": "PASS",
+      "detail": "action digest failed to bind capability"
+    },
+    {
+      "name": "TC-POLICY-DIGEST-BIND:action",
+      "status": "PASS",
+      "detail": "action digest failed to bind action"
+    },
+    {
+      "name": "TC-POLICY-DIGEST-BIND:target_ref",
+      "status": "PASS",
+      "detail": "action digest failed to bind target_ref"
+    },
+    {
+      "name": "TC-POLICY-DIGEST-BIND:input_digest",
+      "status": "PASS",
+      "detail": "action digest failed to bind input_digest"
+    },
+    {
+      "name": "TC-POLICY-DIGEST-BIND:declared_side_effects",
+      "status": "PASS",
+      "detail": "action digest failed to bind declared_side_effects"
+    },
+    {
+      "name": "TC-POLICY-DIGEST-BIND:risk_class",
+      "status": "PASS",
+      "detail": "action digest failed to bind risk_class"
+    },
+    {
+      "name": "TC-POLICY-DIGEST-BIND:deadline",
+      "status": "PASS",
+      "detail": "action digest failed to bind deadline"
+    },
+    {
+      "name": "TC-POLICY-DIGEST-BIND:authorization_context",
+      "status": "PASS",
+      "detail": "action digest failed to bind authorization_context"
+    },
+    {
+      "name": "TC-POLICY-APPROVAL-RECHECK",
+      "status": "PASS",
+      "detail": "require_approval must be followed by a new immutable policy decision bound from command reference"
+    },
+    {
+      "name": "TC-TENANT-01:action-command.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:claim.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:delegation-grant.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:deletion-request.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:evidence-record.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:execution-receipt.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:goal.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:health-signal.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:message-envelope.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:observation.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:policy-approval.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:policy-decision.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:principal.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:repair-proposal.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:state-record.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:tenant.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-TENANT-01:claim-transition-event.schema.json",
+      "status": "PASS",
+      "detail": "tenant_id must be required in protected canonical contract"
+    },
+    {
+      "name": "TC-PROVENANCE-01:claim.schema.json",
+      "status": "PASS",
+      "detail": "source/provenance field missing"
+    },
+    {
+      "name": "TC-PROVENANCE-01:observation.schema.json",
+      "status": "PASS",
+      "detail": "source/provenance field missing"
+    },
+    {
+      "name": "TC-PROVENANCE-01:evidence-record.schema.json",
+      "status": "PASS",
+      "detail": "source/provenance field missing"
+    },
+    {
+      "name": "TC-DELEGATION-01",
+      "status": "PASS",
+      "detail": "properly narrowed delegation rejected"
+    },
+    {
+      "name": "TC-DELEGATION-02",
+      "status": "PASS",
+      "detail": "delegation widening/expiry/revocation cases not rejected"
+    },
+    {
+      "name": "TC-IDEMPOTENCY-01",
+      "status": "PASS",
+      "detail": "same key with changed action was not rejected"
+    },
+    {
+      "name": "TC-UNKNOWN-OUTCOME-01",
+      "status": "PASS",
+      "detail": "unknown effect retry rules mismatch"
+    },
+    {
+      "name": "TC-RECEIPT-01",
+      "status": "PASS",
+      "detail": "execution receipt conditional semantics missing"
+    },
+    {
+      "name": "TC-CAS-01",
+      "status": "PASS",
+      "detail": "CAS expected version/new version rules mismatch"
+    },
+    {
+      "name": "TC-AUTHORITY-01",
+      "status": "PASS",
+      "detail": "projection can overwrite authoritative state or authorized writer blocked"
+    },
+    {
+      "name": "TC-HAL-01",
+      "status": "PASS",
+      "detail": "HAL can self-approve or omit required approval"
+    },
+    {
+      "name": "TC-HAL-02",
+      "status": "PASS",
+      "detail": "HAL hard-limit/policy change bypassed independent gate"
+    },
+    {
+      "name": "TC-DELETION-01",
+      "status": "PASS",
+      "detail": "deletion verified without full propagation or over legal hold"
+    },
+    {
+      "name": "TC-EVIDENCE-01",
+      "status": "PASS",
+      "detail": "deleted content retention invariant failed"
+    },
+    {
+      "name": "TC-EVIDENCE-02",
+      "status": "PASS",
+      "detail": "digest alone incorrectly treated as authenticity"
+    },
+    {
+      "name": "TC-GOAL-COMPLETION-01",
+      "status": "PASS",
+      "detail": "goal completed without evidence for every criterion"
+    },
+    {
+      "name": "TC-QUANTUM-READY-01",
+      "status": "PASS",
+      "detail": "quantum-ready non-advantage rule missing"
+    },
+    {
+      "name": "TC-DELIVERY-01",
+      "status": "PASS",
+      "detail": "global exactly-once forbidden rule missing"
+    },
+    {
+      "name": "TC-RUNTIME-BOUNDARY-01",
+      "status": "PASS",
+      "detail": "runtime/framework code unexpectedly included"
+    },
+    {
+      "name": "TC-INVARIANT-COVERAGE-30",
+      "status": "PASS",
+      "detail": "some invariant lacks mapped evidence"
+    },
+    {
+      "name": "TC-KB-DISPOSITION-COUNT",
+      "status": "PASS",
+      "detail": "count=114; expected 114 distinct items"
+    },
+    {
+      "name": "TC-KB-DISPOSITION-CLAIMS",
+      "status": "PASS",
+      "detail": "claim disposition list does not cover exactly all claims"
+    },
+    {
+      "name": "TC-SOURCE-AUDIT-19",
+      "status": "PASS",
+      "detail": "expected 19 distinct source check records"
+    },
+    {
+      "name": "TC-SOURCE-AUDIT-20-CLAIMS",
+      "status": "PASS",
+      "detail": "source audit does not cover each claim exactly once"
+    }
+  ],
+  "errors": [],
+  "scope_limit": "reference-oracle/specification conformance only; not runtime execution, penetration testing or independent audit"
+}

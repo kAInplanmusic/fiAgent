@@ -1,0 +1,17 @@
+{
+  "name": "PRAIN Architecture Deepening Pack",
+  "version": "0.4.0",
+  "archive": "PRAIN_Architecture_v0.4.0.zip",
+  "sha256": "60de298ddcb130221b240056a805c018158c89675ebfa94049384a01e2f4052c",
+  "size_bytes": 25686,
+  "json_contracts": 3,
+  "documents": 16,
+  "validation": {
+    "json_syntax": "passed",
+    "schema_version_pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+    "pattern_checks": "passed",
+    "jsonschema_check_schema": "passed",
+    "yaml_syntax": "passed"
+  },
+  "status": "architecture design baseline; runtime implementation not implied"
+}

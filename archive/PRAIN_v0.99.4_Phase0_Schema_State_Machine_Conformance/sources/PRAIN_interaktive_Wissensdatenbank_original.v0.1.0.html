@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PRAIN — Vernetzte Agenten-Wissensdatenbank</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2d;--panel2:#18233a;--text:#edf2ff;--muted:#a6b2cc;--line:#2c3a56;--accent:#83b6ff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(150deg,#0b1020,#10182b);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:24px clamp(16px,4vw,48px);border-bottom:1px solid var(--line);background:#0b1020dd;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.kicker{color:#9fc4ff;text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;font-weight:800}h1{margin:.25rem 0;font-size:clamp(1.7rem,4vw,2.6rem)}header p{margin:.3rem 0;color:var(--muted);max-width:850px}
+main{padding:22px clamp(12px,3vw,36px);max-width:1500px;margin:auto}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+input,select,button{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:var(--text);font:inherit}input{flex:1;min-width:220px}button{cursor:pointer}button:hover,.tab.active{border-color:var(--accent);background:#20375a}
+.layout{display:grid;grid-template-columns:minmax(250px,350px) minmax(0,1fr);gap:18px}.panel,.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}.panel h2,.card h2{margin-top:0}.navlist{display:grid;gap:8px}.navitem{display:block;text-align:left;width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#0f1729}.navitem strong{display:block}.navitem small{color:var(--muted)}.navitem.active{border-color:var(--accent);box-shadow:inset 3px 0 var(--accent)}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 8px;font-size:.76rem;color:var(--muted);margin:2px}.badge.high{color:#9de8bd;border-color:#32694b}.badge.low{color:#ffce9e;border-color:#80532e}
+.muted{color:var(--muted)}.section{margin:18px 0}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.mini{background:#0e1728;border:1px solid var(--line);border-radius:12px;padding:12px}.mini h3{margin:0 0 8px;font-size:1rem}.links{display:flex;gap:7px;flex-wrap:wrap}.linkchip{border:1px solid var(--line);background:#101b30;border-radius:999px;padding:5px 9px;color:#c9dcff;cursor:pointer}
+.graph{width:100%;height:auto;min-height:250px;background:#0e1728;border:1px solid var(--line);border-radius:12px}.graph text{fill:var(--text);font-size:13px}.graph .edge{stroke:#607394;stroke-width:1.5;opacity:.9}.graph .node{cursor:pointer;stroke:#d9e7ff;stroke-width:1.2}.graph .node-label{pointer-events:none;font-weight:700}.claim{border-left:3px solid #5c789f;padding:10px 12px;background:#0e1728;border-radius:0 10px 10px 0;margin:9px 0}.claim strong{display:block}.source{padding:10px 0;border-bottom:1px solid var(--line)}a{color:#9fc4ff}ul{padding-left:22px}footer{padding:25px;color:var(--muted);text-align:center;font-size:.85rem}
+@media(max-width:800px){.layout{grid-template-columns:1fr}header{position:relative}.graph{min-height:220px}}
+</style></head><body>
+<header><div class="kicker">Project knowledge base · v0.1.0</div><h1>🧠 PRAIN</h1><p>Vernetzte Wissensbasis für autonome KI-Agenten — fünf Architekturdimensionen, Quellen, Evidenzstatus und Umsetzungsansätze für Hallerbans.</p></header>
+<main>
+<div class="toolbar"><input id="search" placeholder="Suchen: Begriff, Behauptung, Quelle, Architektur …"><select id="filter"><option value="all">Alle Bereiche</option><option value="brain">Gehirn</option><option value="body">Körper</option><option value="senses">Sinne</option><option value="will">Wille</option><option value="soul">Seele</option><option value="security">Querschnitt: Sicherheit</option><option value="evidence">Querschnitt: Evidenz</option></select><button id="export">Daten exportieren (JSON)</button></div>
+<div class="layout"><aside class="panel"><h2>Wissensbereiche</h2><div class="navlist" id="nav"></div><div class="section"><h3>Querschnitt</h3><div id="crossnav" class="navlist"></div></div><p class="muted">Wähle einen Bereich oder einen Knoten im Beziehungsdiagramm. Suchbegriffe filtern Bereiche, Behauptungen und Quellen.</p></aside>
+<section>
+<div class="card"><h2>Beziehungsdiagramm</h2><p class="muted">Die Linien zeigen funktionale Abhängigkeiten zwischen den fünf Dimensionen. Klicke auf einen Knoten, um Details zu öffnen.</p><svg id="graph" class="graph" viewBox="0 0 720 370" role="img" aria-label="Diagramm der fünf verknüpften PRAIN-Dimensionen"></svg><div id="relations" class="links section"></div></div>
+<div id="detail" class="card section"></div>
+<div class="card section"><h2>Priorisierte Ansatzpunkte für Hallerbans</h2><div id="priority" class="cards"></div></div>
+<div class="card section"><h2>Quellenregister</h2><p class="muted">Primärquellen und offizielle Dokumentation bevorzugen. Zahlenwerte nur mit passendem Benchmark und Kontext übernehmen.</p><div id="sources"></div></div>
+</section></div></main><footer>PRAIN · lokale, eigenständige HTML-Wissensdatenbank · Stand 20.10.2026 · Evidenzstatus ist explizit vorläufig und sollte fortlaufend aktualisiert werden.</footer>
+<script>
+const DB = {
+  "project": {
+    "id": "PRAIN",
+    "title": "PRAIN — Autonomous Agent Architecture Knowledge Base",
+    "version": "0.1.0",
+    "created": "2026-10-20",
+    "purpose": "Linked, evidence-aware knowledge base for the five dimensions of autonomous AI agents, initially grounded in the reviewed research report and its implications for Hallerbans.",
+    "status": "Initial foundation; claims and sources require ongoing verification."
+  },
+  "dimensions": [
+    {
+      "id": "brain",
+      "name": "Brain — Cognition & Memory",
+      "icon": "🧠",
+      "color": "#8b5cf6",
+      "summary": "Working state, session summaries, persistent memory, knowledge graphs, retrieval, reasoning and experience consolidation.",
+      "key_concepts": [
+        "Working memory",
+        "Session-scoped compressed memory",
+        "Persistent long-term store",
+        "Mem0",
+        "Zep / Graphiti",
+        "Letta",
+        "A-Mem",
+        "MemoryAgentBench",
+        "MemoryArena",
+        "LoCoMo",
+        "Test-time compute",
+        "Sleep-time compute",
+        "Procedural memory"
+      ],
+      "for_hallerbans": "Keep current task state, durable project facts and execution history distinct. Evaluate memory systems against real multi-step tasks instead of selecting by benchmark headline alone.",
+      "claims": [
+        {
+          "claim": "A three-layer memory model is a useful architecture pattern.",
+          "status": "Supported as a design pattern; not a universal industry standard.",
+          "confidence": "High"
+        },
+        {
+          "claim": "Mem0 universally saves more than 90% of tokens.",
+          "status": "Not established as a universal result; requires the specific benchmark and comparison setup.",
+          "confidence": "Low"
+        },
+        {
+          "claim": "A-Mem's core method is GRPO-based memory routing.",
+          "status": "Mischaracterizes the cited A-Mem paper; its central approach is dynamic, Zettelkasten-inspired memory organization.",
+          "confidence": "High"
+        },
+        {
+          "claim": "Memory benchmarks show that recall alone does not guarantee success in multi-step tasks.",
+          "status": "Broadly supported; exact percentages depend on benchmark, model and setup.",
+          "confidence": "High"
+        }
+      ],
+      "sourceIds": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "body",
+      "name": "Body — Runtime & Infrastructure",
+      "icon": "🖥️",
+      "color": "#0ea5e9",
+      "summary": "Task execution, process lifecycle, resource management, isolation, concurrency, scheduling and agent runtime.",
+      "key_concepts": [
+        "AIOS",
+        "Agent OS",
+        "Task lifecycle",
+        "Persistent jobs",
+        "Process supervision",
+        "Resource limits",
+        "Cloudflare Durable Objects",
+        "Amazon Bedrock AgentCore Runtime",
+        "MicroVM isolation",
+        "Edge runtime"
+      ],
+      "for_hallerbans": "Prioritize a reliable Linux runtime, persistent task state, restart/resume, timeouts, concurrency limits, observability and controlled hand-offs before adopting a full research Agent OS.",
+      "claims": [
+        {
+          "claim": "AIOS is a real research architecture for managing LLM-agent resources.",
+          "status": "Supported.",
+          "confidence": "High"
+        },
+        {
+          "claim": "AIOS is the universally adopted primary agent OS standard.",
+          "status": "Overstated; no such universal standard is established.",
+          "confidence": "High"
+        },
+        {
+          "claim": "AIOS can yield up to 2.1× speed-up.",
+          "status": "A reported result under particular experiments, not a general guarantee.",
+          "confidence": "Medium"
+        },
+        {
+          "claim": "Cloud runtimes guarantee memory access under 100 ms.",
+          "status": "Not substantiated as a universal guarantee by the listed documentation.",
+          "confidence": "High"
+        }
+      ],
+      "sourceIds": [
+        "S6",
+        "S7",
+        "S8"
+      ]
+    },
+    {
+      "id": "senses",
+      "name": "Senses — Perception & Tools",
+      "icon": "👁️",
+      "color": "#14b8a6",
+      "summary": "MCP and other tool interfaces, web/GUI access, files, APIs, multimodal inputs, events and result verification.",
+      "key_concepts": [
+        "Model Context Protocol",
+        "JSON-RPC",
+        "Tool schemas",
+        "MCP tool descriptions",
+        "Browser and GUI perception",
+        "Vision-language models",
+        "Audio/video/PDF inputs",
+        "Event-triggered perception",
+        "Tool-result verification"
+      ],
+      "for_hallerbans": "Maintain a small, clear tool catalog. Specify purpose, input/output schema, limits and failure modes; verify effects from observed system state rather than trusting the model's narration.",
+      "claims": [
+        {
+          "claim": "MCP standardizes connections to tools and data sources.",
+          "status": "Supported; it standardizes interfaces, not correctness or authorization by itself.",
+          "confidence": "High"
+        },
+        {
+          "claim": "Poorly written tool descriptions can impair tool selection and waste context.",
+          "status": "Supported as an active research concern; quantitative benefits need specific evidence.",
+          "confidence": "Medium"
+        },
+        {
+          "claim": "MCP is a universal, fully secure industry standard.",
+          "status": "Overstated; security depends on implementation, permissions and deployment.",
+          "confidence": "High"
+        },
+        {
+          "claim": "Event-triggered perception is a useful architecture pattern.",
+          "status": "Plausible and established as a general systems pattern, not unique to 2026.",
+          "confidence": "High"
+        }
+      ],
+      "sourceIds": [
+        "S9",
+        "S10",
+        "S11"
+      ]
+    },
+    {
+      "id": "will",
+      "name": "Will — Goals & Control",
+      "icon": "🎯",
+      "color": "#f59e0b",
+      "summary": "Goal persistence, planning, task decomposition, progress tracking, verification, recovery and resistance to goal drift.",
+      "key_concepts": [
+        "Goal drift",
+        "Pattern-matching bias",
+        "Task decomposition",
+        "Success criteria",
+        "Independent verifier",
+        "Steering agent",
+        "Trajectory monitoring",
+        "Commitment state",
+        "Retry/recovery policy"
+      ],
+      "for_hallerbans": "Store the goal and measurable acceptance criteria outside the transient model context. Check each major step against them; mark work complete only when the result is independently verified.",
+      "claims": [
+        {
+          "claim": "LLM agents can drift from original goals during long tasks.",
+          "status": "Supported by research; severity varies by model and task.",
+          "confidence": "High"
+        },
+        {
+          "claim": "Goal drift inevitably begins after 100,000 tokens.",
+          "status": "Not supported as a universal threshold.",
+          "confidence": "High"
+        },
+        {
+          "claim": "A steering agent can reduce goal drift.",
+          "status": "Promising research direction; effectiveness is task- and setup-dependent.",
+          "confidence": "Medium"
+        },
+        {
+          "claim": "Goal drift can be driven nearly to zero by the described binding/commitment split.",
+          "status": "Not established by the cited evidence.",
+          "confidence": "High"
+        }
+      ],
+      "sourceIds": [
+        "S12",
+        "S13"
+      ]
+    },
+    {
+      "id": "soul",
+      "name": "Soul — Identity & Governance",
+      "icon": "🔐",
+      "color": "#ec4899",
+      "summary": "Agent identity, delegated authority, least privilege, audit trails, ownership, reputation and optional payment capabilities.",
+      "key_concepts": [
+        "Agent Identity and Access Management",
+        "Scoped delegation",
+        "Continuous authorization",
+        "Audit logs",
+        "ERC-8004",
+        "x402",
+        "AP2",
+        "Trusted Execution Environments",
+        "Owner records"
+      ],
+      "for_hallerbans": "Give the agent a clear service identity, scoped credentials and auditable action logs. Treat crypto identity and autonomous payments as optional capabilities, not prerequisites for general autonomy.",
+      "claims": [
+        {
+          "claim": "Agent systems benefit from identity, scoped authorization and auditability.",
+          "status": "Strong architecture principle; exact implementations vary.",
+          "confidence": "High"
+        },
+        {
+          "claim": "ERC-8004 replaces local identity and access management.",
+          "status": "Incorrect; agent discovery/trust mechanisms do not replace local authorization controls.",
+          "confidence": "High"
+        },
+        {
+          "claim": "x402 and AP2 are real protocol initiatives for agent-related payments.",
+          "status": "Supported; adoption and maturity should not be overstated.",
+          "confidence": "High"
+        },
+        {
+          "claim": "TEEs automatically make an autonomous agent trustworthy.",
+          "status": "Incorrect; TEEs address specific isolation/integrity properties, not the full trust problem.",
+          "confidence": "High"
+        }
+      ],
+      "sourceIds": [
+        "S14",
+        "S15",
+        "S16",
+        "S17"
+      ]
+    }
+  ],
+  "cross_cutting": [
+    {
+      "id": "security",
+      "name": "Security across all dimensions",
+      "summary": "Indirect prompt injection, memory poisoning, tool misuse, privilege escalation, secret leakage, supply-chain risks, and excessive agency.",
+      "links": [
+        "brain",
+        "body",
+        "senses",
+        "will",
+        "soul"
+      ]
+    },
+    {
+      "id": "evidence",
+      "name": "Evidence quality & claim verification",
+      "summary": "Separate primary research, official documentation, secondary commentary and unsupported numerical claims. Track publication date, method, benchmark and scope.",
+      "links": [
+        "brain",
+        "body",
+        "senses",
+        "will",
+        "soul"
+      ]
+    },
+    {
+      "id": "feedback",
+      "name": "Evaluation & feedback loops",
+      "summary": "Measure task success, recovery, tool correctness, memory usefulness, cost, latency and goal adherence on representative tasks.",
+      "links": [
+        "brain",
+        "body",
+        "senses",
+        "will"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from": "brain",
+      "to": "will",
+      "type": "supports",
+      "label": "Memory informs planning; goals determine relevant recall"
+    },
+    {
+      "from": "will",
+      "to": "body",
+      "type": "controls",
+      "label": "Plans become executable tasks"
+    },
+    {
+      "from": "senses",
+      "to": "brain",
+      "type": "feeds",
+      "label": "Observations become context and memory"
+    },
+    {
+      "from": "body",
+      "to": "senses",
+      "type": "exposes",
+      "label": "Runtime makes tools and sensors available"
+    },
+    {
+      "from": "soul",
+      "to": "body",
+      "type": "authorizes",
+      "label": "Identity and permissions constrain execution"
+    },
+    {
+      "from": "soul",
+      "to": "senses",
+      "type": "governs",
+      "label": "Access policy governs tools and data"
+    },
+    {
+      "from": "body",
+      "to": "brain",
+      "type": "persists",
+      "label": "Runtime stores task state and history"
+    },
+    {
+      "from": "will",
+      "to": "brain",
+      "type": "updates",
+      "label": "Verified outcomes become reusable experience"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Mem0 documentation / research",
+      "url": "https://mem0.ai/",
+      "type": "Official product/research",
+      "note": "Check the exact version and benchmark before repeating performance claims."
+    },
+    {
+      "id": "S2",
+      "title": "Graphiti — temporal knowledge graph",
+      "url": "https://github.com/getzep/graphiti",
+      "type": "Official repository",
+      "note": "Open-source temporal knowledge graph framework."
+    },
+    {
+      "id": "S3",
+      "title": "Letta",
+      "url": "https://www.letta.com/",
+      "type": "Official project",
+      "note": "Persistent, agent-managed memory and agent runtime concepts."
+    },
+    {
+      "id": "S4",
+      "title": "A-Mem research paper",
+      "url": "https://arxiv.org/abs/2502.12110",
+      "type": "Primary research",
+      "note": "Dynamic, Zettelkasten-inspired memory organization; do not conflate with GRPO routing."
+    },
+    {
+      "id": "S5",
+      "title": "Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Challenges",
+      "url": "https://arxiv.org/html/2603.07670v1",
+      "type": "Research survey",
+      "note": "Use the paper's exact scope and benchmark definitions."
+    },
+    {
+      "id": "S6",
+      "title": "AIOS research project",
+      "url": "https://github.com/agiresearch/AIOS",
+      "type": "Research repository",
+      "note": "Agent operating-system architecture; speed-up claims are experiment-specific."
+    },
+    {
+      "id": "S7",
+      "title": "Amazon Bedrock AgentCore",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/",
+      "type": "Official documentation",
+      "note": "Runtime capabilities and isolation depend on product configuration."
+    },
+    {
+      "id": "S8",
+      "title": "Cloudflare Agents",
+      "url": "https://developers.cloudflare.com/agents/",
+      "type": "Official documentation",
+      "note": "Agents built on Durable Objects; do not infer universal latency guarantees."
+    },
+    {
+      "id": "S9",
+      "title": "Model Context Protocol specification",
+      "url": "https://modelcontextprotocol.io/",
+      "type": "Official specification",
+      "note": "MCP standardizes interfaces; it does not guarantee safe tool behavior."
+    },
+    {
+      "id": "S10",
+      "title": "MCP Tool Descriptions Are Smelly",
+      "url": "https://www.researchgate.net/publication/415927140_Model_Context_Protocol_MCP_Tool_Descriptions_Are_Smelly_Towards_Improving_AI_Agent_Efficiency_with_Augmented_MCP_Tool_Descriptions",
+      "type": "Research paper listing",
+      "note": "Verify the primary paper/version and exact quantitative findings before citing."
+    },
+    {
+      "id": "S11",
+      "title": "OWASP Top 10 for Agentic Applications",
+      "url": "https://genai.owasp.org/",
+      "type": "Security guidance",
+      "note": "Use the official OWASP project page for current categories and wording."
+    },
+    {
+      "id": "S12",
+      "title": "Evaluating Goal Drift in Language Model Agents",
+      "url": "https://arxiv.org/html/2505.02709v1",
+      "type": "Primary research",
+      "note": "Results depend on tested models and tasks; no universal 100k-token threshold."
+    },
+    {
+      "id": "S13",
+      "title": "Learning to Steer LLM Agents and Multi-Agent Systems",
+      "url": "https://arxiv.org/html/2610.22316v1",
+      "type": "Primary research preprint",
+      "note": "Treat as emerging research, not an established production standard."
+    },
+    {
+      "id": "S14",
+      "title": "ERC-8004",
+      "url": "https://eips.ethereum.org/EIPS/eip-8004",
+      "type": "Standards proposal",
+      "note": "Agent discovery/trust does not replace local access control."
+    },
+    {
+      "id": "S15",
+      "title": "x402",
+      "url": "https://www.x402.org/",
+      "type": "Official project",
+      "note": "HTTP-based payment protocol; adoption and risk depend on implementation."
+    },
+    {
+      "id": "S16",
+      "title": "Agent Payments Protocol (AP2)",
+      "url": "https://github.com/google-agentic-commerce/AP2",
+      "type": "Official repository",
+      "note": "Payment protocol initiative; distinguish announced scope from deployed adoption."
+    },
+    {
+      "id": "S17",
+      "title": "OWASP Agentic Security Initiative",
+      "url": "https://genai.owasp.org/",
+      "type": "Security guidance",
+      "note": "Cross-cutting security reference; map controls to the actual deployment."
+    }
+  ],
+  "priority": [
+    {
+      "rank": 1,
+      "item": "Persistent task state and verifiable completion criteria",
+      "dimension": "will/body",
+      "why": "Makes long-running work resumable and separates activity from success."
+    },
+    {
+      "rank": 2,
+      "item": "Tool catalog with clear schemas and post-action verification",
+      "dimension": "senses/body",
+      "why": "Reduces ambiguous tool use and unverified claims of success."
+    },
+    {
+      "rank": 3,
+      "item": "Layered memory with explicit project facts and execution history",
+      "dimension": "brain",
+      "why": "Supports continuity without putting everything into one undifferentiated memory store."
+    },
+    {
+      "rank": 4,
+      "item": "Scoped credentials and audit logs",
+      "dimension": "soul/body",
+      "why": "Makes actions attributable and limits unnecessary authority."
+    },
+    {
+      "rank": 5,
+      "item": "Representative evaluation suite",
+      "dimension": "all",
+      "why": "Measures actual improvement before adding more frameworks or agents."
+    },
+    {
+      "rank": 6,
+      "item": "Add a temporal graph or learned steering agent only if tests show need",
+      "dimension": "brain/will",
+      "why": "Advanced components should solve measured gaps rather than add complexity by default."
+    },
+    {
+      "rank": 7,
+      "item": "Payments / on-chain agent identity",
+      "dimension": "soul",
+      "why": "Optional until autonomous paid API use or cross-organization agent commerce is a real requirement."
+    }
+  ]
+};
+const byId = id => DB.dimensions.find(x=>x.id===id);
+let selected='brain';
+const $=id=>document.getElementById(id);
+function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function matches(item,q){if(!q)return true;return JSON.stringify(item).toLowerCase().includes(q.toLowerCase())}
+function navButton(id,name,desc,icon=''){return `<button class="navitem ${selected===id?'active':''}" data-id="${safe(id)}"><strong>${icon} ${safe(name)}</strong><small>${safe(desc||'')}</small></button>`}
+function renderNav(){
+ $('nav').innerHTML=DB.dimensions.filter(x=>matches(x,$('search').value)).map(x=>navButton(x.id,x.name,x.summary,x.icon)).join('');
+ $('crossnav').innerHTML=DB.cross_cutting.filter(x=>matches(x,$('search').value)).map(x=>navButton(x.id,x.name,x.summary,'↔️')).join('');
+ document.querySelectorAll('[data-id]').forEach(b=>b.addEventListener('click',()=>{selected=b.dataset.id;renderAll()}));
+}
+const pos={brain:[360,55],body:[565,150],senses:[485,300],will:[235,300],soul:[155,150]};
+function renderGraph(){
+ const svg=$('graph');let s='';
+ DB.relations.forEach(r=>{let a=pos[r.from],b=pos[r.to];s+=`<line class="edge" x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}"/>`});
+ DB.dimensions.forEach(d=>{let [x,y]=pos[d.id];s+=`<g data-id="${d.id}" style="cursor:pointer"><circle class="node" cx="${x}" cy="${y}" r="48" fill="${d.color}"/><text x="${x}" y="${y-5}" text-anchor="middle" class="node-label">${d.icon}</text><text x="${x}" y="${y+17}" text-anchor="middle" class="node-label">${safe(d.name.split(' — ')[0])}</text></g>`});
+ svg.innerHTML=s;svg.querySelectorAll('[data-id]').forEach(n=>n.addEventListener('click',()=>{selected=n.dataset.id;renderAll()}));
+ $('relations').innerHTML=DB.relations.filter(r=>r.from===selected||r.to===selected).map(r=>`<span class="linkchip" title="${safe(r.label)}" data-rel="${r.from===''+selected?r.to:r.from}">${safe(byId(r.from).name.split(' — ')[0])} → ${safe(byId(r.to).name.split(' — ')[0])}: ${safe(r.label)}</span>`).join('');
+ $('relations').querySelectorAll('[data-rel]').forEach(n=>n.addEventListener('click',()=>{selected=n.dataset.rel;renderAll()}));
+}
+function renderDetail(){
+ let d=byId(selected), cross=DB.cross_cutting.find(x=>x.id===selected);
+ if(cross){$('detail').innerHTML=`<h2>↔️ ${safe(cross.name)}</h2><p>${safe(cross.summary)}</p><h3>Verknüpfte Dimensionen</h3><div class="links">${cross.links.map(id=>`<button class="linkchip" data-jump="${id}">${safe(byId(id).name)}</button>`).join('')}</div>`;wireJumps();return}
+ if(!d){$('detail').innerHTML='<h2>Keine Auswahl</h2>';return}
+ const statusClass=s=>s==='High'?'high':s==='Low'?'low':'';
+ $('detail').innerHTML=`<h2>${d.icon} ${safe(d.name)}</h2><p>${safe(d.summary)}</p><h3>Zentrale Konzepte</h3><div class="links">${d.key_concepts.map(c=>`<span class="badge">${safe(c)}</span>`).join('')}</div><div class="section"><h3>Ansatz für Hallerbans</h3><p>${safe(d.for_hallerbans)}</p></div><div class="section"><h3>Behauptungen & Evidenzprüfung</h3>${d.claims.map(c=>`<div class="claim"><strong>${safe(c.claim)} <span class="badge ${statusClass(c.confidence)}">Confidence: ${safe(c.confidence)}</span></strong><span>${safe(c.status)}</span></div>`).join('')}</div><div class="section"><h3>Verknüpfte Quellen</h3>${d.sourceIds.map(id=>{let x=DB.sources.find(s=>s.id===id);return x?`<div class="source"><strong>${safe(x.id)} · ${safe(x.title)}</strong><br><a href="${safe(x.url)}" target="_blank" rel="noopener noreferrer">${safe(x.url)}</a><div class="muted">${safe(x.note)}</div></div>`:''}).join('')}</div>`;
+}
+function wireJumps(){document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>{selected=b.dataset.jump;renderAll()}))}
+function renderPriority(){let q=$('search').value;$('priority').innerHTML=DB.priority.filter(x=>matches(x,q)).map(p=>`<div class="mini"><h3>#${p.rank} ${safe(p.item)}</h3><span class="badge">${safe(p.dimension)}</span><p>${safe(p.why)}</p></div>`).join('')}
+function renderSources(){let q=$('search').value;$('sources').innerHTML=DB.sources.filter(x=>matches(x,q)).map(x=>`<div class="source"><strong>${safe(x.id)} · ${safe(x.title)}</strong> <span class="badge">${safe(x.type)}</span><br><a href="${safe(x.url)}" target="_blank" rel="noopener noreferrer">${safe(x.url)}</a><div class="muted">${safe(x.note)}</div></div>`).join('')}
+function renderAll(){renderNav();renderGraph();renderDetail();renderPriority();renderSources()}
+$('search').addEventListener('input',()=>{const q=$('search').value;const f=$('filter').value;if(f!=='all'&&byId(f))selected=f;renderAll();if(q&&!matches(byId(selected)||DB.cross_cutting.find(x=>x.id===selected),q)){let found=DB.dimensions.find(x=>matches(x,q));if(found){selected=found.id;renderAll()}}});
+$('filter').addEventListener('change',()=>{if($('filter').value!=='all')selected=$('filter').value;renderAll()});
+$('export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(DB,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='PRAIN-knowledge-base-v0.1.0.json';a.click();URL.revokeObjectURL(a.href)});
+renderAll();
+</script></body></html>

@@ -1,0 +1,1118 @@
+{
+  "package": "PRAIN v0.99.4 Phase-0 Schema/State-Machine Conformance Candidate",
+  "status": "PASS",
+  "check_count": 221,
+  "passed": 221,
+  "failed": 0,
+  "errors": [],
+  "runtime_invariant_count": 26,
+  "non_runtime_boundary_invariant_count": 4,
+  "scope_limit": "cross-document specification consistency only; not runtime execution, security certification, legal review, or external independent audit",
+  "checks": [
+    {
+      "name": "invariant_registry_exactly_30",
+      "status": "PASS",
+      "detail": "actual=30"
+    },
+    {
+      "name": "invariant_registry_ids_unique",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_exactly_30",
+      "status": "PASS",
+      "detail": "actual=30"
+    },
+    {
+      "name": "coverage_ids_unique",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_is_bijection_to_registry",
+      "status": "PASS",
+      "detail": "uncovered=[]; orphaned=[]"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-001",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-001",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-001",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-001",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-002",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-002",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-002",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-002",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-003",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-003",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-003",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-003",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-004",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-004",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-004",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-004",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-005",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-005",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-005",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-005",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-006",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-006",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-006",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-006",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-007",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-007",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-007",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-007",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-008",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-008",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-008",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-008",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-009",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-009",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-009",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-009",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-010",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-010",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-010",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-010",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-011",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-011",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-011",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-011",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-012",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-012",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-012",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-012",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-013",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-013",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-013",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-013",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-014",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-014",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-014",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-014",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-015",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-015",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-015",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-015",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-016",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-016",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-016",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-016",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-017",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-017",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-017",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-017",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-018",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-018",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-018",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-018",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-019",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-019",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-019",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-019",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-020",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-020",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-020",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-020",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-021",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-021",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-021",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-021",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-022",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-022",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-022",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-022",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-023",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-023",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-023",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-023",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-024",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-024",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-024",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-024",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-025",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-025",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-025",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-025",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-026",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-026",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-026",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-026",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-027",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-027",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-027",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-027",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-028",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-028",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-028",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-028",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-029",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-029",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-029",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-029",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_requirement_matches:INV-030",
+      "status": "PASS",
+      "detail": "coverage wording must match invariant registry"
+    },
+    {
+      "name": "coverage_has_test_refs:INV-030",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_refs_unique:INV-030",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_phase0_scope:INV-030",
+      "status": "PASS",
+      "detail": "actual=specification-coverage-only"
+    },
+    {
+      "name": "coverage_boundary:INV-001",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-001",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-002",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-002",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-003",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-003",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-004",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-004",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-005",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-005",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-006",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-006",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-007",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-007",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-008",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-008",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-009",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-009",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-010",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-010",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-011",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-011",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-012",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-012",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-013",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-013",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-014",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-014",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-015",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-015",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-016",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-016",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-017",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-017",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-018",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-018",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-019",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-019",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-020",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-020",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-021",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-021",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-022",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-022",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-023",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-023",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-024",
+      "status": "PASS",
+      "detail": "expected=build-artifact; actual=build-artifact"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-024",
+      "status": "PASS",
+      "detail": "expected=False; actual=False"
+    },
+    {
+      "name": "coverage_boundary:INV-025",
+      "status": "PASS",
+      "detail": "expected=architecture-conformance; actual=architecture-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-025",
+      "status": "PASS",
+      "detail": "expected=False; actual=False"
+    },
+    {
+      "name": "coverage_boundary:INV-026",
+      "status": "PASS",
+      "detail": "expected=specification-claim; actual=specification-claim"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-026",
+      "status": "PASS",
+      "detail": "expected=False; actual=False"
+    },
+    {
+      "name": "coverage_boundary:INV-027",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-027",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-028",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-028",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-029",
+      "status": "PASS",
+      "detail": "expected=runtime-conformance; actual=runtime-conformance"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-029",
+      "status": "PASS",
+      "detail": "expected=True; actual=True"
+    },
+    {
+      "name": "coverage_boundary:INV-030",
+      "status": "PASS",
+      "detail": "expected=release-package-inventory; actual=release-package-inventory"
+    },
+    {
+      "name": "coverage_runtime_flag:INV-030",
+      "status": "PASS",
+      "detail": "expected=False; actual=False"
+    },
+    {
+      "name": "deep_report_status_pass",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "deep_report_count_matches_payload",
+      "status": "PASS",
+      "detail": "reported=237; actual=237"
+    },
+    {
+      "name": "deep_report_all_checks_pass",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "coverage_references_resolve",
+      "status": "PASS",
+      "detail": "coverage contains a test id not resolvable to deep report names"
+    },
+    {
+      "name": "deep_count_matches_gate",
+      "status": "PASS",
+      "detail": "gate=237/237; report=237/237"
+    },
+    {
+      "name": "schema_state_machine_report_pass",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "schema_state_machine_report_count_matches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "gate_candidate_version",
+      "status": "PASS",
+      "detail": "0.99.4"
+    },
+    {
+      "name": "gate_release_status_pending",
+      "status": "PASS",
+      "detail": "SPECIFICATION_COMPLETE_PENDING_FINAL_USER_RELEASE_APPROVAL"
+    },
+    {
+      "name": "gate_does_not_authorize_phase1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "gate_records_no_release_approval",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "integrity_does_not_authorize_phase1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "integrity_records_no_release_approval",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "gate_semantic_count_fields_are_nonnegative",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "integrity_semantic_count_fields_are_nonnegative",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "closure_status_pending",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "attestation_phase0_decision_explicit",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "attestation_phase1_is_separate",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "no_combined_phase0_phase1_option",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "release_doc_states_separate_gates",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "candidate_version_in_closure",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "candidate_version_in_readme",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "candidate_version_in_completion_report",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "candidate_version_in_attestation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "current_deep_count_consistent",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "state_machine_report_pass",
+      "status": "PASS",
+      "detail": "status=PASS; failed=0"
+    },
+    {
+      "name": "state_machine_count_matches_gate",
+      "status": "PASS",
+      "detail": "gate=504/504; report=504/504"
+    },
+    {
+      "name": "all_seven_workstreams_documented",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "exit_gate_17_documented",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "semantic_audit_document_exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "release_bundle_verifier_exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "metadata_refresh_tool_exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "prain_dimension_count_five",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "prain_dimension_mapping_exact",
+      "status": "PASS",
+      "detail": "actual={'R': 'Reason', 'N': 'Nerve', 'P': 'Perception', 'I': 'Intention', 'A': 'Anima'}"
+    },
+    {
+      "name": "prain_dimension_ids_unique",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "prain_independent_of_hallerbans",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}
