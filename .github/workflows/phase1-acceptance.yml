@@ -1,0 +1,60 @@
+name: PRAIN Phase 1 acceptance gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: reference-v1.1.9
+            path: archive/PRAIN_v1.1.9_Phase1_Reference_Prototype
+          - label: archived-v1.2.18
+            path: archive/PRAIN_Phase1_Prototype_v1.2.18
+          - label: active-v1.2.19
+            path: prototype
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check required source tree exists
+        env:
+          CANDIDATE_PATH: ${{ matrix.path }}
+        run: |
+          test -f "$CANDIDATE_PATH/prain/__init__.py"
+          test -d "$CANDIDATE_PATH/tests"
+          test -f "$CANDIDATE_PATH/tools/verify_release.py"
+      - name: Verify historic Phase 1 import and immutable inventories
+        run: python tools/verify_phase1_import.py
+      - name: Compile Python modules
+        working-directory: ${{ matrix.path }}
+        run: python -m compileall -q prain tests tools
+      - name: Execute complete discovered unit suite
+        working-directory: ${{ matrix.path }}
+        run: python -W error -m unittest discover -s tests -v
+      - name: Verify release inventory and SHA256 digests
+        working-directory: ${{ matrix.path }}
+        run: python tools/verify_release.py
+      - name: Verify active release version
+        if: matrix.label == 'active-v1.2.19'
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path("prototype/MANIFEST.json").read_text())
+          assert manifest["version"] == "1.2.19", f"Unexpected active version: {manifest['version']}"
+          assert manifest["audit_status"] == "PARTIAL_PASS", "Acceptance may not declare production readiness"
+          PY
