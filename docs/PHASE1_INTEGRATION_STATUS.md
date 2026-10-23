@@ -18,8 +18,13 @@ No external model, credential or paid service is needed for these tests.
 
 Fresh local verification on 2026-10-23 with Python 3.12:
 v1.1.9 **59/59 PASS**, v1.2.18 **105/105 PASS**, candidate release inventory
-**66/66 PASS**, exact SHA256 verification **PASS**, `git diff --check` **PASS**.
-GitHub execution is a separate pending check until its run completes successfully.
+**66/66 PASS**, exact SHA256 verification **PASS**. The staged whitespace check
+passes for newly authored integration files. The unchanged imported snapshot
+contains existing Markdown hard-break trailing spaces and one trailing blank line;
+the full staged whitespace check reports those, so it is not claimed green.
+GitHub execution is currently unavailable: both jobs ended before any test
+steps ran. GitHub CI is **BLOCKED**, not a passing test run. The workflow
+must execute successfully before this integration's CI gate can close.
 The file comparison finds **32 added, 15 changed, 20 unchanged, 0 removed**
 files between prototype versions (including their manifests).
 
