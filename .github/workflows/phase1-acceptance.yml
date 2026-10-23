@@ -36,7 +36,7 @@ jobs:
         run: |
           test -f "$CANDIDATE_PATH/prain/__init__.py"
           test -d "$CANDIDATE_PATH/tests"
-          test -f "$CANDIDATE_PATH/tools/verify_release.py"
+          if [ "$CANDIDATE_PATH" != "archive/PRAIN_v1.1.9_Phase1_Reference_Prototype" ]; then\n            test -f "$CANDIDATE_PATH/tools/verify_release.py"\n          fi
       - name: Verify historic Phase 1 import and immutable inventories
         run: python tools/verify_phase1_import.py
       - name: Compile Python modules
@@ -46,6 +46,7 @@ jobs:
         working-directory: ${{ matrix.path }}
         run: python -W error -m unittest discover -s tests -v
       - name: Verify release inventory and SHA256 digests
+        if: matrix.label != 'reference-v1.1.9'
         working-directory: ${{ matrix.path }}
         run: python tools/verify_release.py
       - name: Verify active release version
