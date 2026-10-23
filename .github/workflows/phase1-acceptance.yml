@@ -36,7 +36,9 @@ jobs:
         run: |
           test -f "$CANDIDATE_PATH/prain/__init__.py"
           test -d "$CANDIDATE_PATH/tests"
-          if [ "$CANDIDATE_PATH" != "archive/PRAIN_v1.1.9_Phase1_Reference_Prototype" ]; then\n            test -f "$CANDIDATE_PATH/tools/verify_release.py"\n          fi
+          if [ "$CANDIDATE_PATH" != "archive/PRAIN_v1.1.9_Phase1_Reference_Prototype" ]; then
+            test -f "$CANDIDATE_PATH/tools/verify_release.py"
+          fi
       - name: Verify historic Phase 1 import and immutable inventories
         run: python tools/verify_phase1_import.py
       - name: Compile Python modules
