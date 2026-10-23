@@ -16,8 +16,9 @@ jobs:
       fail-fast: false
       matrix:
         prototype:
-          - PRAIN_v1.1.9_Phase1_Reference_Prototype
-          - PRAIN_Phase1_Prototype_v1.2.18
+          - archive/PRAIN_v1.1.9_Phase1_Reference_Prototype
+          - archive/PRAIN_Phase1_Prototype_v1.2.18
+          - prototype
     env:
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
@@ -30,9 +31,9 @@ jobs:
       - name: Verify source hashes and baseline preservation
         run: python tools/verify_phase1_import.py
       - name: Run Phase 1 reference prototype tests
-        working-directory: archive/${{ matrix.prototype }}
+        working-directory: ${{ matrix.prototype }}
         run: python -W default -m unittest discover -s tests -v
       - name: Verify candidate release inventory
-        if: matrix.prototype == 'PRAIN_Phase1_Prototype_v1.2.18'
-        working-directory: archive/${{ matrix.prototype }}
+        if: matrix.prototype != 'archive/PRAIN_v1.1.9_Phase1_Reference_Prototype'
+        working-directory: ${{ matrix.prototype }}
         run: python tools/verify_release.py
