@@ -31,10 +31,12 @@ class GoalTests(unittest.TestCase):
     def test_completion_requires_verification(self):
         with self.assertRaises(GoalError): self.g.set_status("g1", "completed")
     def test_pass_requires_evidence(self):
-        with self.assertRaises(GoalError): self.g.record_verification("g1", True, [], "tester")
-    def test_passing_verification_completes(self):
-        self.g.activate("g1"); result = self.g.record_verification("g1", True, ["evidence://1"], "tester")
-        self.assertEqual(result.status, "completed"); self.assertTrue(result.verification["passed"])
+        with self.assertRaises(PermissionError): self.g.record_verification("g1", True, [], "tester")
+    def test_legacy_verification_fails_closed(self):
+        self.g.activate("g1")
+        with self.assertRaisesRegex(PermissionError, "verified_goal_completion_required"):
+            self.g.record_verification("g1", True, ["evidence://1"], "tester")
+        self.assertEqual(self.g.get("g1").status, "active")
 
 class PolicyTests(unittest.TestCase):
     def test_no_policy_denied(self):

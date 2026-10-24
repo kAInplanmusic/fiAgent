@@ -27,7 +27,7 @@ class GoalVerificationTests(unittest.TestCase):
             gid = self.create(registry)
             for value in ['false', 1, 0, None, [], {}]:
                 with self.subTest(adapter=type(registry).__name__, value=value):
-                    with self.assertRaises(GoalError):
+                    with self.assertRaises(PermissionError):
                         registry.record_verification(gid, value, ['e1'], 'verifier')
                     self.assertEqual(registry.get(gid).status, 'active')
 
@@ -35,23 +35,22 @@ class GoalVerificationTests(unittest.TestCase):
         for registry in self.registries:
             gid = self.create(registry)
             for refs in [[], [''], [' '], [None], 'evidence', None]:
-                with self.assertRaises(GoalError):
+                with self.assertRaises(PermissionError):
                     registry.record_verification(gid, True, refs, 'verifier')
 
     def test_every_criterion_requires_its_own_result(self):
         for registry in self.registries:
             gid = self.create(registry, 2)
-            with self.assertRaises(GoalError):
+            with self.assertRaises(PermissionError):
                 registry.record_verification(gid, True, ['e1'], 'verifier')
             good = [{'id': str(i), 'passed': True, 'evidence_refs': [f'e{i}']} for i in range(2)]
             for bad in [good[:1], good + [good[0]], [good[0], {'id':'1', 'passed':False, 'evidence_refs':[]}]]:
-                with self.assertRaises(GoalError):
+                with self.assertRaises(PermissionError):
                     registry.record_verification(gid, True, ['e1'], 'verifier', bad)
-            done = registry.record_verification(gid, True, ['e0', 'e1'], 'verifier', good)
-            self.assertEqual(done.status, 'completed')
-            self.assertEqual(len(done.verification['criterion_results']), 2)
-            with self.assertRaises(GoalError):
-                registry.set_status(gid, 'active')
+            with self.assertRaisesRegex(PermissionError, 'verified_goal_completion_required'):
+                registry.record_verification(gid, True, ['e0', 'e1'], 'verifier', good)
+            self.assertEqual(registry.get(gid).status, 'active')
+            self.assertEqual(registry.get(gid).status, 'active')
 
     def test_criteria_are_unique_and_detached(self):
         for registry in self.registries:
@@ -61,7 +60,7 @@ class GoalVerificationTests(unittest.TestCase):
             self.assertEqual(registry.get(goal.goal_id).acceptance_criteria[0]['check'], 'original')
             with self.assertRaises(GoalError):
                 registry.create('goal', criteria * 2)
-            with self.assertRaises(GoalError):
+            with self.assertRaises(PermissionError):
                 registry.record_verification(goal.goal_id, True, ['e'], 'v')
 
 

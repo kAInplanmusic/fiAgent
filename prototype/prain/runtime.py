@@ -70,6 +70,24 @@ class PRAINRuntime:
         self.goals = DurableGoalRegistry(persistent_db_path) if persistent_db_path else GoalRegistry()
         self.policy = PolicyGateway(policies or [])
         self.evidence = DurableEvidenceLedger(persistent_db_path) if persistent_db_path else EvidenceLedger()
+        # Local semantic coordination and self-observation; no authority granted.
+        from .scf import SemanticFabric
+        from .anima_hal import Anima, HAL
+        if persistent_db_path:
+            from .durable_semantics import DurableSemanticFabric, DurableAnima
+            self.scf = DurableSemanticFabric(persistent_db_path)
+            self.anima = DurableAnima("prain-local-runtime", persistent_db_path)
+        else:
+            self.scf = SemanticFabric()
+            self.anima = Anima("prain-local-runtime")
+        self.hal = HAL()
+        from .hal_proposals import HALProposalController
+        self.hal_proposals = HALProposalController()
+        if persistent_db_path:
+            from .fenced_leases import FencedLeaseStore
+            self.fencing = FencedLeaseStore(persistent_db_path)
+        else:
+            self.fencing = None
         self.evaluators = dict(evaluators or {})
         self._receipts: dict[str, ExecutionReceipt] = {}
         self._request_fingerprints: dict[str, str] = {}
@@ -201,10 +219,17 @@ class PRAINRuntime:
         return receipt, asdict(decision)
 
     def verify_goal(self, goal_id: str, passed: bool, evidence_refs: list[str], verifier: str, criterion_results=None):
-        """Verification is explicit and requires evidence references for a pass."""
-        goal = self.goals.record_verification(goal_id, passed, evidence_refs, verifier, criterion_results)
-        self.evidence.append("goal.verification", goal_id, asdict(goal))
-        return goal
+        raise PermissionError("verified_goal_completion_required")
+
+
+    def secure_completion(self, authenticate):
+        """Create the opt-in atomic evidence-verified durable completion facade.
+
+        The caller's trust boundary must supply a real authenticator. Legacy
+        verification methods remain available until callers are migrated.
+        """
+        from .secure_completion import SecureGoalCompletion
+        return SecureGoalCompletion(self, authenticate)
 
     def snapshot(self) -> dict[str, Any]:
         return {

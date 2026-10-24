@@ -100,11 +100,7 @@ class GoalRegistry:
         return self.get(goal_id)
 
     def record_verification(self, goal_id, passed, evidence_refs, verifier, criterion_results=None):
-        goal = self._require(goal_id)
-        goal.verification = validate_verification(goal, passed, evidence_refs, verifier, criterion_results)
-        goal.status = "completed" if passed else "failed"
-        goal.updated_at = _now()
-        return self.get(goal_id)
+        raise PermissionError("verified_goal_completion_required")
 
     def get(self, goal_id):
         return Goal(**asdict(self._require(goal_id)))

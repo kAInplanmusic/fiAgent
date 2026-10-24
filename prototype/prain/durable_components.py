@@ -75,10 +75,8 @@ class DurableGoalRegistry:
             g.status, g.updated_at = status, goal_now()
         return self._mutate(goal_id, f)
     def record_verification(self, goal_id, passed, evidence_refs, verifier, criterion_results=None):
-        def f(g):
-            g.verification = validate_verification(g, passed, evidence_refs, verifier, criterion_results)
-            g.status, g.updated_at = ('completed' if passed else 'failed'), goal_now()
-        return self._mutate(goal_id, f)
+        raise PermissionError("verified_goal_completion_required")
+
     def get(self, goal_id): return self._read(goal_id)
     def list(self):
         with self._db.connection() as c: rows = c.execute('SELECT goal_id FROM prain_goals ORDER BY rowid').fetchall()

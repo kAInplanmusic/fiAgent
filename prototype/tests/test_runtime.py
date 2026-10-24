@@ -107,10 +107,11 @@ class RuntimeTests(unittest.TestCase):
     def test_goal_needs_verification_evidence(self):
         goal = self.runtime.goals.create("Verify health", [{"id":"c1", "check":"healthy"}], "g1")
         self.runtime.goals.activate(goal.goal_id)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(PermissionError):
             self.runtime.verify_goal("g1", True, [], "test-verifier")
-        result = self.runtime.verify_goal("g1", True, ["evidence://test/1"], "test-verifier")
-        self.assertEqual(result.status, "completed")
+        with self.assertRaisesRegex(PermissionError, "verified_goal_completion_required"):
+            self.runtime.verify_goal("g1", True, ["evidence://test/1"], "test-verifier")
+        self.assertEqual(self.runtime.goals.get("g1").status, "active")
 
     def test_sqlite_admission_replays_across_runtime_restart(self):
         with tempfile.TemporaryDirectory() as tmp:

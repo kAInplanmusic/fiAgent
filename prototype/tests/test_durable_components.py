@@ -15,8 +15,9 @@ class DurableComponentTests(unittest.TestCase):
         goals.activate('g1')
         restarted=DurableGoalRegistry(self.db)
         self.assertEqual(restarted.get('g1').status,'active')
-        done=restarted.record_verification('g1',True,['evidence://test/1'],'unit-test')
-        self.assertEqual(done.status,'completed')
+        with self.assertRaisesRegex(PermissionError, 'verified_goal_completion_required'):
+            restarted.record_verification('g1',True,['evidence://test/1'],'unit-test')
+        self.assertEqual(DurableGoalRegistry(self.db).get('g1').status,'active')
         with self.assertRaises(GoalError): restarted.activate('g1')
 
     def test_event_log_and_consumer_dedup_persist(self):
