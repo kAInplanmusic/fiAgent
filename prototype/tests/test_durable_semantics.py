@@ -76,3 +76,25 @@ class DurableSemanticIntegrationTests(unittest.TestCase):
             results = list(pool.map(lambda r: r.scf.ingest(claim(), "local", "2026-10-25T14:00:00Z").decision, [self.a, b]))
         self.assertEqual(sorted(results), ["adopt", "defer"])
         self.assertEqual(PRAINRuntime(persistent_db_path=self.path).scf.projection("a").version, 1)
+    def test_scf_inbox_exact_replay_after_restart(self):
+        first = self.a.scf.ingest_message("message-1", claim(), "local", "2026-10-25T14:00:00Z")
+        self.assertEqual(first.decision, "adopt")
+        b = PRAINRuntime(persistent_db_path=self.path)
+        again = b.scf.ingest_message("message-1", claim(), "local", "2026-10-25T14:00:00Z")
+        self.assertEqual(again, first)
+        self.assertEqual(len(b.scf.decisions()), 1)
+
+    def test_scf_inbox_same_id_changed_body_rejected(self):
+        self.a.scf.ingest_message("message-1", claim(), "local", "2026-10-25T14:00:00Z")
+        with self.assertRaisesRegex(ValueError, "message_id_conflict"):
+            self.a.scf.ingest_message("message-1", claim(version=2), "local", "2026-10-25T14:00:00Z")
+        self.assertEqual(self.a.scf.projection("a").version, 1)
+
+    def test_scf_inbox_concurrent_replay(self):
+        b = PRAINRuntime(persistent_db_path=self.path)
+        def deliver(runtime):
+            return runtime.scf.ingest_message("message-1", claim(), "local", "2026-10-25T14:00:00Z")
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            results = list(pool.map(deliver, [self.a, b]))
+        self.assertEqual([r.decision for r in results], ["adopt", "adopt"])
+        self.assertEqual(len(self.a.scf.decisions()), 1)

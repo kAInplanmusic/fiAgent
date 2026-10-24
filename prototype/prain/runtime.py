@@ -80,6 +80,14 @@ class PRAINRuntime:
         else:
             self.scf = SemanticFabric()
             self.anima = Anima("prain-local-runtime")
+        if persistent_db_path:
+            from .tenant_access import TenantAccess
+            from .private_projections import PrivateProjections
+            self.tenant_access = TenantAccess(persistent_db_path)
+            self.private_projections = PrivateProjections(persistent_db_path)
+        else:
+            self.tenant_access = None
+            self.private_projections = None
         self.hal = HAL()
         from .hal_proposals import HALProposalController
         self.hal_proposals = HALProposalController()
@@ -130,6 +138,21 @@ class PRAINRuntime:
         with self._action_lock:
             return self._request_action_locked(action, target, capability, actor, payload,
                                                correlation_id, idempotency_key, approval)
+
+    def request_authenticated_action(self, *, tenant: str, principal: str, credential: str,
+                                     action: str, target: str, capability: str,
+                                     payload: dict[str, Any], correlation_id: str,
+                                     idempotency_key: str, approval: dict[str, Any] | None = None):
+        """Authenticated opt-in action entrypoint, constrained by tenant grants.
+
+        The untrusted host must expose this method, not request_action().
+        This reference still simulates actions and is not a complete service boundary.
+        """
+        if self.tenant_access is None:
+            raise PermissionError("persistent_authenticated_runtime_required")
+        self.tenant_access.authorize(tenant, principal, credential, capability, target)
+        return self.request_action(action, target, capability, f"{tenant}:{principal}",
+                                   payload, correlation_id, idempotency_key, approval)
 
     def _request_action_locked(self, action: str, target: str, capability: str | None,
                                actor: str, payload: dict[str, Any], correlation_id: str,

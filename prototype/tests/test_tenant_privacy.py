@@ -35,3 +35,28 @@ class TenantPrivacyTests(unittest.TestCase):
         self.assertEqual(self.projections.read("b", "item")["payload"]["x"], 2)
         with self.assertRaises(ProjectionDeleted):
             self.projections.upsert("a", "item", "public", {"x": 3})
+    def test_authenticated_runtime_enforces_grants_before_replay(self):
+        from prain import PRAINRuntime
+        runtime = PRAINRuntime(
+            policies=[{"policy_id":"p","action":"read","target":"item",
+                       "required_capability":"read"}],
+            persistent_db_path=self.access.database)
+        token = runtime.tenant_access.provision("org", "person", [("read", "item")])
+        options = dict(tenant="org", principal="person", credential=token,
+                       action="read", target="item", capability="read", payload={},
+                       correlation_id="c", idempotency_key="idempotent")
+        receipt, decision = runtime.request_authenticated_action(**options)
+        self.assertIsNotNone(receipt)
+        self.assertTrue(decision["allowed"])
+        runtime.tenant_access.revoke("org", "person")
+        with self.assertRaises(AccessDenied):
+            runtime.request_authenticated_action(**options)
+        self.assertIsNone(self.projections.read("org", "item"))
+
+    def test_in_memory_authentication_unavailable(self):
+        from prain import PRAINRuntime
+        runtime = PRAINRuntime()
+        with self.assertRaises(PermissionError):
+            runtime.request_authenticated_action(tenant="org", principal="person",
+                credential="not-a-real-credential", action="read", target="item",
+                capability="read", payload={}, correlation_id="c", idempotency_key="i")

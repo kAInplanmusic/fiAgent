@@ -70,6 +70,9 @@ class DurableSemanticFabric(SemanticFabric):
             c.execute("CREATE TABLE IF NOT EXISTS prain_scf_state(id INTEGER PRIMARY KEY CHECK(id=1), state_json TEXT NOT NULL)")
             c.execute("INSERT OR IGNORE INTO prain_scf_state VALUES(1,?)",
                       (json.dumps(self._export(), sort_keys=True),))
+            c.execute("""CREATE TABLE IF NOT EXISTS prain_scf_inbox(
+                message_id TEXT PRIMARY KEY, fingerprint TEXT NOT NULL,
+                decision_json TEXT NOT NULL)""")
 
     def _connection(self):
         return sqlite3.connect(self._db_path, timeout=15)
@@ -104,6 +107,41 @@ class DurableSemanticFabric(SemanticFabric):
             decision = super().ingest(claim, recipient_scope, now)
             c.execute("UPDATE prain_scf_state SET state_json=? WHERE id=1",
                       (json.dumps(self._export(), sort_keys=True, allow_nan=False),))
+            c.commit()
+            return decision
+
+    def ingest_message(self, message_id: str, claim: SemanticClaim, recipient_scope: str, now: str):
+        """Atomic local SCF inbox + state transition, with idempotent replay.
+
+        Same message ID with a changed body is a conflict. A committed message
+        is never reapplied, including after runtime restart or concurrent delivery.
+        This does not by itself provide a network transport.
+        """
+        import hashlib
+        if not isinstance(message_id, str) or not message_id.strip():
+            raise ValueError("message_id_required")
+        if not isinstance(claim, SemanticClaim):
+            raise TypeError("semantic_claim_required")
+        serialized = json.dumps({"claim": asdict(claim), "scope": recipient_scope, "now": now},
+                                sort_keys=True, separators=(",", ":"), allow_nan=False)
+        fingerprint = hashlib.sha256(serialized.encode()).hexdigest()
+        with self._lock, self._connection() as c:
+            c.execute("BEGIN IMMEDIATE")
+            prior = c.execute("SELECT fingerprint,decision_json FROM prain_scf_inbox WHERE message_id=?",
+                              (message_id,)).fetchone()
+            if prior is not None:
+                if prior[0] != fingerprint:
+                    raise ValueError("message_id_conflict")
+                return SCFDecision(**json.loads(prior[1]))
+            row = c.execute("SELECT state_json FROM prain_scf_state WHERE id=1").fetchone()
+            if row is None:
+                raise RuntimeError("scf_store_missing")
+            self._restore(row[0])
+            decision = super().ingest(claim, recipient_scope, now)
+            c.execute("UPDATE prain_scf_state SET state_json=? WHERE id=1",
+                      (json.dumps(self._export(), sort_keys=True, allow_nan=False),))
+            c.execute("INSERT INTO prain_scf_inbox VALUES(?,?,?)",
+                      (message_id, fingerprint, json.dumps(asdict(decision), sort_keys=True)))
             c.commit()
             return decision
 
