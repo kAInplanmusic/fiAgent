@@ -94,8 +94,11 @@ class PRAINRuntime:
         if persistent_db_path:
             from .fenced_leases import FencedLeaseStore
             self.fencing = FencedLeaseStore(persistent_db_path)
+            from .scf_delivery import SCFDeliveryQueue
+            self.scf_delivery = SCFDeliveryQueue(persistent_db_path)
         else:
             self.fencing = None
+            self.scf_delivery = None
         self.evaluators = dict(evaluators or {})
         self._receipts: dict[str, ExecutionReceipt] = {}
         self._request_fingerprints: dict[str, str] = {}
