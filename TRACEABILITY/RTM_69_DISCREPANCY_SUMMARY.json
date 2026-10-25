@@ -1,0 +1,10 @@
+{
+  "examined": 69,
+  "classifications": {
+    "MULTIPLE_EXACT_MATCHES": 68,
+    "SOURCE_TEXT_ABSENT": 1
+  },
+  "pointer_changes_applied": 0,
+  "normative_acceptances": 0,
+  "review": "TRACEABILITY/RTM_69_DISCREPANCY_REVIEW.csv"
+}
