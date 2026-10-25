@@ -69,7 +69,7 @@ def run():
         })
     fields=list(output[0])
     with OUT.open("w",encoding="utf-8",newline="") as f:
-        writer=csv.DictWriter(f,fieldnames=fields)
+        writer=csv.DictWriter(f,fieldnames=fields,lineterminator='\n')
         writer.writeheader()
         writer.writerows(output)
     summary={"total":len(rows),"unique_ids":len(set(r["requirement_id"] for r in rows)),
