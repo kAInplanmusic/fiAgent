@@ -1,0 +1,20 @@
+{
+  "content_duplicate_candidates": 3703,
+  "fully_accepted": 0,
+  "pending_acceptance": 5071,
+  "rule": "No automatic substantive acceptance or invented implementation evidence",
+  "source_reference_resolved_69": 69,
+  "total": 5071,
+  "workpackage_file": "TRACEABILITY/RTM_5071_EVIDENCE_WORKPACKAGES.csv",
+  "workstreams": {
+    "ADAPTER": 21,
+    "AUTH": 423,
+    "DISTRIBUTED": 420,
+    "GOVERNANCE": 1556,
+    "HAL": 133,
+    "PRIVACY": 107,
+    "RELEASE": 65,
+    "SCF": 951,
+    "SCHEMA": 1395
+  }
+}
