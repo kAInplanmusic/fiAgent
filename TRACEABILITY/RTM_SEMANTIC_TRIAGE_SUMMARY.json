@@ -1,0 +1,17 @@
+{
+  "normatively_accepted": 0,
+  "queue": "TRACEABILITY/RTM_SEMANTIC_REVIEW_QUEUE.csv",
+  "review_pending": 5071,
+  "row_coverage": true,
+  "suggested_categories": {
+    "CHECKLIST_CANDIDATE": 99,
+    "DUPLICATE_TEXT_CANDIDATE": 346,
+    "NORMATIVE_LANGUAGE_CANDIDATE": 111,
+    "SCHEMA_FIELD_CANDIDATE": 1819,
+    "STRUCTURAL_CANDIDATE": 2451,
+    "TABLE_ROW_CANDIDATE": 245
+  },
+  "total": 5071,
+  "unique_ids": 5071,
+  "warning": "Proposals only. No automatic acceptance or semantic supersession."
+}
