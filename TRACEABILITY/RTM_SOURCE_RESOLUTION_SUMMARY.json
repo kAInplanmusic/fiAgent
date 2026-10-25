@@ -1,0 +1,13 @@
+{
+  "accepted": 0,
+  "duplicate_text_candidates": 3703,
+  "note": "Archive/line verification plus exact text-duplicate suggestions only. Not semantic signoff.",
+  "output": "TRACEABILITY/RTM_SOURCE_RESOLUTION.csv",
+  "source_results": {
+    "EXACT_SOURCE_LINE": 5002,
+    "LINE_MISSING_OR_OUT_OF_RANGE": 1,
+    "SOURCE_LINE_DIFFERS": 68
+  },
+  "total": 5071,
+  "unreviewed": 5071
+}
