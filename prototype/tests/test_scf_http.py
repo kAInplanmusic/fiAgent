@@ -61,3 +61,20 @@ class HTTPTransportTests(unittest.TestCase):
                     node_id="node-b", tenant="tenant-1", peer_keys={"node-a": KEY})
         self.assertEqual(receiver2.accept(asdict(message), datetime.now(timezone.utc).isoformat()).decision, "adopt")
         self.assertEqual(len(receiver2.fabric.decisions()), 1)
+    def test_scf_v1_schema_rejects_malformed_fields(self):
+        from dataclasses import replace
+        original = self.envelope()
+        for field,value in (("confidence",float("nan")),("version",True),
+                            ("epistemic_status","invented"),("dependencies","not-array"),
+                            ("evidence_refs",[""]),("unknown",42)):
+            raw = dict(original.payload["claim"])
+            raw[field] = value
+            msg = self.envelope(message_id="bad-" + field)
+            body = asdict(msg)
+            body["payload"]["claim"] = raw
+            with self.assertRaises(HTTPError) as error:
+                from urllib.request import Request, urlopen
+                import json
+                req = Request(self.url, data=json.dumps(body).encode(), method="POST")
+                urlopen(req,timeout=3)
+            self.assertEqual(error.exception.code,400)

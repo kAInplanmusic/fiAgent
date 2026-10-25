@@ -1,0 +1,17 @@
+{
+  "all_source_locations_verified": false,
+  "note": "Archive-contained evidence requires archive-member checks; no automatic normative approval.",
+  "sample_requirement_ids": {
+    "archive_source_unverified": "RTM-01572",
+    "local_line_located": "RTM-00001",
+    "source_line_out_of_range": "RTM-00069"
+  },
+  "semantically_accepted_by_this_tool": 0,
+  "source_audit_counts": {
+    "archive_source_unverified": 3500,
+    "local_line_located": 1570,
+    "source_line_out_of_range": 1
+  },
+  "total_candidates": 5071,
+  "unique_ids": 5071
+}

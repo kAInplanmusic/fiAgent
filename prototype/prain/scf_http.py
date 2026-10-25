@@ -11,6 +11,7 @@ from .scf_wire import WireEnvelope, verify_envelope, EnvelopeRejected
 from .durable_semantics import DurableSemanticFabric
 from .scf import SemanticClaim
 from .scf_delivery import SCFDeliveryQueue
+from .scf_contract import validate_claim_v1
 import json
 
 
@@ -37,6 +38,7 @@ class SCFHTTPReceiver:
         raw = payload["claim"]
         if not isinstance(raw, dict):
             raise EnvelopeRejected("invalid_claim")
+        validate_claim_v1(raw)
         try:
             claim = SemanticClaim(**{**raw, "evidence_refs": tuple(raw["evidence_refs"]),
                                         "dependencies": tuple(raw.get("dependencies", ()))})
