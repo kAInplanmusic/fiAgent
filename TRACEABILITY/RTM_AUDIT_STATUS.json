@@ -1,0 +1,12 @@
+{
+  "closure_ready": false,
+  "dispositions": {
+    "UNASSESSED": 5071
+  },
+  "duplicate_ids": 0,
+  "invalid_dispositions": 0,
+  "note": "Automated structural audit only; human semantic adjudication and evidence validation still mandatory.",
+  "source": "TRACEABILITY/REQUIREMENT_TRACEABILITY_MATRIX.csv",
+  "total_rows": 5071,
+  "unresolved_rows": 5071
+}
