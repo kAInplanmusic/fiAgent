@@ -44,6 +44,8 @@ class SCFHTTPReceiver:
                                         "dependencies": tuple(raw.get("dependencies", ()))})
         except (TypeError, KeyError, ValueError) as exc:
             raise EnvelopeRejected("invalid_claim") from exc
+        if claim.source != envelope.origin_node:
+            raise EnvelopeRejected("claim_source_origin_mismatch")
         if payload["scope"] != self.tenant or claim.scope != self.tenant:
             raise EnvelopeRejected("claim_tenant_scope_mismatch")
         # The durable inbox updates its projection and receipt in one transaction.

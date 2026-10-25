@@ -78,3 +78,18 @@ class HTTPTransportTests(unittest.TestCase):
                 req = Request(self.url, data=json.dumps(body).encode(), method="POST")
                 urlopen(req,timeout=3)
             self.assertEqual(error.exception.code,400)
+    def test_signed_payload_cannot_impersonate_another_claim_source(self):
+        from prain.scf_wire import sign_envelope
+        from datetime import datetime, timezone, timedelta
+        e=self.envelope(message_id="origin-spoof")
+        body=dict(e.payload)
+        body["claim"]=dict(e.payload["claim"])
+        body["claim"]["source"]="different-node"
+        signed=sign_envelope(key=KEY,message_id="origin-spoof",origin_node="node-a",
+            destination_node="node-b",tenant="tenant-1",
+            issued_at=(datetime.now(timezone.utc)-timedelta(seconds=1)).isoformat(),
+            expires_at=(datetime.now(timezone.utc)+timedelta(seconds=45)).isoformat(),
+            payload=body)
+        with self.assertRaises(HTTPError) as exc:
+            send(self.url,signed)
+        self.assertEqual(exc.exception.code,400)
