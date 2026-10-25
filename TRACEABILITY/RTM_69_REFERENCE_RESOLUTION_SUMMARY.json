@@ -1,0 +1,15 @@
+{
+  "canonical_roadmap_work_items": 68,
+  "historical_informational": 1,
+  "human_release_accepted": 0,
+  "reference_open": 0,
+  "resolved_references": 69,
+  "runtime_accepted": 0,
+  "scope": "Only 69 source discrepancies; does not close remaining 5002 semantic/implementation reviews.",
+  "semantic_dispositions": {
+    "DOCUMENTED_COMPLETION_CLAIM_REQUIRES_EVIDENCE": 12,
+    "NON_NORMATIVE_SOURCE_DESCRIPTION": 1,
+    "NORMATIVE_WORK_TRACK_PENDING_EVIDENCE": 56
+  },
+  "source": "TRACEABILITY/RTM_69_FINAL_REFERENCE_RESOLUTION.csv"
+}
