@@ -90,7 +90,11 @@ class PRAINRuntime:
             self.private_projections = None
         self.hal = HAL()
         from .hal_proposals import HALProposalController
-        self.hal_proposals = HALProposalController()
+        if persistent_db_path:
+            from .durable_hal_proposals import DurableHALProposalController
+            self.hal_proposals = DurableHALProposalController(persistent_db_path)
+        else:
+            self.hal_proposals = HALProposalController()
         if persistent_db_path:
             from .fenced_leases import FencedLeaseStore
             self.fencing = FencedLeaseStore(persistent_db_path)
