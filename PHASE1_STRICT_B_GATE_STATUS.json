@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "project": "PRAIN",
+  "phase0": {"status": "GREEN_PHASE0_SPECIFICATION_CLOSED", "scope": "archived_specification_only"},
+  "phase1": {"status": "PARTIAL_PASS", "strict_b_accepted": false, "phase2_authorized": false},
+  "verified_baseline": {"commit": "7ccb68129c46e597efe3d3d0a759dda2e28494f6", "tests_passed": 186, "tests_failed": 0, "release_files_verified": 92},
+  "gates": {
+    "G00": "PARTIAL", "G01": "OPEN", "G02": "OPEN", "G03": "PARTIAL",
+    "G04": "PARTIAL", "G05": "PARTIAL", "G06": "PARTIAL", "G07": "PARTIAL",
+    "G08": "OPEN", "G09": "OPEN"
+  },
+  "blocking_requirements": [
+    "B01: semantic review of 5071 candidate requirements",
+    "B02: real two-host TLS/identity and partition integration",
+    "B03: all mutating entrypoints enforce authentication",
+    "B04: retention and delete propagation through derived stores/backups",
+    "B05: full canonical SCF graph, routing, conflict, replay conformance",
+    "B06: multi-node HAL and Anima adaptation safety",
+    "B07: independent security review and owner acceptance"
+  ],
+  "green_rule": "Only after every mandatory gate is ACCEPTED with an independently verifiable evidence reference"
+}
