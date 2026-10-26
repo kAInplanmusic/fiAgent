@@ -6,6 +6,8 @@
 
 P.R.A.I.N. steht für **Perception, Reason, Anima, Intention, Nerve** und bezeichnet ein eigenständiges semantisches Framework zur strukturierten Orchestrierung autonomer Agenten. Die fünf Dimensionen sind logische Verantwortlichkeiten, nicht zwingend fünf getrennte Prozesse. Identität entsteht aus ihrem Zusammenspiel; `Anima` ist ein explizites, prüfbares Selbstmodell und keine Behauptung von Bewusstsein.
 
+**Leitidee:** P.R.A.I.N. wird als *organischer Agent* verstanden: ein zusammenhängendes System mit gemeinsamem semantischem Gehirn und funktionalen Sinnen/Modulen, statt einer bloßen Ansammlung voneinander unabhängiger Spezialagenten. Das konkretisiert die bestehenden P/R/A/I/N-Verantwortlichkeiten, ersetzt sie nicht. Einzelne Funktionen dürfen technisch getrennte Prozesse sein, bleiben aber über definierte Verträge und den SCF in den gemeinsamen Arbeitskontext eingebunden. Details, Grenzen und offene Verträge stehen in [Organischer Agent — Architektur-SSOT-Ergänzung](docs/ORGANIC_AGENT_ARCHITECTURE_SSOT.md).
+
 „Quantum-ready“ bedeutet austauschbare Provider- und Compute-Schnittstellen. Es ist **keine** Behauptung, dass Quantenhardware genutzt wird oder ein Quantenvorteil existiert.
 
 ## Architektur in einem Blick
