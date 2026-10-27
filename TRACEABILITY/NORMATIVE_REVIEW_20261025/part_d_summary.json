@@ -1,0 +1,36 @@
+{
+  "partition": [
+    "RTM-03801",
+    "RTM-05071"
+  ],
+  "rows": 1271,
+  "source_occurrences": 148,
+  "distinct_source_contents": 104,
+  "semantic_units": 667,
+  "dispositions": {
+    "RETAIN": 876,
+    "NON_NORMATIVE": 384,
+    "EXTEND": 1,
+    "SUPERSEDE": 10
+  },
+  "roles": {
+    "NORMATIVE_SECTION_LOCATOR": 632,
+    "NORMATIVE_CLAUSE": 245,
+    "HISTORICAL_AUDIT_OR_RESULT": 340,
+    "HISTORICAL_REFERENCE_EXECUTION_CLAIM": 3,
+    "HISTORICAL_PACKAGE_DESCRIPTION": 41,
+    "HISTORICAL_OPEN_CHOICE_WITH_ADOPTED_SUCCESSOR": 8,
+    "AUDIT_RECOMMENDATION_RETAINED": 2
+  },
+  "unresolved": [],
+  "canonical_archive": "archive/PRAIN_v0.99.6_Phase0_Green_Closure.zip",
+  "canonical_archive_sha256": "3d97c4e5d0ead76af748d136c9679ff12f9e33a9d334cc0dc6822ed788da04da",
+  "implementation_accepted": 0,
+  "production_accepted": false,
+  "review_limits": [
+    "Source-family/section adjudication is not a proof of runtime implementation.",
+    "Preserved full contexts retain obligations under heading-only extraction.",
+    "Same source/content contexts share semantic judgments; historical results never transfer acceptance.",
+    "Historical user-attestation assertions remain source-scoped and are not re-signed here."
+  ]
+}

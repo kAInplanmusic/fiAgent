@@ -1,0 +1,418 @@
+[
+  {
+    "id": 1592,
+    "text": "- Event publication and state mutation must use an outbox/transactional strategy where atomicity matters."
+  },
+  {
+    "id": 1595,
+    "text": "A duplicate event must not imply a duplicate side effect. A consumer may record `duplicate_ignored` while still returning the original outcome reference."
+  },
+  {
+    "id": 1607,
+    "text": "A goal must define:"
+  },
+  {
+    "id": 1614,
+    "text": "`inconclusive` must not be coerced to pass. Tool output alone may be evidence, but whether it is sufficient depends on the criterion."
+  },
+  {
+    "id": 1619,
+    "text": "An update proposal must cite:"
+  },
+  {
+    "id": 1621,
+    "text": "Identity consistency means coherent, versioned commitments and self-description\u2014not an immutable personality. The system must be able to correct errors. Store:"
+  },
+  {
+    "id": 1636,
+    "text": "| Dimension | Primary responsibility | Inputs | Outputs | Must connect to |"
+  },
+  {
+    "id": 1639,
+    "text": "Cross-context links use stable IDs, schema versions, and correlation IDs. Contexts may be stored in separate technologies later; references must not depend on a database-specific primary key."
+  },
+  {
+    "id": 1653,
+    "text": "Content from an untrusted zone must not become executable instructions merely because it was retrieved or summarized."
+  },
+  {
+    "id": 1657,
+    "text": "An approval must bind to the exact action, target, canonical input digest, idempotency key, policy version and expiry. It must identify the approver and be authenticated in production. Reusing an approval for a modified action is invalid."
+  },
+  {
+    "id": 1659,
+    "text": "Record policy decisions and significant state transitions, but avoid copying raw secrets and unnecessary personal data into the ledger. Keep a source reference plus redacted representation where possible. Retention/deletion must cover object storage, relational records, vector/graph indexes, caches, derived summaries, backups according to policy, and exported artifacts."
+  },
+  {
+    "id": 1678,
+    "text": "5. Semantic indexes, embeddings, analytics, and read replicas may lag and must expose freshness/version metadata."
+  },
+  {
+    "id": 1706,
+    "text": "Each derived result must expose source version or `as_of` metadata. A consumer must not treat a stale projection as an authoritative policy decision or final verification."
+  },
+  {
+    "id": 1709,
+    "text": "8. A retry cannot create a second side effect if the target supports idempotency; otherwise the action must reconcile before retry."
+  },
+  {
+    "id": 1715,
+    "text": "For mutable resources, each new lease increments a monotonically increasing fencing token. The resource or adapter rejects writes with older tokens. If the target cannot enforce fencing, the adapter must use a target-specific idempotency/reconciliation strategy or mark the action as unsafe to retry."
+  },
+  {
+    "id": 1720,
+    "text": "A compensating action is a new action, not time travel. It requires its own policy decision, idempotency key, evidence, and verification. Compensation may fail and must be observable."
+  },
+  {
+    "id": 1728,
+    "text": "The same key with a different action digest must be rejected as a conflict. If a remote target lacks idempotency support, PRAIN must query/reconcile its state before any retry that could duplicate a side effect."
+  },
+  {
+    "id": 1730,
+    "text": "Consumers must reject unsupported major versions and quarantine malformed messages. Never silently reinterpret a payload with a different meaning."
+  },
+  {
+    "id": 1740,
+    "text": "Deletion must propagate to source records, derived projections, caches, embeddings, backups according to documented retention policy, and exports where applicable. Keep only the minimum legally/operationally required tombstone/audit metadata."
+  },
+  {
+    "id": 1744,
+    "text": "**Precedence rule:** v0.6 is the newest architectural layer, but does not automatically erase or supersede earlier contracts. During consolidation, each prior requirement must be classified as retained, extended, explicitly superseded, or unresolved. Never silently drop a previous decision or code/schema fragment."
+  },
+  {
+    "id": 1746,
+    "text": "- Scope strong consistency to authoritative records; projections may be eventually consistent and must not overwrite authoritative state."
+  },
+  {
+    "id": 1762,
+    "text": "Ereignisse tragen `event_id`, `correlation_id`, `causation_id`, `occurred_at` und `schema_version`. Wiederholte Zustellung darf nicht unbemerkt doppelte Nebenwirkungen erzeugen."
+  },
+  {
+    "id": 1765,
+    "text": "Graph-, relationale, Dokument- und Vektorspeicher sind Backends. Das kanonische Datenmodell darf nicht von einem Backend-Schema abh\u00e4ngen."
+  },
+  {
+    "id": 1769,
+    "text": "- [x] Kanonische P/R/A/I/N-Begriffe und Verantwortlichkeiten definiert"
+  },
+  {
+    "id": 1770,
+    "text": "- [x] Verteiltes Identit\u00e4tsmodell dokumentiert"
+  },
+  {
+    "id": 1771,
+    "text": "- [x] Claim-Typen und Verifikationsstatus voneinander getrennt"
+  },
+  {
+    "id": 1772,
+    "text": "- [x] Kernobjekte als JSON Schema Draft 2020-12 angelegt"
+  },
+  {
+    "id": 1773,
+    "text": "- [x] Event-Korrelation und Idempotenzfelder definiert"
+  },
+  {
+    "id": 1774,
+    "text": "- [x] Capability-Gateway und Policy-Entscheidungen als Architekturprinzip festgelegt"
+  },
+  {
+    "id": 1775,
+    "text": "- [x] ADRs angelegt, darunter Adapter-Neutralit\u00e4t und Quantum-ready-Abgrenzung"
+  },
+  {
+    "id": 1777,
+    "text": "- [ ] ID-Format: UUIDv7, ULID oder providerneutraler String"
+  },
+  {
+    "id": 1778,
+    "text": "- [ ] Zeitregeln: UTC-Normalisierung und Umgang mit versp\u00e4teten Ereignissen"
+  },
+  {
+    "id": 1779,
+    "text": "- [ ] Event Delivery: mindestens einmal + Idempotenz oder zus\u00e4tzliche Exactly-once-Semantik auf Anwendungsebene"
+  },
+  {
+    "id": 1780,
+    "text": "- [ ] State Store: Transaktionsgrenzen, Konfliktaufl\u00f6sung und Versionierung"
+  },
+  {
+    "id": 1781,
+    "text": "- [ ] Evidence Ledger: append-only-Anforderung, Hash-Kette oder signierte Eintr\u00e4ge"
+  },
+  {
+    "id": 1782,
+    "text": "- [ ] Policy: Rollen-/Capability-Vererbung, Freigabestufen und Ablauf von Freigaben"
+  },
+  {
+    "id": 1783,
+    "text": "- [ ] Datenschutz: Retention, L\u00f6schung, Redaction und Umgang mit Secrets"
+  },
+  {
+    "id": 1784,
+    "text": "- [ ] Schema-Kompatibilit\u00e4t: Regeln f\u00fcr additive/minor und breaking/major \u00c4nderungen"
+  },
+  {
+    "id": 1795,
+    "text": "3. Ein `Claim` mit `verification_status=verified` muss mindestens eine Evidenzreferenz enthalten oder eine dokumentierte Ausnahme referenzieren."
+  },
+  {
+    "id": 1796,
+    "text": "6. `execution_status=completed` darf nicht automatisch `verification_status=verified` implizieren."
+  },
+  {
+    "id": 1813,
+    "text": "**Entscheidung:** Jeder Event-Envelope enth\u00e4lt `event_id`, `event_type`, `occurred_at`, `producer`, `correlation_id`, `schema_version` und `payload`. `causation_id` und `idempotency_key` sind bei kausalen Aktionen verpflichtend."
+  },
+  {
+    "id": 1848,
+    "text": "A conformance run must emit JSON with `passed`, `failed`, `skipped`, `schema_version`, and per-test evidence references."
+  },
+  {
+    "id": 1849,
+    "text": "\"reason\": \"unknown enum must fail strict validation\","
+  },
+  {
+    "id": 1872,
+    "text": "- [x] Alle JSON-Schemas laden als JSON Schema Draft 2020-12."
+  },
+  {
+    "id": 1873,
+    "text": "- [x] Kernobjekte definieren IDs, Schema-Versionen bzw. Zeit-/Versionssemantik, soweit relevant."
+  },
+  {
+    "id": 1874,
+    "text": "- [x] Verifizierte Claims ben\u00f6tigen Evidenzreferenzen oder eine explizite dokumentierte Ausnahme (Schema/contract)."
+  },
+  {
+    "id": 1875,
+    "text": "- [x] Aktive Goals ben\u00f6tigen mindestens ein Akzeptanzkriterium."
+  },
+  {
+    "id": 1876,
+    "text": "- [x] ActionRequest verlangt Policy-Referenz, Capability, Idempotenz- und Korrelations-ID."
+  },
+  {
+    "id": 1877,
+    "text": "- [x] Ausf\u00fchrungsstatus und Verifikationsstatus sind getrennt modelliert."
+  },
+  {
+    "id": 1878,
+    "text": "- [x] Referenztest f\u00fcr idempotente Wiederholungszustellung."
+  },
+  {
+    "id": 1879,
+    "text": "- [x] Referenztest f\u00fcr veraltete Versionsupdates."
+  },
+  {
+    "id": 1880,
+    "text": "- [x] Referenztest: fehlende Capability/Policy oder unbekannter Risikograd f\u00fchrt nicht zu Allow."
+  },
+  {
+    "id": 1881,
+    "text": "- [x] Referenztest f\u00fcr Secret-Redaction vor Serialisierung/Persistenz."
+  },
+  {
+    "id": 1882,
+    "text": "- [x] Append-only Korrekturmodell und namespaced externe IDs als Referenztests."
+  },
+  {
+    "id": 1883,
+    "text": "- [x] Schema-Kompatibilit\u00e4tsregel f\u00fcr Breaking Changes dokumentiert und getestet."
+  },
+  {
+    "id": 1884,
+    "text": "- [x] Reproduzierbare Tests erzeugen maschinenlesbare Schema-Ergebnisse."
+  },
+  {
+    "id": 1937,
+    "text": "No matching policy means deny. Rules must identify a policy and required capability. If approval is required, the approval binds action, target, canonical input hash, idempotency key and future expiry. This prototype does not authenticate the approval issuer."
+  },
+  {
+    "id": 1941,
+    "text": "**Status: NOT APPROVED / NOT CLOSED.** This is a final-candidate checklist, not a claim of completion. The package must not be labelled Phase-0 complete until every mandatory row has verifiable evidence and the project owner approves the closure record."
+  },
+  {
+    "id": 1948,
+    "text": "| D-0610 | Biological/processor analogies must map to falsifiable mechanisms | Avoids literal or mystical equivalence claims |"
+  },
+  {
+    "id": 1953,
+    "text": "- `spec/CONSISTENCY_AND_CONFLICTS.md` \u2014 what must be authoritative vs locally divergent."
+  },
+  {
+    "id": 1955,
+    "text": "5. External side effects with ambiguous outcomes must be reconciled before retry."
+  },
+  {
+    "id": 1977,
+    "text": "The narrow set of globally binding decisions: authorization, identity/tenant boundaries, resource ceilings, authoritative goal versions, and evidence-backed completion. This boundary must remain enforceable even when local projections are stale."
+  },
+  {
+    "id": 1982,
+    "text": "The loop must include hysteresis, cooldowns, and rate limits where repeated adjustment could oscillate."
+  },
+  {
+    "id": 1986,
+    "text": "A runtime claiming v0.6 conformance must run these tests against its actual state store, transport, scheduler, policy gateway, and adapters. Passing schema validation alone is insufficient."
+  },
+  {
+    "id": 1989,
+    "text": "10. A plan generated against an obsolete goal version must revalidate before a consequential action."
+  },
+  {
+    "id": 1995,
+    "text": "| Goal definition and acceptance criteria | Versioned authoritative aggregate | Plan must bind to goal version |"
+  },
+  {
+    "id": 1996,
+    "text": "| Semantic projection / cache | Eventual consistency | Must expose source version and freshness |"
+  },
+  {
+    "id": 1998,
+    "text": "If authority is not declared, a write that would affect global truth must be denied or deferred."
+  },
+  {
+    "id": 2001,
+    "text": "- A conflict resolution must record resolver, rationale, input versions, and evidence."
+  },
+  {
+    "id": 2007,
+    "text": "- At-least-once delivery is acceptable; consumers must be idempotent."
+  },
+  {
+    "id": 2008,
+    "text": "- Use transactional outbox/inbox where state changes and message publication must not diverge."
+  },
+  {
+    "id": 2009,
+    "text": "- Schema evolution must be explicit and backward-compatibility tested."
+  },
+  {
+    "id": 2014,
+    "text": "- clock skew must not determine authoritative ordering by itself;"
+  },
+  {
+    "id": 2031,
+    "text": "HAL MUST NOT:"
+  },
+  {
+    "id": 2034,
+    "text": "HAL must report when it lacks enough signal to act. Unknown health is not healthy health."
+  },
+  {
+    "id": 2036,
+    "text": "Mode changes are logged and policy-checked. A degraded mode must not accidentally become a route to broader permissions."
+  },
+  {
+    "id": 2043,
+    "text": "Canonical records are append-only where auditability requires it. Derived indexes and caches may be rebuilt. Privacy and retention rules still apply: immutable auditability must not become a pretext for retaining data beyond a lawful or declared retention period. Redaction, deletion, and tombstone semantics must be defined per data class, including derived projections and replicas."
+  },
+  {
+    "id": 2044,
+    "text": "\"rule\": \"Biological and processor analogies must be translated into testable mechanisms.\""
+  },
+  {
+    "id": 2052,
+    "text": "A test definition is not evidence that a runtime passed. Existing test results are version-scoped and must not be generalized to the full architecture."
+  },
+  {
+    "id": 2058,
+    "text": "The exact enums and transitions must be reconciled against v0.2.1/v0.4/v0.5 schemas before being declared canonical."
+  },
+  {
+    "id": 2062,
+    "text": "| DEC-005 | Prefer UUIDv7 opaque identifiers | v0.2.1 decision register | RETAINED | Collision and clock rollback handling must not rely on time order alone |"
+  },
+  {
+    "id": 2063,
+    "text": "| DEC-007 | Delivery is at-least-once; consumers must be idempotent; no global exactly-once promise | v0.2.1/v0.4/v0.5/v0.6 | RETAINED | Idempotency scope and retention period OPEN |"
+  },
+  {
+    "id": 2064,
+    "text": "| DEC-012 | Strong consistency is scoped to authoritative records; derived projections may be eventual and must expose freshness | v0.5 D-0501+; v0.6 D-0604/0605 | RETAINED | Per-record class table OPEN |"
+  },
+  {
+    "id": 2065,
+    "text": "| DEC-020 | Biological/processor analogies must map to falsifiable mechanisms | v0.6 D-0610 | RETAINED | Avoid anthropomorphic or consciousness claims |"
+  },
+  {
+    "id": 2066,
+    "text": "| DEC-021 | Existing artifacts must not be silently overwritten; every requirement is retained, extended, superseded, or open | Master Index / this consolidation | PROPOSED for user approval | Recommended governance rule |"
+  },
+  {
+    "id": 2068,
+    "text": "8. Exact persistence and broker versions (must remain candidates until separately selected)."
+  },
+  {
+    "id": 2074,
+    "text": "| senses \u2192 brain (`feeds`) | Yes | P observations provide input to R; provenance and uncertainty must be preserved. |"
+  },
+  {
+    "id": 2080,
+    "text": "| P0 | Data lifecycle/privacy contract | Retention/deletion must include projections, caches, replicas, backups and evidence | Classification, retention, redaction, deletion and tombstone rules |"
+  },
+  {
+    "id": 2081,
+    "text": "| P1 | Human approval and revocation lifecycle | Approval must be action-specific and time-bounded | Approval schema/state machine and revocation race behavior |"
+  },
+  {
+    "id": 2092,
+    "text": "- A deletion request must account for derived data, not just the primary row."
+  },
+  {
+    "id": 2096,
+    "text": "| `PRAIN_Wissensdatenbank.json` | Existing knowledge-base records | Must be parsed and individually mapped to canonical concepts/decisions/sources | OPEN / NOT VERIFIED |"
+  },
+  {
+    "id": 2103,
+    "text": "\u201cImplemented_verified\u201d must never be used for a paper specification or schema-only validation."
+  },
+  {
+    "id": 2105,
+    "text": "Schema version and package version are separate and both must be explicit."
+  },
+  {
+    "id": 2158,
+    "text": "- Schema `$id` and `$schema` values must be audited separately before standardizing a registry; this generated field report does not assume one draft/version across files."
+  },
+  {
+    "id": 2216,
+    "text": "**Output:** `SCHEMA_FIELD_AUDIT.md`; next pass must diff nested constraints, enums, refs, patterns, formats and sample payloads."
+  },
+  {
+    "id": 2253,
+    "text": "For every proposed row, user approval or explicit deferral must be recorded. \u201cProposed\u201d does not mean implemented or binding. Broker/provider choices remain deliberately deferred until workload and operational requirements are defined."
+  },
+  {
+    "id": 2374,
+    "text": "A claim must not collapse these independent axes into one `status`:"
+  },
+  {
+    "id": 2376,
+    "text": "| Status | Meaning | Permitted basis | Must not imply |"
+  },
+  {
+    "id": 2380,
+    "text": "- `proposition`: normalized statement or subject-predicate-object form; both can coexist but must be consistent."
+  },
+  {
+    "id": 2383,
+    "text": "4. Evidence must retain source identity, captured time, integrity metadata and applicable classification/retention policy."
+  },
+  {
+    "id": 2384,
+    "text": "5. Derived claims must reference their premise claims and inference method/version. If a premise is invalidated, derived claims become candidates for re-evaluation; they are not automatically false unless dependency policy says so."
+  },
+  {
+    "id": 2386,
+    "text": "- `verification_exception_ref` \u2192 review/exception reference; must not be treated as a pass."
+  },
+  {
+    "id": 2423,
+    "text": "- `brain` \u2192 R / Reason for inference and cognition; memory storage is cross-cutting and must not be equated exclusively with R."
+  },
+  {
+    "id": 2424,
+    "text": "- Any legacy relation claiming that A/Soul itself authorizes actions must be reinterpreted: only the policy gateway grants/denies permission."
+  }
+]

@@ -10,6 +10,22 @@ class AnimaConflict(ValueError):
     pass
 
 
+def _contains_authority_field(value, seen=None):
+    """Reject authority-like keys at any depth of a self-description."""
+    forbidden = {"grant", "capabilities", "approval", "policy_override"}
+    if not isinstance(value, (dict, list, tuple)):
+        return False
+    if seen is None:
+        seen = set()
+    if id(value) in seen:
+        return False
+    seen.add(id(value))
+    if isinstance(value, dict):
+        return any(str(key).lower() in forbidden or _contains_authority_field(item, seen)
+                   for key, item in value.items())
+    return any(_contains_authority_field(item, seen) for item in value)
+
+
 @dataclass(frozen=True)
 class SelfModel:
     identity_id: str
@@ -38,8 +54,7 @@ class Anima:
             raise ValueError("unknown dimension")
         if not isinstance(state, dict) or not isinstance(provenance, str) or not provenance.strip():
             raise ValueError("state and provenance required")
-        forbidden = {"grant", "capabilities", "approval", "policy_override"}
-        if any(str(k).lower() in forbidden for k in state):
+        if _contains_authority_field(state):
             raise AnimaConflict("self_model_cannot_grant_authority")
         with self._lock:
             old = self._model

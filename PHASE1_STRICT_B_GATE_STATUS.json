@@ -1,16 +1,35 @@
 {
   "schema_version": 1,
   "project": "PRAIN",
-  "phase0": {"status": "GREEN_PHASE0_SPECIFICATION_CLOSED", "scope": "archived_specification_only"},
-  "phase1": {"status": "PARTIAL_PASS", "strict_b_accepted": false, "phase2_authorized": false},
-  "verified_baseline": {"commit": "7ccb68129c46e597efe3d3d0a759dda2e28494f6", "tests_passed": 186, "tests_failed": 0, "release_files_verified": 92},
+  "phase0": {
+    "status": "GREEN_PHASE0_SPECIFICATION_CLOSED",
+    "scope": "archived_specification_only"
+  },
+  "phase1": {
+    "status": "PARTIAL_PASS",
+    "strict_b_accepted": false,
+    "phase2_authorized": false
+  },
+  "verified_baseline": {
+    "commit": "7ccb68129c46e597efe3d3d0a759dda2e28494f6",
+    "tests_passed": 186,
+    "tests_failed": 0,
+    "release_files_verified": 92
+  },
   "gates": {
-    "G00": "PARTIAL", "G01": "OPEN", "G02": "OPEN", "G03": "PARTIAL",
-    "G04": "PARTIAL", "G05": "PARTIAL", "G06": "PARTIAL", "G07": "PARTIAL",
-    "G08": "OPEN", "G09": "OPEN"
+    "G00": "PARTIAL",
+    "G01": "OPEN",
+    "G02": "OPEN",
+    "G03": "PARTIAL",
+    "G04": "PARTIAL",
+    "G05": "PARTIAL",
+    "G06": "PARTIAL",
+    "G07": "PARTIAL",
+    "G08": "OPEN",
+    "G09": "OPEN"
   },
   "blocking_requirements": [
-    "B01: semantic review of 5071 candidate requirements",
+    "B01: independent semantic acceptance of the complete 5071-candidate requirement set and complete requirement-to-implementation-to-passing-test evidence remain open; 5002 historical rows have explicit contextual dispositions, which do not grant implementation acceptance",
     "B02: real two-host TLS/identity and partition integration",
     "B03: all mutating entrypoints enforce authentication",
     "B04: retention and delete propagation through derived stores/backups",
@@ -18,5 +37,66 @@
     "B06: multi-node HAL and Anima adaptation safety",
     "B07: independent security review and owner acceptance"
   ],
-  "green_rule": "Only after every mandatory gate is ACCEPTED with an independently verifiable evidence reference"
+  "green_rule": "Only after every mandatory gate is ACCEPTED with an independently verifiable evidence reference",
+  "verified_checkpoint": {
+    "baseline_commit": "36070c65e47f52bfa9aac621905d4a1c5d0eafa8",
+    "tests_passed": 259,
+    "tests_failed": 0,
+    "tests_skipped": 0,
+    "scope": "Full dependency-equipped suite on local and PRAIN server environments; multi-node tests use isolated processes on a single host per execution; no real two-host pipeline evidence",
+    "report": "docs/ACCEPTANCE_CHECKPOINT_20261025.md",
+    "scoped_independent_review": "ACCEPT_SCOPED_SECURITY_PATCH_WITH_LIMITATIONS",
+    "production_accepted": false,
+    "release_files_verified": 137,
+    "runtime_commits": {
+      "local": "e47f9e5",
+      "server": "5c1059e"
+    },
+    "normative_review_commits": {
+      "local": "7b2282f",
+      "server": "fa98bca"
+    },
+    "execution_reports": {
+      "local": {
+        "path": "evidence/canonical_full_suite/results.json",
+        "sha256": "717ba802cce6410dd94e8beb55444d33f85eb98f8bf47eea55ae2135b7d37181",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+        "seconds": 20.21664190399997,
+        "tests_run": 259,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "source_tree_digest": "2d4f6ec7b15f796e8a0262f282978dd3b25c91dbb7a0ca3888fc65ca4e826a17"
+      },
+      "server": {
+        "path": "evidence/canonical_server_suite/results.json",
+        "sha256": "2b89a784548ac7f4e9871000e220aad695344f113085f2e05926996b3a3f201d",
+        "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.39",
+        "seconds": 29.732558254996547,
+        "tests_run": 259,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "source_tree_digest": "cafedd5556519086c146a26e9f096437ae4e3c4aaf2c976b94e59b69b9321c85"
+      }
+    },
+    "prototype_source_hashes_match_between_runs": true,
+    "historical_candidate_dispositions": {
+      "rows": 5002,
+      "RETAIN": 2554,
+      "NON_NORMATIVE": 2331,
+      "SUPERSEDE": 47,
+      "EXTEND": 70,
+      "independent_semantic_acceptance": false,
+      "implementation_status": {
+        "OPEN": 651,
+        "PARTIAL": 2061,
+        "NA": 2290
+      },
+      "implementation_accepted": 0,
+      "scope": "Source-family and contextual row dispositions; not independent complete semantic approval or runtime acceptance"
+    }
+  }
 }

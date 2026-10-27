@@ -108,9 +108,17 @@ class SemanticFabric:
                 action, reason = "adopt", "version_and_scope_valid"
                 self._claims[claim.claim_id] = deepcopy(claim)
                 if prior is not None:
-                    for other_id, other in self._claims.items():
-                        if claim.claim_id in other.dependencies:
-                            self._invalidated.add(other_id)
+                    # A changed ancestor invalidates the entire dependent
+                    # projection chain, not only its immediate children.
+                    frontier = [claim.claim_id]
+                    seen = {claim.claim_id}
+                    while frontier:
+                        parent = frontier.pop()
+                        for other_id, other in self._claims.items():
+                            if other_id not in seen and parent in other.dependencies:
+                                seen.add(other_id)
+                                self._invalidated.add(other_id)
+                                frontier.append(other_id)
             decision = SCFDecision(claim.claim_id, action, reason, recipient_scope)
             self._decisions.append(decision)
             return decision

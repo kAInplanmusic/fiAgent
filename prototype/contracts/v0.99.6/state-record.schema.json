@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:prain:schema:state-record:1.0.0",
+  "title": "PRAIN State Record",
+  "description": "Record metadata declares authority class; projections cannot overwrite authoritative state.",
+  "type": "object",
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "record_class": {
+      "type": "string",
+      "enum": [
+        "principal",
+        "tenant",
+        "policy",
+        "approval",
+        "goal",
+        "claim_revision",
+        "claim_head",
+        "command_ledger",
+        "execution_receipt",
+        "evidence_manifest",
+        "deletion_tombstone",
+        "health_signal",
+        "repair_proposal",
+        "projection",
+        "other"
+      ]
+    },
+    "aggregate_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "authority_class": {
+      "type": "string",
+      "enum": [
+        "authoritative",
+        "append_only_evidence",
+        "derived_projection",
+        "ephemeral_observation"
+      ]
+    },
+    "writer_principal_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "content_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "content_digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "public",
+        "internal",
+        "confidential",
+        "restricted"
+      ]
+    },
+    "retention_policy_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "tombstone": {
+      "type": "boolean"
+    },
+    "previous_version_digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "record_id",
+    "tenant_id",
+    "record_class",
+    "aggregate_id",
+    "version",
+    "updated_at",
+    "authority_class",
+    "writer_principal_id",
+    "classification",
+    "retention_policy_ref",
+    "tombstone",
+    "schema_version"
+  ],
+  "additionalProperties": false
+}

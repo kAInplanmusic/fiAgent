@@ -8,7 +8,7 @@ from prain.anima_hal import HealthObservation
 
 class RuntimeArchitecturalWiringTests(unittest.TestCase):
     def test_semantic_anima_hal_are_local_and_separate_from_action_authority(self):
-        runtime = PRAINRuntime()
+        runtime = PRAINRuntime(trusted_local_prototype_mode=True, )
         claim = SemanticClaim(
             claim_id="c1", subject="component:scf", predicate="readiness",
             value="healthy", scope="local", source="health-probe",

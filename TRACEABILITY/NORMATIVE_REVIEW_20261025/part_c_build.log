@@ -1,0 +1,47 @@
+{
+  "partition": "RTM-02501..RTM-03800",
+  "rows": 1300,
+  "distinct_texts_reviewed": 411,
+  "distinct_source_contents": 77,
+  "dispositions": {
+    "NON_NORMATIVE": 1099,
+    "RETAIN": 120,
+    "EXTEND": 69,
+    "SUPERSEDE": 12
+  },
+  "semantic_categories": {
+    "document_navigation": 841,
+    "claim": 28,
+    "schema": 29,
+    "knowledge": 27,
+    "boundary": 8,
+    "table_header": 5,
+    "privacy": 21,
+    "identity": 7,
+    "slo": 13,
+    "state": 2,
+    "release": 31,
+    "identifier": 2,
+    "delivery": 2,
+    "consistency": 7,
+    "architecture": 3,
+    "policy": 12,
+    "historical_audit_record": 249,
+    "conformance": 4,
+    "goal": 4,
+    "template": 2,
+    "historical_result": 2,
+    "execution": 1
+  },
+  "all_source_lines_exact": true,
+  "canonical_archive_sha256": "3d97c4e5d0ead76af748d136c9679ff12f9e33a9d334cc0dc6822ed788da04da",
+  "unresolved": [],
+  "implementation_accepted": 0,
+  "production_accepted": false,
+  "method_limits": [
+    "Navigation/audit rows have no independent runtime behavior; their full source context and inherited obligations are preserved.",
+    "Explicit decisions do not grant behavioral acceptance.",
+    "Canonical source records and references are version dispositions, not independent verification of historical owner approval.",
+    "Related code/test files are anchors only, not exact complete coverage or passing run evidence."
+  ]
+}

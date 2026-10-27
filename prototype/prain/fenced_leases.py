@@ -54,7 +54,7 @@ class FencedLeaseStore:
                 raise LeaseRejected("lease_held")
             token = row[1] + 1 if row else 1
             expires = moment + ttl
-            if not math.isfinite(expires):
+            if not math.isfinite(expires) or expires <= moment:
                 raise LeaseRejected("invalid_expiry")
             c.execute("""INSERT INTO prain_leases(resource,owner,token,expires_at) VALUES(?,?,?,?)
                 ON CONFLICT(resource) DO UPDATE SET owner=excluded.owner,token=excluded.token,
@@ -75,6 +75,8 @@ class FencedLeaseStore:
             if not row or row[0] != lease.owner or row[1] != lease.token or moment >= row[2]:
                 raise LeaseRejected("stale_lease")
             expires = moment + ttl
+            if not math.isfinite(expires) or expires <= moment:
+                raise LeaseRejected("invalid_expiry")
             c.execute("UPDATE prain_leases SET expires_at=? WHERE resource=?", (expires, lease.resource))
             return Lease(lease.resource, lease.owner, lease.token, expires)
 

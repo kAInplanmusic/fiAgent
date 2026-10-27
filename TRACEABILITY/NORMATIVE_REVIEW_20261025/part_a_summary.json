@@ -1,0 +1,22 @@
+{
+  "range": [
+    "RTM-00070",
+    "RTM-01300"
+  ],
+  "row_count": 1231,
+  "dispositions": {
+    "NON_NORMATIVE": 61,
+    "RETAIN": 1170
+  },
+  "schema_family_reviews": 13,
+  "whole_document_contexts": 14,
+  "normative_groups": 374,
+  "unresolved_normative_dispositions": 0,
+  "runtime_requirements_accepted": 0,
+  "production_acceptance": false,
+  "method": "Reviewer read whole canonical family requirements/conditionals and prose guard contexts; serialization expands reviewed family/context judgments to exact source IDs and pointers. This is not1231 independently implemented behaviors. Semantic retention does not grant implementation acceptance.",
+  "artifacts": {
+    "part_a_reviews.jsonl": "3e11169438fb5408bb36878766555851e31b684e9d720553830d4d53a7c73b30",
+    "part_a_schema_family_reviews.json": "6133508e96aaecaa4e9a4df06fc9044c83cec28f5baf73f5e779e4153d182823"
+  }
+}

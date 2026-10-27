@@ -51,6 +51,15 @@ class FencingTests(unittest.TestCase):
             with self.assertRaises(LeaseRejected):
                 self.a.acquire("r", "worker", ttl, now=100)
 
+    def test_unrepresentable_expiry_rejected_without_mutating_lease(self):
+        with self.assertRaisesRegex(LeaseRejected, "invalid_expiry"):
+            self.a.acquire("r", "worker", 1e-20, now=1_000_000_000)
+        lease = self.a.acquire("r", "worker", 10, now=100)
+        with self.assertRaisesRegex(LeaseRejected, "invalid_expiry"):
+            self.a.renew(lease, 1e-20, now=101)
+        self.a.fenced_write(lease, "still-valid", now=102)
+        self.assertEqual(self.b.read("r"), (lease.token, "still-valid"))
+
 
 class HALProposalTests(unittest.TestCase):
     def test_cooldown_and_budget(self):

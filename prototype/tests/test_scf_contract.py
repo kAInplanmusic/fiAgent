@@ -51,6 +51,15 @@ class SCFContractTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "projection_invalidated"):
             self.fabric.projection("b")
 
+    def test_transitive_dependency_invalidated_on_update(self):
+        for item in (claim(), claim(claim_id="b", dependencies=("a",)),
+                     claim(claim_id="c", dependencies=("b",))):
+            self.assertEqual(self.fabric.ingest(item, "team", self.now).decision, "adopt")
+        self.assertEqual(self.fabric.ingest(claim(version=2), "team", self.now).decision, "adopt")
+        for item_id in ("b", "c"):
+            with self.subTest(item_id=item_id), self.assertRaisesRegex(ValueError, "projection_invalidated"):
+                self.fabric.projection(item_id)
+
     def test_hypothesis_remains_explicit(self):
         d = self.fabric.ingest(claim(epistemic_status="hypothesis"), "team", self.now)
         self.assertEqual(d.decision, "retain_as_hypothesis")

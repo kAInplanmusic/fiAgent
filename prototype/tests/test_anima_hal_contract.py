@@ -34,6 +34,15 @@ class AnimaHALContractTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             a.update(expected_version=0, dimension="unknown", state={}, provenance="test")
 
+    def test_nested_self_model_cannot_encode_authority(self):
+        a = Anima("system-1")
+        for state in ({"plan": [{"approval": "allow"}]},
+                      {"meta": {"POLICY_OVERRIDE": True}},
+                      {"nested": ({"capabilities": ["admin"]},)}):
+            with self.subTest(state=state), self.assertRaisesRegex(AnimaConflict, "authority"):
+                a.update(expected_version=0, dimension="reason", state=state, provenance="test")
+        self.assertEqual(a.snapshot().version, 0)
+
     def test_hal_observe_only_and_unknown_on_stale(self):
         hal = HAL(max_age_seconds=30)
         now = datetime(2026, 10, 24, 20, 0, tzinfo=timezone.utc)

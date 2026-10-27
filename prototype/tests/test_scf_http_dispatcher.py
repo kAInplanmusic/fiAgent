@@ -36,7 +36,7 @@ class DispatchTests(unittest.TestCase):
             payload={"claim": claim, "scope": "tenant"})
 
     def test_delivers_once(self):
-        d = SCFHTTPDispatcher(self.queue, self.url)
+        d = SCFHTTPDispatcher(self.queue, self.url, receipt_key=b"k"*32)
         self.assertTrue(d.enqueue(self.message()))
         self.assertEqual(d.deliver_one(), "SUCCEEDED")
         self.assertEqual(self.queue.status("m1")["status"], "SUCCEEDED")
@@ -44,19 +44,19 @@ class DispatchTests(unittest.TestCase):
         self.assertEqual(len(self.receiver.fabric.decisions()), 1)
 
     def test_bad_signature_terminal_failure(self):
-        d = SCFHTTPDispatcher(self.queue, self.url)
+        d = SCFHTTPDispatcher(self.queue, self.url, receipt_key=b"k"*32)
         d.enqueue(self.message(key=b"wrongkey"*4))
         self.assertEqual(d.deliver_one(), "FAILED")
 
     def test_connection_error_unknown_not_retry(self):
-        d = SCFHTTPDispatcher(self.queue, "http://127.0.0.1:1/scf/v1/receive", timeout=0.3)
+        d = SCFHTTPDispatcher(self.queue, "http://127.0.0.1:1/scf/v1/receive", timeout=0.3, receipt_key=b"k"*32)
         d.enqueue(self.message())
         self.assertEqual(d.deliver_one(), "UNKNOWN")
         self.assertIsNone(d.deliver_one())
         self.assertEqual(SCFDeliveryQueue(self.queue.database).status("m1")["status"], "UNKNOWN")
 
     def test_recovery_requires_reconciliation(self):
-        d = SCFHTTPDispatcher(self.queue, self.url)
+        d = SCFHTTPDispatcher(self.queue, self.url, receipt_key=b"k"*32)
         d.enqueue(self.message())
         item = self.queue.claim()
         self.assertEqual(item["message_id"], "m1")

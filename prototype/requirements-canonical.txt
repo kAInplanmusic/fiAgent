@@ -1,0 +1,7 @@
+# Canonical Draft2020-12 boundary dependency set, observed in verification environment.
+jsonschema==4.25.1
+attrs==26.1.0
+jsonschema-specifications==2025.9.1
+referencing==0.37.0
+rpds-py==2026.9.1
+typing-extensions==4.16.0

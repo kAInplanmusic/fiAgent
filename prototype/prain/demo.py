@@ -4,7 +4,7 @@ from . import PRAINRuntime, Observation
 
 
 def main():
-    runtime = PRAINRuntime(
+    runtime = PRAINRuntime(trusted_local_prototype_mode=True,
         policies=[{"policy_id": "demo.read.v1", "action": "read", "target": "runtime.status",
                    "required_capability": "state:read"}],
         evaluators={"healthy": lambda obs: obs.payload.get("healthy") is True},

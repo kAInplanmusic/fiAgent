@@ -7,7 +7,7 @@ from prain import PRAINRuntime, Observation, DurableAdmissionStore
 
 class RuntimeTests(unittest.TestCase):
     def setUp(self):
-        self.runtime = PRAINRuntime(
+        self.runtime = PRAINRuntime(trusted_local_prototype_mode=True,
             policies=[{"policy_id":"read.v1", "action":"read", "target":"status",
                        "required_capability":"state:read"}],
             evaluators={"healthy": lambda obs: obs.payload.get("healthy") is True},
@@ -75,7 +75,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(self.runtime.snapshot()["receipts"], 1)
 
     def test_single_use_approval_cannot_authorize_two_distinct_actions(self):
-        runtime = PRAINRuntime(policies=[{"policy_id":"deploy.v1", "action":"deploy",
+        runtime = PRAINRuntime(trusted_local_prototype_mode=True, policies=[{"policy_id":"deploy.v1", "action":"deploy",
             "target":"prod", "required_capability":"deploy:prod", "approval_required":True}])
         import hashlib, json
         payload = {"version": 1}
@@ -92,7 +92,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(decision2["reason"], "approval_already_consumed")
 
     def test_single_use_approval_requires_stable_id(self):
-        runtime = PRAINRuntime(policies=[{"policy_id":"deploy.v1", "action":"deploy",
+        runtime = PRAINRuntime(trusted_local_prototype_mode=True, policies=[{"policy_id":"deploy.v1", "action":"deploy",
             "target":"prod", "required_capability":"deploy:prod", "approval_required":True}])
         import hashlib, json
         payload = {"version": 1}
@@ -119,7 +119,7 @@ class RuntimeTests(unittest.TestCase):
             policies = [{"policy_id":"read.v1", "action":"read", "target":"status",
                          "required_capability":"state:read"}]
             args = ("read", "status", "state:read", "agent", {"field":"healthy"}, "restart-c1", "durable-key")
-            first_runtime = PRAINRuntime(policies=policies, admission_store=DurableAdmissionStore(db_path))
+            first_runtime = PRAINRuntime(trusted_local_prototype_mode=True, policies=policies, admission_store=DurableAdmissionStore(db_path))
             first, first_decision = first_runtime.request_action(*args)
             self.assertIsNotNone(first)
             self.assertTrue(first_decision["allowed"])
@@ -127,7 +127,7 @@ class RuntimeTests(unittest.TestCase):
             self.assertIsNotNone(outbox)
             self.assertEqual(outbox["status"], "PENDING")
             self.assertEqual(outbox["payload"]["execution_mode"], "simulated_only")
-            second_runtime = PRAINRuntime(policies=policies, admission_store=DurableAdmissionStore(db_path))
+            second_runtime = PRAINRuntime(trusted_local_prototype_mode=True, policies=policies, admission_store=DurableAdmissionStore(db_path))
             second, replay_decision = second_runtime.request_action(*args)
             self.assertEqual(first, second)
             self.assertEqual(replay_decision["reason"], "idempotent_replay")
@@ -137,9 +137,9 @@ class RuntimeTests(unittest.TestCase):
             db_path = str(Path(tmp) / "prain.sqlite3")
             policies = [{"policy_id":"read.v1", "action":"read", "target":"status",
                          "required_capability":"state:read"}]
-            first_runtime = PRAINRuntime(policies=policies, admission_store=DurableAdmissionStore(db_path))
+            first_runtime = PRAINRuntime(trusted_local_prototype_mode=True, policies=policies, admission_store=DurableAdmissionStore(db_path))
             first_runtime.request_action("read", "status", "state:read", "agent", {"v": 1}, "c", "durable-conflict")
-            second_runtime = PRAINRuntime(policies=policies, admission_store=DurableAdmissionStore(db_path))
+            second_runtime = PRAINRuntime(trusted_local_prototype_mode=True, policies=policies, admission_store=DurableAdmissionStore(db_path))
             second, decision = second_runtime.request_action("read", "status", "state:read", "agent", {"v": 2}, "c", "durable-conflict")
             self.assertIsNone(second)
             self.assertEqual(decision["reason"], "idempotency_key_conflict")
@@ -155,11 +155,11 @@ class RuntimeTests(unittest.TestCase):
                 "input_hash": hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()).hexdigest(),
                 "idempotency_key":"durable-key-a", "expires_at":(datetime.now(timezone.utc)+timedelta(minutes=5)).isoformat(),
                 "lifecycle_status":"issued", "usage_policy":"single_use", "max_uses":1, "usage_count":0}
-            runtime = PRAINRuntime(policies=policies, admission_store=DurableAdmissionStore(db_path))
+            runtime = PRAINRuntime(trusted_local_prototype_mode=True, policies=policies, admission_store=DurableAdmissionStore(db_path))
             first, decision = runtime.request_action("deploy", "prod", "deploy:prod", "agent", payload, "c1", "durable-key-a", approval)
             self.assertIsNotNone(first)
             approval2 = dict(approval, idempotency_key="durable-key-b")
-            restarted = PRAINRuntime(policies=policies, admission_store=DurableAdmissionStore(db_path))
+            restarted = PRAINRuntime(trusted_local_prototype_mode=True, policies=policies, admission_store=DurableAdmissionStore(db_path))
             second, decision2 = restarted.request_action("deploy", "prod", "deploy:prod", "agent", payload, "c2", "durable-key-b", approval2)
             self.assertIsNone(second)
             self.assertEqual(decision2["reason"], "approval_already_consumed")

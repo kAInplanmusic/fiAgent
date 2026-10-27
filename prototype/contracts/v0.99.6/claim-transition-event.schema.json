@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:prain:schema:claim-transition-event:1.0.0",
+  "title": "PRAIN Claim Transition Event",
+  "description": "Every epistemic transition is auditable and revisioned.",
+  "type": "object",
+  "properties": {
+    "transition_event_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "claim_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "from_revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "to_revision": {
+      "type": "integer",
+      "minimum": 2
+    },
+    "from_epistemic_status": {
+      "type": "string",
+      "enum": [
+        "observed",
+        "reported",
+        "inferred",
+        "hypothesized",
+        "corroborated",
+        "verified",
+        "disputed",
+        "refuted",
+        "unknown"
+      ]
+    },
+    "to_epistemic_status": {
+      "type": "string",
+      "enum": [
+        "observed",
+        "reported",
+        "inferred",
+        "hypothesized",
+        "corroborated",
+        "verified",
+        "disputed",
+        "refuted",
+        "unknown"
+      ]
+    },
+    "actor_principal_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 10000
+    },
+    "rule_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+      },
+      "uniqueItems": true
+    },
+    "counterevidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+      },
+      "uniqueItems": true
+    },
+    "policy_decision_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "transition_event_id",
+    "tenant_id",
+    "claim_id",
+    "from_revision",
+    "to_revision",
+    "from_epistemic_status",
+    "to_epistemic_status",
+    "actor_principal_id",
+    "occurred_at",
+    "reason",
+    "rule_version",
+    "evidence_refs",
+    "counterevidence_refs",
+    "schema_version"
+  ],
+  "additionalProperties": false
+}

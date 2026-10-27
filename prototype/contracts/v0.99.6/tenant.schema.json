@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:prain:schema:tenant:1.0.0",
+  "title": "PRAIN Tenant",
+  "description": "Tenant isolation boundary and policy ownership.",
+  "type": "object",
+  "properties": {
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "display_label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "lifecycle_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "suspended",
+        "closed"
+      ]
+    },
+    "isolation_profile": {
+      "type": "string",
+      "enum": [
+        "logical",
+        "dedicated_storage",
+        "dedicated_runtime",
+        "custom"
+      ]
+    },
+    "policy_bundle_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "data_residency_profile": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "tenant_id",
+    "lifecycle_status",
+    "isolation_profile",
+    "policy_bundle_version",
+    "created_at",
+    "updated_at",
+    "schema_version"
+  ],
+  "additionalProperties": false
+}

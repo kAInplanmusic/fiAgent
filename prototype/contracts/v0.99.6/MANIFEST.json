@@ -1,0 +1,94 @@
+{
+  "archive_sha256": "3d97c4e5d0ead76af748d136c9679ff12f9e33a9d334cc0dc6822ed788da04da",
+  "files": {
+    "action-command.schema.json": {
+      "sha256": "4e4cb834836496b7c17e900f2705ffe0ae76c84ba52ba973abbdf03326c0a4b3",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/action-command.schema.json",
+      "schema_id": "urn:prain:schema:action-command:1.0.0"
+    },
+    "claim-transition-event.schema.json": {
+      "sha256": "1bac3c739e269dbe8386b28ab5969ab6ee8ec8c7f747f48ac16412e446e4c7f7",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/claim-transition-event.schema.json",
+      "schema_id": "urn:prain:schema:claim-transition-event:1.0.0"
+    },
+    "claim.schema.json": {
+      "sha256": "343404c92431001662934eb39ce7b751aad276e8db7e50b016fed5207de01cb4",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/claim.schema.json",
+      "schema_id": "urn:prain:schema:claim:1.0.0"
+    },
+    "delegation-grant.schema.json": {
+      "sha256": "6d03fe992708e53e0c3ea4596a0e63f5b201bbf22f27ee59d89a2d8b6291807c",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/delegation-grant.schema.json",
+      "schema_id": "urn:prain:schema:delegation-grant:1.0.0"
+    },
+    "deletion-request.schema.json": {
+      "sha256": "f898ff2ddf8a37944cf83a98d8d511eeab80452ced94e6f9c51055e79aea1b55",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/deletion-request.schema.json",
+      "schema_id": "urn:prain:schema:deletion-request:1.0.0"
+    },
+    "evidence-record.schema.json": {
+      "sha256": "077ebfc67e6c752fb5123b8fb1d98b2afb0b195f6f08bef25e0f6ee13e1f1a39",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/evidence-record.schema.json",
+      "schema_id": "urn:prain:schema:evidence-record:1.0.0"
+    },
+    "execution-receipt.schema.json": {
+      "sha256": "4b2c13d2e89c4a13ff36de95d979f3843f9d69e948086a0f3effe0cbde6aaac0",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/execution-receipt.schema.json",
+      "schema_id": "urn:prain:schema:execution-receipt:1.0.0"
+    },
+    "goal.schema.json": {
+      "sha256": "58349b6c4451fc3fc41b9bbd8798cd7809f625cca0333a43e78613d5ed06cbfa",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/goal.schema.json",
+      "schema_id": "urn:prain:schema:goal:1.0.0"
+    },
+    "health-signal.schema.json": {
+      "sha256": "4c5ab543cf2fd0b1dccfda2564260f52d98e5eaf4e9ab9d7f06b1d2951e8b48a",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/health-signal.schema.json",
+      "schema_id": "urn:prain:schema:health-signal:1.0.0"
+    },
+    "message-envelope.schema.json": {
+      "sha256": "bc9475d4fc81fbb144dab74cf8ee25ba39ed25d50265bdd70d50d903fbc417f3",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/message-envelope.schema.json",
+      "schema_id": "urn:prain:schema:message-envelope:1.0.0"
+    },
+    "observation.schema.json": {
+      "sha256": "828438bdf879365438466bc1ea08b9324223636b9940ed09f6bcde326c9e51a3",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/observation.schema.json",
+      "schema_id": "urn:prain:schema:observation:1.0.0"
+    },
+    "policy-approval.schema.json": {
+      "sha256": "5b62cbf229ae5f7b362e68492638d416795820205cebf216e12bb8ece49ad16e",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/policy-approval.schema.json",
+      "schema_id": "urn:prain:schema:policy-approval:1.0.0"
+    },
+    "policy-decision.schema.json": {
+      "sha256": "4885a83626f8d6306fbcd4a3528bf1c690edd7274ec71a87f2186737896a752a",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/policy-decision.schema.json",
+      "schema_id": "urn:prain:schema:policy-decision:1.0.0"
+    },
+    "principal.schema.json": {
+      "sha256": "906ec443a57ebafeaea10e66873fcebcec8d61d8d74c95cc75a53be5a8397249",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/principal.schema.json",
+      "schema_id": "urn:prain:schema:principal:1.0.0"
+    },
+    "repair-proposal.schema.json": {
+      "sha256": "c487700076de007df6d4b6597860ce8926272b39d06e653119661037dc432141",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/repair-proposal.schema.json",
+      "schema_id": "urn:prain:schema:repair-proposal:1.0.0"
+    },
+    "state-record.schema.json": {
+      "sha256": "58f352d7dc3bbb8f5a80483d35bb064dcb11ec4f7021af097b84c3d1ad4dd9fb",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/state-record.schema.json",
+      "schema_id": "urn:prain:schema:state-record:1.0.0"
+    },
+    "tenant.schema.json": {
+      "sha256": "30956631395ab8102393def397fa3a6361da81f0ae59517795081e2b82443635",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/contracts/tenant.schema.json",
+      "schema_id": "urn:prain:schema:tenant:1.0.0"
+    },
+    "contract_fixtures.json": {
+      "sha256": "9a612c2c3fb766f3fb95f614e4a8ee72457637211464e22cf135c062e42cc955",
+      "archive_member": "PRAIN_v0.99.6_Phase0_Green_Closure/tests/contract_fixtures.json"
+    }
+  }
+}

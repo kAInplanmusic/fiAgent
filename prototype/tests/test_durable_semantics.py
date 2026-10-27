@@ -70,6 +70,16 @@ class DurableSemanticIntegrationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             PRAINRuntime(persistent_db_path=self.path).scf.projection("b")
 
+    def test_transitive_invalidation_survives_restart(self):
+        for item in (claim(), claim(claim_id="b", dependencies=("a",)),
+                     claim(claim_id="c", dependencies=("b",))):
+            self.a.scf.ingest(item, "local", "2026-10-25T14:00:00Z")
+        self.a.scf.ingest(claim(version=2), "local", "2026-10-25T14:00:00Z")
+        restarted = PRAINRuntime(persistent_db_path=self.path)
+        for item_id in ("b", "c"):
+            with self.subTest(item_id=item_id), self.assertRaisesRegex(ValueError, "projection_invalidated"):
+                restarted.scf.projection(item_id)
+
     def test_scf_concurrent_duplicate_only_one_adopted(self):
         b = PRAINRuntime(persistent_db_path=self.path)
         with ThreadPoolExecutor(max_workers=2) as pool:

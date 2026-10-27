@@ -5,6 +5,7 @@ from dataclasses import asdict, dataclass
 from copy import deepcopy
 from datetime import datetime, timezone
 from hashlib import sha256
+import hmac
 import json
 from typing import Any, Callable
 from threading import RLock
@@ -64,7 +65,16 @@ class PRAINRuntime:
     def __init__(self, policies: list[dict[str, Any]] | None = None,
                  evaluators: dict[str, Callable[[Observation], bool]] | None = None,
                  admission_store: DurableAdmissionStore | None = None,
-                 persistent_db_path: str | None = None):
+                 persistent_db_path: str | None = None, *,
+                 trusted_local_prototype_mode: bool = False,
+                 approval_verification_key: bytes | None = None):
+        if type(trusted_local_prototype_mode) is not bool:
+            raise TypeError("trusted_local_prototype_mode_must_be_boolean")
+        self._trusted_local_prototype_mode = trusted_local_prototype_mode
+        if approval_verification_key is not None and (not isinstance(approval_verification_key, bytes)
+                                                      or len(approval_verification_key) < 32):
+            raise ValueError("strong_approval_verification_key_required")
+        self._approval_verification_key = approval_verification_key
         self.state = DurableStateStore(persistent_db_path) if persistent_db_path else StateStore()
         self.events = DurableEventBus(persistent_db_path) if persistent_db_path else EventBus()
         self.goals = DurableGoalRegistry(persistent_db_path) if persistent_db_path else GoalRegistry()
@@ -141,7 +151,13 @@ class PRAINRuntime:
     def request_action(self, action: str, target: str, capability: str | None,
                        actor: str, payload: dict[str, Any], correlation_id: str,
                        idempotency_key: str, approval: dict[str, Any] | None = None) -> tuple[ExecutionReceipt | None, dict[str, Any]]:
-        """Serialize action admission in this process; distributed atomicity is not provided."""
+        """Trusted local simulation only; services must use authenticated admission.
+
+        The explicit constructor opt-in is for offline prototype fixtures. It is
+        not an authentication mechanism or an authorization for external effects.
+        """
+        if not self._trusted_local_prototype_mode:
+            raise PermissionError("authenticated_action_required")
         with self._action_lock:
             return self._request_action_locked(action, target, capability, actor, payload,
                                                correlation_id, idempotency_key, approval)
@@ -150,16 +166,43 @@ class PRAINRuntime:
                                      action: str, target: str, capability: str,
                                      payload: dict[str, Any], correlation_id: str,
                                      idempotency_key: str, approval: dict[str, Any] | None = None):
-        """Authenticated opt-in action entrypoint, constrained by tenant grants.
+        """Reauthorize identity and grants before admission, including replay.
 
-        The untrusted host must expose this method, not request_action().
-        This reference still simulates actions and is not a complete service boundary.
+        Components holding this runtime and its database are trusted Python code.
+        Process-local serialization does not make revocation atomic with a remote
+        external effect; adapters must enforce authority at their own boundary.
         """
         if self.tenant_access is None:
             raise PermissionError("persistent_authenticated_runtime_required")
-        self.tenant_access.authorize(tenant, principal, credential, capability, target)
-        return self.request_action(action, target, capability, f"{tenant}:{principal}",
-                                   payload, correlation_id, idempotency_key, approval)
+        with self._action_lock:
+            self.tenant_access.authorize(tenant, principal, credential, capability, target)
+            # An approval is an authority grant, not a transferable bearer note.
+            # The legacy local policy binding covers action/target/payload/key but
+            # does not know the authenticated tenant and principal at this edge.
+            if approval is not None and (not isinstance(approval, dict)
+                                         or approval.get("tenant") != tenant
+                                         or approval.get("principal") != principal):
+                raise PermissionError("approval_identity_mismatch")
+            if approval is not None:
+                signature = approval.get("issuer_signature")
+                if self._approval_verification_key is None or not isinstance(signature, str):
+                    raise PermissionError("verified_approval_issuer_required")
+                try:
+                    approval_payload = {k: v for k, v in approval.items() if k != "issuer_signature"}
+                    raw = json.dumps(approval_payload, sort_keys=True, separators=(",", ":"),
+                                     allow_nan=False).encode("utf-8")
+                except (TypeError, ValueError, OverflowError) as exc:
+                    raise PermissionError("invalid_approval_payload") from exc
+                expected = hmac.new(self._approval_verification_key,
+                                    b"PRAIN-APPROVAL-v1\0" + raw, sha256).hexdigest()
+                if not hmac.compare_digest(signature, expected):
+                    raise PermissionError("invalid_approval_issuer_signature")
+            # Structured identity avoids collisions such as ("a:b", "c") and
+            # ("a", "b:c") sharing the same actor/fingerprint.
+            actor = json.dumps({"tenant": tenant, "principal": principal},
+                               sort_keys=True, separators=(",", ":"))
+            return self._request_action_locked(action, target, capability, actor,
+                                               payload, correlation_id, idempotency_key, approval)
 
     def _request_action_locked(self, action: str, target: str, capability: str | None,
                                actor: str, payload: dict[str, Any], correlation_id: str,

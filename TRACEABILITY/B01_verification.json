@@ -1,0 +1,33 @@
+{
+  "historical_rows": 5002,
+  "focal_rows": 69,
+  "disposition_counts": {
+    "NON_NORMATIVE": 2331,
+    "RETAIN": 2554,
+    "SUPERSEDE": 47,
+    "EXTEND": 70
+  },
+  "implementation_status_counts": {
+    "NOT_APPLICABLE": 2290,
+    "OPEN": 651,
+    "PARTIAL": 2061
+  },
+  "disposition_by_status": {
+    "EXTEND/OPEN": 21,
+    "EXTEND/PARTIAL": 49,
+    "NON_NORMATIVE/NOT_APPLICABLE": 2290,
+    "NON_NORMATIVE/PARTIAL": 41,
+    "RETAIN/OPEN": 604,
+    "RETAIN/PARTIAL": 1950,
+    "SUPERSEDE/OPEN": 26,
+    "SUPERSEDE/PARTIAL": 21
+  },
+  "referenced_files_hashed": 53,
+  "errors": [],
+  "stale_reference_paths": {},
+  "inventory_and_reference_integrity_passed": true,
+  "semantic_acceptance": false,
+  "implementation_acceptance": false,
+  "production_acceptance": false,
+  "limits": "This checks row coverage and code/test byte identity. It does not inspect semantic correctness, execute per-requirement behavior, or independently sign off the 56 open and 12 claimed roadmap tasks."
+}

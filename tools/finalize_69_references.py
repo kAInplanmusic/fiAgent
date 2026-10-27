@@ -26,9 +26,9 @@ def resolve():
         uid=row["requirement_id"]; norm=row["normalized_requirement"].strip()
         if uid=="RTM-00069":
             candidates=[n for n,v in enumerate(master,1) if v.strip()==norm]
-            if candidates != [40]:
+            if len(candidates) != 1:
                 raise ValueError("master_readme_unexpected")
-            source,selected,alternates="MASTER_README.md",40,""
+            source,selected,alternates="MASTER_README.md",candidates[0],""
             semantic="HISTORICAL_INFORMATIONAL"
             disposition="NON_NORMATIVE_SOURCE_DESCRIPTION"
             rationale="A version overview row describes the historical v0.6 archive; it does not prescribe a runtime requirement."
