@@ -8,3 +8,7 @@ venv/
 *.db
 .coverage
 htmlcov/
+
+# Reconstructed from verified compressed evidence
+/TRACEABILITY/NORMATIVE_REVIEW_20261025/part_a_reviews.jsonl
+/TRACEABILITY/NORMATIVE_REVIEW_20261025/part_c.jsonl

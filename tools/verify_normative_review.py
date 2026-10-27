@@ -14,6 +14,8 @@ REVIEW = ROOT / 'TRACEABILITY/NORMATIVE_REVIEW_20261025'
 
 
 def main():
+    import runpy
+    runpy.run_path(str(REVIEW / 'restore_matrices.py'))['restore']()
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()

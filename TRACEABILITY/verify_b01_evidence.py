@@ -11,6 +11,8 @@ REVIEW = ROOT / 'TRACEABILITY/NORMATIVE_REVIEW_20261025'
 
 
 def verify():
+    import runpy
+    runpy.run_path(str(REVIEW / 'restore_matrices.py'))['restore']()
     rows = []
     for part in 'abcd':
         with (REVIEW / f'part_{part}{"_reviews" if part == "a" else ""}.jsonl').open() as stream:
