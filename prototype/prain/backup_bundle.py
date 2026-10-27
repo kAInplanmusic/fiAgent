@@ -1,6 +1,6 @@
 """Coordinated, staged backup/restore for multiple PRAIN SQLite databases.
 
-Callers must quiesce all writers for the entire operation. Each SQLite file is
+Callers must quiesce all connections for restore and all writers for backup. Each SQLite file is
 backed up with SQLite's online backup API; the bundle is not a distributed
 transaction and cannot create a cross-database point-in-time snapshot while
 writers are active.
@@ -16,6 +16,7 @@ import tempfile
 from pathlib import Path
 from typing import Mapping
 from contextlib import contextmanager
+from datetime import datetime, timezone
 
 
 @contextmanager
@@ -34,6 +35,19 @@ def _sha256(path: Path) -> str:
         for chunk in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def _reject_sqlite_sidecars(path: Path) -> None:
+    """Refuse SQLite state outside the verified main file before opening it.
+
+    WAL/journal files can change SQLite's view without changing the main-file
+    checksum. A destination's old sidecars must never accompany a replacement.
+    Callers must exclude concurrent connections and changes for the whole restore.
+    """
+    for suffix in ('-wal', '-shm', '-journal'):
+        sidecar = path.with_name(path.name + suffix)
+        if os.path.lexists(sidecar):
+            raise ValueError(f'sqlite_sidecar_present:{sidecar.name}')
 
 
 def _integrity(path: Path) -> None:
@@ -86,7 +100,29 @@ def _known_tombstones(path: Path):
         return set(conn.execute("SELECT tenant,source FROM prain_deletion_tombstones"))
 
 
+def _reject_target_with_active_hold(path: Path) -> None:
+    """Do not replace a destination while its legal hold remains active.
+
+    An older backup cannot be trusted to preserve newer hold policy or held
+    content. Restores require stopped connections and exclusive control of files.
+    """
+    if not path.is_file():
+        return
+    from .private_projections import PrivateProjections
+    with _managed_connection(path) as conn:
+        exists = conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='prain_projection_retention'").fetchone()
+        if not exists:
+            return
+        holds = conn.execute("SELECT hold_until FROM prain_projection_retention WHERE hold_until IS NOT NULL").fetchall()
+    now = datetime.now(timezone.utc).isoformat()
+    for (hold_until,) in holds:
+        # Reject malformed hold state rather than silently destroying it.
+        if PrivateProjections._timestamp(hold_until) > now:
+            raise ValueError('restore_blocked_legal_hold')
+
+
 def _restore_deletions(source: Path, target: Path, snapshot):
+    _reject_target_with_active_hold(target)
     required = _private_tables(source) or _private_tables(target)
     if not required and snapshot is None:
         return None
@@ -155,7 +191,7 @@ def restore_databases(bundle_dir: str | Path, destinations: Mapping[str, str | P
 
     Filesystem replacement across multiple databases is not globally atomic. The
     function provides best-effort rollback on replacement errors; writers must be
-    stopped and the caller should retain an independent backup of destinations.
+    closed and the caller should retain an independent backup of destinations.
 
     If source or destination has owned private projection tables, a current
     authoritative tombstone snapshot for that database name is mandatory. The
@@ -179,12 +215,15 @@ def restore_databases(bundle_dir: str | Path, destinations: Mapping[str, str | P
             not isinstance(authoritative_tombstones, Mapping)
             or set(authoritative_tombstones) - set(targets)):
         raise ValueError("invalid_authoritative_tombstone_database_names")
+    for target in targets.values():
+        _reject_sqlite_sidecars(target)
     deletions = {}
     for name, entry in manifest["databases"].items():
         filename = entry.get("file", "")
         if Path(filename).name != filename or not filename.endswith(".sqlite"):
             raise ValueError(f"bundle_filename_invalid:{name}")
         source = bundle / filename
+        _reject_sqlite_sidecars(source)
         if not source.is_file() or _sha256(source) != entry.get("sha256"):
             raise ValueError(f"bundle_checksum_mismatch:{name}")
         _integrity(source)
@@ -272,7 +311,7 @@ def recover_database_from_artifact(artifact_path: str | Path, destination: str |
 
     The artifact is validated and copied to a temporary file beside the target before
     replacement. The artifact itself is retained so operators can verify or retry recovery.
-    Callers must quiesce all writers and confirm that the artifact belongs to the target.
+    Callers must close all database connections and confirm the artifact belongs to the target.
     Private artifacts/destinations require a current trusted deletion snapshot,
     including when a previously sanitized recovery artifact has become stale.
     """
@@ -282,6 +321,8 @@ def recover_database_from_artifact(artifact_path: str | Path, destination: str |
         raise FileNotFoundError(f"recovery_artifact_missing:{artifact}")
     if artifact == target:
         raise ValueError("recovery_artifact_and_destination_must_differ")
+    _reject_sqlite_sidecars(artifact)
+    _reject_sqlite_sidecars(target)
     _integrity(artifact)
     deletions = _restore_deletions(artifact, target, authoritative_tombstones)
     target.parent.mkdir(parents=True, exist_ok=True)

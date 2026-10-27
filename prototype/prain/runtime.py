@@ -184,9 +184,17 @@ class PRAINRuntime:
                                          or approval.get("principal") != principal):
                 raise PermissionError("approval_identity_mismatch")
             if approval is not None:
+                # Bind validation and admission to the same private snapshot.
+                # A caller may otherwise mutate the dictionary after its MAC is
+                # verified, before the policy engine consumes its fields.
+                approval = deepcopy(approval)
+                if approval.get("tenant") != tenant or approval.get("principal") != principal:
+                    raise PermissionError("approval_identity_mismatch")
                 signature = approval.get("issuer_signature")
                 if self._approval_verification_key is None or not isinstance(signature, str):
                     raise PermissionError("verified_approval_issuer_required")
+                if len(signature) != 64 or any(c not in "0123456789abcdef" for c in signature):
+                    raise PermissionError("invalid_approval_issuer_signature")
                 try:
                     approval_payload = {k: v for k, v in approval.items() if k != "issuer_signature"}
                     raw = json.dumps(approval_payload, sort_keys=True, separators=(",", ":"),
@@ -197,16 +205,31 @@ class PRAINRuntime:
                                     b"PRAIN-APPROVAL-v1\0" + raw, sha256).hexdigest()
                 if not hmac.compare_digest(signature, expected):
                     raise PermissionError("invalid_approval_issuer_signature")
+                # A signed client-supplied usage counter cannot establish a
+                # cross-process limit. Single-use admission needs a shared durable
+                # authority; higher limits are not implemented by that store.
+                usage_policy = approval.get("usage_policy")
+                max_uses = approval.get("max_uses")
+                if usage_policy not in (None, "single_use"):
+                    raise PermissionError("approval_usage_limit_not_supported")
+                if max_uses is not None and (type(max_uses) is not int or max_uses != 1):
+                    raise PermissionError("approval_usage_limit_not_supported")
+                if max_uses == 1 and usage_policy != "single_use":
+                    raise PermissionError("single_use_policy_required")
+                if usage_policy == "single_use" and self.admission_store is None:
+                    raise PermissionError("durable_approval_admission_required")
             # Structured identity avoids collisions such as ("a:b", "c") and
             # ("a", "b:c") sharing the same actor/fingerprint.
             actor = json.dumps({"tenant": tenant, "principal": principal},
                                sort_keys=True, separators=(",", ":"))
             return self._request_action_locked(action, target, capability, actor,
-                                               payload, correlation_id, idempotency_key, approval)
+                                               payload, correlation_id, idempotency_key, approval,
+                                               revalidate_replay=True)
 
     def _request_action_locked(self, action: str, target: str, capability: str | None,
                                actor: str, payload: dict[str, Any], correlation_id: str,
-                               idempotency_key: str, approval: dict[str, Any] | None = None) -> tuple[ExecutionReceipt | None, dict[str, Any]]:
+                               idempotency_key: str, approval: dict[str, Any] | None = None, *,
+                               revalidate_replay: bool = False) -> tuple[ExecutionReceipt | None, dict[str, Any]]:
         """Authorize then simulate an action. Denials never execute; repeated keys replay receipt."""
         # Snapshot caller-owned input before hashing or policy evaluation: otherwise a
         # nested mutable object can change after request construction (aliasing).
@@ -217,6 +240,12 @@ class PRAINRuntime:
             "action": action, "target": target, "capability": capability, "actor": actor,
             "payload": payload_snapshot, "correlation_id": correlation_id,
         })
+        def replay_authorized():
+            if not revalidate_replay:
+                return None
+            current = self.policy.evaluate(request, approval=approval)
+            self.evidence.append("policy.replay_reauthorization", current.decision_id, asdict(current))
+            return None if current.allowed else asdict(current)
         if self.admission_store is not None:
             stored = self.admission_store.get_record(idempotency_key)
             if stored is not None:
@@ -224,6 +253,9 @@ class PRAINRuntime:
                 if stored_fingerprint != fingerprint:
                     return None, {"allowed": False, "reason": "idempotency_key_conflict",
                                   "policy_decision_id": stored_data.get("policy_decision_id", "durable-replay")}
+                denial = replay_authorized()
+                if denial is not None:
+                    return None, denial
                 receipt = ExecutionReceipt(**stored_data)
                 self._receipts[idempotency_key] = receipt
                 self._request_fingerprints[idempotency_key] = fingerprint
@@ -234,6 +266,9 @@ class PRAINRuntime:
             if self._request_fingerprints[idempotency_key] != fingerprint:
                 return None, {"allowed": False, "reason": "idempotency_key_conflict",
                               "policy_decision_id": receipt.policy_decision_id}
+            denial = replay_authorized()
+            if denial is not None:
+                return None, denial
             return receipt, {"allowed": True, "reason": "idempotent_replay", "policy_decision_id": receipt.policy_decision_id}
         decision = self.policy.evaluate(request, approval=approval)
         # A single-use approval must have a stable ID and may authorize only one

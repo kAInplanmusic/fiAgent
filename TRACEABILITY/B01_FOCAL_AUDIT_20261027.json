@@ -1,0 +1,5229 @@
+{
+  "counts": {
+    "claimed_complete": 12,
+    "open_roadmap": 56,
+    "historical_information": 1
+  },
+  "source_errors": 0,
+  "rows_with_stale_or_missing_anchors": 55,
+  "behavioral_evidence_not_imported": 68,
+  "independent_signoff_not_imported": 68,
+  "production_accepted": false,
+  "scope": "Reference and hash inventory only; no semantic, behavioral or independent approval.",
+  "rows": [
+    {
+      "requirement_id": "RTM-00001",
+      "category": "claimed_complete",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00002",
+      "category": "claimed_complete",
+      "gate": "G07",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00003",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00004",
+      "category": "open_roadmap",
+      "gate": "G07",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00005",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00006",
+      "category": "claimed_complete",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00007",
+      "category": "claimed_complete",
+      "gate": "G03",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00008",
+      "category": "claimed_complete",
+      "gate": "G03",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00009",
+      "category": "claimed_complete",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/scf.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00010",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00011",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00012",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00013",
+      "category": "open_roadmap",
+      "gate": "G04",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00014",
+      "category": "open_roadmap",
+      "gate": "G09",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00015",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00016",
+      "category": "open_roadmap",
+      "gate": "G04",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00017",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00018",
+      "category": "open_roadmap",
+      "gate": "G04",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00019",
+      "category": "open_roadmap",
+      "gate": "G09",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00020",
+      "category": "claimed_complete",
+      "gate": "G05",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00021",
+      "category": "claimed_complete",
+      "gate": "G05",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00022",
+      "category": "claimed_complete",
+      "gate": "G09",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00023",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00024",
+      "category": "open_roadmap",
+      "gate": "G09",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_scf_contract.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00025",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00026",
+      "category": "open_roadmap",
+      "gate": "G09",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00027",
+      "category": "open_roadmap",
+      "gate": "G09",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00028",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00029",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "NOT_VERIFIED",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00030",
+      "category": "open_roadmap",
+      "gate": "G08",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00031",
+      "category": "open_roadmap",
+      "gate": "G09",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00032",
+      "category": "open_roadmap",
+      "gate": "G04",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00033",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00034",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00035",
+      "category": "open_roadmap",
+      "gate": "G06",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00036",
+      "category": "open_roadmap",
+      "gate": "G04",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00037",
+      "category": "open_roadmap",
+      "gate": "G08",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "NOT_VERIFIED",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00038",
+      "category": "open_roadmap",
+      "gate": "G04",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00039",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/fenced_leases.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_fencing_hal_proposals.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_backup_bundle.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00040",
+      "category": "open_roadmap",
+      "gate": "G04",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00041",
+      "category": "open_roadmap",
+      "gate": "G03",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00042",
+      "category": "open_roadmap",
+      "gate": "G09",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00043",
+      "category": "open_roadmap",
+      "gate": "G05",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00044",
+      "category": "open_roadmap",
+      "gate": "G05",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00045",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00046",
+      "category": "open_roadmap",
+      "gate": "G06",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00047",
+      "category": "open_roadmap",
+      "gate": "G06",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/private_projections.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00048",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "NOT_VERIFIED",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00049",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/runtime.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00050",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "NOT_VERIFIED",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00051",
+      "category": "open_roadmap",
+      "gate": "G07",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00052",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00053",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00054",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/anima_hal.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_anima_hal_contract.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00055",
+      "category": "open_roadmap",
+      "gate": "G08",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00056",
+      "category": "open_roadmap",
+      "gate": "G04",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00057",
+      "category": "open_roadmap",
+      "gate": "G08",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00058",
+      "category": "open_roadmap",
+      "gate": "G08",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "NOT_VERIFIED",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00059",
+      "category": "open_roadmap",
+      "gate": "G03",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "NOT_VERIFIED",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00060",
+      "category": "open_roadmap",
+      "gate": "G09",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "implementation_anchors",
+          "path": "prototype/prain/durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        },
+        {
+          "kind": "test_anchors",
+          "path": "prototype/tests/test_durable_semantics.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00061",
+      "category": "open_roadmap",
+      "gate": "G09",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "NOT_VERIFIED",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00062",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00063",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "NOT_VERIFIED",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00064",
+      "category": "open_roadmap",
+      "gate": "G04",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00065",
+      "category": "open_roadmap",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "NOT_VERIFIED",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00066",
+      "category": "claimed_complete",
+      "gate": "G09",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00067",
+      "category": "claimed_complete",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00068",
+      "category": "claimed_complete",
+      "gate": "G01",
+      "source_exact": true,
+      "stale_or_missing_anchors": [
+        {
+          "kind": "implementation_anchors",
+          "path": "tools/finalize_69_references.py",
+          "reason": "stale_sha256"
+        }
+      ],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "PARTIAL_ANCHORS_ONLY",
+      "production_acceptance": "NOT_ACCEPTED"
+    },
+    {
+      "requirement_id": "RTM-00069",
+      "category": "historical_information",
+      "gate": "G03",
+      "source_exact": true,
+      "stale_or_missing_anchors": [],
+      "behavioral_test_evidence": "NOT_IMPORTED",
+      "independent_signoff": "NOT_IMPORTED",
+      "implementation_acceptance": "NOT_VERIFIED",
+      "production_acceptance": "NOT_ACCEPTED"
+    }
+  ]
+}

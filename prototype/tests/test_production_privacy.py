@@ -69,6 +69,42 @@ class ProjectionLifecycleTests(unittest.TestCase):
         self.assertIsNotNone(self.store.read('a','s'))
         self.assertEqual(self.store.deletion_snapshot(),[])
 
+    def test_tombstone_batch_preserves_all_entries_when_one_has_active_hold(self):
+        for source in ('free', 'held'):
+            self.store.upsert('a', source, 'restricted', {'data': source})
+        self.store.set_retention('a', 'held', expires_at='2025-01-01T00:00:00Z',
+                                 policy_ref='policy:hold', hold_until='2099-01-01T00:00:00Z')
+        with self.assertRaisesRegex(ValueError, 'blocked_legal_hold'):
+            self.store.apply_deletions([('a', 'free'), ('a', 'held')])
+        self.assertIsNotNone(self.store.read('a', 'free'))
+        self.assertIsNotNone(self.store.read('a', 'held'))
+        self.assertEqual(self.store.deletion_snapshot(), [])
+
+    def test_expired_hold_does_not_block_tombstone(self):
+        self.store.upsert('a', 's', 'restricted', {'data': 'old'})
+        self.store.set_retention('a', 's', expires_at='2024-01-01T00:00:00Z',
+                                 policy_ref='policy:hold', hold_until='2025-01-01T00:00:00Z')
+        self.assertEqual(self.store.apply_deletions([('a', 's')]), 1)
+        self.assertIsNone(self.store.read('a', 's'))
+
+    def test_retention_update_cannot_silently_remove_or_shorten_active_hold(self):
+        self.store.upsert('a', 's', 'restricted', {'data': 'held'})
+        original = dict(expires_at='2025-01-01T00:00:00Z', policy_ref='policy:hold',
+                        hold_until='2099-01-01T00:00:00Z')
+        self.store.set_retention('a', 's', **original)
+        for replacement in (None, '2098-01-01T00:00:00Z'):
+            with self.subTest(replacement=replacement), self.assertRaisesRegex(ValueError, 'active_legal_hold'):
+                self.store.set_retention('a', 's', expires_at='2025-01-01T00:00:00Z',
+                                         policy_ref='policy:new', hold_until=replacement)
+            with sqlite3.connect(self.path) as db:
+                row = db.execute('SELECT policy_ref,hold_until FROM prain_projection_retention WHERE tenant=? AND source=?', ('a', 's')).fetchone()
+            self.assertEqual(row[0], 'policy:hold')
+            self.assertEqual(row[1], self.store._timestamp(original['hold_until']))
+            with self.assertRaisesRegex(ValueError, 'legal_hold'):
+                self.store.delete_source('a', 's')
+        self.store.set_retention('a', 's', expires_at=original['expires_at'],
+                                 policy_ref='policy:extend', hold_until='2100-01-01T00:00:00Z')
+
     def test_naive_retention_timestamp_rejected(self):
         self.store.upsert('a','s','public',{})
         with self.assertRaisesRegex(ValueError,'timezone'):

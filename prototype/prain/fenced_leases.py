@@ -44,11 +44,13 @@ class FencedLeaseStore:
         import math
         if not math.isfinite(ttl):
             raise LeaseRejected("invalid_ttl")
-        moment = time.time() if now is None else now
-        if type(moment) not in (int, float) or not math.isfinite(moment):
+        if now is not None and (type(now) not in (int, float) or not math.isfinite(now)):
             raise LeaseRejected("invalid_clock")
         with self._db() as c:
             c.execute("BEGIN IMMEDIATE")
+            # Lock acquisition may block for seconds; evaluate the lease against
+            # the time at which its transaction can actually act.
+            moment = time.time() if now is None else now
             row = c.execute("SELECT owner,token,expires_at FROM prain_leases WHERE resource=?", (resource,)).fetchone()
             if row and moment < row[2]:
                 raise LeaseRejected("lease_held")
@@ -66,11 +68,11 @@ class FencedLeaseStore:
         import math
         if type(ttl) not in (int, float) or not math.isfinite(ttl) or not 0 < ttl <= 86400:
             raise LeaseRejected("invalid_ttl")
-        moment = time.time() if now is None else now
-        if type(moment) not in (int, float) or not math.isfinite(moment):
+        if now is not None and (type(now) not in (int, float) or not math.isfinite(now)):
             raise LeaseRejected("invalid_clock")
         with self._db() as c:
             c.execute("BEGIN IMMEDIATE")
+            moment = time.time() if now is None else now
             row = c.execute("SELECT owner,token,expires_at FROM prain_leases WHERE resource=?", (lease.resource,)).fetchone()
             if not row or row[0] != lease.owner or row[1] != lease.token or moment >= row[2]:
                 raise LeaseRejected("stale_lease")
@@ -84,11 +86,11 @@ class FencedLeaseStore:
         import math
         if not isinstance(lease, Lease) or not isinstance(payload, str):
             raise LeaseRejected("invalid_write")
-        moment = time.time() if now is None else now
-        if type(moment) not in (int, float) or not math.isfinite(moment):
+        if now is not None and (type(now) not in (int, float) or not math.isfinite(now)):
             raise LeaseRejected("invalid_clock")
         with self._db() as c:
             c.execute("BEGIN IMMEDIATE")
+            moment = time.time() if now is None else now
             row = c.execute("SELECT owner,token,expires_at FROM prain_leases WHERE resource=?", (lease.resource,)).fetchone()
             if not row or row[0] != lease.owner or row[1] != lease.token or moment >= row[2]:
                 raise LeaseRejected("stale_fencing_token")

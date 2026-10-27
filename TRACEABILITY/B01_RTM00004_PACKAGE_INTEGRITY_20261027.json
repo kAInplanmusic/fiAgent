@@ -1,0 +1,61 @@
+{
+  "requirement_id": "RTM-00004",
+  "master_archive_sha256": "b007c002fdd439db82c3c07605f4c804a4851f3522c96db29a1b1e7610e54e6f",
+  "packages": [
+    {
+      "name": "PRAIN_Architecture_v0.4.0.zip",
+      "sha256": "60de298ddcb130221b240056a805c018158c89675ebfa94049384a01e2f4052c",
+      "index_digest_verified": true,
+      "members": 16,
+      "crc_valid": true
+    },
+    {
+      "name": "PRAIN_Distributed_Protocol_v0.5.0.zip",
+      "sha256": "a78d29e0717fbcb17d0149808e59b6ece9daf81d87ad99bc8efae3b9bd634b5a",
+      "index_digest_verified": true,
+      "members": 12,
+      "crc_valid": true
+    },
+    {
+      "name": "PRAIN_Phase0_v0.1.0.zip",
+      "sha256": "dc1053cbe5894d40727f738bea54e3c34035ac8da78adc036ab2005173c7a2a5",
+      "index_digest_verified": false,
+      "members": 15,
+      "crc_valid": true
+    },
+    {
+      "name": "PRAIN_Phase0_v0.2.0.zip",
+      "sha256": "124febeff6bfe84a8b74196ea49d129ccdda9947ab6bdc973fb246031a4421ec",
+      "index_digest_verified": false,
+      "members": 26,
+      "crc_valid": true
+    },
+    {
+      "name": "PRAIN_Phase0_v0.2.1.zip",
+      "sha256": "5b801aba53c152105525b5552cb803b6b72e233eec546c1b5e37bafc38f28d82",
+      "index_digest_verified": true,
+      "members": 30,
+      "crc_valid": true
+    },
+    {
+      "name": "PRAIN_Phase1_Prototype_v0.1.0.zip",
+      "sha256": "85494f2fd7606c73ee98d1ccacb46d9983fd55421793a0e12241e8c97126d3a2",
+      "index_digest_verified": false,
+      "members": 22,
+      "crc_valid": true
+    },
+    {
+      "name": "PRAIN_v0.6.zip",
+      "sha256": "ed8cb1a47b89b0d18b93336d8f807e33636ceeac00f8965c036ab3f2c8b7f652",
+      "index_digest_verified": true,
+      "members": 16,
+      "crc_valid": true
+    }
+  ],
+  "errors": [],
+  "scope": "Packages named by the through-v0.6 master index; does not prove completeness of later releases or other historical sources.",
+  "production_accepted": false,
+  "independent_signoff": false,
+  "indexed_packages": 7,
+  "passed_declared_scope": true
+}

@@ -1,0 +1,17 @@
+{
+  "requirement_id": "RTM-00027",
+  "source": "ROADMAP.md",
+  "requirement": "Verifizieren, dass Hash-Chain-Kopien keine nachträgliche Mutierung durch Alias-Referenzen erlauben; Mutationstests ergänzen.",
+  "outcomes": {
+    "in_memory": true,
+    "sqlite_restart": true
+  },
+  "sha256": {
+    "prototype/prain/evidence_ledger.py": "88016e0c60597fa1c10448cdd24dfe4ed65ad3ad15d6901f77478d79d01ea29b",
+    "prototype/prain/durable_components.py": "e89fc782a63503d4ef5277708e9b3a8bb43cec635bc86dda67997778f39245bb",
+    "TRACEABILITY/verify_rtm00027_alias.py": "b77dfb55545bbc76a86b0bea79f44f7928c0dc6943f792d749e977e76bd8cf90"
+  },
+  "scope": "Post-append mutation of nested input, returned entry and retrieved entry; SQLite restart. Does not prove safe concurrent mutation during copy or protection from privileged direct DB access.",
+  "production_accepted": false,
+  "independent_signoff": false
+}

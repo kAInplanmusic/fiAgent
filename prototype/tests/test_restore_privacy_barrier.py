@@ -81,6 +81,32 @@ class RestorePrivacyBarrierTests(unittest.TestCase):
                           authoritative_tombstones={"private": [("a", "subject")]})
         self.assert_deleted(target)
 
+    def test_newer_destination_hold_blocks_restore_and_recovery(self):
+        # The old bundle predates the active hold on the live destination.
+        self.store.set_retention('a', 'subject', expires_at='2025-01-01T00:00:00Z',
+                                 policy_ref='policy:hold', hold_until='2099-01-01T00:00:00Z')
+        before = self.live.read_bytes()
+        for snapshot in ([], [('a', 'subject')]):
+            with self.subTest(snapshot=snapshot), self.assertRaisesRegex(ValueError, 'legal_hold'):
+                restore_databases(self.bundle, {'private': self.live},
+                                  authoritative_tombstones={'private': snapshot})
+            self.assertEqual(self.live.read_bytes(), before)
+        with self.assertRaisesRegex(ValueError, 'legal_hold'):
+            recover_database_from_artifact(self.bundle / 'private.sqlite', self.live,
+                                           authoritative_tombstones=[])
+        self.assertEqual(self.live.read_bytes(), before)
+
+    def test_source_hold_blocks_conflicting_tombstone_before_installation(self):
+        self.store.set_retention('a', 'subject', expires_at='2025-01-01T00:00:00Z',
+                                 policy_ref='policy:hold', hold_until='2099-01-01T00:00:00Z')
+        held_bundle = self.root / 'held-backup'
+        backup_databases({'private': self.live}, held_bundle)
+        target = self.root / 'new-target.sqlite'
+        with self.assertRaisesRegex(ValueError, 'legal_hold'):
+            restore_databases(held_bundle, {'private': target},
+                              authoritative_tombstones={'private': [('a', 'subject')]})
+        self.assertFalse(target.exists())
+
     def test_nonprivate_bundle_cannot_erase_existing_tombstones(self):
         source = self.root / "generic.sqlite"
         with sqlite3.connect(source) as db:

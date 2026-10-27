@@ -1,0 +1,19 @@
+{
+  "requirement_id": "RTM-00006",
+  "source_text": "- [x] Architektur und P/R/A/I/N-Verantwortlichkeiten dokumentiert.",
+  "documentation_scope_passed": true,
+  "errors": [],
+  "negative_cases": {
+    "changed_theme_rejected": true,
+    "missing_responsibility_rejected": true
+  },
+  "sha256": {
+    "ROADMAP.md": "4bee8f2a7cdf7438e84d810cc51a3afeefa29fbee47da5a42be348cdfefe4d9b",
+    "MASTER_README.md": "539795a33308e52fe8eb534af2d03bf9dbddb47c771b966fb8b38003fc656ec2",
+    "docs/ORGANIC_AGENT_ARCHITECTURE_SSOT.md": "796e96d96b436c620f7c9457b31b25ddea7fe1079bb103b3086032a254de93cf"
+  },
+  "runtime_implementation_accepted": false,
+  "independent_signoff": false,
+  "production_accepted": false,
+  "scope": "Exact current P/R/A/I/N labels and documented responsibility headers; no semantic or implementation completeness claim."
+}

@@ -128,6 +128,12 @@ class PrivateProjections:
             db.execute("BEGIN IMMEDIATE")
             if not db.execute("SELECT 1 FROM prain_private_projections WHERE tenant=? AND source=?", (tenant, source)).fetchone():
                 raise ValueError("projection_not_found")
+            existing = db.execute("SELECT hold_until FROM prain_projection_retention WHERE tenant=? AND source=?", (tenant, source)).fetchone()
+            if existing and existing[0]:
+                previous_hold = datetime.fromisoformat(self._timestamp(existing[0]))
+                if previous_hold > datetime.now(timezone.utc):
+                    if hold_until is None or datetime.fromisoformat(hold_until) < previous_hold:
+                        raise ValueError("active_legal_hold_cannot_be_shortened")
             db.execute("""INSERT INTO prain_projection_retention VALUES(?,?,?,?,?)
                 ON CONFLICT(tenant,source) DO UPDATE SET expires_at=excluded.expires_at,
                 policy_ref=excluded.policy_ref,hold_until=excluded.hold_until""",
@@ -178,6 +184,17 @@ class PrivateProjections:
             checked.append(tuple(entry))
         with self._db() as db:
             db.execute("BEGIN IMMEDIATE")
+            # A current hold takes precedence over a deletion request, even
+            # when the tombstone arrived from an otherwise trusted control plane.
+            # Preflight the entire batch in this transaction: no partial deletes.
+            now = datetime.now(timezone.utc).isoformat()
+            for tenant, source in checked:
+                hold = db.execute(
+                    "SELECT hold_until FROM prain_projection_retention WHERE tenant=? AND source=?",
+                    (tenant, source),
+                ).fetchone()
+                if hold and hold[0] and self._timestamp(hold[0]) > now:
+                    raise ValueError("blocked_legal_hold")
             for tenant, source in checked:
                 db.execute("INSERT OR IGNORE INTO prain_deletion_tombstones VALUES(?,?)", (tenant, source))
                 db.execute("DELETE FROM prain_private_projections WHERE tenant=? AND source=?", (tenant, source))

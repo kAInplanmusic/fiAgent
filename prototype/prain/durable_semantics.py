@@ -7,8 +7,8 @@ import sqlite3
 from pathlib import Path
 from threading import RLock
 
-from .anima_hal import Anima, AnimaConflict, SelfModel
-from .scf import SemanticFabric, SemanticClaim, SCFDecision, _timestamp
+from .anima_hal import Anima, AnimaConflict, SelfModel, _contains_authority_field
+from .scf import SemanticFabric, SemanticClaim, SCFDecision, _timestamp, _canonical_claim
 
 
 class DurableAnima(Anima):
@@ -34,8 +34,10 @@ class DurableAnima(Anima):
     def update(self, *, expected_version: int, dimension: str, state: dict, provenance: str):
         if dimension not in self.DIMENSIONS or not isinstance(state, dict) or not isinstance(provenance, str) or not provenance.strip():
             raise ValueError("invalid self-model update")
-        forbidden = {"grant", "capabilities", "approval", "policy_override"}
-        if any(str(k).lower() in forbidden for k in state):
+        # Use the same detached value for validation and persistence: callers
+        # may otherwise mutate a nested dictionary between the two steps.
+        state = deepcopy(state)
+        if _contains_authority_field(state):
             raise AnimaConflict("self_model_cannot_grant_authority")
         if type(expected_version) is not int:
             raise AnimaConflict("stale_self_model_version")
@@ -48,7 +50,7 @@ class DurableAnima(Anima):
             if model.version != expected_version:
                 raise AnimaConflict("stale_self_model_version")
             dimensions = deepcopy(model.dimensions)
-            dimensions[dimension] = deepcopy(state)
+            dimensions[dimension] = state
             new = SelfModel(model.identity_id, model.version + 1, dimensions, provenance)
             c.execute("UPDATE prain_anima SET version=?, data_json=? WHERE identity_id=? AND version=?",
                       (new.version, json.dumps(asdict(new), sort_keys=True, allow_nan=False), model.identity_id, expected_version))
@@ -98,6 +100,7 @@ class DurableSemanticFabric(SemanticFabric):
         self._restore(row[0])
 
     def ingest(self, claim: SemanticClaim, recipient_scope: str, now: str):
+        claim = deepcopy(claim)
         with self._lock, self._connection() as c:
             c.execute("BEGIN IMMEDIATE")
             row = c.execute("SELECT state_json FROM prain_scf_state WHERE id=1").fetchone()
@@ -122,6 +125,9 @@ class DurableSemanticFabric(SemanticFabric):
             raise ValueError("message_id_required")
         if not isinstance(claim, SemanticClaim):
             raise TypeError("semantic_claim_required")
+        # Fingerprint and transition must consume the same detached snapshot.
+        claim = deepcopy(claim)
+        _canonical_claim(claim)
         serialized = json.dumps({"claim": asdict(claim), "scope": recipient_scope, "now": now},
                                 sort_keys=True, separators=(",", ":"), allow_nan=False)
         fingerprint = hashlib.sha256(serialized.encode()).hexdigest()

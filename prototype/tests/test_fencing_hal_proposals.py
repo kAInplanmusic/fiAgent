@@ -1,4 +1,7 @@
 import tempfile
+import sqlite3
+import threading
+import time
 import unittest
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -59,6 +62,41 @@ class FencingTests(unittest.TestCase):
             self.a.renew(lease, 1e-20, now=101)
         self.a.fenced_write(lease, "still-valid", now=102)
         self.assertEqual(self.b.read("r"), (lease.token, "still-valid"))
+
+    def test_write_waiting_for_sqlite_lock_cannot_outlive_lease(self):
+        lease = self.a.acquire("contended", "worker", 0.4)
+        started = threading.Event()
+        def delayed_write():
+            started.set()
+            return self.b.fenced_write(lease, "stale")
+        with sqlite3.connect(self.a.path, timeout=5) as lock:
+            lock.execute("BEGIN IMMEDIATE")
+            with ThreadPoolExecutor(max_workers=1) as pool:
+                future = pool.submit(delayed_write)
+                self.assertTrue(started.wait(2))
+                time.sleep(0.55)
+                lock.commit()
+                with self.assertRaisesRegex(LeaseRejected, "stale_fencing_token"):
+                    future.result(timeout=3)
+        self.assertIsNone(self.a.read("contended"))
+
+    def test_renew_waiting_for_sqlite_lock_cannot_revive_expired_lease(self):
+        lease = self.a.acquire("renew-contended", "worker", 0.4)
+        started = threading.Event()
+        def delayed_renew():
+            started.set()
+            return self.b.renew(lease, 10)
+        with sqlite3.connect(self.a.path, timeout=5) as lock:
+            lock.execute("BEGIN IMMEDIATE")
+            with ThreadPoolExecutor(max_workers=1) as pool:
+                future = pool.submit(delayed_renew)
+                self.assertTrue(started.wait(2))
+                time.sleep(0.55)
+                lock.commit()
+                with self.assertRaisesRegex(LeaseRejected, "stale_lease"):
+                    future.result(timeout=3)
+        successor = self.b.acquire("renew-contended", "other", 10)
+        self.assertGreater(successor.token, lease.token)
 
 
 class HALProposalTests(unittest.TestCase):

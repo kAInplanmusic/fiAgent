@@ -54,6 +54,9 @@ class Anima:
             raise ValueError("unknown dimension")
         if not isinstance(state, dict) or not isinstance(provenance, str) or not provenance.strip():
             raise ValueError("state and provenance required")
+        # Validate and apply the same detached state, not a caller-owned dict
+        # that may change between the authority check and the update.
+        state = deepcopy(state)
         if _contains_authority_field(state):
             raise AnimaConflict("self_model_cannot_grant_authority")
         with self._lock:
@@ -61,7 +64,7 @@ class Anima:
             if type(expected_version) is not int or expected_version != old.version:
                 raise AnimaConflict("stale_self_model_version")
             dimensions = deepcopy(old.dimensions)
-            dimensions[dimension] = deepcopy(state)
+            dimensions[dimension] = state
             self._model = SelfModel(old.identity_id, old.version + 1, dimensions, provenance)
             return self.snapshot()
 

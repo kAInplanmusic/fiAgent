@@ -2,6 +2,8 @@ import tempfile
 import unittest
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
+from unittest.mock import patch
+import prain.durable_semantics as durable_module
 
 from prain import PRAINRuntime
 from prain.anima_hal import AnimaConflict
@@ -63,6 +65,40 @@ class DurableSemanticIntegrationTests(unittest.TestCase):
         self.assertEqual(self.a.scf.ingest(bad, "local", "2026-10-25T14:00:00Z").decision, "raise_conflict")
         self.assertEqual(len(PRAINRuntime(persistent_db_path=self.path).scf.conflicts()), 1)
 
+    def test_scf_same_revision_changed_claim_conflict_survives_restart(self):
+        self.a.scf.ingest(claim(), "local", "2026-10-25T14:00:00Z")
+        changed = SemanticClaim(**{**claim().__dict__, "value": "changed"})
+        result = self.a.scf.ingest_message("other-message", changed, "local", "2026-10-25T14:00:00Z")
+        self.assertEqual((result.decision, result.reason), ("raise_conflict", "same_version_changed_claim"))
+        restarted = PRAINRuntime(persistent_db_path=self.path)
+        self.assertEqual(restarted.scf.conflicts()[-1]["reason"], result.reason)
+        self.assertEqual(restarted.scf.conflicts()[-1]["conflicting_claim"]["value"], "changed")
+        self.assertEqual(restarted.scf.projection("a").value, claim().value)
+        self.assertEqual(restarted.scf.ingest_message("other-message", changed, "local", "2026-10-25T14:00:00Z"), result)
+
+    def test_invalid_json_claim_rejected_before_durable_write(self):
+        bad = SemanticClaim(**{**claim().__dict__, "value": {1: "invalid key"}})
+        with self.assertRaisesRegex(ValueError, "claim_not_canonical_json"):
+            self.a.scf.ingest_message("invalid", bad, "local", "2026-10-25T14:00:00Z")
+        self.assertEqual(PRAINRuntime(persistent_db_path=self.path).scf.decisions(), [])
+        self.assertIsNone(self.a.scf.projection("a"))
+
+    def test_mutation_after_fingerprint_snapshot_cannot_change_durable_claim(self):
+        value = {"nested": ["original"]}
+        original_validator = durable_module._canonical_claim
+        def mutate_external_then_validate(snapshot):
+            value["nested"].append("concurrent")
+            return original_validator(snapshot)
+        changed = SemanticClaim(**{**claim().__dict__, "value": value})
+        with patch("prain.durable_semantics._canonical_claim", side_effect=mutate_external_then_validate):
+            first = self.a.scf.ingest_message("snapshot", changed, "local", "2026-10-25T14:00:00Z")
+        restarted = PRAINRuntime(persistent_db_path=self.path)
+        self.assertEqual(restarted.scf.projection("a").value, {"nested": ["original"]})
+        original = SemanticClaim(**{**claim().__dict__, "value": {"nested": ["original"]}})
+        self.assertEqual(restarted.scf.ingest_message("snapshot", original, "local", "2026-10-25T14:00:00Z"), first)
+        with self.assertRaisesRegex(ValueError, "message_id_conflict"):
+            restarted.scf.ingest_message("snapshot", changed, "local", "2026-10-25T14:00:00Z")
+
     def test_scf_dependency_invalidation_survives_restart(self):
         self.a.scf.ingest(claim(), "local", "2026-10-25T14:00:00Z")
         self.a.scf.ingest(claim(claim_id="b", dependencies=("a",)), "local", "2026-10-25T14:00:00Z")
@@ -76,6 +112,19 @@ class DurableSemanticIntegrationTests(unittest.TestCase):
             self.a.scf.ingest(item, "local", "2026-10-25T14:00:00Z")
         self.a.scf.ingest(claim(version=2), "local", "2026-10-25T14:00:00Z")
         restarted = PRAINRuntime(persistent_db_path=self.path)
+        for item_id in ("b", "c"):
+            with self.subTest(item_id=item_id), self.assertRaisesRegex(ValueError, "projection_invalidated"):
+                restarted.scf.projection(item_id)
+
+    def test_hypothesis_revision_invalidates_dependents_after_restart_and_replay(self):
+        for item in (claim(), claim(claim_id="b", dependencies=("a",)),
+                     claim(claim_id="c", dependencies=("b",))):
+            self.a.scf.ingest(item, "local", "2026-10-25T14:00:00Z")
+        revision = SemanticClaim(**{**claim(version=2).__dict__, "epistemic_status": "hypothesis", "value": "uncertain"})
+        decision = self.a.scf.ingest_message("hypothesis-update", revision, "local", "2026-10-25T14:00:00Z")
+        self.assertEqual(decision.decision, "retain_as_hypothesis")
+        restarted = PRAINRuntime(persistent_db_path=self.path)
+        self.assertEqual(restarted.scf.ingest_message("hypothesis-update", revision, "local", "2026-10-25T14:00:00Z"), decision)
         for item_id in ("b", "c"):
             with self.subTest(item_id=item_id), self.assertRaisesRegex(ValueError, "projection_invalidated"):
                 restarted.scf.projection(item_id)

@@ -12,6 +12,15 @@ class AccessDenied(PermissionError):
 
 
 class TenantAccess:
+    @staticmethod
+    def _token_digest(token):
+        if not isinstance(token, str) or not token:
+            raise AccessDenied("invalid_credentials")
+        try:
+            return hashlib.sha256(token.encode('utf-8')).hexdigest()
+        except UnicodeEncodeError as exc:
+            raise AccessDenied("invalid_credentials") from exc
+
     def __init__(self, database):
         self.database = str(database)
         Path(database).parent.mkdir(parents=True, exist_ok=True)
@@ -49,9 +58,7 @@ class TenantAccess:
 
     def authorize(self, tenant, principal, token, capability, resource):
         self._valid(tenant, principal, capability, resource)
-        if not isinstance(token, str) or not token:
-            raise AccessDenied("invalid_credentials")
-        provided = hashlib.sha256(token.encode()).hexdigest()
+        provided = self._token_digest(token)
         with self._db() as db:
             db.execute("BEGIN")
             row = db.execute("SELECT token_digest,revoked FROM prain_principals WHERE tenant=? AND principal=?",
@@ -84,11 +91,10 @@ class TenantAccess:
 
     def authorize_identity(self, tenant, principal, token):
         self._valid(tenant, principal)
-        if not isinstance(token, str) or not token:
-            raise AccessDenied("invalid_credentials")
+        provided = self._token_digest(token)
         with self._db() as db:
             row = db.execute("SELECT token_digest,revoked FROM prain_principals WHERE tenant=? AND principal=?",
                              (tenant, principal)).fetchone()
-        if not row or row[1] or not hmac.compare_digest(row[0], hashlib.sha256(token.encode()).hexdigest()):
+        if not row or row[1] or not hmac.compare_digest(row[0], provided):
             raise AccessDenied("access_denied")
         return True

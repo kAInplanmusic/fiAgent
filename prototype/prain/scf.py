@@ -1,13 +1,43 @@
 """Versioned, scoped semantic coordination reference implementation (local only)."""
 from __future__ import annotations
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from copy import deepcopy
 from datetime import datetime, timezone
 from threading import RLock
 from typing import Any
+import json
 
 DECISIONS = frozenset({"adopt", "retain_as_hypothesis", "recompute", "request_evidence",
                        "raise_conflict", "ignore_out_of_scope", "defer"})
+
+
+def _canonical_claim(claim):
+    """Require actual JSON values before a claim can enter a projection."""
+    active = set()
+
+    def check(value):
+        if value is None or type(value) in (str, bool, int, float):
+            return
+        if type(value) not in (dict, list) or id(value) in active:
+            raise ValueError("claim_not_canonical_json")
+        active.add(id(value))
+        try:
+            if type(value) is dict:
+                if any(type(key) is not str for key in value):
+                    raise ValueError("claim_not_canonical_json")
+                for item in value.values():
+                    check(item)
+            else:
+                for item in value:
+                    check(item)
+        finally:
+            active.remove(id(value))
+
+    try:
+        check(claim.value)
+        return json.dumps(asdict(claim), sort_keys=True, separators=(",", ":"), allow_nan=False)
+    except (TypeError, ValueError, RecursionError, OverflowError) as exc:
+        raise ValueError("claim_not_canonical_json") from exc
 
 
 def _timestamp(value: str) -> datetime:
@@ -74,16 +104,20 @@ class SemanticFabric:
     def __init__(self):
         self._lock = RLock()
         self._claims: dict[str, SemanticClaim] = {}
-        self._conflicts: list[dict[str, str]] = []
+        self._conflicts: list[dict[str, Any]] = []
         self._decisions: list[SCFDecision] = []
         self._invalidated: set[str] = set()
 
     def ingest(self, claim: SemanticClaim, recipient_scope: str, now: str) -> SCFDecision:
         if not isinstance(claim, SemanticClaim):
             raise TypeError("claim must be SemanticClaim")
+        # A frozen dataclass can still contain mutable JSON values. Capture one
+        # detached value before validation and all subsequent decisions.
+        claim = deepcopy(claim)
         t = _timestamp(now)
         if not isinstance(recipient_scope, str) or not recipient_scope:
             raise ValueError("recipient scope required")
+        incoming = _canonical_claim(claim)
         with self._lock:
             prior = self._claims.get(claim.claim_id)
             if recipient_scope != claim.scope:
@@ -94,22 +128,36 @@ class SemanticFabric:
                 action, reason = "defer", "future_observation"
             elif not claim.evidence_refs:
                 action, reason = "request_evidence", "missing_evidence"
-            elif prior and claim.version <= prior.version:
-                action, reason = ("defer", "duplicate_or_stale_version") if claim.version < prior.version else ("defer", "duplicate_version")
+            elif prior and claim.version < prior.version:
+                action, reason = "defer", "duplicate_or_stale_version"
+            elif prior and claim.version == prior.version:
+                # A revision is an immutable claim: a changed body at the same
+                # revision is an equivocation, not an ordinary duplicate.
+                current = _canonical_claim(prior)
+                if incoming == current:
+                    action, reason = "defer", "duplicate_version"
+                else:
+                    action, reason = "raise_conflict", "same_version_changed_claim"
+                    self._conflicts.append({"claim_id": claim.claim_id, "reason": reason,
+                                            "conflicting_claim": deepcopy(asdict(claim))})
             elif prior and claim.version != prior.version + 1:
                 action, reason = "defer", "version_gap"
             elif prior and (claim.subject, claim.predicate, claim.scope) != (prior.subject, prior.predicate, prior.scope):
                 action, reason = "raise_conflict", "identity_mismatch"
                 self._conflicts.append({"claim_id": claim.claim_id, "reason": reason})
-            elif claim.epistemic_status == "hypothesis":
-                action, reason = "retain_as_hypothesis", "non_authoritative"
-                self._claims[claim.claim_id] = deepcopy(claim)
+            elif any(dependency in self._invalidated for dependency in claim.dependencies):
+                # A downstream claim cannot become usable while one of its
+                # premises is already awaiting re-evaluation.
+                action, reason = "defer", "dependency_invalidated"
             else:
-                action, reason = "adopt", "version_and_scope_valid"
+                if claim.epistemic_status == "hypothesis":
+                    action, reason = "retain_as_hypothesis", "non_authoritative"
+                else:
+                    action, reason = "adopt", "version_and_scope_valid"
                 self._claims[claim.claim_id] = deepcopy(claim)
                 if prior is not None:
-                    # A changed ancestor invalidates the entire dependent
-                    # projection chain, not only its immediate children.
+                    # Every accepted revision changes the premise, including
+                    # a downgrade to a non-authoritative hypothesis.
                     frontier = [claim.claim_id]
                     seen = {claim.claim_id}
                     while frontier:

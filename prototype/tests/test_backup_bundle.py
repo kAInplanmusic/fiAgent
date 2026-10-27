@@ -1,4 +1,6 @@
 import sqlite3
+import hashlib
+import json
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -28,6 +30,68 @@ def make_db(path, table, key, value):
 
 
 class BackupBundleTests(unittest.TestCase):
+    def test_unchecked_bundle_wal_is_rejected_before_destination_changes(self):
+        with tempfile.TemporaryDirectory() as td:
+            base = Path(td)
+            source, target = base / 'source.db', base / 'target.db'
+            make_db(source, 'records', 'one', 'backup')
+            make_db(target, 'records', 'one', 'keep')
+            bundle = base / 'bundle'
+            backup_databases({'records': source}, bundle)
+            payload = bundle / 'records.sqlite'
+            conn = sqlite3.connect(payload)
+            self.addCleanup(conn.close)
+            conn.execute('PRAGMA journal_mode=WAL')
+            conn.execute('PRAGMA wal_autocheckpoint=0')
+            main_hash = hashlib.sha256(payload.read_bytes()).hexdigest()
+            manifest_file = bundle / 'BUNDLE_MANIFEST.json'
+            manifest = json.loads(manifest_file.read_text())
+            manifest['databases']['records']['sha256'] = main_hash
+            manifest_file.write_text(json.dumps(manifest))
+            conn.execute("UPDATE records SET v='unchecked-wal'")
+            conn.commit()
+            self.assertEqual(hashlib.sha256(payload.read_bytes()).hexdigest(), main_hash)
+            self.assertTrue(Path(str(payload) + '-wal').exists())
+            before = target.read_bytes()
+            with self.assertRaisesRegex(ValueError, 'sqlite_sidecar_present'):
+                restore_databases(bundle, {'records': target})
+            self.assertEqual(target.read_bytes(), before)
+
+    def test_live_destination_wal_is_rejected_without_overwrite(self):
+        with tempfile.TemporaryDirectory() as td:
+            base = Path(td)
+            source, target = base / 'source.db', base / 'target.db'
+            make_db(source, 'records', 'one', 'backup')
+            make_db(target, 'records', 'one', 'keep')
+            bundle = base / 'bundle'
+            backup_databases({'records': source}, bundle)
+            conn = sqlite3.connect(target)
+            self.addCleanup(conn.close)
+            conn.execute('PRAGMA journal_mode=WAL')
+            conn.execute('PRAGMA wal_autocheckpoint=0')
+            conn.execute("UPDATE records SET v='live-wal'")
+            conn.commit()
+            with self.assertRaisesRegex(ValueError, 'sqlite_sidecar_present'):
+                restore_databases(bundle, {'records': target})
+            self.assertEqual(conn.execute('SELECT v FROM records').fetchone()[0], 'live-wal')
+
+    def test_recovery_rejects_artifact_wal_without_overwriting_destination(self):
+        with tempfile.TemporaryDirectory() as td:
+            base = Path(td)
+            artifact, target = base / 'artifact.db', base / 'target.db'
+            make_db(artifact, 'records', 'one', 'artifact')
+            make_db(target, 'records', 'one', 'keep')
+            conn = sqlite3.connect(artifact)
+            self.addCleanup(conn.close)
+            conn.execute('PRAGMA journal_mode=WAL')
+            conn.execute('PRAGMA wal_autocheckpoint=0')
+            conn.execute("UPDATE records SET v='unchecked-wal'")
+            conn.commit()
+            before = target.read_bytes()
+            with self.assertRaisesRegex(ValueError, 'sqlite_sidecar_present'):
+                recover_database_from_artifact(artifact, target)
+            self.assertEqual(target.read_bytes(), before)
+
     def test_multi_database_backup_restore_round_trip(self):
         with tempfile.TemporaryDirectory() as td:
             base = Path(td)
